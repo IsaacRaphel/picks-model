@@ -97,7 +97,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
   <div class="navlinks">
     <a href="index.html#how" class="hide-sm">How it works</a>
-    <a href="index.html#plan" class="hide-sm">Roadmap</a>
+    <a href="model.html#reviews" class="hide-sm">Reviews</a>
+    <a href="model.html#lessons" class="hide-sm">Lessons</a>
     <a href="model.html" class="on">Live model</a>
   </div>
 </div></nav>
@@ -118,7 +119,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <div class="tabs" role="tablist">
   <button data-tab="games" class="on">Forecasts</button>
-  <button data-tab="learn">Lessons and reviews</button>
+  <button data-tab="reviews">Reviews</button>
+  <button data-tab="lessons">Lessons</button>
 </div>
 
 <section id="tab-games">
@@ -148,11 +150,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
-<section id="tab-learn" hidden>
+<section id="tab-lessons" hidden>
   <div class="card">
     <h2>Hypotheses the model is testing</h2>
     <p class="muted">Repeated mistakes become lessons. Each one is tracked on the picks it changed and needs 15+ picks before it's judged: kept if it beats the 52.4% break-even rate, dropped if it doesn't. Rules about what goes into the top pick are measured by how the bets they exclude perform.</p>
     <div class="tablewrap"><table id="lessons"></table></div>
+  </div>
+</section>
+
+<section id="tab-reviews" hidden>
+  <div class="card">
+    <h2>How the model grades itself</h2>
+    <p class="muted">Every night the model writes a review of the day: what went right, what went wrong, and what to change. Losses are split into real mistakes and bad luck, so only real mistakes turn into lessons. Every Monday there's a weekly review that breaks results down by edge size, favorites vs. underdogs, home vs. away and league.</p>
   </div>
   <div class="card">
     <h2>Latest weekly review</h2>
@@ -278,7 +287,16 @@ function drawReviews(){
 }
 function drawAll(){drawTiles();drawDays();drawTop();drawTable();drawLessons();drawReviews();}
 
-document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{S.tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x===b));$('tab-games').hidden=S.tab!=='games';$('tab-learn').hidden=S.tab!=='learn';}));
+function setTab(tab,push){
+  if(!['games','lessons','reviews'].includes(tab))tab='games';
+  S.tab=tab;
+  document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x.dataset.tab===tab));
+  ['games','lessons','reviews'].forEach(k=>{$('tab-'+k).hidden=k!==tab;});
+  if(push){try{history.replaceState(null,'',tab==='games'?location.pathname:'#'+tab);}catch(e){}}
+}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab,true)));
+setTab((location.hash||'').slice(1),false);
+window.addEventListener('hashchange',()=>setTab((location.hash||'').slice(1),false));
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{S.view=b.dataset.view;document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
 document.querySelectorAll('[data-league]').forEach(b=>b.addEventListener('click',()=>{S.league=b.dataset.league;document.querySelectorAll('[data-league]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
 $('day').addEventListener('change',e=>{S.day=e.target.value;drawTop();drawTable();});
