@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Isaac Raphel | Sports Forecasting Model</title>
+<meta name="description" content="An economics project testing how efficiently sports markets price games, using daily data collection, a prediction model and a self-correcting feedback loop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d12; --panel:#12151d; --panel2:#171b25; --line:#242a37;
+  --text:#e8ebf2; --muted:#9aa3b5; --dim:#6b7488;
+  --green:#3ddc97; --blue:#5aa9ff; --purple:#a77bff; --amber:#ffb547; --pink:#ff6b9a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+
+nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none}
+.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+.navlinks a{text-decoration:none}
+.navlinks a:hover{color:var(--text)}
+@media(max-width:640px){.navlinks .hide-sm{display:none}}
+
+header.hero{padding:88px 0 64px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-40% -10% auto auto;width:640px;height:640px;background:radial-gradient(circle,rgba(90,169,255,.18),transparent 60%);pointer-events:none}
+.hero:after{content:"";position:absolute;left:-200px;bottom:-300px;width:600px;height:600px;background:radial-gradient(circle,rgba(167,123,255,.14),transparent 60%);pointer-events:none}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--green);border:1px solid rgba(61,220,151,.35);background:rgba(61,220,151,.08);padding:5px 12px;border-radius:999px;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.08;letter-spacing:-.03em;font-weight:800;max-width:820px}
+h1 .grad{background:linear-gradient(90deg,var(--blue),var(--purple) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{margin-top:20px;font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:680px}
+.cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line)}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn.primary:hover{background:#fff}
+.btn.ghost:hover{border-color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:56px}
+.stat{background:var(--panel);padding:20px}
+.stat .n{font-size:28px;font-weight:700;letter-spacing:-.02em}
+.stat .l{font-size:13px;color:var(--muted);margin-top:2px}
+.stat:nth-child(1) .n{color:var(--blue)}
+.stat:nth-child(2) .n{color:var(--green)}
+.stat:nth-child(3) .n{color:var(--purple)}
+.stat:nth-child(4) .n{color:var(--amber)}
+.asof{font-size:12px;color:var(--dim);margin-top:10px}
+@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+section{padding:72px 0;border-top:1px solid var(--line)}
+.kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:10px}
+h2{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;line-height:1.15;margin-bottom:18px}
+p.body{color:var(--muted);max-width:720px;font-size:17px}
+p.body + p.body{margin-top:14px}
+
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts div:last-child{border-bottom:0}
+.facts span:first-child{color:var(--dim)}
+.facts span:last-child{text-align:right}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+
+.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative}
+.step .num{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--dim)}
+.step h3{font-size:17px;margin:8px 0 8px}
+.step p{font-size:14.5px;color:var(--muted)}
+.step .tag{display:inline-block;margin-top:12px;font-size:12px;font-family:"JetBrains Mono",monospace;padding:3px 8px;border-radius:6px}
+.s1 .tag{color:var(--blue);background:rgba(90,169,255,.1)}
+.s2 .tag{color:var(--purple);background:rgba(167,123,255,.1)}
+.s3 .tag{color:var(--amber);background:rgba(255,181,71,.1)}
+.s4 .tag{color:var(--green);background:rgba(61,220,151,.1)}
+.s1{border-top:2px solid var(--blue)} .s2{border-top:2px solid var(--purple)} .s3{border-top:2px solid var(--amber)} .s4{border-top:2px solid var(--green)}
+@media(max-width:880px){.pipeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.pipeline{grid-template-columns:1fr}}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.two .card h3{font-size:17px;margin-bottom:8px}
+.two .card p{font-size:15px;color:var(--muted)}
+.two .card .big{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+@media(max-width:720px){.two{grid-template-columns:1fr}}
+
+.code{margin-top:28px;background:#0e1118;border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto;white-space:pre;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.7;color:#c8cfdc}
+.code .c{color:var(--dim)} .code .k{color:var(--purple)} .code .s{color:var(--green)} .code .n{color:var(--amber)}
+
+.timeline{margin-top:30px;border-left:2px solid var(--line);padding-left:24px;display:grid;gap:26px}
+.tl{position:relative}
+.tl:before{content:"";position:absolute;left:-31px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--dim)}
+.tl.done:before{background:var(--green);border-color:var(--green)}
+.tl.now:before{background:var(--blue);border-color:var(--blue);box-shadow:0 0 12px var(--blue)}
+.tl .when{font-size:13px;color:var(--dim);font-family:"JetBrains Mono",monospace}
+.tl h3{font-size:17px;margin:2px 0 4px}
+.tl p{color:var(--muted);font-size:15px;max-width:680px}
+
+.note{margin-top:28px;font-size:14px;color:var(--dim);max-width:720px}
+footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="#about" class="hide-sm">About</a>
+    <a href="#how">How it works</a>
+    <a href="#plan" class="hide-sm">Roadmap</a>
+    <a href="model.html">Live model</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="dot"></span> Live project · updated daily</div>
+  <h1>Can a disciplined model find where <span class="grad">markets misprice outcomes?</span></h1>
+  <p class="lede">A forecasting system that collects market data every day, makes its own predictions, grades itself against the market's final price, and only keeps the changes that prove themselves over time.</p>
+  <div class="cta">
+    <a class="btn primary" href="model.html">View the live model</a>
+    <a class="btn ghost" href="#how">How it works</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n" id="st-games">151</div><div class="l">Games forecast and graded</div></div>
+    <div class="stat"><div class="n" id="st-ats">57.0%</div><div class="l">Accuracy vs. 52.4% break-even</div></div>
+    <div class="stat"><div class="n" id="st-lessons">11</div><div class="l">Hypotheses being tested</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Markets benchmarked</div></div>
+  </div>
+  <div class="asof" id="st-asof">Through Nov 8, 2026. Early sample, not yet statistically meaningful.</div>
+</div></header>
+
+<section id="about"><div class="wrap about">
+  <div>
+    <div class="kicker">About me</div>
+    <h2>Economics student who likes testing ideas against real data.</h2>
+    <p class="body">I'm Isaac Raphel, an Economics major with a Business minor at Indiana University. I'm interested in how markets turn information into prices, and whether a careful, rules-based process can spot the places where they get it wrong.</p>
+    <p class="body">Sports markets are a good place to study that. Every game has a clear price before it starts and a clear result after, thousands of games happen each season, and the feedback comes in overnight instead of over years. This project is how I'm learning forecasting, data pipelines and model evaluation by actually building one.</p>
+  </div>
+  <div class="card facts">
+    <div><span>School</span><span>Indiana University</span></div>
+    <div><span>Major</span><span>Economics, Business minor</span></div>
+    <div><span>Graduating</span><span>May 2028</span></div>
+    <div><span>Focus</span><span>Markets, forecasting, data</span></div>
+    <div><span>Project started</span><span>November 2026</span></div>
+  </div>
+</div></section>
+
+<section id="how"><div class="wrap">
+  <div class="kicker">How it works</div>
+  <h2>A daily pipeline: collect, predict, grade, learn.</h2>
+  <p class="body">I designed the system and its rules, and it runs on AI agents and scheduled jobs that do the daily data work. Every step is logged to structured datasets, so every prediction can be checked later against what actually happened.</p>
+
+  <div class="pipeline">
+    <div class="step s1"><div class="num">01 · Morning</div><h3>Collect the data</h3><p>Pulls spreads, moneylines and prediction-market prices for up to 60 games, plus injury reports, rest and travel, public betting splits and line movement.</p><span class="tag">ingest</span></div>
+    <div class="step s2"><div class="num">02 · Morning</div><h3>Make a forecast</h3><p>Builds its own projected spread and win probability from team strength, home/road form and game context, then compares it to the market to find real disagreements.</p><span class="tag">predict</span></div>
+    <div class="step s3"><div class="num">03 · Midday + pregame</div><h3>Track the market</h3><p>Re-checks lines and late news before tip-off, recording how prices moved so the model can be measured against the final market price.</p><span class="tag">monitor</span></div>
+    <div class="step s4"><div class="num">04 · Overnight</div><h3>Grade and learn</h3><p>Scores every forecast, separates bad luck from real mistakes, and turns repeated mistakes into new rules to test.</p><span class="tag">evaluate</span></div>
+  </div>
+
+  <div class="two">
+    <div class="card">
+      <h3>Built-in discipline</h3>
+      <p>The model is told not to double count information the market has already priced in, like home field or a well-known injury. Its edge has to come from something the price doesn't reflect yet. When it disagrees with the market by a lot, that's treated as a warning to recheck, not a reason to be confident.</p>
+    </div>
+    <div class="card">
+      <h3>Measured the right way</h3>
+      <p>Wins and losses take hundreds of games to mean anything, so the model also tracks closing line value: whether its number beat the market's final price. Weekly reviews break results down by edge size, favorites vs. underdogs, home vs. away and league to catch problems early.</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="learning"><div class="wrap">
+  <div class="kicker">How the model evolves</div>
+  <h2>Mistakes become hypotheses. Only the ones that hold up survive.</h2>
+  <p class="body">Every night, losses are tagged by cause: a bad read, the market simply being right, or noise like a late fluke score. Noise is ignored. Repeated real mistakes become "lessons," and each lesson is treated as a hypothesis, not a rule. The model tags every prediction a lesson changes, so each one builds its own track record.</p>
+
+<div class="code"><span class="c">// how a lesson is judged, once it has enough evidence</span>
+<span class="k">if</span> (lesson.picks &lt; <span class="n">15</span>)          status = <span class="s">"Testing"</span>
+<span class="k">else if</span> (lesson.winRate &gt;= <span class="n">0.524</span>) status = <span class="s">"Keep"</span>     <span class="c">// beats the break-even rate</span>
+<span class="k">else if</span> (lesson.winRate &lt;  <span class="n">0.47</span>)  status = <span class="s">"Dropped"</span>  <span class="c">// kept on file so it isn't relearned</span>
+<span class="k">else</span>                              status = <span class="s">"Testing"</span>  <span class="c">// decide at 30 picks</span></div>
+
+  <p class="note">Example from week one: the data showed that predictions where the model disagreed with the market by 3+ points did worse than ones with small disagreements. That became a new hypothesis to recheck big disagreements instead of trusting them, and it's now being tested on new games.</p>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <div class="kicker">Roadmap</div>
+  <h2>The plan</h2>
+  <div class="timeline">
+    <div class="tl done"><div class="when">Early Nov 2026</div><h3>Build the pipeline</h3><p>Daily data collection, forecasts across four leagues, automatic grading, and a live dashboard.</p></div>
+    <div class="tl now"><div class="when">November 2026</div><h3>Collect data and test hypotheses</h3><p>Grow the dataset to 1,000+ graded games while the lessons system adds, tests, keeps and drops rules.</p></div>
+    <div class="tl"><div class="when">End of November</div><h3>Formula v1</h3><p>Combine the lessons that held up into one written formula, with the evidence behind each piece.</p></div>
+    <div class="tl"><div class="when">December 2026</div><h3>Out-of-sample test</h3><p>Run v1 on new games without changing it. If it holds up against the market, it becomes the model. If not, revise and test v2.</p></div>
+  </div>
+  <p class="note">This is a research project. Results are tracked with simulated stakes only, and early numbers are a small sample.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University</span>
+  <a href="model.html">View the live model →</a>
+</div></footer>
+
+<script>
+Promise.all([
+  fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()),
+  fetch('data/lessons.json',{cache:'no-store'}).then(r=>r.json())
+]).then(([games,lessons])=>{
+  const graded=games.filter(g=>['W','L','P'].includes(g.spread_result));
+  const w=graded.filter(g=>g.spread_result==='W').length, l=graded.filter(g=>g.spread_result==='L').length;
+  document.getElementById('st-games').textContent=graded.length.toLocaleString();
+  if(w+l) document.getElementById('st-ats').textContent=(100*w/(w+l)).toFixed(1)+'%';
+  document.getElementById('st-lessons').textContent=lessons.filter(x=>x.status&&x.status!=='Setup').length;
+  const last=graded.map(g=>g.date).sort().pop();
+  if(last){const d=new Date(last+'T12:00:00');
+    document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+(graded.length<500?' Early sample, not yet statistically meaningful.':'');}
+}).catch(()=>{});
+</script>
+</body>
+</html>

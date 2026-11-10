@@ -1,0 +1,592 @@
+[
+ {
+  "id": "2026-11-02-potd",
+  "date": "2026-11-02",
+  "kind": "Pick of the day",
+  "pick": "CLE -4.5",
+  "dk_odds": "-105",
+  "fd_odds": "-104",
+  "kalshi_odds": "+106",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-02-parlay",
+  "date": "2026-11-02",
+  "kind": "Parlay",
+  "pick": "5-leg parlay: 3 ML, 2 spreads",
+  "dk_odds": "+1076",
+  "fd_odds": "+1076",
+  "kalshi_odds": "+1269",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-02-leg1",
+  "date": "2026-11-02",
+  "kind": "Parlay leg",
+  "pick": "GONZ ML",
+  "dk_odds": "-238",
+  "fd_odds": "-245",
+  "kalshi_odds": "-208",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-02-leg2",
+  "date": "2026-11-02",
+  "kind": "Parlay leg",
+  "pick": "DET ML",
+  "dk_odds": "-175",
+  "fd_odds": "-174",
+  "kalshi_odds": "-160",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-02-leg3",
+  "date": "2026-11-02",
+  "kind": "Parlay leg",
+  "pick": "MEM ML",
+  "dk_odds": "-218",
+  "fd_odds": "-220",
+  "kalshi_odds": "-203",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-02-leg4",
+  "date": "2026-11-02",
+  "kind": "Parlay leg",
+  "pick": "PHI -11.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-104",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-02-leg5",
+  "date": "2026-11-02",
+  "kind": "Parlay leg",
+  "pick": "ISU -14.5",
+  "dk_odds": "-112",
+  "fd_odds": "-110",
+  "kalshi_odds": "-106",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-03-potd",
+  "date": "2026-11-03",
+  "kind": "Pick of the day",
+  "pick": "SHSU +26.5",
+  "dk_odds": "-108",
+  "fd_odds": "-110",
+  "kalshi_odds": "-104",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-03-parlay",
+  "date": "2026-11-03",
+  "kind": "Parlay",
+  "pick": "4-leg parlay: 2 ML, 2 spreads",
+  "dk_odds": "",
+  "fd_odds": "+254",
+  "kalshi_odds": "+271",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-03-leg1",
+  "date": "2026-11-03",
+  "kind": "Parlay leg",
+  "pick": "TENN ML",
+  "dk_odds": "-20000",
+  "fd_odds": "-30000",
+  "kalshi_odds": "-9900",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-03-leg2",
+  "date": "2026-11-03",
+  "kind": "Parlay leg",
+  "pick": "UVA ML",
+  "dk_odds": "",
+  "fd_odds": "-100000",
+  "kalshi_odds": "-9900",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-03-leg3",
+  "date": "2026-11-03",
+  "kind": "Parlay leg",
+  "pick": "UK -32.5",
+  "dk_odds": "-105",
+  "fd_odds": "-118",
+  "kalshi_odds": "-117",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-03-leg4",
+  "date": "2026-11-03",
+  "kind": "Parlay leg",
+  "pick": "SHSU +26.5",
+  "dk_odds": "-108",
+  "fd_odds": "-110",
+  "kalshi_odds": "-104",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-04-potd",
+  "date": "2026-11-04",
+  "kind": "Pick of the day",
+  "pick": "DET -2.5",
+  "dk_odds": "-106",
+  "fd_odds": "-104",
+  "kalshi_odds": "+104",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-04-parlay",
+  "date": "2026-11-04",
+  "kind": "Parlay",
+  "pick": "5-leg parlay: 3 ML, 2 spreads",
+  "dk_odds": "+1061",
+  "fd_odds": "+1096",
+  "kalshi_odds": "+1277",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-04-leg1",
+  "date": "2026-11-04",
+  "kind": "Parlay leg",
+  "pick": "DET -2.5",
+  "dk_odds": "-106",
+  "fd_odds": "-104",
+  "kalshi_odds": "+104",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-04-leg2",
+  "date": "2026-11-04",
+  "kind": "Parlay leg",
+  "pick": "POR -3.5",
+  "dk_odds": "-105",
+  "fd_odds": "-105",
+  "kalshi_odds": "+104",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-04-leg3",
+  "date": "2026-11-04",
+  "kind": "Parlay leg",
+  "pick": "NOP ML",
+  "dk_odds": "-217",
+  "fd_odds": "-205",
+  "kalshi_odds": "-203",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-04-leg4",
+  "date": "2026-11-04",
+  "kind": "Parlay leg",
+  "pick": "DEN ML",
+  "dk_odds": "-192",
+  "fd_odds": "-194",
+  "kalshi_odds": "-156",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-04-leg5",
+  "date": "2026-11-04",
+  "kind": "Parlay leg",
+  "pick": "MEM ML",
+  "dk_odds": "-265",
+  "fd_odds": "-260",
+  "kalshi_odds": "-285",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-05-potd",
+  "date": "2026-11-05",
+  "kind": "Pick of the day",
+  "pick": "GSW -7.5",
+  "dk_odds": "-106",
+  "fd_odds": "-110",
+  "kalshi_odds": "+106",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-05-parlay",
+  "date": "2026-11-05",
+  "kind": "Parlay",
+  "pick": "4-leg parlay: 2 ML, 2 spreads",
+  "dk_odds": "+351",
+  "fd_odds": "+348",
+  "kalshi_odds": "+430",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-05-leg1",
+  "date": "2026-11-05",
+  "kind": "Parlay leg",
+  "pick": "GSW -7.5",
+  "dk_odds": "-106",
+  "fd_odds": "-110",
+  "kalshi_odds": "+106",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-05-leg2",
+  "date": "2026-11-05",
+  "kind": "Parlay leg",
+  "pick": "ORL +1.5",
+  "dk_odds": "-114",
+  "fd_odds": "-110",
+  "kalshi_odds": "-104",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-05-leg3",
+  "date": "2026-11-05",
+  "kind": "Parlay leg",
+  "pick": "JAX ML",
+  "dk_odds": "-535",
+  "fd_odds": "-510",
+  "kalshi_odds": "-441",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-05-leg4",
+  "date": "2026-11-05",
+  "kind": "Parlay leg",
+  "pick": "VAN ML",
+  "dk_odds": "-2400",
+  "fd_odds": "-3500",
+  "kalshi_odds": "-1438",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-06-potd",
+  "date": "2026-11-06",
+  "kind": "Pick of the day",
+  "pick": "MEM +3.5",
+  "dk_odds": "-118",
+  "fd_odds": "-114",
+  "kalshi_odds": "-111",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-06-parlay",
+  "date": "2026-11-06",
+  "kind": "Parlay",
+  "pick": "5-leg parlay: 3 ML, 2 spreads",
+  "dk_odds": "+743",
+  "fd_odds": "+751",
+  "kalshi_odds": "+775",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-06-leg1",
+  "date": "2026-11-06",
+  "kind": "Parlay leg",
+  "pick": "MEM +3.5",
+  "dk_odds": "-118",
+  "fd_odds": "-114",
+  "kalshi_odds": "-111",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-06-leg2",
+  "date": "2026-11-06",
+  "kind": "Parlay leg",
+  "pick": "NOP +4.5",
+  "dk_odds": "-115",
+  "fd_odds": "-114",
+  "kalshi_odds": "-100",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-06-leg3",
+  "date": "2026-11-06",
+  "kind": "Parlay leg",
+  "pick": "PHI ML",
+  "dk_odds": "-148",
+  "fd_odds": "-154",
+  "kalshi_odds": "-199",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-06-leg4",
+  "date": "2026-11-06",
+  "kind": "Parlay leg",
+  "pick": "SAS ML",
+  "dk_odds": "-990",
+  "fd_odds": "-1200",
+  "kalshi_odds": "-852",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-06-leg5",
+  "date": "2026-11-06",
+  "kind": "Parlay leg",
+  "pick": "ARIZ ML",
+  "dk_odds": "-310",
+  "fd_odds": "-285",
+  "kalshi_odds": "-270",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-07-potd",
+  "date": "2026-11-07",
+  "kind": "Pick of the day",
+  "pick": "HOU -7.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-100",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-07-parlay",
+  "date": "2026-11-07",
+  "kind": "Parlay",
+  "pick": "5-leg parlay: 3 ML, 2 spreads",
+  "dk_odds": "+1368",
+  "fd_odds": "+1370",
+  "kalshi_odds": "+1674",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-07-leg1",
+  "date": "2026-11-07",
+  "kind": "Parlay leg",
+  "pick": "HOU -7.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-100",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-07-leg2",
+  "date": "2026-11-07",
+  "kind": "Parlay leg",
+  "pick": "GSW -6.5",
+  "dk_odds": "-108",
+  "fd_odds": "-108",
+  "kalshi_odds": "-100",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-07-leg3",
+  "date": "2026-11-07",
+  "kind": "Parlay leg",
+  "pick": "TEX ML",
+  "dk_odds": "-142",
+  "fd_odds": "-142",
+  "kalshi_odds": "-127",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-07-leg4",
+  "date": "2026-11-07",
+  "kind": "Parlay leg",
+  "pick": "UTAH ML",
+  "dk_odds": "-185",
+  "fd_odds": "-188",
+  "kalshi_odds": "-163",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-07-leg5",
+  "date": "2026-11-07",
+  "kind": "Parlay leg",
+  "pick": "DUKE ML",
+  "dk_odds": "-192",
+  "fd_odds": "-188",
+  "kalshi_odds": "-186",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-08-potd",
+  "date": "2026-11-08",
+  "kind": "Pick of the day",
+  "pick": "DET -4.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-102",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-08-parlay",
+  "date": "2026-11-08",
+  "kind": "Parlay",
+  "pick": "5-leg parlay: 3 ML, 2 spreads",
+  "dk_odds": "+1456",
+  "fd_odds": "+1484",
+  "kalshi_odds": "+1918",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-08-leg1",
+  "date": "2026-11-08",
+  "kind": "Parlay leg",
+  "pick": "DET -4.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-102",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-08-leg2",
+  "date": "2026-11-08",
+  "kind": "Parlay leg",
+  "pick": "PHI -9.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "+104",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-08-leg3",
+  "date": "2026-11-08",
+  "kind": "Parlay leg",
+  "pick": "NYG ML",
+  "dk_odds": "-162",
+  "fd_odds": "-162",
+  "kalshi_odds": "-153",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-08-leg4",
+  "date": "2026-11-08",
+  "kind": "Parlay leg",
+  "pick": "Cowboys ML",
+  "dk_odds": "-230",
+  "fd_odds": "-220",
+  "kalshi_odds": "-208",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-08-leg5",
+  "date": "2026-11-08",
+  "kind": "Parlay leg",
+  "pick": "NOP ML",
+  "dk_odds": "-119",
+  "fd_odds": "-118",
+  "kalshi_odds": "+104",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-09-potd",
+  "date": "2026-11-09",
+  "kind": "Pick of the day",
+  "pick": "SAS -8.5",
+  "dk_odds": "-115",
+  "fd_odds": "-102",
+  "kalshi_odds": "-108",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-09-parlay",
+  "date": "2026-11-09",
+  "kind": "Parlay",
+  "pick": "4-leg parlay: 2 ML, 2 spreads",
+  "dk_odds": "+658",
+  "fd_odds": "+697",
+  "kalshi_odds": "+763",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-09-leg1",
+  "date": "2026-11-09",
+  "kind": "Parlay leg",
+  "pick": "SAS -8.5",
+  "dk_odds": "-115",
+  "fd_odds": "-102",
+  "kalshi_odds": "-108",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-09-leg2",
+  "date": "2026-11-09",
+  "kind": "Parlay leg",
+  "pick": "Indiana -5.5",
+  "dk_odds": "-105",
+  "fd_odds": "-110",
+  "kalshi_odds": "-100",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-09-leg3",
+  "date": "2026-11-09",
+  "kind": "Parlay leg",
+  "pick": "Bills ML",
+  "dk_odds": "-170",
+  "fd_odds": "-174",
+  "kalshi_odds": "-163",
+  "result": "W"
+ },
+ {
+  "id": "2026-11-09-leg4",
+  "date": "2026-11-09",
+  "kind": "Parlay leg",
+  "pick": "Cincinnati ML",
+  "dk_odds": "-325",
+  "fd_odds": "-295",
+  "kalshi_odds": "-257",
+  "result": "L"
+ },
+ {
+  "id": "2026-11-10-potd",
+  "date": "2026-11-10",
+  "kind": "Pick of the day",
+  "pick": "UVA -37.5",
+  "dk_odds": "-112",
+  "fd_odds": "-108",
+  "kalshi_odds": "-113",
+  "result": "pending"
+ },
+ {
+  "id": "2026-11-10-parlay",
+  "date": "2026-11-10",
+  "kind": "Parlay",
+  "pick": "4-leg parlay: 2 ML, 2 spreads",
+  "dk_odds": "+509",
+  "fd_odds": "+516",
+  "kalshi_odds": "+552",
+  "result": "pending"
+ },
+ {
+  "id": "2026-11-10-leg1",
+  "date": "2026-11-10",
+  "kind": "Parlay leg",
+  "pick": "Florida ML",
+  "dk_odds": "-520",
+  "fd_odds": "-500",
+  "kalshi_odds": "-456",
+  "result": "pending"
+ },
+ {
+  "id": "2026-11-10-leg2",
+  "date": "2026-11-10",
+  "kind": "Parlay leg",
+  "pick": "Duke ML",
+  "dk_odds": "-285",
+  "fd_odds": "-280",
+  "kalshi_odds": "-257",
+  "result": "pending"
+ },
+ {
+  "id": "2026-11-10-leg3",
+  "date": "2026-11-10",
+  "kind": "Parlay leg",
+  "pick": "KU -4.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-104",
+  "result": "pending"
+ },
+ {
+  "id": "2026-11-10-leg4",
+  "date": "2026-11-10",
+  "kind": "Parlay leg",
+  "pick": "ILL -2.5",
+  "dk_odds": "-102",
+  "fd_odds": "-102",
+  "kalshi_odds": "-104",
+  "result": "pending"
+ }
+]

@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Model | Isaac Raphel</title>
+<meta name="description" content="Daily forecasts, market prices, graded results and the hypotheses the model is testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d12; --panel:#12151d; --panel2:#171b25; --line:#242a37; --line2:#1b202b;
+  --text:#e8ebf2; --muted:#9aa3b5; --dim:#6b7488;
+  --green:#3ddc97; --red:#ff6b81; --blue:#5aa9ff; --purple:#a77bff; --amber:#ffb547; --teal:#2dd4bf; --orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted)}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
+
+header{padding:44px 0 8px}
+h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
+.sub{color:var(--muted);margin-top:8px;max-width:760px}
+.updated{font-size:13px;color:var(--dim);margin-top:8px}
+
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;border-top:3px solid var(--blue)}
+.tile:nth-child(2){border-top-color:var(--green)}.tile:nth-child(3){border-top-color:var(--purple)}.tile:nth-child(4){border-top-color:var(--amber)}
+.tile .l{font-size:12.5px;color:var(--muted)}.tile .n{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-top:2px}.tile .s{font-size:12px;color:var(--dim)}
+@media(max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:28px;background:#0f1218}
+.tabs button,.seg button{font:inherit;background:none;border:0;color:var(--muted);cursor:pointer}
+.tabs button{padding:9px 16px;font-size:14.5px}
+.tabs button.on{color:#fff;background:linear-gradient(90deg,var(--purple),var(--blue))}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#0f1218}
+.seg button{padding:6px 12px;font-size:13px}.seg button:hover{color:#fff}
+.seg button.on{color:#fff;background:#2b3242}
+.seg button.on[data-league=NFL]{background:#2563eb}.seg button.on[data-league=NBA]{background:#ea580c}.seg button.on[data-league=CFB]{background:#7c3aed}.seg button.on[data-league=CBB]{background:#0d9488}
+.seg button.on[data-view]{background:var(--blue)}
+select{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;background:#0f1218;color:var(--text)}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:16px}
+.card h2{font-size:17px;margin-bottom:6px}
+.muted{color:var(--muted);font-size:13.5px}
+.top{border-left:3px solid var(--green)}
+.top .pick{font-size:20px;font-weight:700;color:var(--green);margin:4px 0}
+.odds{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:4px}
+.odds b{color:var(--text);font-weight:600}
+
+.tablewrap{overflow-x:auto;margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px;border-bottom:1px solid var(--line2);vertical-align:top}
+tbody tr:hover td{background:rgba(255,255,255,.02)}
+td.lg{font-weight:700;font-size:11px;letter-spacing:.05em}
+.lg-NFL{color:#60a5fa}.lg-NBA{color:var(--orange)}.lg-CFB{color:#c084fc}.lg-CBB{color:var(--teal)}
+.pt{color:#4ade80;background:rgba(61,220,151,.14);border-radius:5px;padding:0 4px;font-weight:600}
+td.pk{color:#4ade80;background:rgba(61,220,151,.08);font-weight:600;white-space:nowrap}
+td.nw{white-space:nowrap}
+td.na{color:#566074;font-style:italic;font-size:12px}
+td.why{color:#b3bacb;line-height:1.5;font-size:13px}
+tr.main td{border-bottom:0;padding-bottom:4px}
+tr.sub td{padding-top:0;padding-bottom:14px}
+tbody tr.main:hover td,tbody tr.main:hover + tr.sub td{background:rgba(255,255,255,.02)}
+.whylab{color:var(--dim);font-weight:600}
+.whyin{position:sticky;left:0;max-width:calc(100vw - 82px)}
+@media(min-width:1200px){.whyin{max-width:none}}
+#lessons td.why{max-width:34rem}
+#lessons .ctx{color:var(--dim)}
+.ctx{display:block;margin-top:5px;color:var(--amber);font-size:12px}
+.W{color:#4ade80;font-weight:700}.L{color:var(--red);font-weight:700}.P{color:var(--amber);font-weight:700}.pend{color:var(--dim)}
+@media(max-width:700px){.hide-sm{display:none}}
+
+.rev{padding:14px 0;border-bottom:1px solid var(--line2)}.rev:last-child{border-bottom:0}
+.rev-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:600;margin-bottom:6px}
+.rev-head .rec{color:var(--muted);font-weight:500;font-size:13px}
+.rev p{font-size:14px;color:#c3c9d6;margin-top:5px;line-height:1.55}
+.rev p b{color:#c4b5fd;font-weight:600}
+.st{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.st-Keep{color:#4ade80;background:rgba(61,220,151,.12)}.st-Testing{color:var(--blue);background:rgba(90,169,255,.12)}.st-Dropped{color:#8a93a6;background:rgba(138,147,166,.12)}
+.legend{font-size:12.5px;color:var(--dim);margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="index.html#how" class="hide-sm">How it works</a>
+    <a href="index.html#plan" class="hide-sm">Roadmap</a>
+    <a href="model.html" class="on">Live model</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<header>
+  <h1>Live Model</h1>
+  <p class="sub">Every game the model forecasts, next to DraftKings, FanDuel and Kalshi prices. The picked side is highlighted in green. Results are graded overnight, with notes on what actually happened.</p>
+  <p class="updated" id="updated"></p>
+</header>
+
+<section class="tiles">
+  <div class="tile"><div class="l">Spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div></div>
+  <div class="tile"><div class="l">Moneyline record</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">&nbsp;</div></div>
+  <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div></div>
+  <div class="tile"><div class="l">Games graded</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div></div>
+</section>
+
+<div class="tabs" role="tablist">
+  <button data-tab="games" class="on">Forecasts</button>
+  <button data-tab="learn">Lessons and reviews</button>
+</div>
+
+<section id="tab-games">
+  <div class="bar">
+    <select id="day" aria-label="Day"></select>
+    <div class="seg" id="view">
+      <button data-view="spread" class="on">Spread</button>
+      <button data-view="ml">Moneyline</button>
+    </div>
+    <div class="seg" id="league">
+      <button data-league="All" class="on">All</button>
+      <button data-league="NFL">NFL</button>
+      <button data-league="NBA">NBA</button>
+      <button data-league="CFB">CFB</button>
+      <button data-league="CBB">CBB</button>
+    </div>
+  </div>
+
+  <div class="card top" id="topcard">
+    <h2>Top pick of the day</h2>
+    <div id="top"></div>
+  </div>
+
+  <div class="card">
+    <div class="tablewrap"><table id="tbl"></table></div>
+    <p class="legend">Model = the model's own line or win chance. Edge = how far the model's number is from the market. "Not posted" means that book had no line when the data was collected.</p>
+  </div>
+</section>
+
+<section id="tab-learn" hidden>
+  <div class="card">
+    <h2>Hypotheses the model is testing</h2>
+    <p class="muted">Repeated mistakes become lessons. Each one is tracked on the picks it changed and needs 15+ picks before it's judged: kept if it beats the 52.4% break-even rate, dropped if it doesn't. Rules about what goes into the top pick are measured by how the bets they exclude perform.</p>
+    <div class="tablewrap"><table id="lessons"></table></div>
+  </div>
+  <div class="card">
+    <h2>Latest weekly review</h2>
+    <div id="weekly"></div>
+  </div>
+  <div class="card">
+    <h2>Daily reviews</h2>
+    <div id="daily"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University · Research project, simulated stakes only</span>
+  <a href="index.html">About this project →</a>
+</div></footer>
+
+<script>
+const S={tab:'games',view:'spread',league:'All',day:null};
+let G=[],P=[],R=[],L=[];
+const $=id=>document.getElementById(id);
+const el=(t,c,txt)=>{const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;};
+const fmtDay=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+const rec=a=>{const w=a.filter(x=>x==='W').length,l=a.filter(x=>x==='L').length,p=a.filter(x=>x==='P').length;return{w,l,p,s:w+'-'+l+(p?'-'+p:''),pct:w+l?100*w/(w+l):null};};
+const na=(v,msg)=>v==null||v===''?null:v;
+
+function cellNA(td,msg){td.className='na';td.textContent=msg;}
+function matchCell(g,side){
+  const td=el('td');const m=g.matchup||'';const nm=side==='away'?g.away_name:g.home_name;
+  const i=nm?m.indexOf(nm):-1;
+  if(i<0){td.textContent=m;return td;}
+  td.append(document.createTextNode(m.slice(0,i)));td.append(el('span','pt',nm));td.append(document.createTextNode(m.slice(i+nm.length)));return td;
+}
+function resCell(r){const td=el('td','nw');const s=el('span',r==='W'||r==='L'||r==='P'?r:'pend',r==='W'?'Win':r==='L'?'Loss':r==='P'?'Push':'Not played yet');td.append(s);return td;}
+
+function drawTiles(){
+  const a=rec(G.map(g=>g.spread_result)),m=rec(G.map(g=>g.ml_result)),t=rec(P.filter(p=>p.kind==='Pick of the day').map(p=>p.result));
+  $('t-ats').textContent=a.s;$('t-ats-s').textContent=a.pct!=null?a.pct.toFixed(1)+'% vs 52.4% break-even':'';
+  $('t-ml').textContent=m.s;$('t-ml-s').textContent=m.pct!=null?m.pct.toFixed(1)+'% (mostly favorites)':'';
+  $('t-top').textContent=t.s;
+  const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
+  $('t-n').textContent=graded.length.toLocaleString();
+  $('t-days').textContent=new Set(graded.map(g=>g.date)).size+' days';
+}
+function days(){return[...new Set(G.map(g=>g.date))].sort();}
+function drawDays(){
+  const d=days();const sel=$('day');sel.replaceChildren();
+  d.slice().reverse().forEach(x=>{const o=el('option',null,fmtDay(x));o.value=x;sel.append(o);});
+  if(!S.day||!d.includes(S.day))S.day=d[d.length-1];sel.value=S.day;
+}
+function drawTop(){
+  const box=$('top');box.replaceChildren();
+  const p=P.find(x=>x.kind==='Pick of the day'&&x.date===S.day);
+  if(!p){box.append(el('p','muted','No top pick for this day.'));return;}
+  box.append(el('div','pick',p.pick));
+  const o=el('div','odds');
+  [['DraftKings',p.dk_odds],['FanDuel',p.fd_odds],['Kalshi',p.kalshi_odds]].forEach(([b,v])=>{const s=el('span');s.append(document.createTextNode(b+' '));s.append(el('b',null,v||'Not offered'));o.append(s);});
+  const r=el('span');r.append(document.createTextNode('Result '));r.append(el('b',p.result==='W'||p.result==='L'||p.result==='P'?p.result:'pend',p.result==='W'?'Win':p.result==='L'?'Loss':p.result==='P'?'Push':'Not played yet'));o.append(r);
+  box.append(o);
+}
+function drawTable(){
+  const t=$('tbl');t.replaceChildren();
+  const rows=G.filter(g=>g.date===S.day&&(S.league==='All'||g.league===S.league));
+  const sp=S.view==='spread';
+  const heads=sp?['','Game','Time / final','DraftKings','FanDuel','Kalshi','Model','Pick','Edge','Result']
+                :['','Game','Time / final','DraftKings','FanDuel','Kalshi','Model','Pick','Result'];
+  const thead=el('thead'),hr=el('tr');heads.forEach(h=>hr.append(el('th',['Kalshi','Edge','FanDuel','Model'].includes(h)?'hide-sm':null,h)));thead.append(hr);t.append(thead);
+  const tb=el('tbody');
+  if(!rows.length){const tr=el('tr'),td=el('td','na','No games for this filter.');td.colSpan=heads.length;tr.append(td);tb.append(tr);}
+  rows.forEach(g=>{
+    const tr=el('tr');
+    tr.append(el('td','lg lg-'+g.league,g.league));
+    tr.append(matchCell(g,sp?g.spread_side:g.ml_side));
+    tr.append(el('td','nw',g.final||g.tip||''));
+    const cols=sp?[g.dk_spread,g.fd_spread,g.kalshi_spread]:[g.dk_ml,g.fd_ml,g.kalshi_ml];
+    const msgs=['Not posted','Not posted','No Kalshi market'];
+    cols.forEach((v,i)=>{const td=el('td',i>0?'hide-sm nw':'nw');if(v)td.textContent=v;else{cellNA(td,msgs[i]);if(i>0)td.classList.add('hide-sm');}tr.append(td);});
+    tr.append(el('td','nw hide-sm',sp?g.model_spread:g.model_ml));
+    tr.append(el('td','pk',sp?g.spread_pick:(g.ml_pick?g.ml_pick+' ML':'')));
+    if(sp){const e=g.spread_edge;tr.append(el('td','hide-sm nw',e===''||e==null?'':(+e).toFixed(1)));}
+    tr.append(resCell(sp?g.spread_result:g.ml_result));
+    tr.className='main';
+    tb.append(tr);
+    const tr2=el('tr','sub');const why=el('td','why');why.colSpan=heads.length;const inner=el('div','whyin');
+    if(g.note){const b=el('span','whylab','Why: ');inner.append(b);inner.append(document.createTextNode(g.note));}
+    if(g.result_context){inner.append(el('span','ctx','What happened: '+g.result_context));}
+    why.append(inner);tr2.append(why);tb.append(tr2);
+  });
+  t.append(tb);
+}
+function drawLessons(){
+  const t=$('lessons');t.replaceChildren();
+  const rows=L.filter(x=>x.status&&x.status!=='Setup');
+  const order={Keep:0,Testing:1,Dropped:2};
+  rows.sort((a,b)=>(order[a.status]??3)-(order[b.status]??3)||(a.id<b.id?-1:1));
+  const thead=el('thead'),hr=el('tr');['ID','Hypothesis','Applies to','Status','Record','Win %'].forEach(h=>hr.append(el('th',h==='Applies to'?'hide-sm':null,h)));thead.append(hr);t.append(thead);
+  const tb=el('tbody');
+  if(!rows.length){const tr=el('tr'),td=el('td','na','No lessons yet.');td.colSpan=6;tr.append(td);tb.append(tr);}
+  rows.forEach(x=>{
+    const tr=el('tr');tr.append(el('td','nw',x.id));
+    const td=el('td','why',x.lesson);if(x.evidence)td.append(el('span','ctx',x.evidence));tr.append(td);
+    tr.append(el('td','hide-sm',(x.league||'')+(x.situation?' · '+x.situation:'')));
+    const s=el('td');s.append(el('span','st st-'+x.status,x.status));tr.append(s);
+    tr.append(el('td','nw',(x.wins||0)+'-'+(x.losses||0)+(x.pushes?'-'+x.pushes:'')));
+    const d=(x.wins||0)+(x.losses||0);tr.append(el('td','nw',d?(100*x.wins/d).toFixed(0)+'%':'—'));
+    tb.append(tr);
+  });
+  t.append(tb);
+}
+function revBlock(r,title){
+  const b=el('div','rev');const h=el('div','rev-head');h.append(el('span',null,title));h.append(el('span','rec',r.record||''));b.append(h);
+  [['','summary'],['Went well: ','went_well'],['Went wrong: ','went_wrong'],['Improve: ','improve'],['Splits: ','splits']].forEach(([lab,k])=>{if(!r[k])return;const p=el('p');if(lab)p.append(el('b',null,lab));p.append(document.createTextNode(r[k]));b.append(p);});
+  return b;
+}
+function drawReviews(){
+  const real=R.filter(r=>r.kind==='Daily'||r.kind==='Weekly');
+  const wk=real.filter(r=>r.kind==='Weekly').sort((a,b)=>a.date<b.date?1:-1)[0];
+  const w=$('weekly');w.replaceChildren();w.append(wk?revBlock(wk,wk.period||('Week ending '+fmtDay(wk.date))):el('p','muted','The first weekly review posts on a Monday.'));
+  const d=$('daily');d.replaceChildren();
+  real.filter(r=>r.kind==='Daily').sort((a,b)=>a.date<b.date?1:-1).slice(0,10).forEach(r=>d.append(revBlock(r,fmtDay(r.date))));
+}
+function drawAll(){drawTiles();drawDays();drawTop();drawTable();drawLessons();drawReviews();}
+
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{S.tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('on',x===b));$('tab-games').hidden=S.tab!=='games';$('tab-learn').hidden=S.tab!=='learn';}));
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{S.view=b.dataset.view;document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
+document.querySelectorAll('[data-league]').forEach(b=>b.addEventListener('click',()=>{S.league=b.dataset.league;document.querySelectorAll('[data-league]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
+$('day').addEventListener('change',e=>{S.day=e.target.value;drawTop();drawTable();});
+
+const get=f=>fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[]);
+Promise.all([get('games'),get('picks'),get('reviews'),get('lessons')]).then(([g,p,r,l])=>{
+  G=g;P=p;R=r;L=l;drawAll();
+  fetch('data/updated.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(u=>{if(u&&u.at){$('updated').textContent='Data last synced '+new Date(u.at).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});}}).catch(()=>{});
+});
+</script>
+</body>
+</html>
