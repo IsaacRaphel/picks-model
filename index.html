@@ -25,7 +25,28 @@ nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.85);backdrop-filt
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{font-weight:700;letter-spacing:-.01em;text-decoration:none}
 .brand span{color:var(--green)}
-.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted);align-items:center}
+.navlinks a.navbtn{color:#0b0d12;background:var(--green);padding:7px 14px;border-radius:8px;font-weight:600}
+.navlinks a.navbtn:hover{color:#0b0d12;background:#5ff0b0}
+#today .head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.topcard{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:14px;padding:20px 22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.topcard .lbl{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.topcard .pk{font-size:26px;font-weight:800;color:var(--green);letter-spacing:-.02em;margin:2px 0}
+.topcard .why{color:var(--muted);font-size:14.5px;max-width:640px}
+.topcard .odds{display:flex;gap:18px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
+.topcard .odds b{color:var(--text)}
+.glist{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px}
+.g{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.g .r1{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--dim)}
+.g .lg{font-weight:700;letter-spacing:.05em}
+.lg-NFL{color:#60a5fa}.lg-NBA{color:#fb923c}.lg-CFB{color:#c084fc}.lg-CBB{color:#2dd4bf}
+.g .mt{font-weight:600;font-size:15px}
+.g .r3{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--muted)}
+.g .r3 b{color:var(--green);font-weight:700}
+.res-W{color:#4ade80;font-weight:700}.res-L{color:#ff6b81;font-weight:700}.res-P{color:var(--amber);font-weight:700}
+.seeall{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.seeall .muted{color:var(--dim);font-size:13.5px}
+.sec-cta{margin-top:30px}
 .navlinks a{text-decoration:none}
 .navlinks a:hover{color:var(--text)}
 @media(max-width:640px){.navlinks .hide-sm{display:none}}
@@ -114,7 +135,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a href="#about" class="hide-sm">About</a>
     <a href="#how">How it works</a>
     <a href="#plan" class="hide-sm">Roadmap</a>
-    <a href="model.html">Live model</a>
+    <a href="model.html" class="navbtn">Live model →</a>
   </div>
 </div></nav>
 
@@ -135,6 +156,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
   <div class="asof" id="st-asof">Through Nov 8, 2026. Early sample, not yet statistically meaningful.</div>
 </div></header>
+
+
+<section id="today"><div class="wrap">
+  <div class="head">
+    <div>
+      <div class="kicker" id="td-kicker">Today's forecasts</div>
+      <h2 style="margin:0">What the model is predicting</h2>
+    </div>
+    <a class="btn primary" href="model.html">See every game →</a>
+  </div>
+  <div class="topcard" id="td-top"><div><div class="lbl">Top pick</div><div class="pk">Loading…</div></div></div>
+  <div class="glist" id="td-list"></div>
+  <div class="seeall"><a class="btn ghost" href="model.html">Open the live model →</a><span class="muted" id="td-count"></span></div>
+</div></section>
 
 <section id="about"><div class="wrap about">
   <div>
@@ -174,6 +209,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <p>Wins and losses take hundreds of games to mean anything, so the model also tracks closing line value: whether its number beat the market's final price. Weekly reviews break results down by edge size, favorites vs. underdogs, home vs. away and league to catch problems early.</p>
     </div>
   </div>
+  <div class="sec-cta"><a class="btn primary" href="model.html">See it running on today's games →</a></div>
 </div></section>
 
 <section id="learning"><div class="wrap">
@@ -220,6 +256,40 @@ Promise.all([
   const last=graded.map(g=>g.date).sort().pop();
   if(last){const d=new Date(last+'T12:00:00');
     document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+(graded.length<500?' Early sample, not yet statistically meaningful.':'');}
+}).catch(()=>{});
+
+Promise.all([
+  fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()),
+  fetch('data/picks.json',{cache:'no-store'}).then(r=>r.json())
+]).then(([games,picks])=>{
+  const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+  const days=[...new Set(games.map(g=>g.date))].sort();const day=days[days.length-1];if(!day)return;
+  const nice=new Date(day+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
+  const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'});
+  document.getElementById('td-kicker').textContent=(day===today?"Today's forecasts · ":'Latest forecasts · ')+nice;
+  const rows=games.filter(g=>g.date===day);
+  const top=picks.find(p=>p.kind==='Pick of the day'&&p.date===day);
+  const tc=document.getElementById('td-top');tc.replaceChildren();
+  if(top){
+    const g=rows.find(r=>r.spread_pick&&r.spread_pick.startsWith(top.pick.replace(/ ML$/,'')))||rows.find(r=>top.pick.startsWith(r.ml_pick+' ')||top.pick===r.ml_pick+' ML');
+    const a=el('div');a.append(el('div','lbl','Top pick of the day'));a.append(el('div','pk',top.pick));
+    if(g&&g.note)a.append(el('div','why',g.note));tc.append(a);
+    const o=el('div','odds');[['DraftKings',top.dk_odds],['FanDuel',top.fd_odds],['Kalshi',top.kalshi_odds]].forEach(([b,v])=>{const s=el('span');s.append(document.createTextNode(b+' '));s.append(el('b',null,v||'n/a'));o.append(s);});
+    if(['W','L','P'].includes(top.result)){const s=el('span');s.append(document.createTextNode('Result '));s.append(el('b','res-'+top.result,top.result==='W'?'Win':top.result==='L'?'Loss':'Push'));o.append(s);}
+    tc.append(o);
+  } else { tc.append(el('div','why','No top pick posted for this day yet.')); }
+  const order={NFL:0,NBA:1,CBB:2,CFB:3};
+  const show=rows.slice().sort((a,b)=>(order[a.league]-order[b.league])).slice(0,6);
+  const list=document.getElementById('td-list');list.replaceChildren();
+  show.forEach(g=>{
+    const c=el('a','g');c.href='model.html';c.style.textDecoration='none';
+    const r1=el('div','r1');r1.append(el('span','lg lg-'+g.league,g.league));r1.append(el('span',null,g.final||g.tip||''));c.append(r1);
+    c.append(el('div','mt',g.matchup));
+    const r3=el('div','r3');const l=el('span');l.append(document.createTextNode('Pick '));l.append(el('b',null,(g.spread_pick||'').replace(/ \((DK|FD)\)$/,'')));r3.append(l);
+    const res=g.spread_result;r3.append(['W','L','P'].includes(res)?el('span','res-'+res,res==='W'?'Win':res==='L'?'Loss':'Push'):el('span',null,'Model '+(g.model_spread||'')));
+    c.append(r3);list.append(c);
+  });
+  document.getElementById('td-count').textContent=rows.length>show.length?('Showing '+show.length+' of '+rows.length+' games'):'';
 }).catch(()=>{});
 </script>
 </body>
