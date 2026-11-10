@@ -295,7 +295,7 @@ Promise.all([
     const r3=el('div','r3');const l=el('span');l.append(document.createTextNode('Pick '));l.append(el('b',null,(g.spread_pick||'').replace(/ \((DK|FD)\)$/,'')));r3.append(l);
     const res=g.spread_result;r3.append(['W','L','P'].includes(res)?el('span','res-'+res,res==='W'?'Win':res==='L'?'Loss':'Push'):el('span',null,'Model '+(g.model_spread||'')));
     c.append(r3);
-    if(g.lessons_applied){c.append(el('div','ovr','Lesson test '+g.lessons_applied.replace(/,/g,', ')+': raw model number says the other side'));}
+    if(g.lessons_applied){c.append(el('div','ovr','Lesson test '+g.lessons_applied.replace(/,/g,', ')+' changed this pick'));}
     list.append(c);
   });
   document.getElementById('td-count').textContent=rows.length>show.length?('Showing '+show.length+' of '+rows.length+' games'):'';
