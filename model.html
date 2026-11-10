@@ -63,6 +63,7 @@ td.lg{font-weight:700;font-size:11px;letter-spacing:.05em}
 .lg-NFL{color:#60a5fa}.lg-NBA{color:var(--orange)}.lg-CFB{color:#c084fc}.lg-CBB{color:var(--teal)}
 .pt{color:#4ade80;background:rgba(61,220,151,.14);border-radius:5px;padding:0 4px;font-weight:600}
 td.pk{color:#4ade80;background:rgba(61,220,151,.08);font-weight:600;white-space:nowrap}
+.ovr{display:block;margin-top:4px;font-size:10.5px;font-weight:600;color:#c4b5fd;background:rgba(167,123,255,.14);border-radius:5px;padding:1px 6px;width:max-content}
 td.nw{white-space:nowrap}
 td.na{color:#566074;font-style:italic;font-size:12px}
 td.why{color:#b3bacb;line-height:1.5;font-size:13px}
@@ -143,7 +144,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
   <div class="card">
     <div class="tablewrap"><table id="tbl"></table></div>
-    <p class="legend">Model = the model's own line or win chance. Edge = how far the model's number is from the market. "Not posted" means that book had no line when the data was collected.</p>
+    <p class="legend">Model = the model's raw line or win chance before any lessons. A purple "Lesson test" tag means a lesson the model is testing changed the pick from what the raw number says, so the pick and the model line can point different ways on those games. Edge = how far the model's number is from the market on the picked side (0 when a lesson made the pick). "Not posted" means that book had no line when the data was collected.</p>
   </div>
 </section>
 
@@ -230,7 +231,9 @@ function drawTable(){
     const msgs=['Not posted','Not posted','No Kalshi market'];
     cols.forEach((v,i)=>{const td=el('td',i>0?'hide-sm nw':'nw');if(v)td.textContent=v;else{cellNA(td,msgs[i]);if(i>0)td.classList.add('hide-sm');}tr.append(td);});
     tr.append(el('td','nw hide-sm',sp?g.model_spread:g.model_ml));
-    tr.append(el('td','pk',sp?g.spread_pick:(g.ml_pick?g.ml_pick+' ML':'')));
+    const pk=el('td','pk',sp?g.spread_pick:(g.ml_pick?g.ml_pick+' ML':''));
+    if(sp&&g.lessons_applied){const tg=el('span','ovr','Lesson test: '+g.lessons_applied.replace(/,/g,', '));tg.title='A lesson the model is testing changed this pick from what its raw number says';pk.append(tg);}
+    tr.append(pk);
     if(sp){const e=g.spread_edge;tr.append(el('td','hide-sm nw',e===''||e==null?'':(+e).toFixed(1)));}
     tr.append(resCell(sp?g.spread_result:g.ml_result));
     tr.className='main';

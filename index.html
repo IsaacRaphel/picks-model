@@ -49,6 +49,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .g .mt{font-weight:600;font-size:15px}
 .g .r3{display:flex;justify-content:space-between;gap:10px;font-size:13.5px;color:var(--muted)}
 .g .r3 b{color:var(--green);font-weight:700}
+.ovr{font-size:12px;color:#c4b5fd;background:rgba(167,123,255,.12);border-radius:6px;padding:3px 8px;width:max-content;max-width:100%}
 .res-W{color:#4ade80;font-weight:700}.res-L{color:#ff6b81;font-weight:700}.res-P{color:var(--amber);font-weight:700}
 .seeall{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .seeall .muted{color:var(--dim);font-size:13.5px}
@@ -293,7 +294,9 @@ Promise.all([
     c.append(el('div','mt',g.matchup));
     const r3=el('div','r3');const l=el('span');l.append(document.createTextNode('Pick '));l.append(el('b',null,(g.spread_pick||'').replace(/ \((DK|FD)\)$/,'')));r3.append(l);
     const res=g.spread_result;r3.append(['W','L','P'].includes(res)?el('span','res-'+res,res==='W'?'Win':res==='L'?'Loss':'Push'):el('span',null,'Model '+(g.model_spread||'')));
-    c.append(r3);list.append(c);
+    c.append(r3);
+    if(g.lessons_applied){c.append(el('div','ovr','Lesson test '+g.lessons_applied.replace(/,/g,', ')+': raw model number says the other side'));}
+    list.append(c);
   });
   document.getElementById('td-count').textContent=rows.length>show.length?('Showing '+show.length+' of '+rows.length+' games'):'';
 }).catch(()=>{});
