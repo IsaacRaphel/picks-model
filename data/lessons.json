@@ -28,20 +28,6 @@
   "evidence": "From Nov 2 review: neutral-site ranked games went 2-3 ATS (MIA, OSU, ISU lost)."
  },
  {
-  "id": "L003",
-  "added": "2026-11-04",
-  "lesson": "Keep spreads of 10+ points out of parlays.",
-  "league": "All",
-  "situation": "Parlay big spread",
-  "status": "Dropped",
-  "picks": 68,
-  "wins": 38,
-  "losses": 30,
-  "pushes": 0,
-  "last_reviewed": "2026-11-10",
-  "evidence": "ISU -14.5 lost the Nov 2 parlay and UK -32.5 lost the Nov 3 parlay; all other legs hit both days. Nov 10 recount, record shown is the excluded group's ATS record: every spread pick of 10+ points on the full board (Nov 2-9) went 38-30 (55.9%), so over 30 picks and above 52.4% means big spreads have been winners and the rule is dropped. No parlay leg or POTD broke the rule since Nov 4."
- },
- {
   "id": "L004",
   "added": "2026-11-04",
   "lesson": "In CBB games with a spread of 25+, only take the underdog when the model's edge is 5+ points; otherwise lean favorite or pass.",
