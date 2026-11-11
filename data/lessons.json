@@ -152,5 +152,33 @@
   "pushes": 0,
   "last_reviewed": "2026-11-11",
   "evidence": "Nov 10 review: PHI +1.5 on a 2-pt edge lost by 22 after the line flipped from PHI -1.5 to BOS -1.5 with the money on Philly; the note flagged the warning and took it anyway. Mirror of L007, which covers picks made because of line moves."
+ },
+ {
+  "id": "L013",
+  "added": "2026-11-11",
+  "lesson": "Early in the season (roughly the first 10-15 games in NBA/CBB, first 4-5 weeks in NFL/CFB), weight a team's track record - last season's results, multi-year program strength, preseason power ratings, coaching and returning core - more than its small current-season sample. Don't overreact to a historically strong team's slow start or a historically weak team's hot start. Still don't double count: brand-name teams are often already overpriced by public money, so only lean on history where the line looks driven by the small sample.",
+  "league": "All",
+  "situation": "Early season / team history",
+  "status": "Testing",
+  "picks": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "last_reviewed": "2026-11-11",
+  "evidence": "Added at Isaac's request: early-season records are mostly noise, so long-run team strength may be underweighted when the line chases a few results."
+ },
+ {
+  "id": "L014",
+  "added": "2026-11-11",
+  "lesson": "Adjust records and margins for strength of schedule: a team with a great record built mostly against weak opponents is worse than it looks, and a team with a so-so record against a tough schedule is better than it looks. Use opponent-adjusted ratings (KenPom/Torvik/net rating vs. quality opponents, SOS rank) instead of raw record, especially when the line seems to be pricing the raw record.",
+  "league": "All",
+  "situation": "Strength of schedule",
+  "status": "Testing",
+  "picks": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "last_reviewed": "2026-11-11",
+  "evidence": "Added at Isaac's request: raw records against weak schedules can make teams look better than they are. Related to L013 (early season / team history)."
  }
 ]
