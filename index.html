@@ -37,6 +37,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 #today .head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
 .topcard{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--green);border-radius:14px;padding:20px 22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 .topcard .lbl{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.streak{display:inline-block;font-size:13px;font-weight:700;color:#fbbf24;background:rgba(251,191,36,.12);border-radius:999px;padding:3px 11px;margin:6px 0 2px}
 .topcard .pk{font-size:26px;font-weight:800;color:var(--green);letter-spacing:-.02em;margin:2px 0}
 .topcard .why{color:var(--muted);font-size:14.5px;max-width:640px}
 .topcard .odds{display:flex;gap:18px;font-size:13.5px;color:var(--muted);flex-wrap:wrap}
@@ -282,7 +283,10 @@ Promise.all([
   const tc=document.getElementById('td-top');tc.replaceChildren();
   if(top){
     const g=rows.find(r=>r.spread_pick&&r.spread_pick.startsWith(top.pick.replace(/ ML$/,'')))||rows.find(r=>top.pick.startsWith(r.ml_pick+' ')||top.pick===r.ml_pick+' ML');
-    const a=el('div');a.append(el('div','lbl','Top pick of the day'));a.append(el('div','pk',top.pick));
+    const a=el('div');a.append(el('div','lbl','Top pick of the day'));
+    {const g2=picks.filter(p=>p.kind==='Pick of the day'&&p.date<=day&&(p.result==='W'||p.result==='L')).sort((x,y)=>x.date<y.date?1:-1);let n=0;for(const p of g2){if(p.result==='W')n++;else break;}
+     if(n)a.append(el('div','streak','🔥 '+n+'-day win streak'));}
+    a.append(el('div','pk',top.pick));
     if(g&&g.note)a.append(el('div','why',g.note));tc.append(a);
     const o=el('div','odds');[['DraftKings',top.dk_odds],['FanDuel',top.fd_odds],['Kalshi',top.kalshi_odds]].forEach(([b,v])=>{const s=el('span');s.append(document.createTextNode(b+' '));s.append(el('b',null,v||'n/a'));o.append(s);});
     if(['W','L','P'].includes(top.result)){const s=el('span');s.append(document.createTextNode('Result '));s.append(el('b','res-'+top.result,top.result==='W'?'Win':top.result==='L'?'Loss':'Push'));o.append(s);}

@@ -51,6 +51,7 @@ select{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line)
 .card h2{font-size:17px;margin-bottom:6px}
 .muted{color:var(--muted);font-size:13.5px}
 .top{border-left:3px solid var(--green)}
+.streak{display:inline-block;font-size:12.5px;font-weight:700;color:#fbbf24;background:rgba(251,191,36,.12);border-radius:999px;padding:2px 10px;margin-bottom:6px}
 .top .pick{font-size:20px;font-weight:700;color:var(--green);margin:4px 0}
 .odds{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:4px}
 .odds b{color:var(--text);font-weight:600}
@@ -198,11 +199,16 @@ function matchCell(g,side){
 }
 function resCell(r){const td=el('td','nw');const s=el('span',r==='W'||r==='L'||r==='P'?r:'pend',r==='W'?'Win':r==='L'?'Loss':r==='P'?'Push':'Not played yet');td.append(s);return td;}
 
+function potdStreak(picks){
+  const g=picks.filter(p=>p.kind==='Pick of the day'&&(p.result==='W'||p.result==='L')).sort((a,b)=>a.date<b.date?1:-1);
+  let n=0;for(const p of g){if(p.result==='W')n++;else break;}return n;
+}
 function drawTiles(){
   const a=rec(G.map(g=>g.spread_result)),m=rec(G.map(g=>g.ml_result)),t=rec(P.filter(p=>p.kind==='Pick of the day').map(p=>p.result));
   $('t-ats').textContent=a.s;$('t-ats-s').textContent=a.pct!=null?a.pct.toFixed(1)+'% vs 52.4% break-even':'';
   $('t-ml').textContent=m.s;$('t-ml-s').textContent=m.pct!=null?m.pct.toFixed(1)+'% (mostly favorites)':'';
   $('t-top').textContent=t.s;
+  {const s=potdStreak(P);const el2=document.querySelector('#t-top + .s');if(el2)el2.textContent=s?('🔥 '+s+'-day win streak'):'One best play per day';}
   const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
   $('t-n').textContent=graded.length.toLocaleString();
   $('t-days').textContent=new Set(graded.map(g=>g.date)).size+' days';
@@ -218,6 +224,7 @@ function drawTop(){
   const p=P.find(x=>x.kind==='Pick of the day'&&x.date===S.day);
   if(!p){box.append(el('p','muted','No top pick for this day.'));return;}
   box.append(el('div','pick',p.pick));
+  {const s=potdStreak(P.filter(x=>x.date<=S.day));if(s)box.append(el('div','streak','🔥 '+s+'-day win streak'));}
   const o=el('div','odds');
   [['DraftKings',p.dk_odds],['FanDuel',p.fd_odds],['Kalshi',p.kalshi_odds]].forEach(([b,v])=>{const s=el('span');s.append(document.createTextNode(b+' '));s.append(el('b',null,v||'Not offered'));o.append(s);});
   const r=el('span');r.append(document.createTextNode('Result '));r.append(el('b',p.result==='W'||p.result==='L'||p.result==='P'?p.result:'pend',p.result==='W'?'Win':p.result==='L'?'Loss':p.result==='P'?'Push':'Not played yet'));o.append(r);
