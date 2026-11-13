@@ -51,16 +51,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 /* nav-fix */
 .brand,.navlinks a{white-space:nowrap}
 @media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
+/* nav-v2 */
+.navlinks{gap:6px!important}
+.navlinks a{padding:6px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+.navlinks a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+.navlinks a.on{color:#fff;background:linear-gradient(90deg,rgba(90,169,255,.22),rgba(167,123,255,.22));box-shadow:inset 0 0 0 1px rgba(167,123,255,.35)}
+@media(max-width:560px){.brand{display:none}nav .wrap{justify-content:center}.navlinks{gap:2px!important}.navlinks a{padding:6px 9px;font-size:13.5px}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
   <div class="navlinks">
-    <a href="index.html#how" class="hide-sm">How it works</a>
-    <a href="analysis.html" class="on">Analysis</a>
-    <a href="notes.html" class="hide-sm">Notes</a>
-    <a href="model.html" class="navbtn">Live model →</a>
+    <a href="index.html">Overview</a>
+    <a href="model.html">Live model</a>
+    <a href="analysis.html" class="on" aria-current="page">Analysis</a>
+    <a href="notes.html">Notes</a>
   </div>
 </div></nav>
 
