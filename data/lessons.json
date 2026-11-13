@@ -33,13 +33,13 @@
   "lesson": "In CBB games with a spread of 25+, only take the underdog when the model's edge is 5+ points; otherwise lean favorite or pass.",
   "league": "CBB",
   "situation": "Big CBB underdog",
-  "status": "Keep",
+  "status": "Testing",
   "picks": 20,
   "wins": 12,
   "losses": 8,
   "pushes": 0,
   "last_reviewed": "2026-11-13",
-  "evidence": "Nov 2-3: 25+ dogs went 4-4 with two backdoor wins (DREX, SHSU), while laying 23.5+ went 7-3. Nov 6: 2-4 as UK, ALA, ISU and UVA fell short (UK and ISU were forced onto chalk the model leaned against); now 5-4, still Testing. Nov 7: moved NMSU-GONZ to Zags -27.5, covered by 13.5; now 6-4. Nov 8: SJU -28.5 won by 39; now 7-4. Nov 9: CONN -37.5 (model leaned Wagner by 2.5, under the 5-pt bar) won by 42; now 8-4. Avg CLV +1.0 on the 1 tagged game with CLV tracked. Nov 10: ISU -33.5 covered, but BYU -27.5 and ARIZ -36.5 fell short (model leaned the dog both times, under the 5-pt bar); now 9-6 (60%) at 15 picks, so Keep. Avg CLV +1.0 on the 4 tagged games with CLV tracked. Nov 11: laid all five 25+ chalk spots (SJU, HOU, UCLA covered; ARK fell 8.5 short and NEB lost by the hook); 3-2, now 12-8 (60%), stays Keep. Avg CLV +0.6 on 9 tagged games."
+  "evidence": "Re-opened under stricter rules (Nov 13): 12-8 (60%), 95% range 39-78%, 20/50 picks needed before it can be kept. Previous: Nov 2-3: 25+ dogs went 4-4 with two backdoor wins (DREX, SHSU), while laying 23.5+ went 7-3. Nov 6: 2-4 as UK, ALA, ISU and UVA fell short (UK and ISU were forced onto chalk the model leaned against); now 5-4, still Testing. Nov 7: moved NMSU-GONZ to Zags -27.5, covered by 13.5; now 6-4. Nov 8: SJU -28.5 won by 39; now 7-4. Nov 9: CONN -37.5 (model leaned Wagner by 2.5, under the 5-pt bar) won by 42; now 8-4. Avg CLV +1.0 on the 1 tagged game with CLV tracked. Nov 10: ISU -33.5 covered, but BYU -27.5 and ARIZ -36.5 fell short (model leaned the dog both times, under the 5-pt bar); now 9-6 (60%) at 15 picks, so Keep. Avg CLV +1.0 on the 4 tagged games with CLV tracked. Nov 11: laid all five 25+ chalk spots (SJU, HOU, UCLA covered; ARK fell 8.5 short and NEB lost by the hook); 3-2, now 12-8 (60%), stays Keep. Avg CLV +0.6 on 9 tagged games."
  },
  {
   "id": "L005",
@@ -89,13 +89,13 @@
   "lesson": "When the ML pick is the favorite, don't take the underdog on the spread just for the points; lay the favorite's number or pass.",
   "league": "All",
   "situation": "Split pick (fav ML, dog ATS)",
-  "status": "Keep",
+  "status": "Testing",
   "picks": 16,
   "wins": 9,
   "losses": 7,
   "pushes": 0,
   "last_reviewed": "2026-11-13",
-  "evidence": "Nov 7 review: split picks went 7-10 ATS (IND, CLE, WAS, MISS, TAMU, MRMK, NU, BC, KSU, RUTG lost); 21-27 ATS across Nov 2-7 vs well over 60% when the spread and ML picks agree. First day Nov 8: 5-2 (LA, KC, DET, HOU, BOS covered; NE lost to GB turnovers, HOU-CAL missed by 1.5). Nov 9: 1-1 (BUF -3 covered; CLE -8.5 lost outright at a depleted CHA); now 6-3. Avg CLV 0.0 on the 2 tagged games with CLV tracked. Nov 10: 1-4 (ORL -5.5 covered; FLA lost by the hook, IOWA in OT, DUKE and CREI lost outright, all CBB spots where the model leaned the dog); now 7-7 at 14 picks, near the drop line. Avg CLV +0.1 on 7 tagged games. Two of the four losses were hook/OT close losses. Nov 11: HOU -6.5 (flipped from a 1.5-pt GSW lean) covered by the hook after Curry left hurt, a lucky-ish win; now 8-7 (53.3%) at 15 picks, so Keep. Supporting evidence: the four untagged NBA split picks on Nov 11 (fav ML, dog ATS: TOR, WAS, MEM, UTA) went 1-3, where other lessons overrode this one. Avg CLV +0.1 on 8 tagged games. Nov 12: TAMU -7.5 (flipped from an OSU lean) won by 19 (+1 CLV); now 9-7 (56.3%), stays Keep. Untagged split TOR +10.5 (PHI ML) lost by the hook. Avg CLV +0.2 on 9 tagged games."
+  "evidence": "Re-opened under stricter rules (Nov 13): 9-7 (56%), 95% range 33-77%, 16/50 picks needed before it can be kept. Previous: Nov 7 review: split picks went 7-10 ATS (IND, CLE, WAS, MISS, TAMU, MRMK, NU, BC, KSU, RUTG lost); 21-27 ATS across Nov 2-7 vs well over 60% when the spread and ML picks agree. First day Nov 8: 5-2 (LA, KC, DET, HOU, BOS covered; NE lost to GB turnovers, HOU-CAL missed by 1.5). Nov 9: 1-1 (BUF -3 covered; CLE -8.5 lost outright at a depleted CHA); now 6-3. Avg CLV 0.0 on the 2 tagged games with CLV tracked. Nov 10: 1-4 (ORL -5.5 covered; FLA lost by the hook, IOWA in OT, DUKE and CREI lost outright, all CBB spots where the model leaned the dog); now 7-7 at 14 picks, near the drop line. Avg CLV +0.1 on 7 tagged games. Two of the four losses were hook/OT close losses. Nov 11: HOU -6.5 (flipped from a 1.5-pt GSW lean) covered by the hook after Curry left hurt, a lucky-ish win; now 8-7 (53.3%) at 15 picks, so Keep. Supporting evidence: the four untagged NBA split picks on Nov 11 (fav ML, dog ATS: TOR, WAS, MEM, UTA) went 1-3, where other lessons overrode this one. Avg CLV +0.1 on 8 tagged games. Nov 12: TAMU -7.5 (flipped from an OSU lean) won by 19 (+1 CLV); now 9-7 (56.3%), stays Keep. Untagged split TOR +10.5 (PHI ML) lost by the hook. Avg CLV +0.2 on 9 tagged games."
  },
  {
   "id": "L009",
@@ -180,20 +180,6 @@
   "pushes": 0,
   "last_reviewed": "2026-11-13",
   "evidence": "Added at Isaac's request: raw records against weak schedules can make teams look better than they are. Related to L013 (early season / team history). Nov 12 first tagged pick: TOR +10.5 lost by the hook (PHI by 11) at +3 CLV; now 0-1."
- },
- {
-  "id": "L015",
-  "added": "2026-11-12",
-  "lesson": "",
-  "league": "All",
-  "situation": "POTD questionable player",
-  "status": "Testing",
-  "picks": 0,
-  "wins": 0,
-  "losses": 0,
-  "pushes": 0,
-  "last_reviewed": "2026-11-13",
-  "evidence": ""
  },
  {
   "id": "L016",

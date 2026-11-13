@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology | Isaac Raphel</title>
+<meta name="description" content="How the forecasting project works: data sources, stack, forecasting rules, grading and the statistical tests.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d12;--panel:#12151d;--line:#242a37;--text:#e8ebf2;--muted:#9aa3b5;--dim:#6b7488;--green:#3ddc97;--blue:#5aa9ff;--purple:#a77bff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px}
+nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted);align-items:center}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
+.navlinks a.navbtn{color:#fff;background:linear-gradient(90deg,#5aa9ff,#a77bff);padding:7px 14px;border-radius:8px;font-weight:600}
+@media(max-width:700px){.hide-sm{display:none}}
+header{padding:44px 0 10px}
+h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
+.sub{color:var(--muted);margin-top:8px}
+.toc{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.toc a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.toc a:hover{border-color:#39415a}
+.toc .d{font-size:12.5px;color:var(--dim)}.toc .t{font-weight:600}
+article{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:22px}
+article .d{font-size:13px;color:var(--dim)}
+article h2{font-size:clamp(22px,3.4vw,28px);letter-spacing:-.02em;line-height:1.2;margin:4px 0 10px}
+article .sum{color:var(--muted);font-size:16px;border-left:3px solid var(--purple);padding-left:14px;margin-bottom:8px}
+article h3{font-size:17px;margin:22px 0 6px}
+article p{color:#c8cedb;font-size:15.5px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
+/* nav-v2 */
+.navlinks{gap:6px!important}
+.navlinks a{padding:6px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+.navlinks a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+.navlinks a.on{color:#fff;background:linear-gradient(90deg,rgba(90,169,255,.22),rgba(167,123,255,.22));box-shadow:inset 0 0 0 1px rgba(167,123,255,.35)}
+@media(max-width:560px){.brand{display:none}nav .wrap{justify-content:center}.navlinks{gap:2px!important}.navlinks a{padding:6px 7px;font-size:13px}}
+/* nav-v3 */
+@media(max-width:560px){.navlinks a.navbtn{margin:0 2px}.navlinks .arr{display:none}}
+.navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#5aa9ff,#a77bff)!important;box-shadow:0 0 0 1px rgba(167,123,255,.5),0 4px 18px rgba(124,108,255,.35)!important;margin:0 4px}
+.navlinks a.navbtn:hover{filter:brightness(1.12)}
+.navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 4px 18px rgba(124,108,255,.45)!important}
+.m h2{font-size:22px;letter-spacing:-.015em;margin:34px 0 8px;scroll-margin-top:72px}
+.m p,.m li{color:#c8cedb;font-size:15.5px}
+.m p{margin-top:10px}
+.m ul{margin:10px 0 0 20px}.m li{margin-top:6px}
+.m b{color:var(--text)}
+.m a{color:#9cc8ff}
+.m code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;background:#171b25;border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.m table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+.m td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:#c8cedb}
+.m td:first-child{color:var(--muted);white-space:nowrap;width:1%}
+.toc2{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.toc2 a{font-size:13.5px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--text);background:rgba(255,255,255,.03)}
+.toc2 a:hover{border-color:rgba(167,123,255,.6)}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="index.html">Overview</a>
+    <a href="index.html#plan">Roadmap</a>
+    <a href="model.html" class="navbtn">Live model<span class="arr"> →</span></a>
+    <a href="analysis.html">Analysis</a>
+    <a href="notes.html">Notes</a>
+  </div>
+</div></nav>
+<main class="wrap narrow m">
+  <header>
+    <h1>Methodology</h1>
+    <p class="sub">How the project works, what I decided versus what's automated, and the statistical rules everything is held to. Code and data are on <a href="https://github.com/IsaacRaphel/picks-model">GitHub</a>.</p>
+    <div class="toc2">
+      <a href="#design">What I designed</a><a href="#stack">Stack and data</a><a href="#pipeline">Daily pipeline</a><a href="#features">What's logged</a><a href="#forecast">How forecasts are made</a><a href="#grading">How it's graded</a><a href="#stats">Statistical rules</a><a href="#limits">Limitations</a>
+    </div>
+  </header>
+
+  <h2 id="design">What I designed</h2>
+  <p>The daily work is done by AI agents running on scheduled jobs, but they follow a system I designed. The decisions that are mine:</p>
+  <ul>
+    <li><b>The question and scope:</b> test how close a disciplined process gets to the market across the NFL, NBA and power-conference college football and basketball, compared against DraftKings, FanDuel and Kalshi.</li>
+    <li><b>What to collect:</b> the set of structured features logged for every game (below), chosen so a real model can be fit on them later.</li>
+    <li><b>How forecasts are built:</b> start from a public rating system, adjust for game context, and never double count what the line already prices in.</li>
+    <li><b>How results are judged:</b> against-the-spread record, closing line value, calibration and simple-strategy control groups, not just wins and losses.</li>
+    <li><b>The lessons framework:</b> separating bad luck from real mistakes, turning repeated mistakes into hypotheses, and the statistical tests a hypothesis has to pass.</li>
+    <li><b>Official plays:</b> the criteria for which games count as the model's real plays.</li>
+  </ul>
+
+  <h2 id="stack">Stack and data</h2>
+  <table>
+    <tr><td>Automation</td><td>Scheduled AI agent jobs (Claude) that collect data, make forecasts, grade results and write reviews, following written rules</td></tr>
+    <tr><td>Storage</td><td>JSON datasets (games, picks, reviews, lessons), copied to this site several times a day</td></tr>
+    <tr><td>Site</td><td>Static HTML and JavaScript on GitHub Pages; charts with Chart.js</td></tr>
+    <tr><td>Market prices</td><td>DraftKings and FanDuel spreads and moneylines (via Covers and ESPN odds pages), Kalshi prediction-market prices</td></tr>
+    <tr><td>Betting splits</td><td>Action Network public betting pages</td></tr>
+    <tr><td>Ratings</td><td>Torvik (college basketball), SP+ or ESPN FPI (football), NBA net rating or ESPN BPI</td></tr>
+    <tr><td>Results</td><td>ESPN and CBS scoreboards and box scores</td></tr>
+  </table>
+
+  <h2 id="pipeline">Daily pipeline</h2>
+  <table>
+    <tr><td>2:14am ET</td><td>Grade every finished game, tag what happened, measure closing line value, update lesson stats, write the daily review (weekly review on Mondays)</td></tr>
+    <tr><td>5:43am ET</td><td>Build the day's slate (up to 60 games), collect prices, splits, ratings and injuries, make forecasts, mark official plays</td></tr>
+    <tr><td>7:27am ET</td><td>Consistency check: typos, contradictions between notes and numbers, grading math</td></tr>
+    <tr><td>Noon, 3pm, 6:30pm ET</td><td>Re-check lines and late news before games start; the 6:30pm prices are used as the closing line</td></tr>
+    <tr><td>5x daily</td><td>Copy the latest data to this site, removing anything that isn't research</td></tr>
+  </table>
+
+  <h2 id="features">What's logged for every game</h2>
+  <p>Besides the lines at all three books and the forecast itself, each game stores structured inputs so a model can be fit on them: the rating system used and each team's rating, the line the ratings imply, home advantage and neutral site, rest days and back-to-backs, key players out, quarterback changes, time zones traveled, games played, strength-of-schedule rank, the opening line, the share of public bets on each side, and the closing line. Missing values are stored as blank, never guessed.</p>
+
+  <h2 id="forecast">How forecasts are made</h2>
+  <ul>
+    <li><b>Baseline:</b> start from the line a public rating system implies, so the starting point is consistent and testable.</li>
+    <li><b>Adjust for context:</b> injuries, rest, travel and situational spots, weighted (injuries and rest count most), with any 2+ point move from the ratings explained in writing.</li>
+    <li><b>No double counting:</b> home field and well-known injuries are already in the price, so they don't count as an edge on their own.</li>
+    <li><b>Big disagreements are a warning:</b> if the model is 3+ points off the market, it has to name the specific thing the market is missing, or shrink the edge.</li>
+    <li><b>Official plays:</b> a game counts only with an edge of at least 1.5 points, no unresolved injury question, no huge spread, and no lesson overriding the model's own number. Usually 2 to 8 a day.</li>
+  </ul>
+
+  <h2 id="grading">How it's graded</h2>
+  <ul>
+    <li><b>Against the spread:</b> the main record. Break-even is 52.4% because a standard bet risks 110 to win 100 (110 / 210 = 52.4%).</li>
+    <li><b>Closing line value:</b> how many points better the model's number was than the final market number. It's a faster signal of skill than wins and losses.</li>
+    <li><b>Calibration:</b> whether teams the model gives a 70% chance actually win about 70% of the time.</li>
+    <li><b>Control groups:</b> the same games picked by simple rules (always the favorite, always the underdog, always home, ratings only). The model has to beat these to be worth anything.</li>
+  </ul>
+
+  <h2 id="stats">Statistical rules</h2>
+  <p><b>Uncertainty is always shown.</b> Every win rate comes with a 95% Wilson confidence interval. With about 200 games, that range is roughly ±7 points, so a 53% record could really be anywhere from about 46% to 60%. A record only counts as evidence of an edge once the whole range sits above 52.4%.</p>
+  <p><b>Lessons have to pass real tests.</b> Each lesson is a hypothesis tested on the picks it changed. To be kept it needs:</p>
+  <ul>
+    <li>at least <b>50 picks</b> (at 15 picks the uncertainty is about ±25 points, which tells you nothing),</li>
+    <li>a <b>one-sided exact binomial test</b> showing it beats 52.4%,</li>
+    <li>a <b>Benjamini-Hochberg correction</b> at a 10% false discovery rate across all lessons with enough picks, because testing many hypotheses at once guarantees some will look good by chance (the multiple comparisons problem),</li>
+    <li>and an average <b>closing line value of zero or better</b>, so a lesson that wins while getting worse numbers than the market doesn't count.</li>
+  </ul>
+  <p>A lesson is dropped once it has 50+ picks and is below 50%, or 100+ picks without passing. Dropped lessons stay on file so the same idea isn't relearned. Early on, almost nothing should pass; that's the expected result, not a failure.</p>
+  <p><b>Out-of-sample testing.</b> Formula v1 is built from the first phase of data and then run on new games without changes, so it can't be tuned to fit the results it's judged on.</p>
+
+  <h2 id="limits">Limitations</h2>
+  <ul>
+    <li><b>Small samples.</b> Hundreds of games are needed before any record means much; everything here is labeled with its uncertainty for that reason.</li>
+    <li><b>Automated collection can make mistakes.</b> Lines, ratings and injuries are gathered from public web pages by AI agents. A daily consistency check catches contradictions, but data errors are possible.</li>
+    <li><b>Closing line is approximate.</b> The 6:30pm ET price stands in for the true closing line, which can still move before tip-off.</li>
+    <li><b>The model picks every game.</b> That keeps the dataset complete, but it means the all-games record includes many close calls; the official-play record is the fairer test.</li>
+    <li><b>Markets are efficient.</b> The most likely outcome is that the model can't beat closing prices consistently. The value is in measuring how close it gets and where the market is weakest.</li>
+    <li><b>No real money.</b> This is a research project. Nothing here is betting advice.</li>
+  </ul>
+  <p style="margin-top:22px"><a href="https://github.com/IsaacRaphel/picks-model">View the code and data on GitHub →</a></p>
+</main>
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University · Research project · no real money wagered · not betting advice</span>
+  <a href="https://github.com/IsaacRaphel/picks-model">GitHub →</a>
+</div></footer>
+</body>
+</html>

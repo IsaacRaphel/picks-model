@@ -115,6 +115,7 @@ p.body + p.body{margin-top:14px}
 .two .card h3{font-size:17px;margin-bottom:8px}
 .two .card p{font-size:15px;color:var(--muted)}
 .two .card .big{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
+@media(max-width:980px){#deeper .two{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:720px){.two{grid-template-columns:1fr!important}}
 
 .code{margin-top:28px;background:#0e1118;border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto;white-space:pre;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.7;color:#c8cfdc}
@@ -152,6 +153,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .chip{display:inline-block;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.03)}
 .chip:hover{border-color:rgba(167,123,255,.6);background:rgba(167,123,255,.10)}
 section{scroll-margin-top:70px}
+.stat .ci{font-size:12.5px;color:var(--amber);margin-top:6px}
+.stack{font-size:15px}.stack a{color:#9cc8ff}
 </style>
 </head>
 <body>
@@ -171,6 +174,7 @@ section{scroll-margin-top:70px}
   <div class="tagrow"><span class="beta">Beta</span><div class="eyebrow"><span class="dot"></span> Phase 1: data collection · updated daily</div></div>
   <h1>Can a disciplined model find where <span class="grad">markets misprice outcomes?</span></h1>
   <p class="lede">A forecasting system that collects market data every day, makes its own predictions, grades itself against the market's final price, and only keeps the changes that prove themselves over time.</p>
+  <p class="lede">Sports betting markets are some of the most efficient markets there are, so the honest expected answer is <em>probably not</em>. The point is to measure how close a careful, rules-based process can get, and to find where the market is weakest.</p>
   <p class="lede phase">Right now the project is in its data-collection phase. Every day it logs prices, makes baseline forecasts and grades them, building the dataset the real model will be built and tested on. Today's forecasts are a starting point, not the finished model.</p>
   <div class="cta">
     <a class="chip" href="#about">About me</a>
@@ -182,12 +186,12 @@ section{scroll-margin-top:70px}
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="n" id="st-games">151</div><div class="l">Games logged and graded</div></div>
-    <div class="stat"><div class="n" id="st-ats">57.0%</div><div class="l">Baseline accuracy (break-even 52.4%)</div></div>
-    <div class="stat"><div class="n" id="st-lessons">11</div><div class="l">Hypotheses being tested</div></div>
-    <div class="stat"><div class="n">3</div><div class="l">Markets benchmarked</div></div>
+    <div class="stat"><div class="n" id="st-games">—</div><div class="l">Games logged and graded</div></div>
+    <div class="stat"><div class="n" id="st-ats">—</div><div class="l">Win rate against the spread, all games</div><div class="ci" id="st-ci">95% range loading · break-even 52.4%</div></div>
+    <div class="stat"><div class="n" id="st-lessons">—</div><div class="l">Hypotheses being tested</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Sportsbooks compared</div></div>
   </div>
-  <div class="asof" id="st-asof">Through Nov 8, 2026. Early sample, not yet statistically meaningful.</div>
+  <div class="asof" id="st-asof"></div>
 </div></header>
 
 
@@ -212,7 +216,8 @@ section{scroll-margin-top:70px}
 <section id="how"><div class="wrap">
   <div class="kicker">How it works</div>
   <h2>A daily pipeline: collect, predict, grade, learn.</h2>
-  <p class="body">I designed the system and its rules, and it runs on AI agents and scheduled jobs that do the daily data work. Every step is logged to structured datasets, so every prediction can be checked later against what actually happened.</p>
+  <p class="body">I designed the system: what data to collect for every game, how a forecast is built from a public rating baseline, how results are graded, the controls it's measured against, the rules for which games count as official plays, and the statistical tests a lesson has to pass. AI agents running on scheduled jobs do the daily data work, following those rules. Every step is logged to structured datasets, so every prediction can be checked later against what actually happened.</p>
+  <p class="body stack"><b>Stack:</b> scheduled AI agent jobs (Claude) for collection and grading · JSON datasets · a live dashboard · this site on GitHub Pages with Chart.js · data from DraftKings, FanDuel, Kalshi, Action Network, ESPN and public rating systems. <a href="method.html">Full methodology →</a> · <a href="https://github.com/IsaacRaphel/picks-model">Code and data on GitHub →</a></p>
 
   <div class="pipeline">
     <div class="step s1"><div class="num">01 · Morning</div><h3>Collect the data</h3><p>Pulls spreads, moneylines and prediction-market prices for up to 60 games, plus injury reports, rest and travel, public betting splits and line movement.</p><span class="tag">ingest</span></div>
@@ -238,23 +243,25 @@ section{scroll-margin-top:70px}
   <h2>Mistakes become hypotheses. Only the ones that hold up survive.</h2>
   <p class="body">Every night, losses are tagged by cause: a bad read, the market simply being right, or noise like a late fluke score. Noise is ignored. Repeated real mistakes become "lessons," and each lesson is treated as a hypothesis, not a rule. The model tags every prediction a lesson changes, so each one builds its own track record.</p>
 
-<div class="code"><span class="c">// how a lesson is judged, once it has enough evidence</span>
-<span class="k">if</span> (lesson.picks &lt; <span class="n">15</span>)          status = <span class="s">"Testing"</span>
-<span class="k">else if</span> (lesson.winRate &gt;= <span class="n">0.524</span>) status = <span class="s">"Keep"</span>     <span class="c">// beats the break-even rate</span>
-<span class="k">else if</span> (lesson.winRate &lt;  <span class="n">0.47</span>)  status = <span class="s">"Dropped"</span>  <span class="c">// kept on file so it isn't relearned</span>
-<span class="k">else</span>                              status = <span class="s">"Testing"</span>  <span class="c">// decide at 30 picks</span></div>
+<div class="code"><span class="c">// how a lesson is judged (n = picks it changed, break-even = 52.4%)</span>
+<span class="k">if</span> (n &lt; <span class="n">50</span>)                                  status = <span class="s">"Testing"</span>   <span class="c">// too small to tell</span>
+<span class="k">else if</span> (passesBH(pValue, <span class="n">0.10</span>) &amp;&amp; avgCLV &gt;= <span class="n">0</span>) status = <span class="s">"Keep"</span>      <span class="c">// survives multiple-testing check</span>
+<span class="k">else if</span> (winRate &lt; <span class="n">0.50</span> || n &gt;= <span class="n">100</span>)          status = <span class="s">"Dropped"</span>   <span class="c">// kept on file so it isn't relearned</span>
+<span class="k">else</span>                                          status = <span class="s">"Testing"</span></div>
+  <p class="note">Why so strict: with dozens of lessons tested at once, a few will look good by pure luck. That's the multiple comparisons problem, so each lesson needs at least 50 picks, a one-sided binomial test against the 52.4% break-even, a Benjamini-Hochberg correction across all lessons, and a non-negative average closing line value before it's kept. Early on, almost nothing should pass. That's the point.</p>
 
-  <p class="note">Example from week one: the data showed that predictions where the model disagreed with the market by 3+ points did worse than ones with small disagreements. That became a new hypothesis to recheck big disagreements instead of trusting them, and it's now being tested on new games.</p>
+  <p class="note">Example: in the first two weeks, a rule as simple as "always lay the points with the favorite" did better than the model. That pointed to the model leaning too hard on underdogs, so "underdogs need a bigger edge and a specific reason" became a hypothesis. It's still being tested, and with this little data the gap could easily be noise.</p>
 </div></section>
 
 <section id="plan"><div class="wrap">
   <div class="kicker">Roadmap</div>
   <h2>The plan</h2>
   <div class="timeline">
-    <div class="tl done"><div class="when">Early Nov 2026</div><h3>Build the data pipeline</h3><p>Daily data collection, forecasts across four leagues, automatic grading, and a live dashboard.</p></div>
-    <div class="tl now"><div class="when">November 2026 · now</div><h3>Phase 1: collect data and test hypotheses</h3><p>Log 1,000+ graded games with baseline forecasts while the lessons system adds, tests, keeps and drops rules. The goal of this phase is a clean dataset and a list of proven adjustments, not a winning record.</p></div>
-    <div class="tl"><div class="when">End of November</div><h3>Formula v1</h3><p>Combine the lessons that held up into one written formula, with the evidence behind each piece.</p></div>
-    <div class="tl"><div class="when">December 2026</div><h3>Out-of-sample test</h3><p>Run v1 on new games without changing it. If it holds up against the market, it becomes the model. If not, revise and test v2.</p></div>
+    <div class="tl" data-start="2026-10-25" data-end="2026-11-02"><div class="when"></div><h3>Build the data pipeline</h3><p>Daily data collection, forecasts across four leagues, automatic grading, and a live dashboard.</p></div>
+    <div class="tl" data-start="2026-11-02" data-end="2026-12-01"><div class="when"></div><h3>Phase 1: collect data and test hypotheses</h3><p>Log 1,000+ graded games with baseline forecasts and structured features while the lessons system adds and tests hypotheses. The goal of this phase is a clean dataset, not a winning record.</p></div>
+    <div class="tl" data-start="2026-12-01" data-end="2026-12-08"><div class="when"></div><h3>Phase 2: formula v1</h3><p>Fit a simple model on the logged features and combine it with any lessons that passed the statistical tests into one written formula, with the evidence behind each piece.</p></div>
+    <div class="tl" data-start="2026-12-08" data-end="2027-02-01"><div class="when"></div><h3>Phase 3: out-of-sample test</h3><p>Run v1 on new games without changing it, judged on official plays, closing line value and calibration against the simple-strategy controls.</p></div>
+    <div class="tl" data-start="2027-02-01" data-end="2099-01-01"><div class="when"></div><h3>Phase 4: revise or scale</h3><p>If v1 holds up, keep it and widen the test. If not, write up why, revise and test v2.</p></div>
   </div>
   <p class="note">This is a research project. Results are tracked with simulated stakes only, and early numbers are a small sample.</p>
 </div></section>
@@ -270,19 +277,25 @@ section{scroll-margin-top:70px}
 <section id="deeper"><div class="wrap">
   <div class="kicker">Go deeper</div>
   <h2>See the work</h2>
-  <div class="two" style="grid-template-columns:repeat(3,1fr)">
+  <div class="two" style="grid-template-columns:repeat(4,1fr)">
     <a class="card" href="model.html" style="text-decoration:none"><h3>Live model →</h3><p>Every game, the market prices, the pick and what happened, updated daily. Searchable by team.</p></a>
     <a class="card" href="analysis.html" style="text-decoration:none"><h3>Analysis →</h3><p>Accuracy over time, closing line value, calibration, simple-strategy benchmarks and a market efficiency check.</p></a>
+    <a class="card" href="method.html" style="text-decoration:none"><h3>Methodology →</h3><p>The data sources, the stack, how forecasts are built and graded, and the statistical rules. Plus the code on GitHub.</p></a>
     <a class="card" href="notes.html" style="text-decoration:none"><h3>Notes →</h3><p>Write-ups on what the data shows and what's changing, posted monthly.</p></a>
   </div>
 </div></section>
 
 <footer><div class="wrap">
   <span>Isaac Raphel · Indiana University · Research project · no real money wagered · not betting advice</span>
-  <a href="model.html">View the live model →</a>
+  <span class="flinks"><a href="method.html">Methodology</a> · <a href="https://github.com/IsaacRaphel/picks-model">GitHub</a> · <a href="model.html">View the live model →</a></span>
 </div></footer>
 
 <script>
+function wilson(w,n,z=1.96){if(!n)return null;const p=w/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return[c-h,c+h];}
+(function(){const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'});
+  document.querySelectorAll('.tl[data-start]').forEach(el=>{const s=el.dataset.start,e=el.dataset.end;const w=el.querySelector('.when');
+    if(today>=e){el.classList.add('done');w.textContent='Done';}else if(today>=s){el.classList.add('now');w.textContent='Now';}else{w.textContent='Up next';}});
+  let first=true;document.querySelectorAll('.tl[data-start]').forEach(el=>{const w=el.querySelector('.when');if(w.textContent==='Up next'){if(!first)w.textContent='Later';first=false;}});})();
 Promise.all([
   fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()),
   fetch('data/lessons.json',{cache:'no-store'}).then(r=>r.json())
@@ -290,11 +303,11 @@ Promise.all([
   const graded=games.filter(g=>['W','L','P'].includes(g.spread_result));
   const w=graded.filter(g=>g.spread_result==='W').length, l=graded.filter(g=>g.spread_result==='L').length;
   document.getElementById('st-games').textContent=graded.length.toLocaleString();
-  if(w+l) document.getElementById('st-ats').textContent=(100*w/(w+l)).toFixed(1)+'%';
+  if(w+l){document.getElementById('st-ats').textContent=(100*w/(w+l)).toFixed(1)+'%';const ci=wilson(w,w+l);document.getElementById('st-ci').textContent='95% range '+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'% · break-even 52.4%';}
   document.getElementById('st-lessons').textContent=lessons.filter(x=>x.status&&x.status!=='Setup').length;
   const last=graded.map(g=>g.date).sort().pop();
   if(last){const d=new Date(last+'T12:00:00');
-    document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+(graded.length<500?' Data-collection phase: early sample, not yet statistically meaningful.':'');}
+    document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+' Record is '+w+'-'+l+'. The 95% range shows how much this could move by luck alone: until it sits fully above 52.4%, there is no evidence of an edge yet.';}
 }).catch(()=>{});
 
 

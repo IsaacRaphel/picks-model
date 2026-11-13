@@ -119,6 +119,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#5aa9ff,#a77bff)!important;box-shadow:0 0 0 1px rgba(167,123,255,.5),0 4px 18px rgba(124,108,255,.35)!important;margin:0 4px}
 .navlinks a.navbtn:hover{filter:brightness(1.12)}
 .navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 4px 18px rgba(124,108,255,.45)!important}
+.rng{color:var(--dim);font-size:11.5px}
+.pbar{width:90px;height:6px;border-radius:99px;background:#232837;overflow:hidden;margin-bottom:4px}
+.pfill{height:100%;background:linear-gradient(90deg,#5aa9ff,#a77bff)}
 </style>
 </head>
 <body>
@@ -141,7 +144,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </header>
 
 <section class="tiles">
-  <div class="tile"><div class="l">Baseline spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div><div class="x" id="t-ats-x">Every game, forecast as data. Most are close calls.</div></div>
+  <div class="tile"><div class="l">Against the spread (all games)</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div><div class="x" id="t-ats-x">Every game, forecast as data. Most are close calls.</div></div>
   <div class="tile"><div class="l">Official plays</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">Tracked from Nov 13</div><div class="x">The 2 to 8 games a day where the model thinks it has a real edge. This record is the one that judges the model.</div></div>
   <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div><div class="x">The single most confident official play each day.</div></div>
   <div class="tile"><div class="l">Moneyline (picked the winner)</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div><div class="x">Just picking who wins. Most picks are favorites, so a high % is expected. <a href="analysis.html" style="color:#9cc8ff">See if the win chances were accurate →</a></div></div>
@@ -189,7 +192,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="tab-lessons" hidden>
   <div class="card">
     <h2>Hypotheses the model is testing</h2>
-    <p class="muted">Repeated mistakes become lessons. Each one is tracked on the picks it changed and needs 15+ picks before it's judged: kept if it beats the 52.4% break-even rate, dropped if it doesn't. Rules about what goes into the top pick are measured by how the bets they exclude perform.</p>
+    <p class="muted">Repeated mistakes become lessons, and each one is tracked on the picks it changed. Because many lessons are tested at once, some will look good by luck, so the bar is strict: a lesson needs at least 50 picks, has to beat the 52.4% break-even in a one-sided binomial test that survives a Benjamini-Hochberg multiple-testing correction, and can't have negative closing line value. Until then it stays "Testing," no matter how good the record looks. The 95% range shows how uncertain each record still is. <a href="method.html#stats" style="color:#9cc8ff">How the tests work →</a></p>
     <div class="tablewrap"><table id="lessons"></table></div>
   </div>
 </section>
@@ -212,7 +215,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer><div class="wrap">
   <span>Isaac Raphel · Indiana University · Research project · no real money wagered · not betting advice</span>
-  <a href="index.html">About this project →</a>
+  <span class="flinks"><a href="method.html">Methodology</a> · <a href="https://github.com/IsaacRaphel/picks-model">GitHub</a> · <a href="index.html">About this project →</a></span>
 </div></footer>
 
 <script>
@@ -238,10 +241,11 @@ function potdStreak(picks){
   const g=picks.filter(p=>p.kind==='Pick of the day'&&(p.result==='W'||p.result==='L')).sort((a,b)=>a.date<b.date?1:-1);
   let n=0;for(const p of g){if(p.result==='W')n++;else break;}return n;
 }
+function wilson(w,n,z=1.96){if(!n)return null;const p=w/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return[c-h,c+h];}
 function drawTiles(){
   const a=rec(G.map(g=>g.spread_result)),m=rec(G.map(g=>g.ml_result)),t=rec(P.filter(p=>p.kind==='Pick of the day').map(p=>p.result));
-  $('t-ats').textContent=a.s;$('t-ats-s').textContent=a.pct!=null?a.pct.toFixed(1)+'% vs 52.4% break-even':'';
-  {const o=rec(G.filter(g=>g.official===true).map(g=>g.spread_result));if(o.w+o.l){$('t-ml').textContent=o.s;$('t-ml-s').textContent=o.pct.toFixed(1)+'% · the model\'s real plays';}}
+  $('t-ats').textContent=a.s;if(a.pct!=null){const ci=wilson(a.w,a.w+a.l);$('t-ats-s').textContent=a.pct.toFixed(1)+'% · 95% range '+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'% · break-even 52.4%';}
+  {const o=rec(G.filter(g=>g.official===true).map(g=>g.spread_result));if(o.w+o.l){$('t-ml').textContent=o.s;const ci=wilson(o.w,o.w+o.l);$('t-ml-s').textContent=o.pct.toFixed(1)+'% · 95% range '+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'%';}}
   $('t-top').textContent=t.s;
   {const s=potdStreak(P);const el2=document.querySelector('#t-top + .s');if(el2)el2.textContent=s?('🔥 '+s+'-day win streak'):'One best play per day';}
   const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
@@ -307,16 +311,17 @@ function drawLessons(){
   const rows=L.filter(x=>x.status&&x.status!=='Setup');
   const order={Keep:0,Testing:1,Dropped:2};
   rows.sort((a,b)=>(order[a.status]??3)-(order[b.status]??3)||(a.id<b.id?-1:1));
-  const thead=el('thead'),hr=el('tr');['ID','Hypothesis','Applies to','Status','Record','Win %'].forEach(h=>hr.append(el('th',h==='Applies to'?'hide-sm':null,h)));thead.append(hr);t.append(thead);
+  const thead=el('thead'),hr=el('tr');['ID','Hypothesis','Applies to','Status','Record','Win % (95% range)','Progress'].forEach(h=>hr.append(el('th',h==='Applies to'?'hide-sm':null,h)));thead.append(hr);t.append(thead);
   const tb=el('tbody');
-  if(!rows.length){const tr=el('tr'),td=el('td','na','No lessons yet.');td.colSpan=6;tr.append(td);tb.append(tr);}
+  if(!rows.length){const tr=el('tr'),td=el('td','na','No lessons yet.');td.colSpan=7;tr.append(td);tb.append(tr);}
   rows.forEach(x=>{
     const tr=el('tr');tr.append(el('td','nw',x.id));
     const td=el('td','why',x.lesson);if(x.evidence)td.append(el('span','ctx',x.evidence));tr.append(td);
     tr.append(el('td','hide-sm',(x.league||'')+(x.situation?' · '+x.situation:'')));
     const s=el('td');s.append(el('span','st st-'+x.status,x.status));tr.append(s);
     tr.append(el('td','nw',(x.wins||0)+'-'+(x.losses||0)+(x.pushes?'-'+x.pushes:'')));
-    const d=(x.wins||0)+(x.losses||0);tr.append(el('td','nw',d?(100*x.wins/d).toFixed(0)+'%':'—'));
+    const d=(x.wins||0)+(x.losses||0);{const td2=el('td','nw',d?(100*x.wins/d).toFixed(0)+'%':'—');if(d){const ci=wilson(x.wins,d);td2.append(el('span','rng',' ('+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'%)'));}tr.append(td2);}
+    {const td3=el('td','nw');const pct=Math.min(100,Math.round(100*d/50));const bar=el('div','pbar');const f=el('div','pfill');f.style.width=pct+'%';bar.append(f);td3.append(bar,el('span','rng',d>=50?'Ready to judge':d+'/50 picks'));tr.append(td3);}
     tb.append(tr);
   });
   t.append(tb);

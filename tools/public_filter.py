@@ -35,6 +35,7 @@ lessons = [l for l in load("lessons") if not str(l.get("situation", "")).lower()
 for l in lessons:
     for k in ("lesson", "evidence"):
         l[k] = clean_text(l.get(k, ""))
+lessons = [l for l in lessons if str(l.get("lesson", "")).strip()]  # drop lessons that were only about parlays/$
 save("lessons", lessons)
 
 games = load("games")

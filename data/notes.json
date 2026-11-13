@@ -28,7 +28,7 @@
    {
     "h": "What the lessons system learned",
     "p": [
-     "Fifteen hypotheses have been added so far. Two have earned a 'Keep': only taking huge college underdogs when there's a big edge (12-8), and not taking the underdog's points when the model likes the favorite to win (8-7). One was dropped: a rule steering away from 10+ point spreads, because those big-spread picks were actually winning. Everything else is still being tested."
+     "Fifteen hypotheses have been added so far. Two looked promising early: only taking huge college underdogs when there's a big edge (12-8), and not taking the underdog's points when the model likes the favorite to win (9-7). On November 13 I tightened the rules, because records like 12-8 are well within luck: a 95% range on 20 picks runs from roughly 39% to 78%. Testing many lessons at once also guarantees a few will look good by chance, which is the multiple comparisons problem. Now a lesson needs at least 50 picks, has to beat break-even in a binomial test that survives a Benjamini-Hochberg correction across all lessons, and can't have negative closing line value. Both early leaders went back to Testing, and one rule (steering away from 10+ point spreads) was dropped because those picks were actually winning."
     ]
    },
    {
