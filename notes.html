@@ -50,6 +50,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#5aa9ff,#a77bff)!important;box-shadow:0 0 0 1px rgba(167,123,255,.5),0 4px 18px rgba(124,108,255,.35)!important;margin:0 4px}
 .navlinks a.navbtn:hover{filter:brightness(1.12)}
 .navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 4px 18px rgba(124,108,255,.45)!important}
+/* nav-v4 */
+.navlinks .short{display:none}
+@media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
+@media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
 </style>
 </head>
 <body>
@@ -60,6 +64,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <a href="index.html#plan">Roadmap</a>
     <a href="model.html" class="navbtn">Live model<span class="arr"> →</span></a>
     <a href="analysis.html">Analysis</a>
+    <a href="method.html"><span class="long">Methodology</span><span class="short">Method</span></a>
     <a href="notes.html" class="on" aria-current="page">Notes</a>
   </div>
 </div></nav>

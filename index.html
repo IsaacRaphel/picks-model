@@ -155,6 +155,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 section{scroll-margin-top:70px}
 .stat .ci{font-size:12.5px;color:var(--amber);margin-top:6px}
 .stack{font-size:15px}.stack a{color:#9cc8ff}
+/* nav-v4 */
+.navlinks .short{display:none}
+@media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
+@media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
 </style>
 </head>
 <body>
@@ -166,6 +170,7 @@ section{scroll-margin-top:70px}
     <a href="#plan">Roadmap</a>
     <a href="model.html" class="navbtn">Live model<span class="arr"> →</span></a>
     <a href="analysis.html">Analysis</a>
+    <a href="method.html"><span class="long">Methodology</span><span class="short">Method</span></a>
     <a href="notes.html">Notes</a>
   </div>
 </div></nav>
