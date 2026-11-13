@@ -107,6 +107,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .dotg{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3b4256;margin-right:7px;vertical-align:middle}
 .dotg.on{background:var(--green)}.dotg.star{background:var(--amber)}
 @media(max-width:820px){.explain{grid-template-columns:1fr}}
+.tile .x{font-size:12px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line2);line-height:1.45}
 </style>
 </head>
 <body>
@@ -129,16 +130,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </header>
 
 <section class="tiles">
-  <div class="tile"><div class="l">Baseline spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div></div>
-  <div class="tile"><div class="l">Official plays</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">Tracked from Nov 13</div></div>
-  <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div></div>
-  <div class="tile"><div class="l">Games graded</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div></div>
-</section>
-
-<section class="explain">
-  <div><span class="dotg"></span><b>Every game</b> gets a forecast so the dataset is complete. Most are close calls where the model and the market basically agree.</div>
-  <div><span class="dotg on"></span><b>Official plays</b> are the 2 to 8 games a day where the model thinks it has a real edge (1.5+ points, no red flags). Their record is the one that judges the model.</div>
-  <div><span class="dotg star"></span><b>Top pick of the day</b> is the single most confident official play. Every top pick is an official play, but most official plays aren't the top pick.</div>
+  <div class="tile"><div class="l">Baseline spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div><div class="x">Every game, forecast as data. Most are close calls.</div></div>
+  <div class="tile"><div class="l">Official plays</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">Tracked from Nov 13</div><div class="x">The 2 to 8 games a day where the model thinks it has a real edge. This record is the one that judges the model.</div></div>
+  <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div><div class="x">The single most confident official play each day.</div></div>
+  <div class="tile"><div class="l">Games graded</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div><div class="x">Every game logged and graded since Nov 2.</div></div>
 </section>
 
 <div class="tabs" role="tablist">
