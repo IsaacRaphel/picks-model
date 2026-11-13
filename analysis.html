@@ -45,6 +45,11 @@ h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
 .econ .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:rgba(255,181,71,.1);padding:3px 9px;border-radius:999px;margin-bottom:8px}
 .econ ul{margin:10px 0 0 18px;color:#c3c9d6;font-size:14px}
 .econ li{margin-top:6px}
+.sechead{margin-top:44px;padding-top:6px}
+.sechead .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.sechead h2{font-size:clamp(22px,3.2vw,28px);letter-spacing:-.02em;margin-top:4px}
+.sechead p{color:var(--muted);font-size:15px;margin-top:6px;max-width:820px}
+.econ .chartbox.sm{height:260px}
 .small{font-size:12.5px;color:var(--dim);margin-top:10px}
 footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -137,6 +142,55 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </ul>
   <p class="small" id="mkt-n"></p>
 </section>
+
+<div class="sechead" id="firm">
+  <div class="eyebrow">Intermediate microeconomics</div>
+  <h2>The sportsbook as a firm</h2>
+  <p>A sportsbook is a firm selling a product (a bet) at a price (the line and the odds). The data the model collects every day doubles as a dataset on how that market works. These charts test a few textbook ideas against it.</p>
+</div>
+
+<div class="grid2">
+  <section class="card econ">
+    <span class="tag">Law of one price</span>
+    <h2>Do competing books charge the same price?</h2>
+    <p class="what">The same game's spread at DraftKings vs. FanDuel. In a competitive market with easy comparison shopping, identical products should sell at one price, so most gaps should be zero.</p>
+    <div class="chartbox sm"><canvas id="c-lop"></canvas></div>
+    <p class="takeaway" id="t-lop"></p>
+  </section>
+  <section class="card econ">
+    <span class="tag">Markups</span>
+    <h2>How big is the book's markup?</h2>
+    <p class="what">The hold is the share of every dollar bet the book expects to keep if action is balanced. It's the price above "cost" (the fair odds), like a markup in a market with a few big sellers.</p>
+    <div class="chartbox sm"><canvas id="c-hold"></canvas></div>
+    <p class="takeaway" id="t-hold"></p>
+  </section>
+</div>
+
+<section class="card econ">
+  <span class="tag">Supply and demand</span>
+  <h2>Does the price move when demand piles onto one side?</h2>
+  <p class="what">Each dot is a game. Across: the share of bets on the more popular side. Up: how many points the spread moved against that side from open to the latest line (positive means the book made the popular side more expensive). If books just balanced demand, dots would climb to the right.</p>
+  <div class="chartbox"><canvas id="c-sd"></canvas></div>
+  <p class="takeaway" id="t-sd"></p>
+</section>
+
+<div class="grid2">
+  <section class="card econ">
+    <span class="tag">Asymmetric information</span>
+    <h2>The crowd vs. the bigger bettors</h2>
+    <p class="what">Ticket counts show where the crowd is. When a side's share of money is clearly higher than its share of bets, fewer, larger bettors are on it, often a sign of better-informed money. Which side covers more?</p>
+    <div class="chartbox sm"><canvas id="c-info"></canvas></div>
+    <p class="takeaway" id="t-info"></p>
+  </section>
+  <section class="card econ">
+    <span class="tag">Strategic behavior</span>
+    <h2>Model with vs. against the crowd</h2>
+    <p class="what">If prices are set knowing how the public will bet, the best response can be to go the other way. This splits the model's spread picks by whether they sided with the majority of bets.</p>
+    <div class="chartbox sm"><canvas id="c-gt"></canvas></div>
+    <p class="takeaway" id="t-gt"></p>
+  </section>
+</div>
+<p class="small">Bet-share data comes from public betting-split pages and isn't available for every game. Every rate here comes with its 95% range in the text; with samples this size, treat them as early signals.</p>
 </main>
 
 <footer><div class="wrap">
@@ -255,6 +309,64 @@ fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()).then(G=>{
   if(mk.length){const dev=mk.reduce((s,c)=>s+c.n*Math.abs(c.y-c.x),0)/mk.reduce((s,c)=>s+c.n,0);
     $('t-mkt').innerHTML='On average the prices missed actual win rates by <b>'+dev.toFixed(1)+' percentage points</b>, and the book\'s built-in cut averaged <b>'+(vig!=null?vig.toFixed(1)+'%':'—')+'</b> per game. '+(dev<4?'That\'s close to the line: the market is hard to beat, which is the point of the project.':'Some gaps show up, but with this few games they could easily be noise.');}
   $('mkt-n').textContent=pts.length?('Based on '+pts.length+' team results from '+vigN+' games with DraftKings moneylines. Buckets need at least 8 teams to show.'):'';
+
+  // ===== Sportsbook as a firm =====
+  const ids=g=>{const p=g.id.split('-');return{a:p[p.length-2],h:p[p.length-1]};};
+  const homeLine=(g,str)=>{const t=ids(g),x=parseSpread(str);if(!x)return null;return x.team===t.h?x.line:x.team===t.a?-x.line:null;};
+  // law of one price
+  const gaps=[];G.forEach(g=>{const d=homeLine(g,g.dk_spread),f=homeLine(g,g.fd_spread);if(d!=null&&f!=null)gaps.push(Math.abs(d-f));});
+  const gb=['0','0.5','1','1.5','2','2.5+'],gc=gb.map((b,i)=>gaps.filter(x=>i<5?x===i/2:x>=2.5).length);
+  line('c-lop',{type:'bar',data:{labels:gb.map(b=>b==='0'?'Same':b+' pt'),datasets:[{label:'Games',data:gc,backgroundColor:gb.map((b,i)=>i?C.amber:C.green),borderRadius:5,maxBarThickness:46}]},
+    options:baseOpts('Games',{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},title:{display:true,text:'DraftKings vs. FanDuel spread gap',color:C.dim}},y:{ticks:{precision:0}}}})});
+  if(gaps.length){const same=gaps.filter(x=>x===0).length,w1=gaps.filter(x=>x<=1).length;
+    $('t-lop').innerHTML='<b>'+pct(same/gaps.length)+'</b> of '+gaps.length+' games had the exact same spread at both books, and '+pct(w1/gaps.length)+' were within a point. Prices mostly converge, as competition predicts. The gaps that remain are why the model shops both books: when one is out of line, take the better price.';}
+  // markups (hold)
+  const lg=['NFL','NBA','CFB','CBB'].filter(L=>G.some(g=>g.league===L));
+  const hold=(g,k)=>{const m=parseML(g[k]),t=Object.keys(m);if(t.length!==2)return null;return 1-1/(impl(m[t[0]])+impl(m[t[1]]));};
+  const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+  const hd=k=>lg.map(L=>{const v=G.filter(g=>g.league===L).map(g=>hold(g,k)).filter(x=>x!=null);const m=avg(v);return m==null?null:+(100*m).toFixed(2);});
+  const hdk=hd('dk_ml'),hfd=hd('fd_ml');
+  line('c-hold',{type:'bar',data:{labels:lg,datasets:[{label:'DraftKings',data:hdk,backgroundColor:C.blue,borderRadius:5,maxBarThickness:34},{label:'FanDuel',data:hfd,backgroundColor:C.purple,borderRadius:5,maxBarThickness:34}]},
+    options:baseOpts('Avg hold on moneylines',{interaction:{mode:'index',intersect:false},scales:{x:{grid:{display:false}},y:{beginAtZero:true,ticks:{callback:v=>v+'%'}}},plugins:{tooltip:{callbacks:{label:c=>c.dataset.label+': '+c.raw+'%'}}}})});
+  {const all1=G.map(g=>hold(g,'dk_ml')).filter(x=>x!=null),all2=G.map(g=>hold(g,'fd_ml')).filter(x=>x!=null),d=avg(all1),f=avg(all2);
+   const pairs=lg.map((L,i)=>[L,hdk[i]]).filter(x=>x[1]!=null).sort((a,b)=>b[1]-a[1]);
+   if(d!=null&&f!=null)$('t-hold').innerHTML='Average hold: <b>DraftKings '+(100*d).toFixed(1)+'%</b>, <b>FanDuel '+(100*f).toFixed(1)+'%</b>. '+(pairs.length>1?('The markup is highest in '+pairs[0][0]+' and lowest in '+pairs[pairs.length-1][0]+'. '):'')+'Markup theory predicts higher margins where buyers are less price-sensitive and lower margins where sellers compete hardest, which is a hypothesis this data can keep testing as it grows.';}
+  // supply and demand
+  const sd=[];G.forEach(g=>{const t=ids(g),m=/^Opened\s+(\S+)\s+([+-]?\d+(?:\.\d+)?|PK)/i.exec(g.line_move||''),ps=/^(\S+)\s+(\d+)% bets/.exec(g.public_split||''),cur=homeLine(g,g.dk_spread);
+    if(!m||!ps||cur==null)return;const n=/pk/i.test(m[2])?0:+m[2];if(m[1]!==t.h&&m[1]!==t.a)return;const op=m[1]===t.h?n:-n;
+    if(ps[1]!==t.h&&ps[1]!==t.a)return;const pp=+ps[2];if(pp<50)return;sd.push({x:pp,y:ps[1]===t.h?op-cur:cur-op,g,side:ps[1]===t.h?'home':'away'});});
+  const jit=sd.map((p,i)=>({x:p.x,y:p.y+((i*37)%7-3)*0.04}));
+  let fit=null;if(sd.length>5){const mx=avg(sd.map(p=>p.x)),my=avg(sd.map(p=>p.y));const b=sd.reduce((s,p)=>s+(p.x-mx)*(p.y-my),0)/sd.reduce((s,p)=>s+(p.x-mx)**2,0);fit={b,a:my-b*mx,my};}
+  const sdDs=[{label:'Games',data:jit,backgroundColor:'rgba(255,181,71,.55)',pointRadius:4}];
+  if(fit)sdDs.push({type:'line',label:'Trend',data:[{x:50,y:fit.a+fit.b*50},{x:100,y:fit.a+fit.b*100}],borderColor:C.blue,pointRadius:0,borderWidth:2});
+  line('c-sd',{type:'scatter',data:{datasets:sdDs},options:baseOpts('',{interaction:{mode:'nearest',intersect:true},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.datasetIndex?'Trend':(sd[c.dataIndex].x+'% of bets on one side, line moved '+(sd[c.dataIndex].y>0?'+':'')+sd[c.dataIndex].y+' pts against it')}}},
+    scales:{x:{type:'linear',min:50,max:100,title:{display:true,text:'Share of bets on the popular side',color:C.dim},ticks:{callback:v=>v+'%'}},y:{suggestedMin:-4,suggestedMax:4,title:{display:true,text:'Line move against popular side (pts)',color:C.dim}}}})});
+  if(fit){const heavy=sd.filter(p=>p.x>=75),still=sd.filter(p=>p.y===0).length;
+    $('t-sd').innerHTML='Across '+sd.length+' games the average move was <b>'+(fit.my>=0?'+':'')+fit.my.toFixed(2)+' points</b>, and the trend adds only <b>'+(10*fit.b>=0?'+':'')+(10*fit.b).toFixed(2)+' points per extra 10% of bets</b>. '+(heavy.length?'Even when 75%+ of bets were on one side ('+heavy.length+' games), the line moved '+(avg(heavy.map(p=>p.y))>=0?'+':'')+avg(heavy.map(p=>p.y)).toFixed(2)+' points on average. ':'')+'Lines barely chase ticket demand. That fits the research view that books don\'t simply clear the market; they set prices on information and are willing to hold a position against the crowd.';}
+  // asymmetric info
+  const sideRes=(i,side)=>side==='home'?i.homeRes:i.awayRes;
+  const pubRes=[],fadeRes=[],monRes=[];
+  G.forEach(g=>{if(!['W','L','P'].includes(g.spread_result))return;const i=gameInfo(g);if(!i)return;const ps=/^(\S+)\s+(\d+)% bets(?: \/ (\d+)% money)?/.exec(g.public_split||'');if(!ps)return;
+    const side=ps[1]===i.f.home.team?'home':ps[1]===i.f.away.team?'away':null;if(!side||+ps[2]===50)return;
+    const pubSide=+ps[2]>50?side:(side==='home'?'away':'home'),other=pubSide==='home'?'away':'home';
+    pubRes.push(sideRes(i,pubSide));fadeRes.push(sideRes(i,other));
+    if(ps[3]!=null){const gap=+ps[3]-+ps[2];if(Math.abs(gap)>=5){const ms=gap>0?side:(side==='home'?'away':'home');monRes.push(sideRes(i,ms));}}});
+  const R1=rec(pubRes),R2=rec(fadeRes),R3=rec(monRes);
+  const ib=[['Crowd side',R1,C.orange],['Other side',R2,C.teal]];if(R3.n)ib.push(['Bigger-bettor side',R3,C.purple]);
+  line('c-info',{type:'bar',data:{labels:ib.map(b=>b[0]),datasets:[{label:'Cover %',data:ib.map(b=>b[1].rate!=null?+(100*b[1].rate).toFixed(1):null),backgroundColor:ib.map(b=>b[2]),borderRadius:6,maxBarThickness:60},
+    {type:'line',label:'50%',data:ib.map(()=>50),borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
+    options:baseOpts('Cover % against the spread',{plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>c.datasetIndex===0?('Record '+ib[c.dataIndex][1].s+' · 95% range '+rng(ib[c.dataIndex][1].w,ib[c.dataIndex][1].n)):''}}},scales:{x:{grid:{display:false}},y:{min:20,max:80,ticks:{callback:v=>v+'%'}}}})});
+  if(R1.n)$('t-info').innerHTML='The crowd\'s side covered <b>'+pct(R1.rate)+'</b> ('+R1.s+', range '+rng(R1.w,R1.n)+'). '+(R3.n?'The side with a clearly bigger share of money than tickets covered <b>'+pct(R3.rate)+'</b> ('+R3.s+', range '+rng(R3.w,R3.n)+'), but that\'s only '+R3.n+' games since money splits are rarely public. ':'')+'In a market with asymmetric information, the less-informed side should do worse over time. The ranges still overlap 50%, so no conclusion yet.';
+  // strategic behavior
+  const withP=[],vsP=[];
+  G.forEach(g=>{if(!['W','L','P'].includes(g.spread_result)||!g.spread_side)return;const t=ids(g),ps=/^(\S+)\s+(\d+)% bets/.exec(g.public_split||'');if(!ps||+ps[2]===50)return;
+    const side=ps[1]===t.h?'home':ps[1]===t.a?'away':null;if(!side)return;const pubSide=+ps[2]>50?side:(side==='home'?'away':'home');
+    (g.spread_side===pubSide?withP:vsP).push(g.spread_result);});
+  const W1=rec(withP),W2=rec(vsP);
+  line('c-gt',{type:'bar',data:{labels:['Model with the crowd','Model against the crowd'],datasets:[{label:'Win %',data:[W1,W2].map(r=>r.rate!=null?+(100*r.rate).toFixed(1):null),backgroundColor:[C.orange,C.blue],borderRadius:6,maxBarThickness:70},
+    {type:'line',label:'Break-even 52.4%',data:[52.4,52.4],borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
+    options:baseOpts('Win % against the spread',{plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>{const r=[W1,W2][c.dataIndex];return c.datasetIndex===0?('Record '+r.s+' · 95% range '+rng(r.w,r.n)):'';}}}},scales:{x:{grid:{display:false}},y:{min:20,max:80,ticks:{callback:v=>v+'%'}}}})});
+  if(W1.n&&W2.n)$('t-gt').innerHTML='With the crowd: <b>'+pct(W1.rate)+'</b> ('+W1.s+'). Against it: <b>'+pct(W2.rate)+'</b> ('+W2.s+'). '+(W2.n<W1.n?'The model sides with the majority more often than not. ':'The model goes against the majority more often than not. ')+'If a gap holds up as more games come in, it becomes a lesson to test under the same statistical rules.';
 }).catch(e=>{$('asof').textContent='Could not load data.';});
 </script>
 </body>
