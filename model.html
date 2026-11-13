@@ -65,6 +65,12 @@ td.lg{font-weight:700;font-size:11px;letter-spacing:.05em}
 .lg-NFL{color:#60a5fa}.lg-NBA{color:var(--orange)}.lg-CFB{color:#c084fc}.lg-CBB{color:var(--teal)}
 .pt{color:#4ade80;background:rgba(61,220,151,.14);border-radius:5px;padding:0 4px;font-weight:600}
 td.pk{color:#4ade80;background:rgba(61,220,151,.08);font-weight:600;white-space:nowrap}
+.offtag{display:block;margin-top:4px;font-size:10.5px;font-weight:700;color:#0b0d12;background:var(--green);border-radius:5px;padding:1px 6px;width:max-content}
+.dt{display:block;font-size:11px;color:var(--dim)}
+#q{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:9px;background:#0f1218;color:var(--text);min-width:180px}
+#q::placeholder{color:var(--dim)}
+select:disabled{opacity:.4}
+.seg button.on[data-off=off]{background:#16a34a}
 .ovr{display:block;margin-top:4px;font-size:10.5px;font-weight:600;color:#c4b5fd;background:rgba(167,123,255,.14);border-radius:5px;padding:1px 6px;width:max-content}
 td.nw{white-space:nowrap}
 td.na{color:#566074;font-style:italic;font-size:12px}
@@ -92,15 +98,19 @@ tbody tr.main:hover td,tbody tr.main:hover + tr.sub td{background:rgba(255,255,2
 footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 [hidden]{display:none!important}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
   <div class="navlinks">
-    <a href="index.html#how" class="hide-sm">How it works</a>
     <a href="model.html#reviews" class="hide-sm">Reviews</a>
     <a href="model.html#lessons" class="hide-sm">Lessons</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="notes.html" class="hide-sm">Notes</a>
     <a href="model.html" class="on">Live model</a>
   </div>
 </div></nav>
@@ -114,7 +124,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section class="tiles">
   <div class="tile"><div class="l">Baseline spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div></div>
-  <div class="tile"><div class="l">Moneyline record</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">&nbsp;</div></div>
+  <div class="tile"><div class="l">Official plays</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">Tracked from Nov 13</div></div>
   <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div></div>
   <div class="tile"><div class="l">Games graded</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div></div>
 </section>
@@ -127,6 +137,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="tab-games">
   <div class="bar">
+    <input id="q" type="search" placeholder="Search a team" aria-label="Search a team" autocomplete="off">
     <select id="day" aria-label="Day"></select>
     <div class="seg" id="view">
       <button data-view="spread" class="on">Spread</button>
@@ -139,6 +150,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <button data-league="CFB">CFB</button>
       <button data-league="CBB">CBB</button>
     </div>
+    <div class="seg" id="offseg">
+      <button data-off="all" class="on">All games</button>
+      <button data-off="off">Official plays</button>
+    </div>
   </div>
 
   <div class="card top" id="topcard">
@@ -147,8 +162,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 
   <div class="card">
+    <p class="muted" id="searchnote"></p>
     <div class="tablewrap"><table id="tbl"></table></div>
-    <p class="legend">Model = the model's raw line or win chance before any lessons. A purple "Lesson test" tag means a lesson the model is testing changed the pick from what the raw number says, so the pick and the model line can point different ways on those games. Edge = how far the model's number is from the market on the picked side (0 when a lesson made the pick). "Not posted" means that book had no line when the data was collected.</p>
+    <p class="legend">Official play = one of the model's real plays for the day (edge of 1.5+ points and no red flags); every other game is still forecast and tracked as data. Model = the model's raw line or win chance before any lessons. A purple "Lesson test" tag means a lesson the model is testing changed the pick from what the raw number says, so the pick and the model line can point different ways on those games. Edge = how far the model's number is from the market on the picked side (0 when a lesson made the pick). "Not posted" means that book had no line when the data was collected.</p>
   </div>
 </section>
 
@@ -182,7 +198,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></footer>
 
 <script>
-const S={tab:'games',view:'spread',league:'All',day:null};
+const ALIAS={"hawks": "ATL", "celtics": "BOS", "nets": "BKN", "hornets": "CHA", "bulls": "CHI", "cavaliers": "CLE", "cavs": "CLE", "mavericks": "DAL", "mavs": "DAL", "nuggets": "DEN", "pistons": "DET", "warriors": "GSW", "rockets": "HOU", "pacers": "IND", "clippers": "LAC", "lakers": "LAL", "grizzlies": "MEM", "heat": "MIA", "bucks": "MIL", "timberwolves": "MIN", "wolves": "MIN", "pelicans": "NOP", "knicks": "NYK", "thunder": "OKC", "magic": "ORL", "76ers": "PHI", "sixers": "PHI", "suns": "PHX", "blazers": "POR", "trail blazers": "POR", "kings": "SAC", "spurs": "SAS", "raptors": "TOR", "jazz": "UTA", "wizards": "WAS", "cardinals": "ARI", "falcons": "ATL", "ravens": "BAL", "bills": "BUF", "panthers": "CAR", "bears": "CHI", "bengals": "CIN", "browns": "CLE", "cowboys": "DAL", "broncos": "DEN", "lions": "DET", "packers": "GB", "texans": "HOU", "colts": "IND", "jaguars": "JAX", "jags": "JAX", "chiefs": "KC", "raiders": "LV", "chargers": "LAC", "rams": "LAR", "dolphins": "MIA", "vikings": "MIN", "patriots": "NE", "pats": "NE", "saints": "NO", "giants": "NYG", "jets": "NYJ", "eagles": "PHI", "steelers": "PIT", "49ers": "SF", "niners": "SF", "seahawks": "SEA", "buccaneers": "TB", "bucs": "TB", "titans": "TEN", "commanders": "WAS"};
+const S={tab:'games',view:'spread',league:'All',day:null,q:'',off:false};
 let G=[],P=[],R=[],L=[];
 const $=id=>document.getElementById(id);
 const el=(t,c,txt)=>{const e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e;};
@@ -206,7 +223,7 @@ function potdStreak(picks){
 function drawTiles(){
   const a=rec(G.map(g=>g.spread_result)),m=rec(G.map(g=>g.ml_result)),t=rec(P.filter(p=>p.kind==='Pick of the day').map(p=>p.result));
   $('t-ats').textContent=a.s;$('t-ats-s').textContent=a.pct!=null?a.pct.toFixed(1)+'% vs 52.4% break-even':'';
-  $('t-ml').textContent=m.s;$('t-ml-s').textContent=m.pct!=null?m.pct.toFixed(1)+'% (mostly favorites)':'';
+  {const o=rec(G.filter(g=>g.official===true).map(g=>g.spread_result));if(o.w+o.l){$('t-ml').textContent=o.s;$('t-ml-s').textContent=o.pct.toFixed(1)+'% · the model\'s real plays';}}
   $('t-top').textContent=t.s;
   {const s=potdStreak(P);const el2=document.querySelector('#t-top + .s');if(el2)el2.textContent=s?('🔥 '+s+'-day win streak'):'One best play per day';}
   const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
@@ -232,7 +249,11 @@ function drawTop(){
 }
 function drawTable(){
   const t=$('tbl');t.replaceChildren();
-  const rows=G.filter(g=>g.date===S.day&&(S.league==='All'||g.league===S.league));
+  const q=(S.q||'').trim().toLowerCase();
+  let rows=G.filter(g=>(q?true:g.date===S.day)&&(S.league==='All'||g.league===S.league)&&(!S.off||g.official===true));
+  if(q){const ab=(ALIAS[q]||'').toLowerCase();const hit=g=>{const hay=[g.matchup,g.final,g.dk_spread].join(' ').toLowerCase();if(hay.includes(q))return true;if(!ab)return false;const toks=(g.league==='NBA'||g.league==='NFL')?(g.matchup||'').toLowerCase().split(/[^a-z0-9]+/):[];return toks.includes(ab);};
+    rows=rows.filter(hit).sort((a,b)=>a.date<b.date?1:-1);}
+  $('searchnote').textContent=q?(rows.length+' game'+(rows.length===1?'':'s')+' matching "'+S.q.trim()+'" across all days'):'';
   const sp=S.view==='spread';
   const heads=sp?['','Game','Time / final','DraftKings','FanDuel','Kalshi','Model','Pick','Edge','Result']
                 :['','Game','Time / final','DraftKings','FanDuel','Kalshi','Model','Pick','Result'];
@@ -243,12 +264,13 @@ function drawTable(){
     const tr=el('tr');
     tr.append(el('td','lg lg-'+g.league,g.league));
     tr.append(matchCell(g,sp?g.spread_side:g.ml_side));
-    tr.append(el('td','nw',g.final||g.tip||''));
+    {const td=el('td','nw',g.final||g.tip||'');if(q){td.prepend(el('span','dt',fmtDay(g.date)));}tr.append(td);}
     const cols=sp?[g.dk_spread,g.fd_spread,g.kalshi_spread]:[g.dk_ml,g.fd_ml,g.kalshi_ml];
     const msgs=['Not posted','Not posted','No Kalshi market'];
     cols.forEach((v,i)=>{const td=el('td',i>0?'hide-sm nw':'nw');if(v)td.textContent=v;else{cellNA(td,msgs[i]);if(i>0)td.classList.add('hide-sm');}tr.append(td);});
     tr.append(el('td','nw hide-sm',sp?g.model_spread:g.model_ml));
     const pk=el('td','pk',sp?g.spread_pick:(g.ml_pick?g.ml_pick+' ML':''));
+    if(g.official===true){const tg=el('span','offtag','Official play');tg.title='One of the model\'s real plays for the day';pk.append(tg);}
     if(sp&&g.lessons_applied){const tg=el('span','ovr','Lesson test: '+g.lessons_applied.replace(/,/g,', '));tg.title='A lesson the model is testing changed this pick from what its raw number says';pk.append(tg);}
     tr.append(pk);
     if(sp){const e=g.spread_edge;tr.append(el('td','hide-sm nw',e===''||e==null?'':(+e).toFixed(1)));}
@@ -308,6 +330,8 @@ window.addEventListener('hashchange',()=>setTab((location.hash||'').slice(1),fal
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{S.view=b.dataset.view;document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
 document.querySelectorAll('[data-league]').forEach(b=>b.addEventListener('click',()=>{S.league=b.dataset.league;document.querySelectorAll('[data-league]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
 $('day').addEventListener('change',e=>{S.day=e.target.value;drawTop();drawTable();});
+$('q').addEventListener('input',e=>{S.q=e.target.value;$('day').disabled=!!S.q.trim();drawTable();});
+document.querySelectorAll('[data-off]').forEach(b=>b.addEventListener('click',()=>{S.off=b.dataset.off==='off';document.querySelectorAll('[data-off]').forEach(x=>x.classList.toggle('on',x===b));drawTable();}));
 
 const get=f=>fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).catch(()=>[]);
 Promise.all([get('games'),get('picks'),get('reviews'),get('lessons')]).then(([g,p,r,l])=>{

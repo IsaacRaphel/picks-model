@@ -119,7 +119,7 @@ p.body + p.body{margin-top:14px}
 .two .card h3{font-size:17px;margin-bottom:8px}
 .two .card p{font-size:15px;color:var(--muted)}
 .two .card .big{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-bottom:4px}
-@media(max-width:720px){.two{grid-template-columns:1fr}}
+@media(max-width:720px){.two{grid-template-columns:1fr!important}}
 
 .code{margin-top:28px;background:#0e1118;border:1px solid var(--line);border-radius:14px;padding:20px;overflow-x:auto;white-space:pre;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.7;color:#c8cfdc}
 .code .c{color:var(--dim)} .code .k{color:var(--purple)} .code .s{color:var(--green)} .code .n{color:var(--amber)}
@@ -136,6 +136,9 @@ p.body + p.body{margin-top:14px}
 .note{margin-top:28px;font-size:14px;color:var(--dim);max-width:720px}
 footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--dim);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
 </style>
 </head>
 <body>
@@ -144,8 +147,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <a class="brand" href="#">Isaac Raphel<span>.</span></a>
   <div class="navlinks">
     <a href="#about" class="hide-sm">About</a>
-    <a href="#how">How it works</a>
-    <a href="#plan" class="hide-sm">Roadmap</a>
+    <a href="#how" class="hide-sm">How it works</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="notes.html" class="hide-sm">Notes</a>
     <a href="model.html" class="navbtn">Live model →</a>
   </div>
 </div></nav>
@@ -249,6 +253,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="tl"><div class="when">December 2026</div><h3>Out-of-sample test</h3><p>Run v1 on new games without changing it. If it holds up against the market, it becomes the model. If not, revise and test v2.</p></div>
   </div>
   <p class="note">This is a research project. Results are tracked with simulated stakes only, and early numbers are a small sample.</p>
+</div></section>
+
+<section id="deeper"><div class="wrap">
+  <div class="kicker">Go deeper</div>
+  <h2>See the work</h2>
+  <div class="two" style="grid-template-columns:repeat(3,1fr)">
+    <a class="card" href="model.html" style="text-decoration:none"><h3>Live model →</h3><p>Every game, the market prices, the pick and what happened, updated daily. Searchable by team.</p></a>
+    <a class="card" href="analysis.html" style="text-decoration:none"><h3>Analysis →</h3><p>Accuracy over time, closing line value, calibration, simple-strategy benchmarks and a market efficiency check.</p></a>
+    <a class="card" href="notes.html" style="text-decoration:none"><h3>Notes →</h3><p>Write-ups on what the data shows and what's changing, posted monthly.</p></a>
+  </div>
 </div></section>
 
 <footer><div class="wrap">

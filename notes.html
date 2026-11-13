@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notes | Isaac Raphel</title>
+<meta name="description" content="Write-ups on what the forecasting model's data shows, what changed and what's next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d12;--panel:#12151d;--line:#242a37;--text:#e8ebf2;--muted:#9aa3b5;--dim:#6b7488;--green:#3ddc97;--blue:#5aa9ff;--purple:#a77bff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px}
+nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted);align-items:center}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
+.navlinks a.navbtn{color:#0b0d12;background:var(--green);padding:7px 14px;border-radius:8px;font-weight:600}
+@media(max-width:700px){.hide-sm{display:none}}
+header{padding:44px 0 10px}
+h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
+.sub{color:var(--muted);margin-top:8px}
+.toc{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.toc a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.toc a:hover{border-color:#39415a}
+.toc .d{font-size:12.5px;color:var(--dim)}.toc .t{font-weight:600}
+article{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:22px}
+article .d{font-size:13px;color:var(--dim)}
+article h2{font-size:clamp(22px,3.4vw,28px);letter-spacing:-.02em;line-height:1.2;margin:4px 0 10px}
+article .sum{color:var(--muted);font-size:16px;border-left:3px solid var(--purple);padding-left:14px;margin-bottom:8px}
+article h3{font-size:17px;margin:22px 0 6px}
+article p{color:#c8cedb;font-size:15.5px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="index.html#how" class="hide-sm">How it works</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="notes.html" class="on">Notes</a>
+    <a href="model.html" class="navbtn">Live model →</a>
+  </div>
+</div></nav>
+<main class="wrap narrow">
+  <header>
+    <h1>Notes</h1>
+    <p class="sub">Write-ups on what the data shows, what's working, what isn't, and what changes next. A new one posts at the start of each month.</p>
+    <div class="toc" id="toc"></div>
+  </header>
+  <div id="posts"></div>
+</main>
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University · Research project, simulated stakes only</span>
+  <a href="analysis.html">See the charts →</a>
+</div></footer>
+<script>
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
+const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+fetch('data/notes.json',{cache:'no-store'}).then(r=>r.ok?r.json():[]).then(N=>{
+  N.sort((a,b)=>a.date<b.date?1:-1);
+  const toc=document.getElementById('toc'),box=document.getElementById('posts');
+  if(N.length>1)N.forEach(n=>{const a=el('a');a.href='#'+n.id;a.append(el('div','d',fmt(n.date)),el('div','t',n.title));toc.append(a);});
+  N.forEach(n=>{const art=el('article');art.id=n.id;art.append(el('div','d',fmt(n.date)),el('h2',null,n.title));
+    if(n.summary)art.append(el('p','sum',n.summary));
+    (n.sections||[]).forEach(s=>{if(s.h)art.append(el('h3',null,s.h));(s.p||[]).forEach(p=>art.append(el('p',null,p)));});
+    box.append(art);});
+  if(!N.length)box.append(el('p','sub','The first write-up is coming soon.'));
+}).catch(()=>{});
+</script>
+</body>
+</html>

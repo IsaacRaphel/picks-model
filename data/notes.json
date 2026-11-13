@@ -1,0 +1,43 @@
+[
+ {
+  "id": "2026-11-13-two-weeks-in",
+  "date": "2026-11-13",
+  "title": "Two weeks in: what the data says so far",
+  "summary": "201 graded games in, the model is slightly above break-even, a simple 'always take the favorite' rule is beating it, and the market is proving hard to beat. Here's what I'm changing.",
+  "sections": [
+   {
+    "h": "Where things stand",
+    "p": [
+     "Through November 11 the model has forecast and graded 201 games against the spread, going 108-93 (53.7%). Break-even after the sportsbook's cut is 52.4%, so it's slightly above water, but 201 games is nowhere near enough to call that a real edge.",
+     "By league: NFL 10-6, college football 18-15, college basketball 39-35, NBA 41-37. Every league is above 50%, but none of them is far enough above break-even to mean much yet."
+    ]
+   },
+   {
+    "h": "The humbling part",
+    "p": [
+     "The most useful thing I added this week was a control group. A rule as simple as 'always take the favorite' went 111-89-1 (55.5%) on the same games, which is better than the model. Underdogs went the other way. That tells me the model has been too willing to take points with underdogs, which lines up with what the lessons system had already started flagging.",
+     "The other pattern: the bigger the model's disagreement with the market, the worse it did. Picks with an edge under 1 point went 27-22, while picks with an edge of 3+ points went 9-9. When the model strongly disagrees with the market, the market has usually known something the model missed."
+    ]
+   },
+   {
+    "h": "What the market data shows",
+    "p": [
+     "Converting DraftKings moneylines into implied probabilities (with the book's cut removed) and comparing them with actual results, prices missed actual win rates by about 5 percentage points on average, and favorites won slightly more often than their prices implied. That's consistent with the favorite-longshot bias economists have documented in betting markets, though with this few games it could still be noise."
+    ]
+   },
+   {
+    "h": "What the lessons system learned",
+    "p": [
+     "Fifteen hypotheses have been added so far. Two have earned a 'Keep': only taking huge college underdogs when there's a big edge (12-8), and not taking the underdog's points when the model likes the favorite to win (8-7). One was dropped: a rule steering away from 10+ point spreads, because those big-spread picks were actually winning. Everything else is still being tested."
+    ]
+   },
+   {
+    "h": "What's changing",
+    "p": [
+     "Starting November 13 the model works differently in three ways. Every game now starts from a public rating system (Torvik for college basketball, net rating for the NBA, FPI or SP+ for football) so the baseline is consistent and testable. Every game also logs structured data (ratings, rest days, back-to-backs, injuries, travel, strength of schedule, opening and closing lines) so that at the end of the month I can fit an actual regression instead of eyeballing patterns. And only the model's strongest spots are marked as official plays, which get their own record, while the rest of the board keeps getting forecast as data.",
+     "The goal for the end of November is formula v1: the adjustments that held up, backed by the data, then tested on new games in December."
+    ]
+   }
+  ]
+ }
+]

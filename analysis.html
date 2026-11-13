@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analysis | Isaac Raphel</title>
+<meta name="description" content="How the forecasting model is performing: record over time, closing line value, calibration, simple-strategy benchmarks and a market efficiency check.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0d12; --panel:#12151d; --line:#242a37; --line2:#1b202b;
+  --text:#e8ebf2; --muted:#9aa3b5; --dim:#6b7488;
+  --green:#3ddc97; --red:#ff6b81; --blue:#5aa9ff; --purple:#a77bff; --amber:#ffb547; --teal:#2dd4bf; --orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted);align-items:center}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
+.navlinks a.navbtn{color:#0b0d12;background:var(--green);padding:7px 14px;border-radius:8px;font-weight:600}
+@media(max-width:700px){.hide-sm{display:none}}
+header{padding:44px 0 6px}
+h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
+.sub{color:var(--muted);margin-top:8px;max-width:780px}
+.note{font-size:13px;color:var(--dim);margin-top:8px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;border-top:3px solid var(--blue)}
+.tile:nth-child(2){border-top-color:var(--green)}.tile:nth-child(3){border-top-color:var(--purple)}.tile:nth-child(4){border-top-color:var(--amber)}
+.tile .l{font-size:12.5px;color:var(--muted)}.tile .n{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-top:2px}.tile .s{font-size:12px;color:var(--dim)}
+@media(max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:18px}
+.card h2{font-size:19px;letter-spacing:-.01em}
+.card .what{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:820px}
+.chartbox{position:relative;height:320px;margin-top:16px}
+.takeaway{margin-top:14px;font-size:14px;color:#c3c9d6;border-left:3px solid var(--blue);padding-left:12px}
+.takeaway b{color:var(--text)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid2 .card{margin-top:18px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.econ{border-color:rgba(255,181,71,.35)}
+.econ .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);background:rgba(255,181,71,.1);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+.econ ul{margin:10px 0 0 18px;color:#c3c9d6;font-size:14px}
+.econ li{margin-top:6px}
+.small{font-size:12.5px;color:var(--dim);margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="index.html#how" class="hide-sm">How it works</a>
+    <a href="analysis.html" class="on">Analysis</a>
+    <a href="notes.html" class="hide-sm">Notes</a>
+    <a href="model.html" class="navbtn">Live model →</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+<header>
+  <h1>Analysis</h1>
+  <p class="sub">How the model is actually doing, measured the way forecasters measure it: not just wins and losses, but whether it beats the closing price, whether its probabilities are honest, and whether it beats simple strategies anyone could follow.</p>
+  <p class="note" id="asof">Loading…</p>
+</header>
+
+<section class="tiles">
+  <div class="tile"><div class="l">Official plays (ATS)</div><div class="n" id="k-off">—</div><div class="s" id="k-off-s">Tracked from Nov 13</div></div>
+  <div class="tile"><div class="l">Full board (ATS)</div><div class="n" id="k-all">—</div><div class="s" id="k-all-s">&nbsp;</div></div>
+  <div class="tile"><div class="l">Avg closing line value</div><div class="n" id="k-clv">—</div><div class="s" id="k-clv-s">&nbsp;</div></div>
+  <div class="tile"><div class="l">Games in dataset</div><div class="n" id="k-n">—</div><div class="s" id="k-n-s">&nbsp;</div></div>
+</section>
+
+<section class="card">
+  <h2>Accuracy over time</h2>
+  <p class="what">Running win rate against the spread, day by day. The dashed line is 52.4%, the break-even rate after the sportsbook's cut. Early swings are expected; the line should settle as the sample grows.</p>
+  <div class="chartbox"><canvas id="c-cum"></canvas></div>
+  <p class="takeaway" id="t-cum"></p>
+</section>
+
+<section class="card">
+  <h2>Model vs. simple strategies</h2>
+  <p class="what">A forecast only matters if it beats something simpler. These are the same graded games, picked by rules anyone could follow: always take the favorite, always the underdog, always the home team, and the public rating system with no adjustments.</p>
+  <div class="chartbox"><canvas id="c-ctrl"></canvas></div>
+  <p class="takeaway" id="t-ctrl"></p>
+  <p class="small">Simple strategies are graded on each game's latest posted DraftKings spread; the model is graded on the line it actually picked. "Ratings only" starts once rating data is logged (from Nov 13).</p>
+</section>
+
+<div class="grid2">
+  <section class="card">
+    <h2>Closing line value by day</h2>
+    <p class="what">Did the model's number beat the market's final number? Positive means the line moved toward our pick before tip-off, which is the best early sign of a sharp model.</p>
+    <div class="chartbox" style="height:260px"><canvas id="c-clv"></canvas></div>
+    <p class="takeaway" id="t-clv"></p>
+  </section>
+  <section class="card">
+    <h2>Calibration</h2>
+    <p class="what">When the model says a team wins 70% of the time, does it? Points on the dashed line mean the probabilities are honest; above it means the model was too cautious, below it too confident.</p>
+    <div class="chartbox" style="height:260px"><canvas id="c-cal"></canvas></div>
+    <p class="takeaway" id="t-cal"></p>
+  </section>
+</div>
+
+<section class="card econ">
+  <span class="tag">Econ connection</span>
+  <h2>Is the betting market efficient?</h2>
+  <p class="what">Every moneyline is a price, and a price implies a probability. After removing the sportsbook's cut, this compares what DraftKings' prices implied with how often those teams actually won. If the market is efficient, the dots sit on the dashed line.</p>
+  <div class="chartbox"><canvas id="c-mkt"></canvas></div>
+  <p class="takeaway" id="t-mkt"></p>
+  <ul>
+    <li><b>Prices as information.</b> A competitive market's price should reflect all public information, so a forecast only has value where it knows something the price doesn't. That's why the model is built to avoid double counting what's already priced in.</li>
+    <li><b>The vig is a wedge.</b> Implied probabilities on both sides add up to more than 100%. The extra is the book's cut, which works like a tax wedge between what bettors pay and the fair price, and it's why break-even is 52.4% instead of 50%.</li>
+    <li><b>Risk preferences.</b> A well-known pattern in betting markets is the favorite-longshot bias: long shots tend to win less often than their prices imply, because some bettors pay extra for a small chance at a big payout, the same way people buy lottery tickets.</li>
+  </ul>
+  <p class="small" id="mkt-n"></p>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University · Research project, simulated stakes only</span>
+  <a href="model.html">See every game →</a>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+const C={text:'#e8ebf2',muted:'#9aa3b5',dim:'#6b7488',grid:'rgba(255,255,255,.06)',green:'#3ddc97',red:'#ff6b81',blue:'#5aa9ff',purple:'#a77bff',amber:'#ffb547',teal:'#2dd4bf',orange:'#fb923c'};
+const $=id=>document.getElementById(id);
+const pct=x=>(100*x).toFixed(1)+'%';
+const fmtDay=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+if(window.Chart){Chart.defaults.color=C.muted;Chart.defaults.font.family='Inter,system-ui,sans-serif';Chart.defaults.borderColor=C.grid;}
+
+function parseSpread(s){const m=/^(.+?)\s+([+-]?\d+(?:\.\d+)?)/.exec(s||'');return m?{team:m[1].trim(),line:+m[2]}:null;}
+function parseFinal(s){const parts=(s||'').split(',').map(x=>x.trim());if(parts.length!==2)return null;
+  const p=parts.map(x=>{const m=/^(.+?)\s+(\d+)$/.exec(x);return m?{team:m[1].trim(),pts:+m[2]}:null;});return p[0]&&p[1]?{away:p[0],home:p[1]}:null;}
+function parseML(s){const out={};(s||'').split('/').forEach(x=>{const m=/^\s*(.+?)\s+([+-]\d+)\s*$/.exec(x);if(m)out[m[1].trim()]=+m[2];});return out;}
+const impl=o=>o<0?(-o)/(-o+100):100/(o+100);
+function rec(arr){const w=arr.filter(x=>x==='W').length,l=arr.filter(x=>x==='L').length,p=arr.filter(x=>x==='P').length;return{w,l,p,n:w+l,rate:w+l?w/(w+l):null,s:w+'-'+l+(p?'-'+p:'')};}
+function coverResult(margin){return margin>0?'W':margin<0?'L':'P';}
+
+// per-game outcome for a team at a home-perspective line
+function gameInfo(g){
+  const f=parseFinal(g.final), sp=parseSpread(g.dk_spread)||parseSpread(g.fd_spread);
+  if(!f||!sp)return null;
+  let lineHome;
+  if(sp.team===f.home.team)lineHome=sp.line;else if(sp.team===f.away.team)lineHome=-sp.line;else return null;
+  const homeMargin=f.home.pts-f.away.pts;
+  const homeRes=coverResult(homeMargin+lineHome), awayRes=coverResult(-homeMargin-lineHome);
+  return{f,lineHome,homeRes,awayRes,favRes:lineHome<0?homeRes:lineHome>0?awayRes:null,dogRes:lineHome<0?awayRes:lineHome>0?homeRes:null};
+}
+
+function line(id,cfg){if(!window.Chart)return;new Chart($(id),cfg);}
+const baseOpts=(yTitle,extra={})=>({responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+  plugins:{legend:{labels:{boxWidth:12,boxHeight:12,usePointStyle:true}},tooltip:{backgroundColor:'#171b25',borderColor:'#2b3242',borderWidth:1}},
+  scales:{x:{grid:{display:false}},y:{title:{display:!!yTitle,text:yTitle,color:C.dim}}},...extra});
+
+fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()).then(G=>{
+  const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
+  const days=[...new Set(graded.map(g=>g.date))].sort();
+  $('asof').textContent='Through '+(days.length?fmtDay(days[days.length-1]):'—')+' · '+graded.length+' graded games. Data-collection phase: small samples, so read these as early signals.';
+
+  // tiles
+  const all=rec(graded.map(g=>g.spread_result));
+  const offRows=graded.filter(g=>g.official===true), off=rec(offRows.map(g=>g.spread_result));
+  $('k-all').textContent=all.s;$('k-all-s').textContent=all.rate!=null?pct(all.rate)+' vs 52.4% break-even':'';
+  $('k-off').textContent=off.n?off.s:'—';if(off.n)$('k-off-s').textContent=pct(off.rate)+' · the record that judges the model';
+  const clvRows=graded.filter(g=>typeof g.clv==='number');const avgClv=clvRows.length?clvRows.reduce((a,g)=>a+g.clv,0)/clvRows.length:null;
+  $('k-clv').textContent=avgClv==null?'—':(avgClv>=0?'+':'')+avgClv.toFixed(2)+' pts';$('k-clv-s').textContent=clvRows.length?clvRows.length+' games measured':'';
+  $('k-n').textContent=G.length.toLocaleString();$('k-n-s').textContent=days.length+' days graded';
+
+  // cumulative
+  let w=0,l=0,ow=0,ol=0;const cum=[],cumOff=[],be=[];
+  days.forEach(d=>{graded.filter(g=>g.date===d).forEach(g=>{if(g.spread_result==='W')w++;if(g.spread_result==='L')l++;if(g.official===true){if(g.spread_result==='W')ow++;if(g.spread_result==='L')ol++;}});
+    cum.push(w+l?+(100*w/(w+l)).toFixed(1):null);cumOff.push(ow+ol?+(100*ow/(ow+ol)).toFixed(1):null);be.push(52.4);});
+  const ds=[{label:'Full board',data:cum,borderColor:C.blue,backgroundColor:C.blue,tension:.25,pointRadius:3},
+            {label:'Break-even 52.4%',data:be,borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}];
+  if(cumOff.some(x=>x!=null))ds.splice(1,0,{label:'Official plays',data:cumOff,borderColor:C.green,backgroundColor:C.green,tension:.25,pointRadius:3,spanGaps:true});
+  line('c-cum',{type:'line',data:{labels:days.map(fmtDay),datasets:ds},options:baseOpts('Win % against the spread',{scales:{x:{grid:{display:false}},y:{suggestedMin:40,suggestedMax:70,ticks:{callback:v=>v+'%'}}}})});
+  $('t-cum').innerHTML=all.rate!=null?('<b>'+pct(all.rate)+'</b> over '+all.n+' decided games. A real edge usually needs a few hundred games to separate from luck, so this is still early.'):'';
+
+  // controls
+  const infos=graded.map(g=>({g,i:gameInfo(g)})).filter(x=>x.i);
+  const fav=rec(infos.map(x=>x.i.favRes).filter(Boolean)), dog=rec(infos.map(x=>x.i.dogRes).filter(Boolean)), home=rec(infos.map(x=>x.i.homeRes));
+  const ratRows=infos.filter(x=>x.g.features&&typeof x.g.features.rating_line==='number');
+  const rat=rec(ratRows.map(x=>{const v=-x.g.features.rating_line+x.i.lineHome;return v>0?x.i.homeRes:v<0?x.i.awayRes:null;}).filter(Boolean));
+  const bars=[['Model (full board)',all,C.blue]];
+  if(off.n)bars.push(['Official plays',off,C.green]);
+  bars.push(['Always favorite',fav,C.purple],['Always underdog',dog,C.orange],['Always home',home,C.teal]);
+  if(rat.n>=10)bars.push(['Ratings only',rat,C.amber]);
+  line('c-ctrl',{type:'bar',data:{labels:bars.map(b=>b[0]),datasets:[{label:'Win % ATS',data:bars.map(b=>b[1].rate!=null?+(100*b[1].rate).toFixed(1):null),backgroundColor:bars.map(b=>b[2]),borderRadius:6,maxBarThickness:70},
+    {type:'line',label:'Break-even 52.4%',data:bars.map(()=>52.4),borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
+    options:baseOpts('Win % against the spread',{plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>c.datasetIndex===0?('Record '+bars[c.dataIndex][1].s):''}}},scales:{x:{grid:{display:false}},y:{min:30,suggestedMax:65,ticks:{callback:v=>v+'%'}}}})});
+  const best=bars.slice(1).filter(b=>b[1].rate!=null).sort((a,b)=>b[1].rate-a[1].rate)[0];
+  $('t-ctrl').innerHTML=all.rate!=null&&best?('The model is at <b>'+pct(all.rate)+'</b>. The best simple strategy so far is <b>'+best[0].toLowerCase()+'</b> at '+pct(best[1].rate)+' ('+best[1].s+'). '+(all.rate>best[1].rate?'So far the model is beating every simple rule.':'Beating that simple rule is the bar the model has to clear.')):'';
+
+  // CLV by day
+  const clvDays=days.filter(d=>clvRows.some(g=>g.date===d));
+  const clvAvg=clvDays.map(d=>{const r=clvRows.filter(g=>g.date===d);return +(r.reduce((a,g)=>a+g.clv,0)/r.length).toFixed(2);});
+  line('c-clv',{type:'bar',data:{labels:clvDays.map(fmtDay),datasets:[{label:'Avg CLV (points)',data:clvAvg,backgroundColor:clvAvg.map(v=>v>=0?C.green:C.red),borderRadius:5,maxBarThickness:46}]},
+    options:baseOpts('Points vs closing line',{plugins:{legend:{display:false}}})});
+  $('t-clv').innerHTML=avgClv!=null?('Average <b>'+(avgClv>=0?'+':'')+avgClv.toFixed(2)+' points</b> across '+clvRows.length+' games since tracking started. '+(avgClv>0?'Positive so far: the market has tended to move toward the model.':'Not positive yet: the market has tended to move away from the model\'s picks.')):'Tracking started Nov 10; bars appear as games are graded.';
+
+  // calibration
+  const mlRows=G.filter(g=>(g.ml_result==='W'||g.ml_result==='L')&&/(\d+)%/.test(g.model_ml||''));
+  const bk=[[50,60],[60,70],[70,80],[80,90],[90,100.1]];
+  const cal=bk.map(([a,b])=>{const r=mlRows.filter(g=>{const p=+/(\d+)%/.exec(g.model_ml)[1];return p>=a&&p<b;});
+    if(r.length<5)return null;const pr=r.reduce((s,g)=>s+ +/(\d+)%/.exec(g.model_ml)[1],0)/r.length;const ac=100*r.filter(g=>g.ml_result==='W').length/r.length;return{x:+pr.toFixed(1),y:+ac.toFixed(1),n:r.length};}).filter(Boolean);
+  line('c-cal',{type:'scatter',data:{datasets:[{label:'Model',data:cal,backgroundColor:C.purple,pointRadius:ctx=>{const v=ctx.raw;return v?Math.max(5,Math.min(14,Math.sqrt(v.n)*1.6)):5;}},
+      {type:'line',label:'Perfect calibration',data:[{x:50,y:50},{x:100,y:100}],borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
+    options:baseOpts('',{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw&&c.raw.n?('Said '+c.raw.x+'%, won '+c.raw.y+'% ('+c.raw.n+' games)'):''}}},
+      scales:{x:{type:'linear',min:50,max:100,title:{display:true,text:'Model win chance',color:C.dim},ticks:{callback:v=>v+'%'}},y:{min:30,max:100,title:{display:true,text:'Actual win rate',color:C.dim},ticks:{callback:v=>v+'%'}}}})});
+  if(cal.length){const err=cal.reduce((s,c)=>s+c.n*(c.y-c.x),0)/cal.reduce((s,c)=>s+c.n,0);
+    $('t-cal').innerHTML='Across '+mlRows.length+' moneyline calls, the model\'s favorites won <b>'+(Math.abs(err)<2?'about as often as it said':err>0?Math.abs(err).toFixed(1)+' points more often than it said':Math.abs(err).toFixed(1)+' points less often than it said')+'</b>. '+(Math.abs(err)<2?'That\'s well calibrated.':err>0?'So it has been a bit too cautious.':'So it has been a bit overconfident.');}
+
+  // market efficiency (econ)
+  const pts=[];let vigSum=0,vigN=0;
+  G.forEach(g=>{const f=parseFinal(g.final);if(!f)return;const ml=parseML(g.dk_ml);const teams=Object.keys(ml);if(teams.length!==2)return;
+    const p1=impl(ml[teams[0]]),p2=impl(ml[teams[1]]),tot=p1+p2;vigSum+=tot-1;vigN++;
+    const winner=f.home.pts>f.away.pts?f.home.team:f.away.pts>f.home.pts?f.away.team:null;if(!winner)return;
+    if(!teams.includes(f.home.team)||!teams.includes(f.away.team))return;
+    teams.forEach((t,i)=>pts.push({p:(i?p2:p1)/tot,won:t===winner}));});
+  const mb=[[0,.2],[.2,.4],[.4,.6],[.6,.8],[.8,1.01]];
+  const mk=mb.map(([a,b])=>{const r=pts.filter(x=>x.p>=a&&x.p<b);if(r.length<8)return null;return{x:+(100*r.reduce((s,x)=>s+x.p,0)/r.length).toFixed(1),y:+(100*r.filter(x=>x.won).length/r.length).toFixed(1),n:r.length};}).filter(Boolean);
+  line('c-mkt',{type:'scatter',data:{datasets:[{label:'DraftKings prices',data:mk,backgroundColor:C.amber,pointRadius:ctx=>{const v=ctx.raw;return v?Math.max(5,Math.min(14,Math.sqrt(v.n)*1.3)):5;}},
+      {type:'line',label:'Efficient market',data:[{x:0,y:0},{x:100,y:100}],borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
+    options:baseOpts('',{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw&&c.raw.n?('Priced at '+c.raw.x+'%, won '+c.raw.y+'% ('+c.raw.n+' teams)'):''}}},
+      scales:{x:{type:'linear',min:0,max:100,title:{display:true,text:'Win probability implied by the price (vig removed)',color:C.dim},ticks:{callback:v=>v+'%'}},y:{min:0,max:100,title:{display:true,text:'Actual win rate',color:C.dim},ticks:{callback:v=>v+'%'}}}})});
+  const vig=vigN?100*vigSum/vigN:null;
+  if(mk.length){const dev=mk.reduce((s,c)=>s+c.n*Math.abs(c.y-c.x),0)/mk.reduce((s,c)=>s+c.n,0);
+    $('t-mkt').innerHTML='On average the prices missed actual win rates by <b>'+dev.toFixed(1)+' percentage points</b>, and the book\'s built-in cut averaged <b>'+(vig!=null?vig.toFixed(1)+'%':'—')+'</b> per game. '+(dev<4?'That\'s close to the line: the market is hard to beat, which is the point of the project.':'Some gaps show up, but with this few games they could easily be noise.');}
+  $('mkt-n').textContent=pts.length?('Based on '+pts.length+' team results from '+vigN+' games with DraftKings moneylines. Buckets need at least 8 teams to show.'):'';
+}).catch(e=>{$('asof').textContent='Could not load data.';});
+</script>
+</body>
+</html>
