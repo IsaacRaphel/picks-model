@@ -176,18 +176,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></header>
 
 
-<section id="today"><div class="wrap">
-  <div class="head">
-    <div>
-      <div class="kicker" id="td-kicker">Today's forecasts</div>
-      <h2 style="margin:0">Today's baseline forecasts</h2>
-    </div>
-    <a class="btn primary" href="model.html">See every game →</a>
-  </div>
-  <div class="topcard" id="td-top"><div><div class="lbl">Top pick</div><div class="pk">Loading…</div></div></div>
-  <div class="glist" id="td-list"></div>
-  <div class="seeall"><a class="btn ghost" href="model.html">Open the live model →</a><span class="muted" id="td-count"></span></div>
-</div></section>
 
 <section id="about"><div class="wrap about">
   <div>
@@ -287,44 +275,7 @@ Promise.all([
     document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+(graded.length<500?' Data-collection phase: early sample, not yet statistically meaningful.':'');}
 }).catch(()=>{});
 
-Promise.all([
-  fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()),
-  fetch('data/picks.json',{cache:'no-store'}).then(r=>r.json())
-]).then(([games,picks])=>{
-  const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;};
-  const days=[...new Set(games.map(g=>g.date))].sort();const day=days[days.length-1];if(!day)return;
-  const nice=new Date(day+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
-  const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/New_York'});
-  document.getElementById('td-kicker').textContent=(day===today?"Today's forecasts · ":'Latest forecasts · ')+nice;
-  const rows=games.filter(g=>g.date===day);
-  const top=picks.find(p=>p.kind==='Pick of the day'&&p.date===day);
-  const tc=document.getElementById('td-top');tc.replaceChildren();
-  if(top){
-    const g=rows.find(r=>r.spread_pick&&r.spread_pick.startsWith(top.pick.replace(/ ML$/,'')))||rows.find(r=>top.pick.startsWith(r.ml_pick+' ')||top.pick===r.ml_pick+' ML');
-    const a=el('div');a.append(el('div','lbl','Top pick of the day'));
-    {const g2=picks.filter(p=>p.kind==='Pick of the day'&&p.date<=day&&(p.result==='W'||p.result==='L')).sort((x,y)=>x.date<y.date?1:-1);let n=0;for(const p of g2){if(p.result==='W')n++;else break;}
-     if(n)a.append(el('div','streak','🔥 '+n+'-day win streak'));}
-    a.append(el('div','pk',top.pick));
-    if(g&&g.note)a.append(el('div','why',g.note));tc.append(a);
-    const o=el('div','odds');[['DraftKings',top.dk_odds],['FanDuel',top.fd_odds],['Kalshi',top.kalshi_odds]].forEach(([b,v])=>{const s=el('span');s.append(document.createTextNode(b+' '));s.append(el('b',null,v||'n/a'));o.append(s);});
-    if(['W','L','P'].includes(top.result)){const s=el('span');s.append(document.createTextNode('Result '));s.append(el('b','res-'+top.result,top.result==='W'?'Win':top.result==='L'?'Loss':'Push'));o.append(s);}
-    tc.append(o);
-  } else { tc.append(el('div','why','No top pick posted for this day yet.')); }
-  const order={NFL:0,NBA:1,CBB:2,CFB:3};
-  const show=rows.slice().sort((a,b)=>(order[a.league]-order[b.league])).slice(0,6);
-  const list=document.getElementById('td-list');list.replaceChildren();
-  show.forEach(g=>{
-    const c=el('a','g');c.href='model.html';c.style.textDecoration='none';
-    const r1=el('div','r1');r1.append(el('span','lg lg-'+g.league,g.league));r1.append(el('span',null,g.final||g.tip||''));c.append(r1);
-    c.append(el('div','mt',g.matchup));
-    const r3=el('div','r3');const l=el('span');l.append(document.createTextNode('Pick '));l.append(el('b',null,(g.spread_pick||'').replace(/ \((DK|FD)\)$/,'')));r3.append(l);
-    const res=g.spread_result;r3.append(['W','L','P'].includes(res)?el('span','res-'+res,res==='W'?'Win':res==='L'?'Loss':'Push'):el('span',null,'Model '+(g.model_spread||'')));
-    c.append(r3);
-    if(g.lessons_applied){c.append(el('div','ovr','Lesson test '+g.lessons_applied.replace(/,/g,', ')+' changed this pick'));}
-    list.append(c);
-  });
-  document.getElementById('td-count').textContent=rows.length>show.length?('Showing '+show.length+' of '+rows.length+' games'):'';
-}).catch(()=>{});
+
 </script>
 </body>
 </html>
