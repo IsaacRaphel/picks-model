@@ -68,6 +68,7 @@ header.hero{padding:88px 0 64px;position:relative;overflow:hidden}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
 h1{font-size:clamp(34px,6vw,58px);line-height:1.08;letter-spacing:-.03em;font-weight:800;max-width:820px}
 h1 .grad{background:linear-gradient(90deg,var(--blue),var(--purple) 55%,var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede.phase{font-size:15.5px;border-left:3px solid var(--amber);padding-left:14px;margin-top:16px}
 .lede{margin-top:20px;font-size:clamp(16px,2.2vw,19px);color:var(--muted);max-width:680px}
 .cta{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line)}
@@ -150,17 +151,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="tagrow"><span class="beta">Beta</span><div class="eyebrow"><span class="dot"></span> Live project · updated daily</div></div>
+  <div class="tagrow"><span class="beta">Beta</span><div class="eyebrow"><span class="dot"></span> Phase 1: data collection · updated daily</div></div>
   <h1>Can a disciplined model find where <span class="grad">markets misprice outcomes?</span></h1>
   <p class="lede">A forecasting system that collects market data every day, makes its own predictions, grades itself against the market's final price, and only keeps the changes that prove themselves over time.</p>
+  <p class="lede phase">Right now the project is in its data-collection phase. Every day it logs prices, makes baseline forecasts and grades them, building the dataset the real model will be built and tested on. Today's forecasts are a starting point, not the finished model.</p>
   <div class="cta">
     <a class="btn primary" href="model.html">View the live model</a>
     <a class="btn ghost" href="#how">How it works</a>
   </div>
 
   <div class="stats">
-    <div class="stat"><div class="n" id="st-games">151</div><div class="l">Games forecast and graded</div></div>
-    <div class="stat"><div class="n" id="st-ats">57.0%</div><div class="l">Accuracy vs. 52.4% break-even</div></div>
+    <div class="stat"><div class="n" id="st-games">151</div><div class="l">Games logged and graded</div></div>
+    <div class="stat"><div class="n" id="st-ats">57.0%</div><div class="l">Baseline accuracy (break-even 52.4%)</div></div>
     <div class="stat"><div class="n" id="st-lessons">11</div><div class="l">Hypotheses being tested</div></div>
     <div class="stat"><div class="n">3</div><div class="l">Markets benchmarked</div></div>
   </div>
@@ -172,7 +174,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="head">
     <div>
       <div class="kicker" id="td-kicker">Today's forecasts</div>
-      <h2 style="margin:0">What the model is predicting</h2>
+      <h2 style="margin:0">Today's baseline forecasts</h2>
     </div>
     <a class="btn primary" href="model.html">See every game →</a>
   </div>
@@ -241,8 +243,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="kicker">Roadmap</div>
   <h2>The plan</h2>
   <div class="timeline">
-    <div class="tl done"><div class="when">Early Nov 2026</div><h3>Build the pipeline</h3><p>Daily data collection, forecasts across four leagues, automatic grading, and a live dashboard.</p></div>
-    <div class="tl now"><div class="when">November 2026</div><h3>Collect data and test hypotheses</h3><p>Grow the dataset to 1,000+ graded games while the lessons system adds, tests, keeps and drops rules.</p></div>
+    <div class="tl done"><div class="when">Early Nov 2026</div><h3>Build the data pipeline</h3><p>Daily data collection, forecasts across four leagues, automatic grading, and a live dashboard.</p></div>
+    <div class="tl now"><div class="when">November 2026 · now</div><h3>Phase 1: collect data and test hypotheses</h3><p>Log 1,000+ graded games with baseline forecasts while the lessons system adds, tests, keeps and drops rules. The goal of this phase is a clean dataset and a list of proven adjustments, not a winning record.</p></div>
     <div class="tl"><div class="when">End of November</div><h3>Formula v1</h3><p>Combine the lessons that held up into one written formula, with the evidence behind each piece.</p></div>
     <div class="tl"><div class="when">December 2026</div><h3>Out-of-sample test</h3><p>Run v1 on new games without changing it. If it holds up against the market, it becomes the model. If not, revise and test v2.</p></div>
   </div>
@@ -266,7 +268,7 @@ Promise.all([
   document.getElementById('st-lessons').textContent=lessons.filter(x=>x.status&&x.status!=='Setup').length;
   const last=graded.map(g=>g.date).sort().pop();
   if(last){const d=new Date(last+'T12:00:00');
-    document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+(graded.length<500?' Early sample, not yet statistically meaningful.':'');}
+    document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+(graded.length<500?' Data-collection phase: early sample, not yet statistically meaningful.':'');}
 }).catch(()=>{});
 
 Promise.all([
