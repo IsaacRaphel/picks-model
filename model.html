@@ -114,6 +114,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .navlinks a:hover{color:var(--text);background:rgba(255,255,255,.04)}
 .navlinks a.on{color:#fff;background:linear-gradient(90deg,rgba(90,169,255,.22),rgba(167,123,255,.22));box-shadow:inset 0 0 0 1px rgba(167,123,255,.35)}
 @media(max-width:560px){.brand{display:none}nav .wrap{justify-content:center}.navlinks{gap:2px!important}.navlinks a{padding:6px 7px;font-size:13px}}
+/* nav-v3 */
+@media(max-width:560px){.navlinks a.navbtn{margin:0 2px}.navlinks .arr{display:none}}
+.navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#5aa9ff,#a77bff)!important;box-shadow:0 0 0 1px rgba(167,123,255,.5),0 4px 18px rgba(124,108,255,.35)!important;margin:0 4px}
+.navlinks a.navbtn:hover{filter:brightness(1.12)}
+.navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 4px 18px rgba(124,108,255,.45)!important}
 </style>
 </head>
 <body>
@@ -122,7 +127,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="navlinks">
     <a href="index.html">Overview</a>
     <a href="index.html#plan">Roadmap</a>
-    <a href="model.html" class="on" aria-current="page">Live model</a>
+    <a href="model.html" class="navbtn on" aria-current="page">Live model<span class="arr"> →</span></a>
     <a href="analysis.html">Analysis</a>
     <a href="notes.html">Notes</a>
   </div>
