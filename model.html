@@ -141,10 +141,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </header>
 
 <section class="tiles">
-  <div class="tile"><div class="l">Baseline spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div><div class="x">Every game, forecast as data. Most are close calls.</div></div>
+  <div class="tile"><div class="l">Baseline spread record</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div><div class="x" id="t-ats-x">Every game, forecast as data. Most are close calls.</div></div>
   <div class="tile"><div class="l">Official plays</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">Tracked from Nov 13</div><div class="x">The 2 to 8 games a day where the model thinks it has a real edge. This record is the one that judges the model.</div></div>
   <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div><div class="x">The single most confident official play each day.</div></div>
-  <div class="tile"><div class="l">Games graded</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div><div class="x">Every game logged and graded since Nov 2.</div></div>
+  <div class="tile"><div class="l">Moneyline (picked the winner)</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div><div class="x">Just picking who wins. Most picks are favorites, so a high % is expected. <a href="analysis.html" style="color:#9cc8ff">See if the win chances were accurate →</a></div></div>
 </section>
 
 <div class="tabs" role="tablist">
@@ -245,8 +245,8 @@ function drawTiles(){
   $('t-top').textContent=t.s;
   {const s=potdStreak(P);const el2=document.querySelector('#t-top + .s');if(el2)el2.textContent=s?('🔥 '+s+'-day win streak'):'One best play per day';}
   const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
-  $('t-n').textContent=graded.length.toLocaleString();
-  $('t-days').textContent=new Set(graded.map(g=>g.date)).size+' days';
+  {const m=rec(G.map(g=>g.ml_result));$('t-n').textContent=m.s;$('t-days').textContent=m.pct!=null?m.pct.toFixed(1)+'% of winners picked':'';}
+  $('t-ats-x').textContent='Every game since Nov 2 ('+graded.length+' graded over '+new Set(graded.map(g=>g.date)).size+' days), forecast as data. Most are close calls.';
 }
 function days(){return[...new Set(G.map(g=>g.date))].sort();}
 function drawDays(){
