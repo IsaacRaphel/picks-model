@@ -148,6 +148,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 4px 18px rgba(124,108,255,.45)!important}
 .resp{border-left:3px solid var(--blue)}
 .resp a{color:#9cc8ff}
+.cta{gap:8px!important}
+.chip{display:inline-block;padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--text);text-decoration:none;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.chip:hover{border-color:rgba(167,123,255,.6);background:rgba(167,123,255,.10)}
+section{scroll-margin-top:70px}
 </style>
 </head>
 <body>
@@ -169,7 +173,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <p class="lede">A forecasting system that collects market data every day, makes its own predictions, grades itself against the market's final price, and only keeps the changes that prove themselves over time.</p>
   <p class="lede phase">Right now the project is in its data-collection phase. Every day it logs prices, makes baseline forecasts and grades them, building the dataset the real model will be built and tested on. Today's forecasts are a starting point, not the finished model.</p>
   <div class="cta">
-    <a class="btn primary" href="#how">How it works</a>
+    <a class="chip" href="#about">About me</a>
+    <a class="chip" href="#how">How it works</a>
+    <a class="chip" href="#learning">How it evolves</a>
+    <a class="chip" href="#plan">Roadmap</a>
+    <a class="chip" href="#responsible">About this project</a>
+    <a class="chip" href="#deeper">See the work</a>
   </div>
 
   <div class="stats">
