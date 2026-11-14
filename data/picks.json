@@ -118,5 +118,15 @@
   "fd_odds": "-104",
   "kalshi_odds": "-104",
   "result": "W"
+ },
+ {
+  "id": "2026-11-14-potd",
+  "date": "2026-11-14",
+  "kind": "Pick of the day",
+  "pick": "ORE -10.5",
+  "dk_odds": "-110",
+  "fd_odds": "-110",
+  "kalshi_odds": "-104",
+  "result": "pending"
  }
 ]
