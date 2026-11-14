@@ -10,47 +10,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0b0d12; --panel:#12151d; --panel2:#171b25; --line:#242a37; --line2:#1b202b;
-  --text:#e8ebf2; --muted:#9aa3b5; --dim:#6b7488;
-  --green:#3ddc97; --red:#ff6b81; --blue:#5aa9ff; --purple:#a77bff; --amber:#ffb547; --teal:#2dd4bf; --orange:#fb923c;
+  --bg:#f9f9ff; --panel:#ffffff; --panel2:#16324a; --line:#dfe3ea; --line2:#f1f4f8;
+  --text:#16324a; --muted:#556677; --dim:#767676;
+  --green:#3a9a4a; --red:#c94545; --blue:#1f7fb3; --purple:#224f6a; --amber:#1f7fb3; --teal:#54b7e8; --orange:#8a9aa8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:10;background:rgba(11,13,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:10;background:rgba(249,249,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
 .brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
 .navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted)}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
 
 header{padding:44px 0 8px}
-.beta{display:inline-block;vertical-align:middle;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#0b0d12;background:linear-gradient(90deg,var(--blue),var(--purple));padding:5px 11px;border-radius:999px;position:relative;top:-4px}
+.beta{display:inline-block;vertical-align:middle;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#f9f9ff;background:linear-gradient(90deg,var(--blue),var(--purple));padding:5px 11px;border-radius:999px;position:relative;top:-4px}
 h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
 .sub{color:var(--muted);margin-top:8px;max-width:760px}
 .updated{font-size:13px;color:var(--dim);margin-top:8px}
 
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
-.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;border-top:3px solid rgba(167,123,255,.45)}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;border-top:3px solid rgba(34,79,106,.45)}
 .tile .l{font-size:12.5px;color:var(--muted)}.tile .n{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-top:2px}.tile .s{font-size:12px;color:var(--dim)}
 @media(max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
 
-.tabs{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:28px;background:#0f1218}
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:28px;background:#ffffff}
 .tabs button,.seg button{font:inherit;background:none;border:0;color:var(--muted);cursor:pointer}
 .tabs button{padding:9px 16px;font-size:14.5px}
 .tabs button.on{color:#fff;background:linear-gradient(90deg,var(--purple),var(--blue))}
 .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#0f1218}
-.seg button{padding:6px 12px;font-size:13px}.seg button:hover{color:#fff}
-.seg button.on{color:#fff;background:#2b3242}
-.seg button.on[data-league=NFL]{background:#2563eb}.seg button.on[data-league=NBA]{background:#ea580c}.seg button.on[data-league=CFB]{background:#7c3aed}.seg button.on[data-league=CBB]{background:#0d9488}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#ffffff}
+.seg button{padding:6px 12px;font-size:13px}.seg button:hover{color:#16324a}
+.seg button.on{color:#fff;background:#224f6a}
+.seg button.on[data-league=NFL]{background:#224f6a}.seg button.on[data-league=NBA]{background:#1f7fb3}.seg button.on[data-league=CFB]{background:#3a9a4a}.seg button.on[data-league=CBB]{background:#0d9488}
 .seg button.on[data-view]{background:var(--blue)}
-select{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;background:#0f1218;color:var(--text)}
+select{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line);border-radius:9px;background:#ffffff;color:var(--text)}
 
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:16px}
 .card h2{font-size:17px;margin-bottom:6px}
 .muted{color:var(--muted);font-size:13.5px}
 .top{border-left:3px solid var(--green)}
-.streak{display:inline-block;font-size:12.5px;font-weight:700;color:#fbbf24;background:rgba(251,191,36,.12);border-radius:999px;padding:2px 10px;margin-bottom:6px}
+.streak{display:inline-block;font-size:12.5px;font-weight:700;color:#b7791f;background:rgba(183,121,31,.12);border-radius:999px;padding:2px 10px;margin-bottom:6px}
 .top .pick{font-size:20px;font-weight:700;color:var(--green);margin:4px 0}
 .odds{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:4px}
 .odds b{color:var(--text);font-weight:600}
@@ -59,40 +59,40 @@ select{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line)
 table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
 th{text-align:left;font-weight:600;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;font-size:10.5px;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
 td{padding:10px;border-bottom:1px solid var(--line2);vertical-align:top}
-tbody tr:hover td{background:rgba(255,255,255,.02)}
+tbody tr:hover td{background:rgba(34,79,106,.02)}
 td.lg{font-weight:700;font-size:11px;letter-spacing:.05em}
-.lg-NFL{color:#60a5fa}.lg-NBA{color:var(--orange)}.lg-CFB{color:#c084fc}.lg-CBB{color:var(--teal)}
-.pt{color:#4ade80;background:rgba(61,220,151,.14);border-radius:5px;padding:0 4px;font-weight:600}
-td.pk{color:#4ade80;background:rgba(61,220,151,.08);font-weight:600;white-space:nowrap}
-.offtag{display:block;margin-top:4px;font-size:10.5px;font-weight:700;color:#0b0d12;background:#5aa9ff;border-radius:5px;padding:1px 6px;width:max-content}
+.lg-NFL{color:#1f7fb3}.lg-NBA{color:var(--orange)}.lg-CFB{color:#224f6a}.lg-CBB{color:var(--teal)}
+.pt{color:#3a9a4a;background:rgba(95,189,100,.14);border-radius:5px;padding:0 4px;font-weight:600}
+td.pk{color:#3a9a4a;background:rgba(95,189,100,.08);font-weight:600;white-space:nowrap}
+.offtag{display:block;margin-top:4px;font-size:10.5px;font-weight:700;color:#f9f9ff;background:#1f7fb3;border-radius:5px;padding:1px 6px;width:max-content}
 .dt{display:block;font-size:11px;color:var(--dim)}
-#q{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:9px;background:#0f1218;color:var(--text);min-width:180px}
+#q{font:inherit;font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:9px;background:#ffffff;color:var(--text);min-width:180px}
 #q::placeholder{color:var(--dim)}
 select:disabled{opacity:.4}
-.seg button.on[data-off=off]{background:#2563eb}
-.ovr{display:block;margin-top:4px;font-size:10.5px;font-weight:600;color:#c4b5fd;background:rgba(167,123,255,.14);border-radius:5px;padding:1px 6px;width:max-content}
+.seg button.on[data-off=off]{background:#224f6a}
+.ovr{display:block;margin-top:4px;font-size:10.5px;font-weight:600;color:#224f6a;background:rgba(34,79,106,.14);border-radius:5px;padding:1px 6px;width:max-content}
 td.nw{white-space:nowrap}
-td.na{color:#566074;font-style:italic;font-size:12px}
-td.why{color:#b3bacb;line-height:1.5;font-size:13px}
+td.na{color:#8a95a3;font-style:italic;font-size:12px}
+td.why{color:#4a5a6a;line-height:1.5;font-size:13px}
 tr.main td{border-bottom:0;padding-bottom:4px}
 tr.sub td{padding-top:0;padding-bottom:14px}
-tbody tr.main:hover td,tbody tr.main:hover + tr.sub td{background:rgba(255,255,255,.02)}
+tbody tr.main:hover td,tbody tr.main:hover + tr.sub td{background:rgba(34,79,106,.02)}
 .whylab{color:var(--dim);font-weight:600}
 .whyin{position:sticky;left:0;max-width:calc(100vw - 82px)}
 @media(min-width:1200px){.whyin{max-width:none}}
 #lessons td.why{max-width:34rem}
 #lessons .ctx{color:var(--dim)}
 .ctx{display:block;margin-top:5px;color:var(--amber);font-size:12px}
-.W{color:#4ade80;font-weight:700}.L{color:var(--red);font-weight:700}.P{color:var(--amber);font-weight:700}.pend{color:var(--dim)}
+.W{color:#3a9a4a;font-weight:700}.L{color:var(--red);font-weight:700}.P{color:var(--amber);font-weight:700}.pend{color:var(--dim)}
 @media(max-width:700px){.hide-sm{display:none}}
 
 .rev{padding:14px 0;border-bottom:1px solid var(--line2)}.rev:last-child{border-bottom:0}
 .rev-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:600;margin-bottom:6px}
 .rev-head .rec{color:var(--muted);font-weight:500;font-size:13px}
-.rev p{font-size:14px;color:#c3c9d6;margin-top:5px;line-height:1.55}
-.rev p b{color:#c4b5fd;font-weight:600}
+.rev p{font-size:14px;color:#33475b;margin-top:5px;line-height:1.55}
+.rev p b{color:#224f6a;font-weight:600}
 .st{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
-.st-Keep{color:#4ade80;background:rgba(61,220,151,.12)}.st-Testing{color:var(--blue);background:rgba(90,169,255,.12)}.st-Dropped{color:#8a93a6;background:rgba(138,147,166,.12)}
+.st-Keep{color:#3a9a4a;background:rgba(95,189,100,.12)}.st-Testing{color:var(--blue);background:rgba(84,183,232,.12)}.st-Dropped{color:#66727f;background:rgba(118,118,118,.12)}
 .legend{font-size:12.5px;color:var(--dim);margin-top:10px}
 footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -103,25 +103,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .explain{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
 .explain div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--muted);line-height:1.5}
 .explain b{color:var(--text)}
-.dotg{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3b4256;margin-right:7px;vertical-align:middle}
+.dotg{display:inline-block;width:9px;height:9px;border-radius:50%;background:#b9c3cf;margin-right:7px;vertical-align:middle}
 .dotg.on{background:var(--green)}.dotg.star{background:var(--amber)}
 @media(max-width:820px){.explain{grid-template-columns:1fr}}
 .tile .x{font-size:12px;color:var(--muted);margin-top:8px;padding-top:8px;border-top:1px solid var(--line2);line-height:1.45}
-.navlinks a.navbtn{color:#fff;background:linear-gradient(90deg,#5aa9ff,#a77bff);padding:7px 14px;border-radius:8px;font-weight:600}
+.navlinks a.navbtn{color:#fff;background:linear-gradient(90deg,#1f7fb3,#224f6a);padding:7px 14px;border-radius:8px;font-weight:600}
 /* nav-v2 */
 .navlinks{gap:6px!important}
 .navlinks a{padding:6px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
-.navlinks a:hover{color:var(--text);background:rgba(255,255,255,.04)}
-.navlinks a.on{color:#fff;background:linear-gradient(90deg,rgba(90,169,255,.22),rgba(167,123,255,.22));box-shadow:inset 0 0 0 1px rgba(167,123,255,.35)}
+.navlinks a:hover{color:var(--text);background:rgba(34,79,106,.04)}
+.navlinks a.on{color:#16324a;background:linear-gradient(90deg,rgba(84,183,232,.22),rgba(34,79,106,.22));box-shadow:inset 0 0 0 1px rgba(34,79,106,.35)}
 @media(max-width:560px){.brand{display:none}nav .wrap{justify-content:center}.navlinks{gap:2px!important}.navlinks a{padding:6px 7px;font-size:13px}}
 /* nav-v3 */
 @media(max-width:560px){.navlinks a.navbtn{margin:0 2px}.navlinks .arr{display:none}}
-.navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#5aa9ff,#a77bff)!important;box-shadow:0 0 0 1px rgba(167,123,255,.5),0 4px 18px rgba(124,108,255,.35)!important;margin:0 4px}
+.navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#1f7fb3,#224f6a)!important;box-shadow:0 0 0 1px rgba(34,79,106,.5),0 4px 18px rgba(34,79,106,.35)!important;margin:0 4px}
 .navlinks a.navbtn:hover{filter:brightness(1.12)}
-.navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(255,255,255,.55),0 4px 18px rgba(124,108,255,.45)!important}
+.navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(84,183,232,.6),0 4px 18px rgba(34,79,106,.45)!important}
 .rng{color:var(--dim);font-size:11.5px}
-.pbar{width:90px;height:6px;border-radius:99px;background:#232837;overflow:hidden;margin-bottom:4px}
-.pfill{height:100%;background:linear-gradient(90deg,#5aa9ff,#a77bff)}
+.pbar{width:90px;height:6px;border-radius:99px;background:#e6eaf0;overflow:hidden;margin-bottom:4px}
+.pfill{height:100%;background:linear-gradient(90deg,#1f7fb3,#224f6a)}
 /* nav-v4 */
 .navlinks .short{display:none}
 @media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
@@ -151,7 +151,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="tile"><div class="l">Against the spread (all games)</div><div class="n" id="t-ats">—</div><div class="s" id="t-ats-s">&nbsp;</div><div class="x" id="t-ats-x">Every game, forecast as data. Most are close calls.</div></div>
   <div class="tile"><div class="l">Official plays</div><div class="n" id="t-ml">—</div><div class="s" id="t-ml-s">Tracked from Nov 13</div><div class="x">The 2 to 8 games a day where the model thinks it has a real edge. This record is the one that judges the model.</div></div>
   <div class="tile"><div class="l">Top pick of the day</div><div class="n" id="t-top">—</div><div class="s">One best play per day</div><div class="x">The single most confident official play each day.</div></div>
-  <div class="tile"><div class="l">Moneyline (picked the winner)</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div><div class="x">Just picking who wins. Most picks are favorites, so a high % is expected. <a href="analysis.html" style="color:#9cc8ff">See if the win chances were accurate →</a></div></div>
+  <div class="tile"><div class="l">Moneyline (picked the winner)</div><div class="n" id="t-n">—</div><div class="s" id="t-days">&nbsp;</div><div class="x">Just picking who wins. Most picks are favorites, so a high % is expected. <a href="analysis.html" style="color:#1f7fb3">See if the win chances were accurate →</a></div></div>
 </section>
 
 <div class="tabs" role="tablist">
@@ -196,7 +196,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section id="tab-lessons" hidden>
   <div class="card">
     <h2>Hypotheses the model is testing</h2>
-    <p class="muted">Repeated mistakes become lessons, and each one is tracked on the picks it changed. Because many lessons are tested at once, some will look good by luck, so the bar is strict: a lesson needs at least 50 picks, has to beat the 52.4% break-even in a one-sided binomial test that survives a Benjamini-Hochberg multiple-testing correction, and can't have negative closing line value. Until then it stays "Testing," no matter how good the record looks. The 95% range shows how uncertain each record still is. <a href="method.html#stats" style="color:#9cc8ff">How the tests work →</a></p>
+    <p class="muted">Repeated mistakes become lessons, and each one is tracked on the picks it changed. Because many lessons are tested at once, some will look good by luck, so the bar is strict: a lesson needs at least 50 picks, has to beat the 52.4% break-even in a one-sided binomial test that survives a Benjamini-Hochberg multiple-testing correction, and can't have negative closing line value. Until then it stays "Testing," no matter how good the record looks. The 95% range shows how uncertain each record still is. <a href="method.html#stats" style="color:#1f7fb3">How the tests work →</a></p>
     <div class="tablewrap"><table id="lessons"></table></div>
   </div>
 </section>
