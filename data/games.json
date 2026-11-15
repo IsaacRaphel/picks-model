@@ -7759,16 +7759,16 @@
   "spread_pick": "DEN -11.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "DEN -670 / NOP +483",
   "fd_ml": "DEN -720 / NOP +520",
   "kalshi_ml": "DEN 84%",
   "model_ml": "DEN 83%",
   "ml_pick": "DEN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DEN 116, NOP 108",
+  "result_context": "Bad read: NOP trailed only 86-82 after three and DEN won by 8, 3.5 short of -11.5 (and the market had DEN even bigger)",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -7792,9 +7792,10 @@
    "sos_rank_home": null,
    "open_line_home": 11.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 12.5
   },
-  "note": "Ratings say Denver by 9.5, and New Orleans is on a back-to-back after losing by 31 last night with Trey Murphy and Dejounte Murray out, so my number is DEN -11. That leaned NOP +12.5 at DK by a point and a half, but I have Denver winning easily, so L008/L011 put me on Nuggets -11.5 at FanDuel instead of the dog."
+  "note": "Ratings say Denver by 9.5, and New Orleans is on a back-to-back after losing by 31 last night with Trey Murphy and Dejounte Murray out, so my number is DEN -11. That leaned NOP +12.5 at DK by a point and a half, but I have Denver winning easily, so L008/L011 put me on Nuggets -11.5 at FanDuel instead of the dog.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-NBA-DAL-CLE",
@@ -7813,16 +7814,16 @@
   "spread_pick": "CLE -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DAL -204 / CLE +170",
   "fd_ml": "DAL -196 / CLE +164",
   "kalshi_ml": "CLE 54%",
   "model_ml": "CLE 53%",
   "ml_pick": "CLE",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DAL 117, CLE 127",
+  "result_context": "Injury: CLE was without Mobley on a back-to-back and the line flipped to DAL -4.5, but CLE led 71-53 at half and won by 10",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -7846,9 +7847,10 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 4.5
   },
-  "note": "Ratings have this close to a pick'em, Cleveland is on a back-to-back without Evan Mobley, and Dallas is coming off a 39-point loss, so my number is CLE -1 and the raw lean was Dallas +2.5. I still have the Cavs winning a coin flip at home, so L008/L011 say lay it: Cavs -2.5 at FanDuel."
+  "note": "Ratings have this close to a pick'em, Cleveland is on a back-to-back without Evan Mobley, and Dallas is coming off a 39-point loss, so my number is CLE -1 and the raw lean was Dallas +2.5. I still have the Cavs winning a coin flip at home, so L008/L011 say lay it: Cavs -2.5 at FanDuel.",
+  "clv": -7.0
  },
  {
   "id": "2026-11-14-NBA-DET-MIA",
@@ -7867,16 +7869,16 @@
   "spread_pick": "DET -4.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "DET -173 / MIA +146",
   "fd_ml": "DET -172 / MIA +144",
   "kalshi_ml": "DET 64%",
   "model_ml": "DET 67%",
   "ml_pick": "DET",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "DET 117, MIA 137",
+  "result_context": "Blowout, Bad read: MIA led 68-60 at half and 103-86 after three, won by 20",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -7900,9 +7902,10 @@
    "sos_rank_home": null,
    "open_line_home": 4.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 3.5
   },
-  "note": "Detroit is 8-3 with a +7.7 scoring margin and ratings make them 5.5 better here even without Jalen Duren, and Miami is on a back-to-back without Klay Thompson, so my number is DET -6. Pistons -4.5 at DK and ML."
+  "note": "Detroit is 8-3 with a +7.7 scoring margin and ratings make them 5.5 better here even without Jalen Duren, and Miami is on a back-to-back without Klay Thompson, so my number is DET -6. Pistons -4.5 at DK and ML.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-14-NBA-CHI-MIN",
@@ -7921,16 +7924,16 @@
   "spread_pick": "MIN -14.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MIN -1080 / CHI +690",
   "fd_ml": "MIN -950 / CHI +640",
   "kalshi_ml": "MIN 89%",
   "model_ml": "MIN 89%",
   "ml_pick": "MIN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "CHI 117, MIN 106",
+  "result_context": "Bad read: the 2-9 Bulls led 58-45 at half and won outright by 11 as 15-pt dogs",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -7954,9 +7957,10 @@
    "sos_rank_home": null,
    "open_line_home": -13.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -15.5
   },
-  "note": "Ratings say MIN -30, but that's 12-game noise from Chicago's awful start, so I shrink it way down to MIN -16. Anthony Edwards has been out for weeks and Minnesota is still 9-3, and Chicago is on a back-to-back after an OT win, so Wolves -14.5 at DK and ML, but it's too big a number for an official play."
+  "note": "Ratings say MIN -30, but that's 12-game noise from Chicago's awful start, so I shrink it way down to MIN -16. Anthony Edwards has been out for weeks and Minnesota is still 9-3, and Chicago is on a back-to-back after an OT win, so Wolves -14.5 at DK and ML, but it's too big a number for an official play.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-NBA-BKN-MEM",
@@ -7975,16 +7979,16 @@
   "spread_pick": "MEM -4.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MEM -125 / BKN +106",
   "fd_ml": "MEM -120 / BKN +102",
   "kalshi_ml": "MEM 66%",
   "model_ml": "MEM 64%",
   "ml_pick": "MEM",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BKN 110, MEM 129",
+  "result_context": "Blowout: MEM (without Edey) led 71-54 at half and won by 19",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8008,9 +8012,10 @@
    "sos_rank_home": null,
    "open_line_home": -5.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -1.5
   },
-  "note": "Ratings say MEM -14.5, but Memphis is only 2-4 at home, on a back-to-back and without Zach Edey, so my number is MEM -5.5. Small lean to the Grizzlies -4.5 at DK and ML."
+  "note": "Ratings say MEM -14.5, but Memphis is only 2-4 at home, on a back-to-back and without Zach Edey, so my number is MEM -5.5. Small lean to the Grizzlies -4.5 at DK and ML.",
+  "clv": -3.0
  },
  {
   "id": "2026-11-14-CBB-STONE-TTU",
@@ -8029,16 +8034,16 @@
   "spread_pick": "STONE +40.5 (FD)",
   "spread_side": "away",
   "spread_edge": 8.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "",
   "fd_ml": "",
   "kalshi_ml": "",
   "model_ml": "TTU 99%",
   "ml_pick": "TTU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "STONE 37, TTU 88",
+  "result_context": "Blowout, Bad read: Texas Tech won by 51, 10.5 past the +40.5 we took",
   "lessons_applied": "L004,L017",
   "official": false,
   "features": {
@@ -8062,9 +8067,10 @@
    "sos_rank_home": null,
    "open_line_home": -40.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -40.5
   },
-  "note": "Torvik has Texas Tech about 31 points better and both teams play slow, so 40.5 is a lot to lay in a game with maybe 68 possessions. My number is TTU -32, an 8.5-point lean to Stonehill that clears L004's 5-point bar, and L017 says don't shrink it into the chalk: Stonehill +40.5, Tech to win."
+  "note": "Torvik has Texas Tech about 31 points better and both teams play slow, so 40.5 is a lot to lay in a game with maybe 68 possessions. My number is TTU -32, an 8.5-point lean to Stonehill that clears L004's 5-point bar, and L017 says don't shrink it into the chalk: Stonehill +40.5, Tech to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CBB-LSU-GONZ",
@@ -8083,16 +8089,16 @@
   "spread_pick": "GONZ -4.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "GONZ -230 / LSU +190",
   "fd_ml": "GONZ -220 / LSU +180",
   "kalshi_ml": "GONZ 68%",
   "model_ml": "GONZ 72%",
   "ml_pick": "GONZ",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "LSU 81, GONZ 80",
+  "result_context": "Close loss: LSU beat Gonzaga 81-80 on a last-second shot; GONZ needed to win by 5",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -8116,9 +8122,10 @@
    "sos_rank_home": null,
    "open_line_home": -6.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -5.5
   },
-  "note": "Torvik has Gonzaga 7.5 better in Spokane (at the downtown arena, so a slightly smaller home edge), and the Zags have the much longer track record, so my number is GONZ -7. The line slipped from 6.5 to 4.5 at FanDuel, which is the number I want: Zags -4.5 and ML."
+  "note": "Torvik has Gonzaga 7.5 better in Spokane (at the downtown arena, so a slightly smaller home edge), and the Zags have the much longer track record, so my number is GONZ -7. The line slipped from 6.5 to 4.5 at FanDuel, which is the number I want: Zags -4.5 and ML.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CBB-COLO-PROV",
@@ -8137,16 +8144,16 @@
   "spread_pick": "COLO +12.5 (DK)",
   "spread_side": "away",
   "spread_edge": 4.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "PROV -675 / COLO +490",
   "fd_ml": "PROV -880 / COLO +580",
   "kalshi_ml": "PROV 86%",
   "model_ml": "PROV 78%",
   "ml_pick": "PROV",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "COLO 53, PROV 67",
+  "result_context": "Close loss: Providence won by 14, 1.5 past the +12.5 we took",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -8170,9 +8177,10 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -12.5
   },
-  "note": "Torvik makes Providence about 7 better at home and my number is PROV -8, so the move from 9.5 to 12.5 looks like too much, but I couldn't find injury news to explain it, so per L010 I treat the 4.5-point lean to Colorado as small. L016 says keep the CBB dog rather than flip to the favorite: Buffs +12.5 at DK, Friars to win."
+  "note": "Torvik makes Providence about 7 better at home and my number is PROV -8, so the move from 9.5 to 12.5 looks like too much, but I couldn't find injury news to explain it, so per L010 I treat the 4.5-point lean to Colorado as small. L016 says keep the CBB dog rather than flip to the favorite: Buffs +12.5 at DK, Friars to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-SYR-NCST",
@@ -8191,16 +8199,16 @@
   "spread_pick": "SYR -2.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "SYR -148 / NCST +124",
   "fd_ml": "SYR -142 / NCST +120",
   "kalshi_ml": "SYR 57%",
   "model_ml": "SYR 55%",
   "ml_pick": "SYR",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "SYR 34, NCST 31",
+  "result_context": "Close win, Hook: SYR trailed 28-13 after three, scored 21 in the 4th with the winning TD at 0:48, covered -2.5 by the half point",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -8224,9 +8232,10 @@
    "sos_rank_home": null,
    "open_line_home": 3.0,
    "public_bets_pct_home": 45,
-   "close_line_home": null
+   "close_line_home": 2.5
   },
-  "note": "FPI has Syracuse only about a point better on the road, so my number is SYR -1.5 and the raw lean was NC State +2.5. I still have the Orange winning, so L008/L011 say lay it instead of grabbing a small dog: Syracuse -2.5 at FanDuel."
+  "note": "FPI has Syracuse only about a point better on the road, so my number is SYR -1.5 and the raw lean was NC State +2.5. I still have the Orange winning, so L008/L011 say lay it instead of grabbing a small dog: Syracuse -2.5 at FanDuel.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-WIS-MD",
@@ -8245,16 +8254,16 @@
   "spread_pick": "WIS -8.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "WIS -345 / MD +275",
   "fd_ml": "WIS -350 / MD +280",
   "kalshi_ml": "WIS 76%",
   "model_ml": "WIS 78%",
   "ml_pick": "WIS",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "WIS 21, MD 24",
+  "result_context": "Bad read: MD led 14-13 after three and won outright 24-21 with a late FG",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8278,9 +8287,10 @@
    "sos_rank_home": null,
    "open_line_home": 7.5,
    "public_bets_pct_home": 40,
-   "close_line_home": null
+   "close_line_home": 8.5
   },
-  "note": "FPI has Wisconsin 10 better than a 3-6 Maryland team, but the line already climbed from 7.5, so my number of WIS -10 is only a small edge over DK's 8.5. Badgers -8.5 and ML, not an official play."
+  "note": "FPI has Wisconsin 10 better than a 3-6 Maryland team, but the line already climbed from 7.5, so my number of WIS -10 is only a small edge over DK's 8.5. Badgers -8.5 and ML, not an official play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-NW-OSU",
@@ -8299,16 +8309,16 @@
   "spread_pick": "OSU -13.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "OSU -550 / NW +410",
   "fd_ml": "OSU -630 / NW +460",
   "kalshi_ml": "OSU 83%",
   "model_ml": "OSU 84%",
   "ml_pick": "OSU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "NW 19, OSU 28",
+  "result_context": "Bad read: OSU led 21-13 after three and won by 9, 4.5 short of -13.5",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8332,9 +8342,10 @@
    "sos_rank_home": null,
    "open_line_home": -11.0,
    "public_bets_pct_home": 43,
-   "close_line_home": null
+   "close_line_home": -13.5
   },
-  "note": "Both teams are 6-3 and have won three straight, but FPI has Ohio State 14.5 better at home and the line moved toward the Buckeyes with most bets on Northwestern. My number is OSU -14, so Buckeyes -13.5 at DK and ML, a thin edge on a big number."
+  "note": "Both teams are 6-3 and have won three straight, but FPI has Ohio State 14.5 better at home and the line moved toward the Buckeyes with most bets on Northwestern. My number is OSU -14, so Buckeyes -13.5 at DK and ML, a thin edge on a big number.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-CIN-ISU",
@@ -8353,16 +8364,16 @@
   "spread_pick": "ISU -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "ISU -148 / CIN +124",
   "fd_ml": "ISU -150 / CIN +125",
   "kalshi_ml": "ISU 57%",
   "model_ml": "ISU 53%",
   "ml_pick": "ISU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "CIN 13, ISU 41",
+  "result_context": "Blowout: ISU led 31-13 at half and shut CIN out after the break",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -8386,9 +8397,10 @@
    "sos_rank_home": null,
    "open_line_home": -1.0,
    "public_bets_pct_home": 46,
-   "close_line_home": null
+   "close_line_home": -2.5
   },
-  "note": "FPI has this close to a coin flip with Iowa State missing several skill players for the year, so my number is ISU -1 and the raw lean was Cincinnati +2.5. I still lean the Cyclones to win at home, so L008/L011 put me on ISU -2.5 at FanDuel."
+  "note": "FPI has this close to a coin flip with Iowa State missing several skill players for the year, so my number is ISU -1 and the raw lean was Cincinnati +2.5. I still lean the Cyclones to win at home, so L008/L011 put me on ISU -2.5 at FanDuel.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-DUKE-MIA",
@@ -8407,16 +8419,16 @@
   "spread_pick": "MIA -13.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MIA -600 / DUKE +440",
   "fd_ml": "MIA -580 / DUKE +440",
   "kalshi_ml": "MIA 83%",
   "model_ml": "MIA 82%",
   "ml_pick": "MIA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DUKE 25, MIA 36",
+  "result_context": "Close loss: MIA led 22-17 after three and won by 11, 2.5 short of -13.5",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8440,9 +8452,10 @@
    "sos_rank_home": null,
    "open_line_home": -14.0,
    "public_bets_pct_home": 51,
-   "close_line_home": null
+   "close_line_home": -13.5
   },
-  "note": "FPI says MIA -16, but star WR Malachi Toney (1,027 yards) is out and Duke has outscored its last two opponents 88-5, so my number is MIA -14. Darian Mensah should still carry Miami against his old team, so Canes -13.5 at FanDuel and ML, a small edge."
+  "note": "FPI says MIA -16, but star WR Malachi Toney (1,027 yards) is out and Duke has outscored its last two opponents 88-5, so my number is MIA -14. Darian Mensah should still carry Miami against his old team, so Canes -13.5 at FanDuel and ML, a small edge.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-WAKE-SMU",
@@ -8461,16 +8474,16 @@
   "spread_pick": "SMU -1.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "SMU -115 / WAKE -105",
   "fd_ml": "SMU -113 / WAKE -106",
   "kalshi_ml": "SMU 52%",
   "model_ml": "SMU 50%",
   "ml_pick": "SMU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "WAKE 49, SMU 7",
+  "result_context": "Blowout, Bad read: Wake Forest led 42-0 at half and won by 42",
   "lessons_applied": "L011,L012",
   "official": false,
   "features": {
@@ -8494,9 +8507,10 @@
    "sos_rank_home": null,
    "open_line_home": 2.0,
    "public_bets_pct_home": 37,
-   "close_line_home": null
+   "close_line_home": -1.5
   },
-  "note": "FPI says Wake by 3.5, but QB Gio Lopez is coming back from a leg injury and Kevin Jennings is 16-1 as a home starter, so my number is a pick'em and the raw lean was Wake +1.5. The line flipped from Wake -2 to SMU -1.5 with 63% of bets on Wake, so L011/L012 switch me to SMU -1.5 at DK and ML."
+  "note": "FPI says Wake by 3.5, but QB Gio Lopez is coming back from a leg injury and Kevin Jennings is 16-1 as a home starter, so my number is a pick'em and the raw lean was Wake +1.5. The line flipped from Wake -2 to SMU -1.5 with 63% of bets on Wake, so L011/L012 switch me to SMU -1.5 at DK and ML.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-NEB-RUTG",
@@ -8515,16 +8529,16 @@
   "spread_pick": "NEB -14.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "NEB -675 / RUTG +490",
   "fd_ml": "NEB -750 / RUTG +530",
   "kalshi_ml": "NEB 86%",
   "model_ml": "NEB 87%",
   "ml_pick": "NEB",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "NEB 31, RUTG 0",
+  "result_context": "Blowout: NEB shut out Rutgers and won by 31",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8548,9 +8562,10 @@
    "sos_rank_home": null,
    "open_line_home": 14.0,
    "public_bets_pct_home": 45,
-   "close_line_home": null
+   "close_line_home": 14.5
   },
-  "note": "FPI makes Nebraska 16 better than a 2-7 Rutgers team, so Huskers -14.5 at DK and ML. The edge is real, but laying two touchdowns on the road brings backdoor risk, so it's not an official play."
+  "note": "FPI makes Nebraska 16 better than a 2-7 Rutgers team, so Huskers -14.5 at DK and ML. The edge is real, but laying two touchdowns on the road brings backdoor risk, so it's not an official play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-GT-CLEM",
@@ -8569,16 +8584,16 @@
   "spread_pick": "CLEM -14.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "CLEM -625 / GT +455",
   "fd_ml": "CLEM -720 / GT +530",
   "kalshi_ml": "CLEM 83%",
   "model_ml": "CLEM 83%",
   "ml_pick": "CLEM",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "GT 20, CLEM 6",
+  "result_context": "Bad read: GT led 13-3 at half and won outright 20-6, its first win at Clemson since 2008",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8602,9 +8617,10 @@
    "sos_rank_home": null,
    "open_line_home": -12.5,
    "public_bets_pct_home": 42,
-   "close_line_home": null
+   "close_line_home": -15.5
   },
-  "note": "FPI lands right on Clemson -14.5 against a 2-7 Georgia Tech team, and the line moved 2-3 points toward Clemson with most bets on GT. No edge at FanDuel's -14.5, so Tigers to cover and win is just a lean."
+  "note": "FPI lands right on Clemson -14.5 against a 2-7 Georgia Tech team, and the line moved 2-3 points toward Clemson with most bets on GT. No edge at FanDuel's -14.5, so Tigers to cover and win is just a lean.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CFB-ALA-VAN",
@@ -8623,16 +8639,16 @@
   "spread_pick": "ALA -14.5 (DK)",
   "spread_side": "away",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "ALA -675 / VAN +490",
   "fd_ml": "ALA -650 / VAN +480",
   "kalshi_ml": "ALA 86%",
   "model_ml": "ALA 86%",
   "ml_pick": "ALA",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "ALA 21, VAN 6",
+  "result_context": "Close win, Hook: ALA led 21-6 after three, nobody scored in the 4th, covered -14.5 by the half point",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8656,9 +8672,10 @@
    "sos_rank_home": null,
    "open_line_home": 19.5,
    "public_bets_pct_home": 18,
-   "close_line_home": null
+   "close_line_home": 14.5
   },
-  "note": "FPI says Alabama by 23, but starting QB Keelon Russell is sitting with an ankle injury and Austin Mack starts, so I knock it down to ALA -16.5. The line already dropped 5 points on that news, which feels like a bit much for a deep Bama roster, so Tide -14.5 at DK and ML, but not official with a backup QB and a 14-point spread."
+  "note": "FPI says Alabama by 23, but starting QB Keelon Russell is sitting with an ankle injury and Austin Mack starts, so I knock it down to ALA -16.5. The line already dropped 5 points on that news, which feels like a bit much for a deep Bama roster, so Tide -14.5 at DK and ML, but not official with a backup QB and a 14-point spread.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-KSU-TCU",
@@ -8677,16 +8694,16 @@
   "spread_pick": "TCU -12.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "TCU -520 / KSU +390",
   "fd_ml": "TCU -520 / KSU +390",
   "kalshi_ml": "TCU 79%",
   "model_ml": "TCU 80%",
   "ml_pick": "TCU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "KSU 10, TCU 20",
+  "result_context": "Bad read: TCU led 17-10 after three and won by 10, 2.5 short of -12.5",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -8710,9 +8727,10 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": 42,
-   "close_line_home": null
+   "close_line_home": -13.5
   },
-  "note": "FPI says TCU -8.5, but K-State is down to its third- and fourth-string QBs with Avery Johnson and Jacob Knuth hurt, so my number is TCU -12. That still leaned K-State +13.5 by a point and a half, but I have TCU winning, so L008/L011 say lay it: Frogs -12.5 at FanDuel."
+  "note": "FPI says TCU -8.5, but K-State is down to its third- and fourth-string QBs with Avery Johnson and Jacob Knuth hurt, so my number is TCU -12. That still leaned K-State +13.5 by a point and a half, but I have TCU winning, so L008/L011 say lay it: Frogs -12.5 at FanDuel.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CFB-TENN-TAMU",
@@ -8731,16 +8749,16 @@
   "spread_pick": "TENN -1.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "TENN -112 / TAMU -108",
   "fd_ml": "TENN -110 / TAMU -110",
   "kalshi_ml": "TENN 52%",
   "model_ml": "TENN 53%",
   "ml_pick": "TENN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TENN 22, TAMU 7",
+  "result_context": "TENN pulled away with 13 in the 4th (five FGs) to win by 15",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8764,9 +8782,10 @@
    "sos_rank_home": null,
    "open_line_home": 3.0,
    "public_bets_pct_home": 15,
-   "close_line_home": null
+   "close_line_home": 1.5
   },
-  "note": "FPI has Tennessee by 3 and my number is TENN -2, so it's a small lean to the Vols -1.5 at DK and ML. Warning sign: 85% of bets are on Tennessee and the line still dropped from 3 to 1.5, which L012 would fade, but L008 wins when I still have the Vols winning, so this is a lean, not a play."
+  "note": "FPI has Tennessee by 3 and my number is TENN -2, so it's a small lean to the Vols -1.5 at DK and ML. Warning sign: 85% of bets are on Tennessee and the line still dropped from 3 to 1.5, which L012 would fade, but L008 wins when I still have the Vols winning, so this is a lean, not a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-MICH-ORE",
@@ -8785,16 +8804,16 @@
   "spread_pick": "ORE -10.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "ORE -425 / MICH +330",
   "fd_ml": "ORE -410 / MICH +320",
   "kalshi_ml": "ORE 80%",
   "model_ml": "ORE 80%",
   "ml_pick": "ORE",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MICH 7, ORE 31",
+  "result_context": "ORE led 21-7 at half and won by 24",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -8818,9 +8837,10 @@
    "sos_rank_home": null,
    "open_line_home": -11.0,
    "public_bets_pct_home": 48,
-   "close_line_home": null
+   "close_line_home": -10.5
   },
-  "note": "FPI has Oregon 13 better at home, and a 5-4 Michigan team is flying three time zones west with its QB job reopened, so my number is ORE -12. Ducks -10.5 at DK and ML."
+  "note": "FPI has Oregon 13 better at home, and a 5-4 Michigan team is flying three time zones west with its QB job reopened, so my number is ORE -12. Ducks -10.5 at DK and ML.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-CAL-UVA",
@@ -8839,16 +8859,16 @@
   "spread_pick": "UVA -10.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "UVA -470 / CAL +360",
   "fd_ml": "UVA -450 / CAL +350",
   "kalshi_ml": "UVA 80%",
   "model_ml": "UVA 81%",
   "ml_pick": "UVA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "CAL 7, UVA 36",
+  "result_context": "Blowout: UVA won by 29",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -8872,9 +8892,10 @@
    "sos_rank_home": null,
    "open_line_home": -12.5,
    "public_bets_pct_home": 37,
-   "close_line_home": null
+   "close_line_home": -11.5
   },
-  "note": "FPI makes Virginia 13.5 better, and Cal is a 3-6 team making a cross-country trip for an afternoon kickoff, so my number is UVA -12.5. The line slid 2 points with the public on Cal, so I'm grabbing Cavaliers -10.5 at FanDuel and ML."
+  "note": "FPI makes Virginia 13.5 better, and Cal is a 3-6 team making a cross-country trip for an afternoon kickoff, so my number is UVA -12.5. The line slid 2 points with the public on Cal, so I'm grabbing Cavaliers -10.5 at FanDuel and ML.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CFB-MIZZ-UGA",
@@ -8893,16 +8914,16 @@
   "spread_pick": "UGA -16.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "UGA -750 / MIZZ +525",
   "fd_ml": "UGA -800 / MIZZ +570",
   "kalshi_ml": "UGA 88%",
   "model_ml": "UGA 88%",
   "ml_pick": "UGA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MIZZ 21, UGA 48",
+  "result_context": "Blowout: UGA led 31-7 at half and won by 27",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -8926,9 +8947,10 @@
    "sos_rank_home": null,
    "open_line_home": -14.0,
    "public_bets_pct_home": 59,
-   "close_line_home": null
+   "close_line_home": -16.5
   },
-  "note": "FPI says Georgia by 17 and the line is right there at 16.5 after moving up from 14, so there's not much edge. Dawgs -16.5 at DK and ML, a lean, not a play."
+  "note": "FPI says Georgia by 17 and the line is right there at 16.5 after moving up from 14, so there's not much edge. Dawgs -16.5 at DK and ML, a lean, not a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-USC-IU",
@@ -8947,16 +8969,16 @@
   "spread_pick": "IU -8.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "IU -345 / USC +275",
   "fd_ml": "IU -330 / USC +265",
   "kalshi_ml": "IU 75%",
   "model_ml": "IU 73%",
   "ml_pick": "IU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "USC 13, IU 27",
+  "result_context": "IU led 20-13 after three and pulled away to win by 14",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -8980,9 +9002,10 @@
    "sos_rank_home": null,
    "open_line_home": -7.0,
    "public_bets_pct_home": 16,
-   "close_line_home": null
+   "close_line_home": -9.5
   },
-  "note": "FPI has Indiana by 9, but Josh Hoover's arm is a question and Cignetti won't say who starts, so my number is IU -8 and the raw lean was USC +9.5. I still have the Hoosiers winning, and the line moved their way with 84% of bets on USC, so L008/L011 put me on IU -8.5 at FanDuel; not official with the QB unknown."
+  "note": "FPI has Indiana by 9, but Josh Hoover's arm is a question and Cignetti won't say who starts, so my number is IU -8 and the raw lean was USC +9.5. I still have the Hoosiers winning, and the line moved their way with 84% of bets on USC, so L008/L011 put me on IU -8.5 at FanDuel; not official with the QB unknown.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CFB-BC-ND",
@@ -9001,16 +9024,16 @@
   "spread_pick": "ND -29.5 (DK)",
   "spread_side": "home",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "ND -5000 / BC +1800",
   "fd_ml": "ND -8000 / BC +2000",
   "kalshi_ml": "ND 98%",
   "model_ml": "ND 97%",
   "ml_pick": "ND",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BC 7, ND 41",
+  "result_context": "Blowout: ND led 31-0 at half and won by 34",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -9034,9 +9057,10 @@
    "sos_rank_home": null,
    "open_line_home": -30.5,
    "public_bets_pct_home": 57,
-   "close_line_home": null
+   "close_line_home": -29.5
   },
-  "note": "FPI says Notre Dame by 33.5 over a 4-5 BC team and my number is ND -32, so Irish -29.5 at DK and ML. The edge is there, but 30-point spreads live and die on garbage time, so it's a lean, not a play."
+  "note": "FPI says Notre Dame by 33.5 over a 4-5 BC team and my number is ND -32, so Irish -29.5 at DK and ML. The edge is there, but 30-point spreads live and die on garbage time, so it's a lean, not a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-KU-WVU",
@@ -9055,16 +9079,16 @@
   "spread_pick": "WVU -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "WVU -142 / KU +120",
   "fd_ml": "WVU -132 / KU +110",
   "kalshi_ml": "WVU 58%",
   "model_ml": "WVU 54%",
   "ml_pick": "WVU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "KU 37, WVU 14",
+  "result_context": "Bad read: Kansas won by 23 on the road",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -9088,9 +9112,10 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": 76,
-   "close_line_home": null
+   "close_line_home": -2.5
   },
-  "note": "FPI has these two close to even, so my number is WVU -1.5 and the raw lean was Kansas +2.5. I still have the Mountaineers winning at home, so L008/L011 say lay the short number: WVU -2.5 at FanDuel."
+  "note": "FPI has these two close to even, so my number is WVU -1.5 and the raw lean was Kansas +2.5. I still have the Mountaineers winning at home, so L008/L011 say lay the short number: WVU -2.5 at FanDuel.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-AUB-MSST",
@@ -9109,16 +9134,16 @@
   "spread_pick": "AUB -2.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "AUB -135 / MSST +114",
   "fd_ml": "AUB -142 / MSST +120",
   "kalshi_ml": "AUB 57%",
   "model_ml": "MSST 51%",
   "ml_pick": "MSST",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "AUB 41, MSST 9",
+  "result_context": "Blowout: AUB led 27-7 at half and won by 32; our MSST ML lean was wrong",
   "lessons_applied": "L010,L011",
   "official": false,
   "features": {
@@ -9142,9 +9167,10 @@
    "sos_rank_home": null,
    "open_line_home": 3.0,
    "public_bets_pct_home": 18,
-   "close_line_home": null
+   "close_line_home": 2.5
   },
-  "note": "FPI has Mississippi State by a half at home, so the raw lean was MSST +2.5, a 3-point gap from the market. I couldn't find a specific reason the line is wrong (L010), and a dog needs 2+ points of edge (L011), so I lay Auburn -2.5 at DK, while my ML still leans the Bulldogs in a coin flip."
+  "note": "FPI has Mississippi State by a half at home, so the raw lean was MSST +2.5, a 3-point gap from the market. I couldn't find a specific reason the line is wrong (L010), and a dog needs 2+ points of edge (L011), so I lay Auburn -2.5 at DK, while my ML still leans the Bulldogs in a coin flip.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-ASU-UCF",
@@ -9163,16 +9189,16 @@
   "spread_pick": "UCF -3.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "UCF -175 / ASU +145",
   "fd_ml": "UCF -172 / ASU +142",
   "kalshi_ml": "UCF 60%",
   "model_ml": "UCF 63%",
   "ml_pick": "UCF",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "ASU 26, UCF 13",
+  "result_context": "Bad read: Arizona State won by 13 on the road",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -9196,9 +9222,10 @@
    "sos_rank_home": null,
    "open_line_home": -3.0,
    "public_bets_pct_home": 55,
-   "close_line_home": null
+   "close_line_home": -3.5
   },
-  "note": "FPI has UCF by 4.5 and Arizona State is flying two time zones east, so my number is UCF -4.5. Knights -3.5 at DK and ML, a small edge just past the key number."
+  "note": "FPI has UCF by 4.5 and Arizona State is flying two time zones east, so my number is UCF -4.5. Knights -3.5 at DK and ML, a small edge just past the key number.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-WASH-MSU",
@@ -9217,16 +9244,16 @@
   "spread_pick": "WASH -2.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "WASH -135 / MSU +114",
   "fd_ml": "WASH -137 / MSU +114",
   "kalshi_ml": "WASH 62%",
   "model_ml": "WASH 55%",
   "ml_pick": "WASH",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "WASH 21, MSU 14",
+  "result_context": "Close win: WASH won by 7",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -9250,9 +9277,10 @@
    "sos_rank_home": null,
    "open_line_home": 3.5,
    "public_bets_pct_home": 42,
-   "close_line_home": null
+   "close_line_home": 2.5
   },
-  "note": "FPI has Washington by 2, but QB Demond Williams carried a questionable tag this week and the Huskies fly three time zones east, so my number is WASH -1.5 and the raw lean was Michigan State +2.5. I still have UW winning, so L008/L011 say lay WASH -2.5 at DK; not official with the QB question."
+  "note": "FPI has Washington by 2, but QB Demond Williams carried a questionable tag this week and the Huskies fly three time zones east, so my number is WASH -1.5 and the raw lean was Michigan State +2.5. I still have UW winning, so L008/L011 say lay WASH -2.5 at DK; not official with the QB question.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-ORST-BSU",
@@ -9271,16 +9299,16 @@
   "spread_pick": "BSU -16.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "BSU -675 / ORST +490",
   "fd_ml": "BSU -690 / ORST +500",
   "kalshi_ml": "BSU 85%",
   "model_ml": "BSU 86%",
   "ml_pick": "BSU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "ORST 41, BSU 46",
+  "result_context": "Bad read: Boise led 32-20 at half but ORST kept scoring and BSU won by only 5",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -9304,9 +9332,10 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": 49,
-   "close_line_home": null
+   "close_line_home": -16.5
   },
-  "note": "FPI says Boise by 12.5, but Oregon State lost Braden Atkinson, the nation's leading passer, to a hand injury and starts Maalik Murphy, so my number is BSU -17. The line already jumped 7 points on that news, so Broncos -16.5 at DK and ML is just a lean."
+  "note": "FPI says Boise by 12.5, but Oregon State lost Braden Atkinson, the nation's leading passer, to a hand injury and starts Maalik Murphy, so my number is BSU -17. The line already jumped 7 points on that news, so Broncos -16.5 at DK and ML is just a lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-FLA-UK",
@@ -9325,16 +9354,16 @@
   "spread_pick": "UK -2.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "UK -148 / FLA +124",
   "fd_ml": "UK -150 / FLA +125",
   "kalshi_ml": "UK 60%",
   "model_ml": "UK 56%",
   "ml_pick": "UK",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "FLA 21, UK 14",
+  "result_context": "Bad read: UK led 7-0 in the 2nd quarter, Florida won 21-14 outright",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -9358,9 +9387,10 @@
    "sos_rank_home": null,
    "open_line_home": -3.5,
    "public_bets_pct_home": 63,
-   "close_line_home": null
+   "close_line_home": -2.5
   },
-  "note": "FPI has Kentucky by 1.5 and my number is UK -2, so the raw lean was Florida +3.5 through the key number of 3. Both teams got beaten soundly last week and I still lean the Cats at home, so L008/L011 say lay the short number: UK -2.5 at DK."
+  "note": "FPI has Kentucky by 1.5 and my number is UK -2, so the raw lean was Florida +3.5 through the key number of 3. Both teams got beaten soundly last week and I still lean the Cats at home, so L008/L011 say lay the short number: UK -2.5 at DK.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-LOU-UNC",
@@ -9433,16 +9463,16 @@
   "spread_pick": "PSU -10.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "PSU -455 / MINN +350",
   "fd_ml": "PSU -450 / MINN +350",
   "kalshi_ml": "PSU 76%",
   "model_ml": "PSU 79%",
   "ml_pick": "PSU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MINN 14, PSU 42",
+  "result_context": "Blowout: PSU led 28-0 at half and won by 28",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -9466,9 +9496,10 @@
    "sos_rank_home": null,
    "open_line_home": -7.5,
    "public_bets_pct_home": 44,
-   "close_line_home": null
+   "close_line_home": -11.5
   },
-  "note": "FPI makes Penn State 13 better at home, and Minnesota's offense ranks 129th in FBS against a PSU pass defense that ranks 3rd. The line jumped 4 points toward PSU with most bets on Minnesota, so Nittany Lions -10.5 at FanDuel and ML."
+  "note": "FPI makes Penn State 13 better at home, and Minnesota's offense ranks 129th in FBS against a PSU pass defense that ranks 3rd. The line jumped 4 points toward PSU with most bets on Minnesota, so Nittany Lions -10.5 at FanDuel and ML.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CFB-BAY-BYU",
@@ -9487,16 +9518,16 @@
   "spread_pick": "BYU -8.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "BYU -325 / BAY +260",
   "fd_ml": "BYU -310 / BAY +250",
   "kalshi_ml": "BYU 75%",
   "model_ml": "BYU 70%",
   "ml_pick": "BYU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BAY 7, BYU 28",
+  "result_context": "BYU led 21-0 into the 4th and won by 21",
   "lessons_applied": "L008",
   "official": false,
   "features": {
@@ -9520,9 +9551,10 @@
    "sos_rank_home": null,
    "open_line_home": -7.0,
    "public_bets_pct_home": 67,
-   "close_line_home": null
+   "close_line_home": -9.5
   },
-  "note": "FPI and SP+ both have BYU only about 6 better, Baylor has covered all three games as a dog, and BYU is coming off a Holy War loss with rain in the forecast, so my number is BYU -6.5 and the raw lean was Baylor +9.5. I still have BYU winning, so L008 says lay it instead of taking the points: Cougars -8.5 at FanDuel."
+  "note": "FPI and SP+ both have BYU only about 6 better, Baylor has covered all three games as a dog, and BYU is coming off a Holy War loss with rain in the forecast, so my number is BYU -6.5 and the raw lean was Baylor +9.5. I still have BYU winning, so L008 says lay it instead of taking the points: Cougars -8.5 at FanDuel.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-14-CFB-TEX-LSU",
@@ -9541,16 +9573,16 @@
   "spread_pick": "LSU -4.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "LSU -205 / TEX +170",
   "fd_ml": "LSU -200 / TEX +164",
   "kalshi_ml": "LSU 63%",
   "model_ml": "LSU 58%",
   "ml_pick": "LSU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "TEX 22, LSU 21",
+  "result_context": "Close loss: Texas won 22-21 at LSU",
   "lessons_applied": "L008",
   "official": false,
   "features": {
@@ -9574,9 +9606,10 @@
    "sos_rank_home": null,
    "open_line_home": -4.5,
    "public_bets_pct_home": 20,
-   "close_line_home": null
+   "close_line_home": -4.5
   },
-  "note": "FPI has LSU by 1, and I bump it for a night game in Death Valley with Texas missing OL Trevor Goosby, TE Nick Townsend and RB Hollywood Smothers, so my number is LSU -3 and the raw lean was Texas +5.5. I still like LSU to win, and the money is much closer than the 80% of tickets on Texas, so L008 puts me on LSU -4.5 at DK."
+  "note": "FPI has LSU by 1, and I bump it for a night game in Death Valley with Texas missing OL Trevor Goosby, TE Nick Townsend and RB Hollywood Smothers, so my number is LSU -3 and the raw lean was Texas +5.5. I still like LSU to win, and the money is much closer than the 80% of tickets on Texas, so L008 puts me on LSU -4.5 at DK.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-UNLV-UNM",
@@ -9595,16 +9628,16 @@
   "spread_pick": "UNM -16.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "UNM -800 / UNLV +550",
   "fd_ml": "UNM -820 / UNLV +570",
   "kalshi_ml": "UNM 87%",
   "model_ml": "UNM 86%",
   "ml_pick": "UNM",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "UNLV 21, UNM 17",
+  "result_context": "Bad read: UNM led 17-7 in the 3rd, UNLV scored the last 14 and won outright as a 16.5-pt dog",
   "lessons_applied": "L008,L011,L012",
   "official": false,
   "features": {
@@ -9628,9 +9661,10 @@
    "sos_rank_home": null,
    "open_line_home": -13.5,
    "public_bets_pct_home": 32,
-   "close_line_home": null
+   "close_line_home": -16.5
   },
-  "note": "FPI has New Mexico by 15 and my number is UNM -15.5, so the raw lean was UNLV +16.5. But the line climbed 3 points with 68% of bets on UNLV, and I have the Lobos winning, so L008/L011/L012 put me on UNM -16.5 at DK."
+  "note": "FPI has New Mexico by 15 and my number is UNM -15.5, so the raw lean was UNLV +16.5. But the line climbed 3 points with 68% of bets on UNLV, and I have the Lobos winning, so L008/L011/L012 put me on UNM -16.5 at DK.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-PUR-IOWA",
@@ -9649,16 +9683,16 @@
   "spread_pick": "IOWA -17.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "IOWA -950 / PUR +625",
   "fd_ml": "IOWA -1000 / PUR +660",
   "kalshi_ml": "IOWA 89%",
   "model_ml": "IOWA 88%",
   "ml_pick": "IOWA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "PUR 7, IOWA 28",
+  "result_context": "IOWA led 28-7 in the 3rd and won by 21",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -9682,9 +9716,10 @@
    "sos_rank_home": null,
    "open_line_home": -16.0,
    "public_bets_pct_home": 55,
-   "close_line_home": null
+   "close_line_home": -17.5
   },
-  "note": "FPI says Iowa by 16 over a 3-6 Purdue team, so the raw lean was Purdue +17.5. I have Iowa winning easily and the dog edge is only 1.5, so L008/L011 say lay it: Hawkeyes -17.5 at FanDuel's even money."
+  "note": "FPI says Iowa by 16 over a 3-6 Purdue team, so the raw lean was Purdue +17.5. I have Iowa winning easily and the dog edge is only 1.5, so L008/L011 say lay it: Hawkeyes -17.5 at FanDuel's even money.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-STAN-VT",
@@ -9757,16 +9792,16 @@
   "spread_pick": "SC -7.5 (FD)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "SC -325 / ARK +260",
   "fd_ml": "SC -300 / ARK +240",
   "kalshi_ml": "SC 76%",
   "model_ml": "SC 77%",
   "ml_pick": "SC",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "SC 6, ARK 34",
+  "result_context": "Blowout, Bad read: Arkansas led 17-0 at half and won by 28 as a home dog",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -9790,9 +9825,10 @@
    "sos_rank_home": null,
    "open_line_home": 7.5,
    "public_bets_pct_home": 13,
-   "close_line_home": null
+   "close_line_home": 7.5
   },
-  "note": "FPI has South Carolina 10 better than a 3-6 Arkansas team, and Kalshi's coin-flip spread is SC -9.5, so the books' 7.5 looks short. Gamecocks -7.5 at FanDuel and ML, though 87% of bets are on SC with no line move, so I'm keeping my number at SC -9."
+  "note": "FPI has South Carolina 10 better than a 3-6 Arkansas team, and Kalshi's coin-flip spread is SC -9.5, so the books' 7.5 looks short. Gamecocks -7.5 at FanDuel and ML, though 87% of bets are on SC with no line move, so I'm keeping my number at SC -9.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-TTU-OKST",
@@ -9811,16 +9847,16 @@
   "spread_pick": "OKST -3.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "OKST -170 / TTU +142",
   "fd_ml": "OKST -156 / TTU +130",
   "kalshi_ml": "OKST 60%",
   "model_ml": "OKST 55%",
   "ml_pick": "OKST",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "TTU 52, OKST 27",
+  "result_context": "Blowout, Bad read: Texas Tech won by 25 on the road",
   "lessons_applied": "L008,L011,L012",
   "official": false,
   "features": {
@@ -9844,9 +9880,10 @@
    "sos_rank_home": null,
    "open_line_home": -3.0,
    "public_bets_pct_home": 22,
-   "close_line_home": null
+   "close_line_home": -3.5
   },
-  "note": "FPI has Oklahoma State by 1, and I go to OKST -2 since they grade out better per play, so the raw lean was Texas Tech +3.5. But 78% of bets are on Tech and the line still moved toward OSU, and I have the Cowboys winning, so L008/L011/L012 put me on OKST -3.5 at DK."
+  "note": "FPI has Oklahoma State by 1, and I go to OKST -2 since they grade out better per play, so the raw lean was Texas Tech +3.5. But 78% of bets are on Tech and the line still moved toward OSU, and I have the Cowboys winning, so L008/L011/L012 put me on OKST -3.5 at DK.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-14-CFB-UTAH-ARIZ",

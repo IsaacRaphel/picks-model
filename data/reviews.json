@@ -141,5 +141,16 @@
   "went_well": "Portland handled the 1-11 Kings as the healthy, better team, and Memphis -3.5 (+31) and San Antonio -12.5 (+38) were clean favorite reads. In CBB, Xavier -3.5, Arizona -2.5 and UConn -10.5 all won comfortably, with UConn and Arizona beating the close by a point.",
   "went_wrong": "The big CBB chalk was the story: L004/L010 had us lay all nine 25+ favorites even though Torvik leaned the dogs by 8-15 points, and they went 2-7 (Kentucky won by 1 at -34.5, Tennessee by 5 at -29.5), with the ratings number closer every time. Smaller CBB favorites (Clemson, UNC, Butler) lost outright, and in the NBA Houston -16.5 (1 pt worse than the close) and Atlanta -7.5 at the 2-9 Bulls were bad reads.",
   "improve": "New L017: on CBB spreads of 20+ where the ratings line is 5+ points short of the favorite's number, stop letting L010 shrink the edge into laying full chalk; take the dog only with L004's bar and a reason, otherwise pass. L010 is now 8-11 and L004 14-15, both well within noise, so keep testing rather than drop."
+ },
+ {
+  "id": "2026-11-14-daily",
+  "date": "2026-11-14",
+  "kind": "Daily",
+  "period": "",
+  "record": "Official 3-3 · Spread 17-20 · ML 23-14 · POTD W · CLV -0.1",
+  "summary": "Official plays split 3-3: Oregon, Virginia and Penn State covered easily, while Detroit, Gonzaga and South Carolina lost. No bad beats: four close losses (Gonzaga, Colorado, Miami, LSU) and the rest were real misses.",
+  "went_well": "Oregon -10.5 (POTD), Virginia, Penn State, Georgia and Notre Dame were clean reads on good teams at home, all winning by 24+. Cleveland -2.5 won by 10 even though the line moved 7 points against us after Mobley was ruled out, and the ML read on the Cavs (+170) held up; Syracuse and Alabama covered by the hook, so don't read much into those two.",
+  "went_wrong": "Road underdogs ran over our small CFB home favorites: Kansas, Florida, Arizona State, Wake Forest, Texas Tech and Texas all won outright, and UNLV beat New Mexico as a 16.5-pt dog, so a lot of those were bad reads, not bad luck. In the NBA, Detroit (official) got blown out by 20 and the 2-9 Bulls won outright at Minnesota; South Carolina (official) lost by 28 as a road favorite.",
+  "improve": "L012 (reverse line move) is now 0-5 and L011 put us on four small CFB home favorites that all lost, so the morning run should flag any CFB home favorite of 4 or less that L011/L012 creates and pass unless the edge is 2.5+. CFB small home favorites are 2-7 season-long, which is still noise-level, so this is a watch item under L011/L012, not a new lesson yet."
  }
 ]
