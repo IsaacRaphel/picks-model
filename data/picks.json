@@ -138,5 +138,15 @@
   "fd_odds": "-146",
   "kalshi_odds": "-163",
   "result": "W"
+ },
+ {
+  "id": "2026-11-16-potd",
+  "date": "2026-11-16",
+  "kind": "Pick of the day",
+  "pick": "BOS -8.5",
+  "dk_odds": "-117",
+  "fd_odds": "-116",
+  "kalshi_odds": "-108",
+  "result": "pending"
  }
 ]
