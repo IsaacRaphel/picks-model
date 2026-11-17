@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Model Map | Isaac Raphel</title>
+<meta name="description" content="A live 3D map of how the forecasting model works, built from its own data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f9f9ff;--panel:#ffffff;--line:#dfe3ea;--text:#16324a;--muted:#3f4f63;--dim:#5f666e;--green:#3a9a4a;--blue:#1f7fb3;--purple:#224f6a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px}
+nav{position:sticky;top:0;z-index:10;background:rgba(249,249,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted);align-items:center}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
+.navlinks a.navbtn{color:#fff;background:linear-gradient(90deg,#1f7fb3,#224f6a);padding:7px 14px;border-radius:8px;font-weight:600}
+@media(max-width:700px){.hide-sm{display:none}}
+header{padding:44px 0 10px}
+h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
+.sub{color:var(--muted);margin-top:8px}
+.toc{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.toc a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.toc a:hover{border-color:#b9c3cf}
+.toc .d{font-size:12.5px;color:var(--dim)}.toc .t{font-weight:600}
+article{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:22px}
+article .d{font-size:13px;color:var(--dim)}
+article h2{font-size:clamp(22px,3.4vw,28px);letter-spacing:-.02em;line-height:1.2;margin:4px 0 10px}
+article .sum{color:var(--muted);font-size:16px;border-left:3px solid var(--purple);padding-left:14px;margin-bottom:8px}
+article h3{font-size:17px;margin:22px 0 6px}
+article p{color:#1e3246;font-size:15.5px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
+/* nav-v2 */
+.navlinks{gap:6px!important}
+.navlinks a{padding:6px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+.navlinks a:hover{color:var(--text);background:rgba(34,79,106,.04)}
+.navlinks a.on{color:#16324a;background:linear-gradient(90deg,rgba(84,183,232,.22),rgba(34,79,106,.22));box-shadow:inset 0 0 0 1px rgba(34,79,106,.35)}
+@media(max-width:560px){.brand{display:none}nav .wrap{justify-content:center}.navlinks{gap:2px!important}.navlinks a{padding:6px 7px;font-size:13px}}
+/* nav-v3 */
+@media(max-width:560px){.navlinks a.navbtn{margin:0 2px}.navlinks .arr{display:none}}
+.navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#1f7fb3,#224f6a)!important;box-shadow:0 0 0 1px rgba(34,79,106,.5),0 4px 18px rgba(34,79,106,.35)!important;margin:0 4px}
+.navlinks a.navbtn:hover{filter:brightness(1.12)}
+.navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(84,183,232,.6),0 4px 18px rgba(34,79,106,.45)!important}
+/* nav-v4 */
+.navlinks .short{display:none}
+@media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
+@media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
+.pkmap { display:flex; flex-direction:column; gap:12px; }
+.pkmap-head { display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; justify-content:space-between; }
+.pkmap-stage { font-size:13.5px; color:#3f4f63; }
+.pkmap-stage b { color:#16324a; }
+.pkmap-ctr { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.pkmap-ctr input[type=range] { width:150px; accent-color:#1f7fb3; }
+.pkmap-date { font-size:12.5px; color:#3f4f63; min-width:84px; }
+.pkmap-btn { font:inherit; font-size:12.5px; font-weight:600; color:#224f6a; background:#fff; border:1px solid #cfd6df; border-radius:8px; padding:5px 10px; cursor:pointer; min-width:32px; }
+.pkmap-btn:hover { background:#f1f4f8; }
+.pkmap-body { display:grid; grid-template-columns:minmax(0,1fr) 290px; gap:14px; align-items:start; }
+.pkmap-canvas { position:relative; background:radial-gradient(520px 300px at 22% 28%, rgba(84,120,232,.22), transparent 70%), radial-gradient(480px 320px at 80% 75%, rgba(160,90,220,.18), transparent 70%), radial-gradient(900px 600px at 50% 50%, #0d1430, #05070f); border:1px solid #1b2440; border-radius:14px; overflow:hidden; }
+.pkmap-canvas canvas { display:block; width:100%; }
+.pkmap-hint { position:absolute; left:12px; bottom:10px; font-size:12px; color:#aab6cc; transition:opacity .4s; pointer-events:none; }
+.pkmap-panel { background:#fff; border:1px solid #dfe3ea; border-radius:14px; padding:16px; font-size:13.5px; line-height:1.55; color:#1e3246; min-height:180px; }
+.pkmap-panel h3 { margin:2px 0 8px; font-size:16px; color:#16324a; line-height:1.3; }
+.pkmap-panel p { margin:0 0 9px; }
+.pkmap-kind { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.pkmap-row { display:flex; justify-content:space-between; gap:12px; border-top:1px solid #eef1f5; padding-top:7px; margin-bottom:7px !important; }
+.pkmap-row span { color:#3f4f63; } .pkmap-row b { color:#16324a; text-align:right; }
+.pkmap-muted { color:#5f666e; font-size:12.5px; }
+.pkmap-legend { display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12px; color:#3f4f63; }
+.pkmap-legend span { display:inline-flex; align-items:center; gap:6px; }
+.pkmap-legend i { width:10px; height:10px; border-radius:50%; display:inline-block; }
+@media (max-width:820px) { .pkmap-body { grid-template-columns:1fr; } .pkmap-ctr input[type=range] { width:110px; } }
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="index.html">Overview</a>
+    <a href="model.html" class="navbtn">Live model<span class="arr"> →</span></a>
+    <a href="analysis.html">Analysis</a>
+    <a href="map.html" class="on" aria-current="page"><span class="long">Model map</span><span class="short">Map</span></a>
+    <a href="method.html"><span class="long">Methodology</span><span class="short">Method</span></a>
+    <a href="notes.html">Notes</a>
+  </div>
+</div></nav>
+<main class="wrap">
+  <header>
+    <h1>Model map</h1>
+    <p class="sub">A live 3D map of how the model works, drawn from its own data. Data flows left to right: sources, inputs, the model's line, lessons, picks and grading. It grows as games, inputs and lessons are added, and Formula v1 lights up once it's built.</p>
+  </header>
+  <div id="map" style="margin-top:22px">Loading…</div>
+</main>
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University · Research project · no real money wagered · not betting advice</span>
+  <span class="flinks"><a href="method.html">Methodology</a> · <a href="model.html">See every game →</a></span>
+</div></footer>
+<script src="assets/pkmap.js"></script>
+<script>
+const j=(u,d)=>fetch(u,{cache:'no-store'}).then(r=>r.ok?r.json():d).catch(()=>d);
+Promise.all([j('data/games.json',[]),j('data/lessons.json',[]),j('data/formula_v1.json',null)]).then(([G,L,V])=>{window.pkMap(document.getElementById('map'),G,L,V);});
+</script>
+
+</body>
+</html>
