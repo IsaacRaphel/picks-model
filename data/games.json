@@ -11664,16 +11664,16 @@
   "spread_pick": "BAL -4.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "BAL -230 / LAC +190",
   "fd_ml": "LAC +190",
   "kalshi_ml": "BAL 68%",
   "model_ml": "BAL 58%",
   "ml_pick": "BAL",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "LAC 23, BAL 20",
+  "result_context": "Bad read, Turnovers / special teams, Injury: winless LAC led most of the way (17-10 at half, 20-13 after 3); BAL cut it to 3 but Flowers fumbled in the final minutes. Lamar on IR, Brissett's Ravens debut (1 INT). L008/L012 flipped us off the LAC lean",
   "lessons_applied": "L008,L012",
   "official": false,
   "features": {
@@ -11697,9 +11697,10 @@
    "sos_rank_home": 20,
    "open_line_home": -2.5,
    "public_bets_pct_home": 36,
-   "close_line_home": null
+   "close_line_home": -4.5
   },
-  "note": "FPI actually has the 0-8 Chargers a point better, but Brissett is a real upgrade over the rookie who started last week and McConkey is out, so my number is BAL -2.5 and the raw lean was LAC +4.5. That's only a 2-pt edge with 64% of bets on the Chargers while the line moved from 2.5 to 4.5 toward Baltimore, so L008/L012 flipped me to Ravens -4.5 and the Ravens to win."
+  "note": "FPI actually has the 0-8 Chargers a point better, but Brissett is a real upgrade over the rookie who started last week and McConkey is out, so my number is BAL -2.5 and the raw lean was LAC +4.5. That's only a 2-pt edge with 64% of bets on the Chargers while the line moved from 2.5 to 4.5 toward Baltimore, so L008/L012 flipped me to Ravens -4.5 and the Ravens to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-NBA-ORL-BOS",
@@ -11718,16 +11719,16 @@
   "spread_pick": "BOS -8.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "BOS -360 / ORL +287",
   "fd_ml": "BOS -360 / ORL +290",
   "kalshi_ml": "BOS 75%",
   "model_ml": "BOS 82%",
   "ml_pick": "BOS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "ORL 115, BOS 105",
+  "result_context": "Bad read, Back-to-back: Magic pulled away in the 4th to snap Boston's 6-game streak even without Banchero; BOS on night 2 of a back-to-back",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -11751,9 +11752,10 @@
    "sos_rank_home": 30,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -8.5
   },
-  "note": "Ratings say BOS -16.7, but that's a 13-game sample and Boston is on the second night of a back-to-back, so I trimmed it to BOS -10.5. Orlando is without Banchero and the Celtics just beat Dallas by 37, so I like Boston to win and cover 8.5."
+  "note": "Ratings say BOS -16.7, but that's a 13-game sample and Boston is on the second night of a back-to-back, so I trimmed it to BOS -10.5. Orlando is without Banchero and the Celtics just beat Dallas by 37, so I like Boston to win and cover 8.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-NBA-CHI-CLE",
@@ -11772,16 +11774,16 @@
   "spread_pick": "CLE -9.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "CLE -344 / CHI +276",
   "fd_ml": "CLE -335 / CHI +270",
   "kalshi_ml": "CLE 75%",
   "model_ml": "CLE 82%",
   "ml_pick": "CLE",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "CHI 115, CLE 126",
+  "result_context": "Close win, Injury: Mitchell 39 as the Cavs held off the Bulls and covered 9.5 by 1.5; Mobley out",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -11805,9 +11807,10 @@
    "sos_rank_home": 20,
    "open_line_home": -10.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -8.5
   },
-  "note": "Cleveland rates about 12 better here, but Mobley is out and Chicago just beat Minnesota and Atlanta, so my number is CLE -10.5. Harden and Mitchell should still be too much for a 3-9 Bulls team, so Cavs to win and cover, but it's a small edge."
+  "note": "Cleveland rates about 12 better here, but Mobley is out and Chicago just beat Minnesota and Atlanta, so my number is CLE -10.5. Harden and Mitchell should still be too much for a 3-9 Bulls team, so Cavs to win and cover, but it's a small edge.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-16-NBA-MEM-WAS",
@@ -11826,16 +11829,16 @@
   "spread_pick": "MEM -3.5 (DK)",
   "spread_side": "away",
   "spread_edge": 3.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MEM -155 / WAS +131",
   "fd_ml": "MEM -154 / WAS +130",
   "kalshi_ml": "MEM 67%",
   "model_ml": "MEM 70%",
   "ml_pick": "MEM",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MEM 136, WAS 120",
+  "result_context": "Blowout: Boozer career-high 29 (7 threes) and Edey 23; Wizards' 8th straight loss",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -11859,9 +11862,10 @@
    "sos_rank_home": 25,
    "open_line_home": 6.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 3.5
   },
-  "note": "Ratings make Memphis a 14-pt favorite, but Ty Jerome is out and Edey is questionable, so I cut it to MEM -7. The 3-pt drop on Jerome looks like too much since they beat Brooklyn by 19 without him and the Wizards have lost 7 straight and are on a back-to-back, so Grizzlies -3.5 and to win, but it's not official with Edey up in the air."
+  "note": "Ratings make Memphis a 14-pt favorite, but Ty Jerome is out and Edey is questionable, so I cut it to MEM -7. The 3-pt drop on Jerome looks like too much since they beat Brooklyn by 19 without him and the Wizards have lost 7 straight and are on a back-to-back, so Grizzlies -3.5 and to win, but it's not official with Edey up in the air.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-NBA-PHI-BKN",
@@ -11880,16 +11884,16 @@
   "spread_pick": "PHI -5.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "PHI -217 / BKN +180",
   "fd_ml": "PHI -210 / BKN +176",
   "kalshi_ml": "PHI 69%",
   "model_ml": "PHI 64%",
   "ml_pick": "PHI",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "PHI 135, BKN 123",
+  "result_context": "Embiid 37; PHI built a big lead, BKN got within 4 late, then PHI closed on a 10-2 run",
   "lessons_applied": "L008",
   "official": false,
   "features": {
@@ -11913,9 +11917,10 @@
    "sos_rank_home": 21,
    "open_line_home": 5.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 5.5
   },
-  "note": "Philly is 11-3 but only +2 per game, and it's on a back-to-back with Embiid questionable, so my number is PHI -4.5 and the raw lean was Brooklyn +6.5. I still have the Sixers winning, so L008 flipped me to lay the 5.5 instead of taking the Nets."
+  "note": "Philly is 11-3 but only +2 per game, and it's on a back-to-back with Embiid questionable, so my number is PHI -4.5 and the raw lean was Brooklyn +6.5. I still have the Sixers winning, so L008 flipped me to lay the 5.5 instead of taking the Nets.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-NBA-HOU-MIA",
@@ -11934,16 +11939,16 @@
   "spread_pick": "HOU -2.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "HOU -130 / MIA +110",
   "fd_ml": "HOU -134 / MIA +114",
   "kalshi_ml": "HOU 54%",
   "model_ml": "HOU 58%",
   "ml_pick": "HOU",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "HOU 110, MIA 128",
+  "result_context": "Line was right, Blowout, Back-to-back: Heat led wire-to-wire for their 5th straight win (Giannis 20); HOU on a road back-to-back without VanVleet",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -11967,9 +11972,10 @@
    "sos_rank_home": 17,
    "open_line_home": 2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 1.5
   },
-  "note": "Ratings say Houston by about 11, but Miami is 7-2 since an 0-4 start with Giannis rolling, and the Rockets are on a road back-to-back without VanVleet, so my number is only HOU -3. Small lean to Houston to win and cover 2.5, nothing official."
+  "note": "Ratings say Houston by about 11, but Miami is 7-2 since an 0-4 start with Giannis rolling, and the Rockets are on a road back-to-back without VanVleet, so my number is only HOU -3. Small lean to Houston to win and cover 2.5, nothing official.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-16-NBA-POR-MIN",
@@ -11988,16 +11994,16 @@
   "spread_pick": "MIN -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MIN -135 / POR +114",
   "fd_ml": "MIN -134 / POR +114",
   "kalshi_ml": "MIN 59%",
   "model_ml": "MIN 60%",
   "ml_pick": "MIN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "POR 98, MIN 106",
+  "result_context": "Injury: Edwards out, but Shannon scored a career-high 34",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -12021,9 +12027,10 @@
    "sos_rank_home": 19,
    "open_line_home": -3.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -2.5
   },
-  "note": "These two rate almost even and both are missing their best guard (Edwards for Minnesota, Morant for Portland), so my number is just home court, MIN -3. Tiny lean to the Wolves to win and cover 2.5."
+  "note": "These two rate almost even and both are missing their best guard (Edwards for Minnesota, Morant for Portland), so my number is just home court, MIN -3. Tiny lean to the Wolves to win and cover 2.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-NBA-GSW-NOP",
@@ -12042,16 +12049,16 @@
   "spread_pick": "GSW -3.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "GSW -161 / NOP +136",
   "fd_ml": "GSW -162 / NOP +136",
   "kalshi_ml": "GSW 65%",
   "model_ml": "GSW 66%",
   "ml_pick": "GSW",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "GSW 94, NOP 115",
+  "result_context": "Bad read, Blowout, Injury: with Curry, Butler and Porzingis out, NOP snapped a 6-game skid by 21; Fears had his first triple-double",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -12075,9 +12082,10 @@
    "sos_rank_home": 15,
    "open_line_home": 2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": 3.5
   },
-  "note": "The ratings love Golden State, but Curry, Butler and Porzingis are all out, so I knocked it down to GSW -5. New Orleans is missing Murphy, Murray and Mathurin too, so I'll take the Warriors to win and cover 3.5, but with both teams this banged up it's not an official play."
+  "note": "The ratings love Golden State, but Curry, Butler and Porzingis are all out, so I knocked it down to GSW -5. New Orleans is missing Murphy, Murray and Mathurin too, so I'll take the Warriors to win and cover 3.5, but with both teams this banged up it's not an official play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-NBA-PHX-DEN",
@@ -12096,16 +12104,16 @@
   "spread_pick": "DEN -10.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "DEN -408 / PHX +320",
   "fd_ml": "DEN -405 / PHX +320",
   "kalshi_ml": "DEN 77%",
   "model_ml": "DEN 80%",
   "ml_pick": "DEN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "PHX 117, DEN 105",
+  "result_context": "Bad read, Back-to-back: L008/L011 flipped a Suns lean to DEN -10.5 and Phoenix won outright on a big 2nd half for its first road win",
   "lessons_applied": "L008,L011",
   "official": false,
   "features": {
@@ -12129,9 +12137,10 @@
    "sos_rank_home": 12,
    "open_line_home": -10.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -9.5
   },
-  "note": "Ratings only have Denver by 5, but Phoenix played last night and now plays at altitude, and Jokic's Nuggets have a much longer track record, so my number is DEN -9.5 and the raw lean was the Suns +10.5. That's a 1-pt dog edge with no real reason, so L008/L011 flipped me to Nuggets -10.5 and Denver to win."
+  "note": "Ratings only have Denver by 5, but Phoenix played last night and now plays at altitude, and Jokic's Nuggets have a much longer track record, so my number is DEN -9.5 and the raw lean was the Suns +10.5. That's a 1-pt dog edge with no real reason, so L008/L011 flipped me to Nuggets -10.5 and Denver to win.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-16-CBB-GRAM-UK",
@@ -12150,16 +12159,16 @@
   "spread_pick": "GRAM +30.5 (DK)",
   "spread_side": "away",
   "spread_edge": 7.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "",
   "kalshi_ml": "UK 99%",
   "model_ml": "UK 98%",
   "ml_pick": "UK",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "GRAM 59, UK 88",
+  "result_context": "Close win: Kentucky started slow and won by 29, so GRAM +30.5 covered by 1.5; Moreno 22",
   "lessons_applied": "L004,L017",
   "official": false,
   "features": {
@@ -12183,9 +12192,10 @@
    "sos_rank_home": null,
    "open_line_home": -30.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -30.5
   },
-  "note": "Torvik has Kentucky as only the 55th-best team, and the Wildcats beat Manhattan by 28, JMU by 9 and Northern Arizona by 1, so my number is UK -23. That's 7.5 short of the line, which clears L004's 5-pt bar, and L017 says don't shrink it into the chalk, so Grambling +30.5 and Kentucky to win."
+  "note": "Torvik has Kentucky as only the 55th-best team, and the Wildcats beat Manhattan by 28, JMU by 9 and Northern Arizona by 1, so my number is UK -23. That's 7.5 short of the line, which clears L004's 5-pt bar, and L017 says don't shrink it into the chalk, so Grambling +30.5 and Kentucky to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-16-CBB-LBSU-UCLA",
@@ -12204,16 +12214,16 @@
   "spread_pick": "UCLA -34.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "",
   "kalshi_ml": "UCLA 99%",
   "model_ml": "UCLA 99%",
   "ml_pick": "UCLA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "LBSU 66, UCLA 105",
+  "result_context": "Blowout: UCLA won by 39 and covered 34.5",
   "lessons_applied": "L004",
   "official": false,
   "features": {
@@ -12237,8 +12247,9 @@
    "sos_rank_home": null,
    "open_line_home": -33.5,
    "public_bets_pct_home": null,
-   "close_line_home": null
+   "close_line_home": -34.5
   },
-  "note": "Torvik says UCLA -24, but the Bruins beat North Florida by 51 and Arkansas-Pine Bluff by 69, so my number is UCLA -30 and the raw lean was Long Beach State +34.5. That 4.5-pt dog edge is short of L004's 5-pt bar, so I'm on UCLA -34.5 and the Bruins to win, strictly as a tracking pick."
+  "note": "Torvik says UCLA -24, but the Bruins beat North Florida by 51 and Arkansas-Pine Bluff by 69, so my number is UCLA -30 and the raw lean was Long Beach State +34.5. That 4.5-pt dog edge is short of L004's 5-pt bar, so I'm on UCLA -34.5 and the Bruins to win, strictly as a tracking pick.",
+  "clv": 0.0
  }
 ]
