@@ -332,7 +332,7 @@ function drawLessons(){
 }
 function revBlock(r,title){
   const b=el('div','rev');const h=el('div','rev-head');h.append(el('span',null,title));h.append(el('span','rec',r.record||''));b.append(h);
-  [['','summary'],['Went well: ','went_well'],['Went wrong: ','went_wrong'],['Improve: ','improve'],['Splits: ','splits']].forEach(([lab,k])=>{if(!r[k])return;const p=el('p');if(lab)p.append(el('b',null,lab));p.append(document.createTextNode(r[k]));b.append(p);});
+  [['','summary'],['Went well: ','went_well'],['Went wrong: ','went_wrong'],['Improve: ','improve'],['Splits: ','splits'],['What the data shows so far: ','season']].forEach(([lab,k])=>{if(!r[k])return;const p=el('p');if(k==='season')p.style.whiteSpace='pre-line';if(lab)p.append(el('b',null,lab));p.append(document.createTextNode(r[k]));b.append(p);});
   return b;
 }
 function drawReviews(){
