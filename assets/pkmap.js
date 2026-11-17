@@ -139,7 +139,7 @@ window.pkMap = function (root, games, lessons, v1) {
     if (n.id === 'v1') {
       if (S.v1Live && v1) { panel.append(el('p', null, 'Formula v1 is live. It was built on ' + fmtD(v1.built || asof) + ' from the logged data and now runs on new games without changes. Thicker purple lines mean an input carries more weight.'));
         (v1.inputs || []).forEach((i) => panel.append(line(i.name || String(i.features || ''), (i.coefficient > 0 ? '+' : '') + (+i.coefficient).toFixed(2)))); if (v1.official_rule) panel.append(el('p', 'pkmap-muted', 'Official plays: ' + (typeof v1.official_rule === 'string' ? v1.official_rule : JSON.stringify(v1.official_rule))));
-      } else { panel.append(el('p', null, 'Not built yet. The target is December 7. On that date the logged inputs get fit into one written formula, tested against simple baselines, and then run on new games without changes.'), el('p', null, 'The dashed purple lines show which inputs could feed it. Once it’s built, they turn solid and their thickness shows how much each input counts.'), line('Games with full inputs so far', String(S.F.filter((g) => ['W', 'L', 'P'].includes(g.spread_result)).length)), line('Lessons that passed the tests', String(lessons.filter((l) => l.status === 'Keep').length))); }
+      } else { panel.append(el('p', null, 'Not built yet. The target is December 31. On that date the logged inputs get fit into one written formula, tested against simple baselines, and then run on new games without changes.'), el('p', null, 'The dashed purple lines show which inputs could feed it. Once it’s built, they turn solid and their thickness shows how much each input counts.'), line('Games with full inputs so far', String(S.F.filter((g) => ['W', 'L', 'P'].includes(g.spread_result)).length)), line('Lessons that passed the tests', String(lessons.filter((l) => l.status === 'Keep').length))); }
     } else {
       panel.append(el('p', null, n.desc));
       if (n.group === 'inp') { panel.append(line('Logged on', n.cov + ' of ' + n.covN + ' games')); if (!n.cov) panel.append(el('p', 'pkmap-muted', 'Just added. It fills in as new games are logged.')); if (S.v1Live) panel.append(line('In Formula v1', S.v1in[n.id] ? 'Yes' : 'No')); }
@@ -152,7 +152,7 @@ window.pkMap = function (root, games, lessons, v1) {
       if (n.id === 'base' || n.id === 'raw') panel.append(line('Games with ratings logged', String(S.F.length)));
     }
   }
-  function refresh() { compute(); const les = N.filter((x) => x.group === 'les' && x.show); stage.textContent = ''; stage.append(el('b', null, S.v1Live ? 'Stage: Formula v1 live' : 'Stage: collecting data'), ' · ' + S.G.length + ' games logged · ' + les.length + ' lessons · ' + (S.v1Live ? 'out-of-sample test running' : 'Formula v1 target Dec 7')); dlab.textContent = 'As of ' + fmtD(asof); if (sel && !sel.show) sel = null; showPanel(); }
+  function refresh() { compute(); const les = N.filter((x) => x.group === 'les' && x.show); stage.textContent = ''; stage.append(el('b', null, S.v1Live ? 'Stage: Formula v1 live' : 'Stage: collecting data'), ' · ' + S.G.length + ' games logged · ' + les.length + ' lessons · ' + (S.v1Live ? 'out-of-sample test running' : 'Formula v1 target Dec 31')); dlab.textContent = 'As of ' + fmtD(asof); if (sel && !sel.show) sel = null; showPanel(); }
 
   // ---------- events ----------
   const pos = (ev) => { const r = cv.getBoundingClientRect(); return [ev.clientX - r.left, ev.clientY - r.top]; };
