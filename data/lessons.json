@@ -222,5 +222,47 @@
   "pushes": 0,
   "last_reviewed": "2026-11-16",
   "evidence": "Week of Nov 9-15 review: since rating_line tracking began Nov 13, picks against the ratings side went 19-29 ATS (CBB 5-13) while picks agreeing with it went 24-24, and the ratings-only control was 53-43. Overlaps L010 and L017 (which already cover big edges and CBB 20+ chalk); 0/50 picks needed."
+ },
+ {
+  "id": "L019",
+  "added": "2026-11-16",
+  "lesson": "Hot streaks are usually priced in, often too much: when a team's line has moved up mostly because of a recent winning streak and its season rating doesn't back it up, lean the other side or pass.",
+  "league": "All",
+  "situation": "Hot streak / momentum",
+  "status": "Testing",
+  "picks": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "last_reviewed": "2026-11-16",
+  "evidence": "Isaac's idea (momentum). Markets tend to overreact to streaks; tag only games where this flipped or decided the pick. 0/50 picks needed."
+ },
+ {
+  "id": "L020",
+  "added": "2026-11-16",
+  "lesson": "Regression to the mean: when a good team (strong season rating) has lost recently mostly through bad luck (close losses, opponents shooting unusually well, turnovers) and the line has dropped because of it, lean toward that team.",
+  "league": "All",
+  "situation": "Good team due / bounce-back",
+  "status": "Testing",
+  "picks": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "last_reviewed": "2026-11-16",
+  "evidence": "Isaac's idea (good teams are due). Real version is regression, not the gambler's fallacy. 0/50 picks needed."
+ },
+ {
+  "id": "L021",
+  "added": "2026-11-16",
+  "lesson": "Cold-weather spot: in NFL/CFB, when a dome or warm-weather team plays outdoors in freezing temps, snow or strong wind (15+ mph), lean toward the home team if the line hasn't moved for the weather.",
+  "league": "All",
+  "situation": "Football weather / warm team in cold",
+  "status": "Testing",
+  "picks": 0,
+  "wins": 0,
+  "losses": 0,
+  "pushes": 0,
+  "last_reviewed": "2026-11-16",
+  "evidence": "Isaac's idea (e.g. Miami in snowy Buffalo). Rare spot, will take a while to test. 0/50 picks needed."
  }
 ]
