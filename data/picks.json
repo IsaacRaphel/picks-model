@@ -168,5 +168,15 @@
   "fd_odds": "-110",
   "kalshi_odds": "-104",
   "result": "L"
+ },
+ {
+  "id": "2026-11-19-potd",
+  "date": "2026-11-19",
+  "kind": "Pick of the day",
+  "pick": "SHU +4.5",
+  "dk_odds": "-115",
+  "fd_odds": "-110",
+  "kalshi_odds": "",
+  "result": "pending"
  }
 ]
