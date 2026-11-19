@@ -187,5 +187,27 @@
   "went_well": "Memphis -3.5 was the right read on a Wizards team on a back-to-back that's lost 8 straight, and laying Philly -5.5 held up even after Brooklyn got within 4 late. Grambling +30.5 (Torvik had Kentucky way short of the line) covered, though only by 1.5, and the Wolves read held without Edwards.",
   "went_wrong": "Boston on a back-to-back got run over in the 4th, and the Rockets (road back-to-back, no VanVleet) and Warriors (no Curry, Butler or Porzingis) lost by 18 and 21 - the ratings were too high on short-handed road teams and the market's tighter numbers were closer. The Ravens and Nuggets picks were L008 flips off our own dog leans, and both dogs won outright.",
   "improve": "L008 is now 25-25 at 50 picks (exactly 50%, nowhere near significant) and its flips put us against the ratings side in both losses today, so the morning run should tag L018 when a flip goes against the ratings and keep tracking rather than add a new rule. When the ratings like a road team missing two-plus starters, apply L006/L009 instead of trusting the raw rating."
+ },
+ {
+  "id": "2026-11-17-daily",
+  "date": "2026-11-17",
+  "kind": "Daily",
+  "period": "",
+  "record": "Official 0-2 · Spread 8-11 · ML 11-8 · POTD L · CLV +0.0",
+  "summary": "Both official plays lost (Spurs -9.5 lost outright to Detroit, Lakers -7.5 only won by 4 in OT), and the full board went 8-11 ATS and 11-8 straight up with flat CLV. No bad beats: 3 of the 11 losses were close (Wolves by 1, UCF by 3, Lakers in OT) and 8 were real misses.",
+  "went_well": "The CBB dogs mostly held: Indiana won outright at MSG, Tennessee beat Michigan State by 15 as the dog, and Montana State and ODU covered big numbers fairly cleanly. Utah +6.5 won outright by 25, though a lot of that was the Clippers sitting Leonard, Harden and Zubac, so don't over-credit it; Rutgers +16.5 was a backdoor cover.",
+  "went_wrong": "Spurs -9.5 was a bad read: Detroit was the better team even without Duren, and the 12-game streak was already in the price. Duke -7.5 (Illinois won by 21 without Mirkovic), Nova -1.5 and Auburn +1.5 were also bad reads, and Raptors +3.5 lost to a market that had the Knicks right.",
+  "improve": "Two of the three NBA favorite losses (SAS on a 12-game streak, LAL on 8 straight) were teams riding hot streaks, which is exactly what L019 tests, so the morning run should tag L019 when a streak is part of the case for laying the number. No new lesson yet; one day is too small to call."
+ },
+ {
+  "id": "2026-11-18-daily",
+  "date": "2026-11-18",
+  "kind": "Daily",
+  "period": "",
+  "record": "Official 2-2 · Spread 10-12 · ML 17-5 · POTD L · CLV +0.1",
+  "summary": "The official plays split 2-2 (Houston +1.5 and Philly +1.5 won outright; Nets -2.5 and Celtics -2.5 lost), and the full board went 10-12 ATS and 17-5 straight up with slightly positive CLV. No bad beats: 3 of the 12 losses were close (Boston blew a 17-pt lead, Kansas won by 4, Notre Dame in OT) and 9 were real misses.",
+  "went_well": "Houston over No. 1 Florida and Philly at Orlando were good dog reads that won outright, and Memphis +5.5 won outright too. Laying Dallas against a Curry-less Warriors team and Phoenix at Sacramento both covered by double digits, and Detroit -4.5 held up even without Cade.",
+  "went_wrong": "Nets -2.5 lost by 30 and Lakers -9.5 lost outright to a 3-13 Jazz team, both bad reads, and Toronto -4.5 without Barnes and Barrett lost outright. OKC -5.5 (an L008/L011 flip off our Hawks lean) and Nebraska -32.5 (an L004 flip) lost where the market's number was right, and the big CBB dogs L017 kept us on (Siena, Northern Colorado) got run over.",
+  "improve": "L008 has now reached 51 picks at 25-26, so it's Dropped under the rules; the morning run should stop using it to flip onto favorites and keep the model's own side or pass. L017 is 3-6 and L011 13-18, both still small samples, so keep testing rather than change them."
  }
 ]
