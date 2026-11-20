@@ -178,5 +178,15 @@
   "fd_odds": "-110",
   "kalshi_odds": "",
   "result": "W"
+ },
+ {
+  "id": "2026-11-20-potd",
+  "date": "2026-11-20",
+  "kind": "Pick of the day",
+  "pick": "IU ML",
+  "dk_odds": "-148",
+  "fd_odds": "-138",
+  "kalshi_odds": "-133",
+  "result": "pending"
  }
 ]
