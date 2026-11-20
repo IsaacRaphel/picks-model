@@ -14852,16 +14852,16 @@
   "spread_pick": "MIL +10.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "POR -518 / MIL +394",
   "fd_ml": "POR -520 / MIL +400",
   "kalshi_ml": "POR 79%",
   "model_ml": "POR 80%",
   "ml_pick": "POR",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "POR 124, MIL 114",
+  "result_context": "Hook, Injury: MIL cut it to 115-114 with 3:18 left, then POR scored the last 9 to win by 10, so MIL +10.5 covered by the half point; MIL without Kuzma and Turner, Lillard 33",
   "lessons_applied": "L001",
   "official": false,
   "features": {
@@ -14885,7 +14885,7 @@
    "sos_rank_home": null,
    "open_line_home": 9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 11.5,
    "last5_margin_away": 6.8,
    "last5_margin_home": -13.0,
    "streak_away": -2,
@@ -14895,7 +14895,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Milwaukee has lost 11 straight and is on the second night of a back-to-back, but I shrink the ratings' 16.5 for the early sample and Avdija and Camara being questionable, so my number is POR -11.5 and the Blazers to win. With Avdija (24 a game) undecided, L001 says don't lay a big number, so the raw lean on Portland -9.5 flips to Bucks +10.5 at DK."
+  "note": "Milwaukee has lost 11 straight and is on the second night of a back-to-back, but I shrink the ratings' 16.5 for the early sample and Avdija and Camara being questionable, so my number is POR -11.5 and the Blazers to win. With Avdija (24 a game) undecided, L001 says don't lay a big number, so the raw lean on Portland -9.5 flips to Bucks +10.5 at DK.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-19-NBA-NYK-MIN",
@@ -14914,16 +14915,16 @@
   "spread_pick": "MIN +1.5 (DK)",
   "spread_side": "home",
   "spread_edge": 6.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "NYK -113 / MIN -104",
   "fd_ml": "NYK -110 / MIN -106",
   "kalshi_ml": "NYK 51%",
   "model_ml": "MIN 63%",
   "ml_pick": "MIN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "NYK 102, MIN 99",
+  "result_context": "Close loss: NYK led by 19 in Q3 and went scoreless the last 3:26; MIN's tying 3 missed with 9.9s left, NYK won by 3",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -14947,7 +14948,7 @@
    "sos_rank_home": null,
    "open_line_home": null,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 1.5,
    "last5_margin_away": 7.0,
    "last5_margin_home": 10.4,
    "streak_away": 2,
@@ -14957,7 +14958,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Minnesota is 11-4 and 7-2 at home without Edwards, and even after shrinking the ratings' 6.5 for the small sample and Kuminga being questionable, my number is MIN -4.5 and the Wolves to win. The market still seems to be pricing Edwards' name, so Minnesota +1.5, but a 6-point gap is an L010 warning, so it's a lean, not a play."
+  "note": "Minnesota is 11-4 and 7-2 at home without Edwards, and even after shrinking the ratings' 6.5 for the small sample and Kuminga being questionable, my number is MIN -4.5 and the Wolves to win. The market still seems to be pricing Edwards' name, so Minnesota +1.5, but a 6-point gap is an L010 warning, so it's a lean, not a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-NBA-LAC-SAS",
@@ -14976,16 +14978,16 @@
   "spread_pick": "SAS -15.5 (FD)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "SAS -1020 / LAC +660",
   "fd_ml": "SAS -1000 / LAC +660",
   "kalshi_ml": "SAS 88%",
   "model_ml": "SAS 90%",
   "ml_pick": "SAS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "LAC 112, SAS 124",
+  "result_context": "Line was right: SAS led 105-97 with 8 min left and won by 12, short of 15.5; Wembanyama 32/11, no Dylan Harper (hip)",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -15009,7 +15011,7 @@
    "sos_rank_home": null,
    "open_line_home": -15.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -15.5,
    "last5_margin_away": -4.6,
    "last5_margin_home": 13.0,
    "streak_away": -1,
@@ -15019,7 +15021,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "The Spurs are 12-3 with Wemby rolling and the Clippers are 0-5 on the road without Ingram or Beal, so my number is SAS -16.5 and San Antonio to win. The ratings say closer to 20 but I shrink that early in the year, so it's only a point of value on Spurs -15.5 at FanDuel, with real blowout and backdoor risk."
+  "note": "The Spurs are 12-3 with Wemby rolling and the Clippers are 0-5 on the road without Ingram or Beal, so my number is SAS -16.5 and San Antonio to win. The ratings say closer to 20 but I shrink that early in the year, so it's only a point of value on Spurs -15.5 at FanDuel, with real blowout and backdoor risk.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-NBA-GSW-MEM",
@@ -15038,16 +15041,16 @@
   "spread_pick": "MEM -7.5 (DK)",
   "spread_side": "home",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MEM -216 / GSW +179",
   "fd_ml": "MEM -215 / GSW +180",
   "kalshi_ml": "MEM 70%",
   "model_ml": "MEM 76%",
   "ml_pick": "MEM",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "GSW 98, MEM 126",
+  "result_context": "Blowout, Injury: GSW without Curry (oblique) and Green (elbow); MEM never trailed and led by 34 in Q4",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -15071,7 +15074,7 @@
    "sos_rank_home": null,
    "open_line_home": -8.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -5.5,
    "last5_margin_away": -7.4,
    "last5_margin_home": 12.8,
    "streak_away": -4,
@@ -15081,7 +15084,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Golden State is without Curry, Butler and Porzingis on a back-to-back after losing four straight by 22 a game, so my number is MEM -10 and Memphis to win even without Jerome and Stewart. That clears L009's 2.5-point bar for fading a beat-up team, so Grizzlies -7.5, but Draymond and Horford being questionable keeps it off the official list."
+  "note": "Golden State is without Curry, Butler and Porzingis on a back-to-back after losing four straight by 22 a game, so my number is MEM -10 and Memphis to win even without Jerome and Stewart. That clears L009's 2.5-point bar for fading a beat-up team, so Grizzlies -7.5, but Draymond and Horford being questionable keeps it off the official list.",
+  "clv": -2.0
  },
  {
   "id": "2026-11-19-NFL-IND-HOU",
@@ -15100,16 +15104,16 @@
   "spread_pick": "IND +12.5 (FD)",
   "spread_side": "away",
   "spread_edge": 3.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "HOU -750 / IND +525",
   "fd_ml": "HOU -770 / IND +540",
   "kalshi_ml": "HOU 85%",
   "model_ml": "HOU 78%",
   "ml_pick": "HOU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "IND 3, HOU 26",
+  "result_context": "Blowout, Bad read: HOU scored 26 unanswered and held IND to 167 yards; Daniel Jones was benched",
   "lessons_applied": "L018",
   "official": false,
   "features": {
@@ -15133,7 +15137,7 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -12.5,
    "last5_margin_away": -9.8,
    "last5_margin_home": 7.8,
    "streak_away": 1,
@@ -15143,7 +15147,8 @@
    "precip": null,
    "away_dome_or_warm": true
   },
-  "note": "FPI only has Houston by about 7 and the Texans are 0-4 at home, but the Colts just traded Keenan Allen and Josh Downs, so my number is HOU -9.5 and Houston to win. The line jumped from 9.5 to 12.5, which L010/L011 would push me onto, but L018 says don't lay it against the ratings without a real reason, so Colts +12.5 at FanDuel as a lean, not a play."
+  "note": "FPI only has Houston by about 7 and the Texans are 0-4 at home, but the Colts just traded Keenan Allen and Josh Downs, so my number is HOU -9.5 and Houston to win. The line jumped from 9.5 to 12.5, which L010/L011 would push me onto, but L018 says don't lay it against the ratings without a real reason, so Colts +12.5 at FanDuel as a lean, not a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-WVU-FLA",
@@ -15162,16 +15167,16 @@
   "spread_pick": "WVU +9.5 (FD)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "FLA -410 / WVU +320",
   "fd_ml": "FLA -465 / WVU +360",
   "kalshi_ml": "FLA 81%",
   "model_ml": "FLA 74%",
   "ml_pick": "FLA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "WVU 72, FLA 85",
+  "result_context": "Line was right: FLA never trailed, led 40-30 at half and shot 14-of-22 after the break; WVU got within 3 before FLA pulled away, even without Fland",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -15195,7 +15200,7 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -9.5,
    "last5_margin_away": 19.8,
    "last5_margin_home": 13.4,
    "streak_away": -1,
@@ -15205,7 +15210,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Both teams are on their third game in three days after semifinal losses, and Torvik has Florida about 7.5 better, so my number is FLA -8 and the Gators to win. That's 1.5 points on West Virginia +9.5 at FanDuel; L011 would flip a dog this thin, but L016 keeps me on the college dog, so it's a lean, not a play."
+  "note": "Both teams are on their third game in three days after semifinal losses, and Torvik has Florida about 7.5 better, so my number is FLA -8 and the Gators to win. That's 1.5 points on West Virginia +9.5 at FanDuel; L011 would flip a dog this thin, but L016 keeps me on the college dog, so it's a lean, not a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-ND-AUB",
@@ -15224,16 +15230,16 @@
   "spread_pick": "ND +3.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "AUB -185 / ND +154",
   "fd_ml": "AUB -150 / ND +126",
   "kalshi_ml": "AUB 57%",
   "model_ml": "AUB 59%",
   "ml_pick": "AUB",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "ND 78, AUB 73",
+  "result_context": "Close win: tied at 55 with 4:46 left, AUB went 2-of-9 at the line late and Braeden Smith's layup with 14s left won it; ND won outright",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -15257,7 +15263,7 @@
    "sos_rank_home": null,
    "open_line_home": -3.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": 18.6,
    "last5_margin_home": 10.6,
    "streak_away": 1,
@@ -15267,7 +15273,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Torvik has Auburn about 3 better and Notre Dame is coming off an overtime game last night, so my number is AUB -3 and the Tigers to win. Only a half point of value on Notre Dame +3.5, and L016 keeps me on the dog instead of letting L011 flip me to Auburn."
+  "note": "Torvik has Auburn about 3 better and Notre Dame is coming off an overtime game last night, so my number is AUB -3 and the Tigers to win. Only a half point of value on Notre Dame +3.5, and L016 keeps me on the dog instead of letting L011 flip me to Auburn.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-STET-LOU",
@@ -15286,16 +15293,16 @@
   "spread_pick": "STET +35.5 (DK)",
   "spread_side": "away",
   "spread_edge": 5.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "LOU -100000 / STET +5500",
   "kalshi_ml": "LOU 99%",
   "model_ml": "LOU 99%",
   "ml_pick": "LOU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "STET 69, LOU 83",
+  "result_context": "LOU won by only 14 as a 35.5-pt favorite",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -15319,7 +15326,7 @@
    "sos_rank_home": null,
    "open_line_home": -33.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -35.5,
    "last5_margin_away": null,
    "last5_margin_home": 14.7,
    "streak_away": null,
@@ -15329,7 +15336,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Stetson is one of the worst teams Torvik rates, but my scaling only has Louisville around 26 (I bump it to 30 for the mismatch) and the Cards just lost by 20 at Memphis, so my number is LOU -30 and Louisville to win. That's 5.5 short of 35.5, which clears L004's bar, and L017 says don't shrink it into the chalk, so Stetson +35.5 at DK as a tracking pick."
+  "note": "Stetson is one of the worst teams Torvik rates, but my scaling only has Louisville around 26 (I bump it to 30 for the mismatch) and the Cards just lost by 20 at Memphis, so my number is LOU -30 and Louisville to win. That's 5.5 short of 35.5, which clears L004's bar, and L017 says don't shrink it into the chalk, so Stetson +35.5 at DK as a tracking pick.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-SUU-TEX",
@@ -15348,16 +15356,16 @@
   "spread_pick": "SUU +38.5 (DK)",
   "spread_side": "away",
   "spread_edge": 7.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "TEX -100000 / SUU +7000",
   "kalshi_ml": "TEX 99%",
   "model_ml": "TEX 99%",
   "ml_pick": "TEX",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "SUU 68, TEX 92",
+  "result_context": "TEX started slow and won by 24, well short of 38.5",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -15381,7 +15389,7 @@
    "sos_rank_home": null,
    "open_line_home": -38.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -38.5,
    "last5_margin_away": null,
    "last5_margin_home": 33.0,
    "streak_away": null,
@@ -15391,7 +15399,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Texas crushed three cupcakes but only beat Baylor by 3, and my scaling has this around 25 (bumped to 31 for the mismatch), so my number is TEX -31 and the Longhorns to win. L017 says don't lay 38.5 when the ratings are this far short, so Southern Utah +38.5 at DK as a no-play lean."
+  "note": "Texas crushed three cupcakes but only beat Baylor by 3, and my scaling has this around 25 (bumped to 31 for the mismatch), so my number is TEX -31 and the Longhorns to win. L017 says don't lay 38.5 when the ratings are this far short, so Southern Utah +38.5 at DK as a no-play lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-TAMU-TCU",
@@ -15410,16 +15419,16 @@
   "spread_pick": "TAMU -0.5 (FD)",
   "spread_side": "away",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "TAMU -110 / TCU -110",
   "fd_ml": "TAMU -110 / TCU -110",
   "kalshi_ml": "TAMU 51%",
   "model_ml": "TAMU 55%",
   "ml_pick": "TAMU",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TAMU 97, TCU 92",
+  "result_context": "Overtime: TAMU rallied late to force OT and won by 5 in OT",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -15443,7 +15452,7 @@
    "sos_rank_home": null,
    "open_line_home": -1.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 1.5,
    "last5_margin_away": 32.0,
    "last5_margin_home": 27.8,
    "streak_away": 5,
@@ -15453,7 +15462,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Both teams are unbeaten against soft home schedules, but Torvik has Texas A&M about 6 points better per 100 possessions, which is still worth a point and a half at TCU, so my number is TAMU -1.5 and the Aggies to win. The line already moved from TCU -1.5 to A&M, so it's just a small edge on Aggies -0.5 at FanDuel."
+  "note": "Both teams are unbeaten against soft home schedules, but Torvik has Texas A&M about 6 points better per 100 possessions, which is still worth a point and a half at TCU, so my number is TAMU -1.5 and the Aggies to win. The line already moved from TCU -1.5 to A&M, so it's just a small edge on Aggies -0.5 at FanDuel.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-19-CBB-SHU-WIS",
@@ -15472,16 +15482,16 @@
   "spread_pick": "SHU +4.5 (FD)",
   "spread_side": "away",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "WIS -185 / SHU +154",
   "fd_ml": "WIS -188 / SHU +155",
   "kalshi_ml": "WIS 64%",
   "model_ml": "WIS 58%",
   "ml_pick": "WIS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "SHU 74, WIS 69",
+  "result_context": "SHU led 40-23 in the 1st half, WIS tied it at 55, then Trey Parker's 3 at 5:10 put SHU ahead for good; Parker 21 off the bench, SHU won outright",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -15505,7 +15515,7 @@
    "sos_rank_home": null,
    "open_line_home": -4.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -4.5,
    "last5_margin_away": 7.8,
    "last5_margin_home": 17.8,
    "streak_away": -1,
@@ -15515,7 +15525,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Wisconsin is 4-0 but every game was at home against weak teams, while Seton Hall's only loss was by 6 at Alabama, and Torvik has the Badgers by about 2 on a neutral floor, so my number is WIS -2.5 and Wisconsin to win. That's 2 points of value on a slow-paced, defensive Pirates team, so Seton Hall +4.5 at FanDuel is an official play."
+  "note": "Wisconsin is 4-0 but every game was at home against weak teams, while Seton Hall's only loss was by 6 at Alabama, and Torvik has the Badgers by about 2 on a neutral floor, so my number is WIS -2.5 and Wisconsin to win. That's 2 points of value on a slow-paced, defensive Pirates team, so Seton Hall +4.5 at FanDuel is an official play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-TARL-USC",
@@ -15534,16 +15545,16 @@
   "spread_pick": "TARL +26.5 (FD)",
   "spread_side": "away",
   "spread_edge": 5.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "",
   "fd_ml": "USC -20000 / TARL +3500",
   "kalshi_ml": "USC 98%",
   "model_ml": "USC 96%",
   "ml_pick": "USC",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TARL 51, USC 96",
+  "result_context": "Blowout, Garbage time: USC led 55-21 at half and by as many as 48; L017 kept us on the dog",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -15567,7 +15578,7 @@
    "sos_rank_home": null,
    "open_line_home": -27.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -26.5,
    "last5_margin_away": null,
    "last5_margin_home": 31.8,
    "streak_away": null,
@@ -15577,7 +15588,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Tarleton is 4-1 and Torvik rates it about average, while USC's best win is by 12 at Cal, so my number is USC -21 (the ratings say 17, bumped for the mismatch) and the Trojans to win. L017 says don't lay 26.5 that far off the ratings, so Tarleton +26.5 at FanDuel as a tracking pick."
+  "note": "Tarleton is 4-1 and Torvik rates it about average, while USC's best win is by 12 at Cal, so my number is USC -21 (the ratings say 17, bumped for the mismatch) and the Trojans to win. L017 says don't lay 26.5 that far off the ratings, so Tarleton +26.5 at FanDuel as a tracking pick.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-19-CBB-KU-HOU",
@@ -15596,16 +15608,16 @@
   "spread_pick": "KU +2.5 (DK)",
   "spread_side": "away",
   "spread_edge": 3.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "",
   "fd_ml": "HOU -138 / KU +114",
   "kalshi_ml": "HOU 57%",
   "model_ml": "KU 51%",
   "ml_pick": "KU",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "KU 83, HOU 92",
+  "result_context": "Line was right: KU's first half sank them and a late rally fell short; HOU won by 9 with Stokes playing",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -15629,7 +15641,7 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -2.5,
    "last5_margin_away": 24.6,
    "last5_margin_home": 25.0,
    "streak_away": 5,
@@ -15639,6 +15651,7 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Torvik has Kansas a hair better, but Tyran Stokes is iffy with a bone bruise and it is the third game in three days, so my number is KU -0.5 and the Jayhawks to win. A 3-point gap with Stokes undecided is an L010 warning and L011 would flip me to Houston, but L016 keeps the college dog, so Kansas +2.5 at DK is only a lean."
+  "note": "Torvik has Kansas a hair better, but Tyran Stokes is iffy with a bone bruise and it is the third game in three days, so my number is KU -0.5 and the Jayhawks to win. A 3-point gap with Stokes undecided is an L010 warning and L011 would flip me to Houston, but L016 keeps the college dog, so Kansas +2.5 at DK is only a lean.",
+  "clv": 0.0
  }
 ]
