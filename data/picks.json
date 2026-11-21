@@ -188,5 +188,15 @@
   "fd_odds": "-138",
   "kalshi_odds": "-133",
   "result": "W"
+ },
+ {
+  "id": "2026-11-21-potd",
+  "date": "2026-11-21",
+  "kind": "Pick of the day",
+  "pick": "TENN +1.5",
+  "dk_odds": "-115",
+  "fd_odds": "-116",
+  "kalshi_odds": "-108",
+  "result": "pending"
  }
 ]
