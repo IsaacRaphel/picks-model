@@ -34,6 +34,8 @@ h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
 @media(max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:18px}
 .card h2{font-size:19px;letter-spacing:-.01em}
+.card .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.card h2.head{font-size:21px;line-height:1.25}
 .card .what{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:820px}
 .chartbox{position:relative;height:320px;margin-top:16px}
 .takeaway{margin-top:14px;font-size:14px;color:#1e3246;border-left:3px solid var(--blue);padding-left:12px}
@@ -102,14 +104,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </section>
 
 <section class="card">
-  <h2>Accuracy over time</h2>
+  <div class="eyebrow">Accuracy over time</div>
+    <h2 class="head" id="h-cum">Accuracy over time</h2>
   <p class="what">Running win rate against the spread, day by day, with its 95% range shaded. The dashed line is 52.4%, the break-even rate after the sportsbook's cut. An edge only counts once the whole shaded band sits above that line.</p>
   <div class="chartbox"><canvas id="c-cum"></canvas></div>
   <p class="takeaway" id="t-cum"></p>
 </section>
 
 <section class="card">
-  <h2>Model vs. simple strategies</h2>
+  <div class="eyebrow">Model vs. simple strategies</div>
+    <h2 class="head" id="h-ctrl">Model vs. simple strategies</h2>
   <p class="what">A forecast only matters if it beats something simpler. These are the same graded games, picked by rules anyone could follow: always take the favorite, always the underdog, always the home team, and the public rating system with no adjustments. Everything here is against the spread: "always favorite" means laying the points with the favorite every game, not just picking them to win.</p>
   <div class="chartbox"><canvas id="c-ctrl"></canvas></div>
   <p class="takeaway" id="t-ctrl"></p>
@@ -118,13 +122,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <div class="grid2">
   <section class="card">
-    <h2>Closing line value by day</h2>
+    <div class="eyebrow">Closing line value by day</div>
+    <h2 class="head" id="h-clv">Closing line value by day</h2>
     <p class="what">Did the model's number beat the market's final number? Positive means the line moved toward our pick before tip-off, which is the best early sign of a sharp model.</p>
     <div class="chartbox" style="height:260px"><canvas id="c-clv"></canvas></div>
     <p class="takeaway" id="t-clv"></p>
   </section>
   <section class="card">
-    <h2>Calibration</h2>
+    <div class="eyebrow">Calibration</div>
+    <h2 class="head" id="h-cal">Calibration</h2>
     <p class="what">When the model says a team wins 70% of the time, does it? Points on the dashed line mean the probabilities are honest; above it means the model was too cautious, below it too confident.</p>
     <div class="chartbox" style="height:260px"><canvas id="c-cal"></canvas></div>
     <p class="takeaway" id="t-cal"></p>
@@ -229,6 +235,23 @@ function gameInfo(g){
   return{f,lineHome,homeRes,awayRes,favRes:lineHome<0?homeRes:lineHome>0?awayRes:null,dogRes:lineHome<0?awayRes:lineHome>0?homeRes:null};
 }
 
+
+// ---- direct labels and callouts (no legend hunting) ----
+const pkLabels={id:'pkLabels',afterDatasetsDraw(ch){const o=ch.options.plugins.pkLabels;if(!o||(!o.ends&&!o.gap&&!o.marks))return;const x=ch.ctx;x.save();
+  const L=[];(o.ends||[]).forEach(e=>{const ds=ch.data.datasets[e.i];const m=ch.getDatasetMeta(e.i);if(!ds||m.hidden)return;let k=ds.data.length-1;while(k>=0&&ds.data[k]==null)k--;if(k<0)return;
+    const pt=m.data[k];L.push({x:pt.x+8,y:pt.y,t:e.text.replace('{v}',(+ds.data[k]).toFixed(1)+'%'),c:e.color||ds.borderColor,b:e.bold});});
+  L.sort((a,b)=>a.y-b.y);for(let it=0;it<20;it++)for(let j=1;j<L.length;j++){const d=L[j].y-L[j-1].y;if(d<15){const sh=(15-d)/2;L[j-1].y-=sh;L[j].y+=sh;}}
+  L.forEach(l=>{x.font=(l.b?'700 ':'600 ')+'12px Inter,system-ui,sans-serif';x.fillStyle=l.c;x.textBaseline='middle';x.textAlign='left';x.fillText(l.t,l.x,l.y);});
+  const g=o.gap;if(g){const m=ch.getDatasetMeta(g.i),ds=ch.data.datasets[g.i];let k=ds.data.length-1;while(k>=0&&ds.data[k]==null)k--;if(k>=0){const v=ds.data[k],y1=m.data[k].y,y2=ch.scales.y.getPixelForValue(g.target),px=m.data[k].x-14;
+    const d=v-g.target,col=d>=0?'#2e7d3a':'#c94545';x.strokeStyle=col;x.fillStyle=col;x.lineWidth=1.6;x.beginPath();x.moveTo(px,y1);x.lineTo(px,y2);x.stroke();
+    const dir=y2>y1?1:-1;x.beginPath();x.moveTo(px,y2);x.lineTo(px-4,y2-6*dir);x.lineTo(px+4,y2-6*dir);x.closePath();x.fill();
+    x.font='700 12px Inter,system-ui,sans-serif';x.textAlign='right';x.textBaseline='top';x.fillText(Math.abs(d).toFixed(1)+' pts '+(d>=0?'above':'below')+(ch.width<560?'':' break-even'),px+4,Math.max(y1,y2)+10);}}
+  (o.marks||[]).forEach(mk=>{const m=ch.getDatasetMeta(mk.i),pt=m.data[mk.k];if(!pt)return;x.fillStyle=mk.color;x.beginPath();x.arc(pt.x,pt.y,4,0,7);x.fill();x.font='600 11.5px Inter,system-ui,sans-serif';x.textAlign='center';x.textBaseline='bottom';x.fillText(mk.text,pt.x,pt.y-8);});
+  x.restore();}};
+const pkBarVals={id:'pkBarVals',afterDatasetsDraw(ch){const po=ch.options.plugins.pkBarVals;if(!po||!po.on)return;const x=ch.ctx,m=ch.getDatasetMeta(0),ds=ch.data.datasets[0];x.save();x.font='700 12px Inter,system-ui,sans-serif';x.textAlign='center';x.textBaseline='bottom';
+  x.textBaseline='top';m.data.forEach((b,k)=>{const v=ds.data[k];if(typeof v!=='number')return;const nar=b.width<44;x.font='700 '+(nar?10:12)+'px Inter,system-ui,sans-serif';x.fillStyle=ds.backgroundColor[k]==='#c3ccd6'?'#3f4f63':'#ffffff';x.fillText(nar?Math.round(v)+'%':v.toFixed(1)+'%',b.x,b.y+7);});
+  if(po.be!=null){const y=ch.scales.y.getPixelForValue(po.be);x.font='600 11.5px Inter,system-ui,sans-serif';x.fillStyle='#7b8794';x.textAlign='left';x.textBaseline='bottom';x.fillText('Break-even '+po.be+'%',ch.chartArea.left+6,y-4);}x.restore();}};
+if(window.Chart){Chart.register(pkLabels);Chart.register(pkBarVals);}
 function line(id,cfg){if(!window.Chart)return;new Chart($(id),cfg);}
 const baseOpts=(yTitle,extra={})=>({responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
   plugins:{legend:{labels:{boxWidth:12,boxHeight:12,usePointStyle:true}},tooltip:{backgroundColor:'#16324a',borderColor:'#cfd6df',borderWidth:1}},
@@ -251,13 +274,17 @@ fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()).then(G=>{
   // cumulative
   let w=0,l=0,ow=0,ol=0;const cum=[],cumOff=[],be=[],lo=[],hi=[];
   days.forEach(d=>{graded.filter(g=>g.date===d).forEach(g=>{if(g.spread_result==='W')w++;if(g.spread_result==='L')l++;if(g.official===true){if(g.spread_result==='W')ow++;if(g.spread_result==='L')ol++;}});
-    cum.push(w+l?+(100*w/(w+l)).toFixed(1):null);{const c=wilson(w,w+l);lo.push(c?+(100*c[0]).toFixed(1):null);hi.push(c?+(100*c[1]).toFixed(1):null);}cumOff.push(ow+ol?+(100*ow/(ow+ol)).toFixed(1):null);be.push(52.4);});
-  const ds=[{label:'95% range',data:hi,borderColor:'transparent',backgroundColor:'rgba(84,183,232,.13)',fill:'+1',pointRadius:0,tension:.25,order:3},
+    cum.push(w+l?+(100*w/(w+l)).toFixed(1):null);{const c=wilson(w,w+l);lo.push(c?+(100*c[0]).toFixed(1):null);hi.push(c?+(100*c[1]).toFixed(1):null);}cumOff.push(ow+ol>=10?+(100*ow/(ow+ol)).toFixed(1):null);be.push(52.4);});
+  const ds=[{label:'95% range',data:hi,borderColor:'transparent',backgroundColor:'rgba(34,79,106,.07)',fill:'+1',pointRadius:0,tension:.25,order:3},
             {label:'_lo',data:lo,borderColor:'transparent',pointRadius:0,tension:.25,fill:false,order:3},
-            {label:'Full board',data:cum,borderColor:C.blue,backgroundColor:C.blue,tension:.25,pointRadius:3},
-            {label:'Break-even 52.4%',data:be,borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}];
-  if(cumOff.some(x=>x!=null))ds.splice(1,0,{label:'Official plays',data:cumOff,borderColor:C.green,backgroundColor:C.green,tension:.25,pointRadius:3,spanGaps:true});
-  line('c-cum',{type:'line',data:{labels:days.map(fmtDay),datasets:ds},options:baseOpts('Win % against the spread',{plugins:{legend:{labels:{boxWidth:12,boxHeight:12,usePointStyle:true,filter:i=>!i.text.startsWith('_')}},tooltip:{filter:i=>!i.dataset.label.startsWith('_')}},scales:{x:{grid:{display:false}},y:{suggestedMin:30,suggestedMax:75,ticks:{callback:v=>v+'%'}}}})});
+            {label:'Full board',data:cum,borderColor:C.blue,backgroundColor:C.blue,tension:.25,pointRadius:0,pointHoverRadius:4,borderWidth:2.5},
+            {label:'Break-even 52.4%',data:be,borderColor:'#9aa5b1',borderDash:[6,5],pointRadius:0,borderWidth:1.5}];
+  if(cumOff.some(x=>x!=null))ds.splice(2,0,{label:'Official plays',data:cumOff,borderColor:C.green,backgroundColor:C.green,tension:.25,pointRadius:0,pointHoverRadius:4,borderWidth:2,borderDash:[5,4],spanGaps:true});
+  function cumLabels(ds){const fi=ds.findIndex(d=>d.label==='Full board'),oi=ds.findIndex(d=>d.label==='Official plays'),bi=ds.findIndex(d=>d.label==='Break-even 52.4%');
+    const sm=window.innerWidth<560;const ends=[{i:fi,text:(sm?'All {v}':'Full board {v}'),bold:1}];if(oi>=0)ends.push({i:oi,text:(sm?'Official {v}':'Official plays {v}')});ends.push({i:bi,text:(sm?'Break-even':'Break-even 52.4%'),color:'#7b8794'});
+    return{ends,gap:{i:fi,target:52.4}};}
+  line('c-cum',{type:'line',data:{labels:days.map(fmtDay),datasets:ds},options:baseOpts('Win % against the spread',{layout:{padding:{right:window.innerWidth<560?96:132}},plugins:{legend:{display:false},tooltip:{filter:i=>!i.dataset.label.startsWith('_')},pkLabels:cumLabels(ds)},scales:{x:{grid:{display:false}},y:{suggestedMin:30,suggestedMax:75,ticks:{callback:v=>v+'%'}}}})});
+  if(all.rate!=null){const ci=wilson(all.w,all.n);$('h-cum').textContent=ci[0]>0.524?'Beating break-even, and the whole range is above it':all.rate>=0.524?'Above break-even, but not proven yet':'Close to a coin flip, still below break-even';}
   $('t-cum').innerHTML=all.rate!=null?('<b>'+pct(all.rate)+'</b> over '+all.n+' decided games, with a 95% range of '+rng(all.w,all.n)+'. The shaded band is how far the true rate could plausibly be from the observed one. '+(wilson(all.w,all.n)[0]>0.524?'The whole band is above break-even, which is real evidence of an edge.':'The band still includes break-even, so there is no evidence of an edge yet. It narrows as games are added.')):'';
 
   // controls
@@ -265,14 +292,15 @@ fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()).then(G=>{
   const fav=rec(infos.map(x=>x.i.favRes).filter(Boolean)), dog=rec(infos.map(x=>x.i.dogRes).filter(Boolean)), home=rec(infos.map(x=>x.i.homeRes));
   const ratRows=infos.filter(x=>x.g.features&&typeof x.g.features.rating_line==='number');
   const rat=rec(ratRows.map(x=>{const v=-x.g.features.rating_line+x.i.lineHome;return v>0?x.i.homeRes:v<0?x.i.awayRes:null;}).filter(Boolean));
-  const bars=[['Model (full board)',all,C.blue]];
+  const MUTE='#c3ccd6';const bars=[['Model (full board)',all,C.blue]];
   if(off.n)bars.push(['Official plays',off,C.green]);
-  bars.push(['Always favorite',fav,C.purple],['Always underdog',dog,C.orange],['Always home',home,C.teal]);
-  if(rat.n>=10)bars.push(['Ratings only',rat,C.amber]);
+  bars.push(['Always favorite',fav,MUTE],['Always underdog',dog,MUTE],['Always home',home,MUTE]);
+  if(rat.n>=10)bars.push(['Ratings only',rat,MUTE]);
   line('c-ctrl',{type:'bar',data:{labels:bars.map(b=>b[0]),datasets:[{label:'Win % ATS',data:bars.map(b=>b[1].rate!=null?+(100*b[1].rate).toFixed(1):null),backgroundColor:bars.map(b=>b[2]),borderRadius:6,maxBarThickness:70},
-    {type:'line',label:'Break-even 52.4%',data:bars.map(()=>52.4),borderColor:C.dim,borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
-    options:baseOpts('Win % against the spread',{plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>c.datasetIndex===0?('Record '+bars[c.dataIndex][1].s):''}}},scales:{x:{grid:{display:false}},y:{min:30,suggestedMax:65,ticks:{callback:v=>v+'%'}}}})});
+    {type:'line',label:'Break-even 52.4%',data:bars.map(()=>52.4),borderColor:'#9aa5b1',borderDash:[6,5],pointRadius:0,borderWidth:1.5}]},
+    options:baseOpts('Win % against the spread',{plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:c=>c.datasetIndex===0?('Record '+bars[c.dataIndex][1].s):''}},pkBarVals:{on:true,be:52.4}},scales:{x:{grid:{display:false}},y:{min:30,suggestedMax:65,ticks:{callback:v=>v+'%'}}}})});
   const best=bars.slice(1).filter(b=>b[1].rate!=null).sort((a,b)=>b[1].rate-a[1].rate)[0];
+  if(all.rate!=null&&best)$('h-ctrl').textContent=all.rate>best[1].rate?'The model is beating every simple rule so far':'A simple rule ("'+best[0].toLowerCase()+'") is doing better so far';
   $('t-ctrl').innerHTML=all.rate!=null&&best?('The model is at <b>'+pct(all.rate)+'</b>. The best simple strategy so far is <b>'+best[0].toLowerCase()+'</b> at '+pct(best[1].rate)+' ('+best[1].s+'). '+(all.rate>best[1].rate?'So far the model is beating every simple rule.':'Beating that simple rule is the bar the model has to clear.')):'';
 
   // CLV by day
@@ -280,6 +308,7 @@ fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()).then(G=>{
   const clvAvg=clvDays.map(d=>{const r=clvRows.filter(g=>g.date===d);return +(r.reduce((a,g)=>a+g.clv,0)/r.length).toFixed(2);});
   line('c-clv',{type:'bar',data:{labels:clvDays.map(fmtDay),datasets:[{label:'Avg CLV (points)',data:clvAvg,backgroundColor:clvAvg.map(v=>v>=0?C.green:C.red),borderRadius:5,maxBarThickness:46}]},
     options:baseOpts('Points vs closing line',{plugins:{legend:{display:false}}})});
+  if(avgClv!=null)$('h-clv').textContent=avgClv>0?'The market has been moving toward our picks':'The market has been moving away from our picks';
   $('t-clv').innerHTML=avgClv!=null?('Average <b>'+(avgClv>=0?'+':'')+avgClv.toFixed(2)+' points</b> across '+clvRows.length+' games since tracking started. '+(avgClv>0?'Positive so far: the market has tended to move toward the model.':'Not positive yet: the market has tended to move away from the model\'s picks.')):'Tracking started Nov 10; bars appear as games are graded.';
 
   // calibration
@@ -292,6 +321,7 @@ fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()).then(G=>{
     options:baseOpts('',{plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw&&c.raw.n?('Said '+c.raw.x+'%, won '+c.raw.y+'% ('+c.raw.n+' games)'):''}}},
       scales:{x:{type:'linear',min:50,max:100,title:{display:true,text:'Model win chance',color:C.dim},ticks:{callback:v=>v+'%'}},y:{min:30,max:100,title:{display:true,text:'Actual win rate',color:C.dim},ticks:{callback:v=>v+'%'}}}})});
   if(cal.length){const err=cal.reduce((s,c)=>s+c.n*(c.y-c.x),0)/cal.reduce((s,c)=>s+c.n,0);
+    $('h-cal').textContent=Math.abs(err)<2?'The win-chance calls have been honest':err>0?'The model has been a bit too cautious':'The model has been a bit overconfident';
     $('t-cal').innerHTML='Across '+mlRows.length+' moneyline calls, the model\'s favorites won <b>'+(Math.abs(err)<2?'about as often as it said':err>0?Math.abs(err).toFixed(1)+' points more often than it said':Math.abs(err).toFixed(1)+' points less often than it said')+'</b>. '+(Math.abs(err)<2?'That\'s well calibrated.':err>0?'So it has been a bit too cautious.':'So it has been a bit overconfident.');}
 
   // market efficiency (econ)
