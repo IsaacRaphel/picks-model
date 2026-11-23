@@ -19892,16 +19892,16 @@
   "spread_pick": "ARI +16.5 (FD)",
   "spread_side": "away",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "KC -1320 / ARI +800",
   "fd_ml": "KC -1800 / ARI +980",
   "kalshi_ml": "KC 92%",
   "model_ml": "KC 85%",
   "ml_pick": "KC",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "ARI 7, KC 34",
+  "result_context": "Blowout: KC led 14-0 after one and 27-7 at half with Josh Johnson starting for ARI (Beck out); KC by 27, way past +16.5.",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -19925,7 +19925,7 @@
    "sos_rank_home": 32,
    "open_line_home": -15,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -15.5,
    "last5_margin_away": -10.2,
    "last5_margin_home": 8.0,
    "streak_away": -2,
@@ -19935,7 +19935,8 @@
    "precip": null,
    "away_dome_or_warm": true
   },
-  "note": "Arizona is down to fourth-stringer Josh Johnson, so KC should win easily, but the Chiefs are missing Kenneth Walker plus guards Trey Smith and Jaylon Moore. My number is KC -14, so I'll take the extra point at FD with Cardinals +16.5."
+  "note": "Arizona is down to fourth-stringer Josh Johnson, so KC should win easily, but the Chiefs are missing Kenneth Walker plus guards Trey Smith and Jaylon Moore. My number is KC -14, so I'll take the extra point at FD with Cardinals +16.5.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-22-NFL-NO-CHI",
@@ -19954,16 +19955,16 @@
   "spread_pick": "CHI -11.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "CHI -610 / NO +450",
   "fd_ml": "CHI -720 / NO +520",
   "kalshi_ml": "CHI 85%",
   "model_ml": "CHI 77%",
   "ml_pick": "CHI",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "NO 13, CHI 21",
+  "result_context": "Line was right: CHI led 16-10 at half and 19-10 after three but never pulled away; won by 8, short of -11.5.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -19987,7 +19988,7 @@
    "sos_rank_home": 24,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -11.5,
    "last5_margin_away": -2.2,
    "last5_margin_home": 2.0,
    "streak_away": -1,
@@ -19997,7 +19998,8 @@
    "precip": "rain",
    "away_dome_or_warm": true
   },
-  "note": "Chicago is off a bye and the Saints are missing three starting linemen (Fuaga, Richards, McCoy), so my number is CHI -10 and the Bears to win. The raw number leaned Saints +11.5, but that's only a 1.5-point edge on a dog (L011), so I flipped to Bears -11.5."
+  "note": "Chicago is off a bye and the Saints are missing three starting linemen (Fuaga, Richards, McCoy), so my number is CHI -10 and the Bears to win. The raw number leaned Saints +11.5, but that's only a 1.5-point edge on a dog (L011), so I flipped to Bears -11.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-TB-DET",
@@ -20016,16 +20018,16 @@
   "spread_pick": "DET -3.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DET -200 / TB +168",
   "fd_ml": "DET -200 / TB +168",
   "kalshi_ml": "DET 69%",
   "model_ml": "DET 59%",
   "ml_pick": "DET",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TB 21, DET 31",
+  "result_context": "DET won by 10 for its sixth straight win, covering -3.5 comfortably.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -20049,7 +20051,7 @@
    "sos_rank_home": 30,
    "open_line_home": -5.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": 8.8,
    "last5_margin_home": 13.2,
    "streak_away": -1,
@@ -20059,7 +20061,8 @@
    "precip": null,
    "away_dome_or_warm": true
   },
-  "note": "Baker Mayfield is expected to play through his foot injury after the bye, and Detroit just lost Aidan Hutchinson to IR, so my number is DET -3 and the Lions to win. The raw lean was Bucs +3.5 by half a point, but L011 doesn't back a dog with that little edge, so Lions -3.5."
+  "note": "Baker Mayfield is expected to play through his foot injury after the bye, and Detroit just lost Aidan Hutchinson to IR, so my number is DET -3 and the Lions to win. The raw lean was Bucs +3.5 by half a point, but L011 doesn't back a dog with that little edge, so Lions -3.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-TEN-DAL",
@@ -20078,16 +20081,16 @@
   "spread_pick": "DAL -7.5 (FD)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DAL -343 / TEN +276",
   "fd_ml": "DAL -370 / TEN +295",
   "kalshi_ml": "DAL 77%",
   "model_ml": "DAL 74%",
   "ml_pick": "DAL",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TEN 30, DAL 51",
+  "result_context": "Blowout, Garbage time: DAL scored TDs on its first six drives; TEN's TD with under a minute left made it 51-30 (cover never in doubt).",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -20111,7 +20114,7 @@
    "sos_rank_home": 17,
    "open_line_home": -8,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -7.5,
    "last5_margin_away": -8.8,
    "last5_margin_home": 0.4,
    "streak_away": -3,
@@ -20121,7 +20124,8 @@
    "precip": null,
    "away_dome_or_warm": false
   },
-  "note": "FPI makes this about DAL -9.5, but the Cowboys' secondary is thin with Bland, Locke and Thompson out and Ferguson is out too, so my number is DAL -8.5. That's still past the 7, so Cowboys -7.5 and Dallas to win, but it's a small edge."
+  "note": "FPI makes this about DAL -9.5, but the Cowboys' secondary is thin with Bland, Locke and Thompson out and Ferguson is out too, so my number is DAL -8.5. That's still past the 7, so Cowboys -7.5 and Dallas to win, but it's a small edge.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-BAL-CAR",
@@ -20140,16 +20144,16 @@
   "spread_pick": "CAR -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 3.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "CAR -145 / BAL +123",
   "fd_ml": "CAR -146 / BAL +124",
   "kalshi_ml": "CAR 59%",
   "model_ml": "CAR 67%",
   "ml_pick": "CAR",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BAL 33, CAR 35",
+  "result_context": "Hook, Turnovers / special teams: back-and-forth game; CAR won on a late 37-yd FG and a game-sealing INT, but by 2, so -2.5 lost by the half point (ML won). Two BAL fumbles, a muffed punt and an 86-yd kick return TD swung it.",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -20173,7 +20177,7 @@
    "sos_rank_home": 20,
    "open_line_home": -2,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -2.5,
    "last5_margin_away": -15.4,
    "last5_margin_home": -5.8,
    "streak_away": -5,
@@ -20183,7 +20187,8 @@
    "precip": null,
    "away_dome_or_warm": false
   },
-  "note": "Baltimore has lost five straight with Brissett at QB and no Madubuike, Humphrey or Hawkins, so my number is CAR -6 and the Panthers to win. That's a 3.5-point gap from the market and I can't name what it's missing, so it stays off the official list, but Panthers -2.5 is the side."
+  "note": "Baltimore has lost five straight with Brissett at QB and no Madubuike, Humphrey or Hawkins, so my number is CAR -6 and the Panthers to win. That's a 3.5-point gap from the market and I can't name what it's missing, so it stays off the official list, but Panthers -2.5 is the side.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-MIA-BUF",
@@ -20202,16 +20207,16 @@
   "spread_pick": "BUF -16.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "BUF -1460 / MIA +860",
   "fd_ml": "BUF -1600 / MIA +900",
   "kalshi_ml": "BUF 92%",
   "model_ml": "BUF 90%",
   "ml_pick": "BUF",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MIA 9, BUF 26",
+  "result_context": "Hook: BUF led 20-6 at half and held MIA without a TD; won by 17, so -16.5 cashed by the half point.",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -20235,7 +20240,7 @@
    "sos_rank_home": 12,
    "open_line_home": -17,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -16.5,
    "last5_margin_away": -4.2,
    "last5_margin_home": 13.6,
    "streak_away": -3,
@@ -20245,7 +20250,8 @@
    "precip": null,
    "away_dome_or_warm": true
   },
-  "note": "Miami is 1-8 with backup Kyle McCord at QB and Buffalo has won five straight, so my number is BUF -17 and the Bills to win. It's basically the market number, so Bills -16.5 is a lean with real backdoor risk."
+  "note": "Miami is 1-8 with backup Kyle McCord at QB and Buffalo has won five straight, so my number is BUF -17 and the Bills to win. It's basically the market number, so Bills -16.5 is a lean with real backdoor risk.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-PIT-PHI",
@@ -20264,16 +20270,16 @@
   "spread_pick": "PIT -3.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "PIT -190 / PHI +160",
   "fd_ml": "PIT -198 / PHI +166",
   "kalshi_ml": "PIT 66%",
   "model_ml": "PIT 57%",
   "ml_pick": "PIT",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "PIT 16, PHI 19",
+  "result_context": "Close loss: PHI jumped to 13-0 in the first quarter and won on Jake Elliott's 55-yd FG, snapping a 7-game skid; PIT lost outright.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -20297,7 +20303,7 @@
    "sos_rank_home": 10,
    "open_line_home": 4.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 3.5,
    "last5_margin_away": 5.2,
    "last5_margin_home": -11.0,
    "streak_away": -1,
@@ -20307,7 +20313,8 @@
    "precip": "rain",
    "away_dome_or_warm": false
   },
-  "note": "Philly has lost seven straight with Joe Milton at QB, but it's off a bye and Pittsburgh is without Herbig and Pittman, so my number is PIT -2.5 and the Steelers to win. The raw lean was Eagles +3.5 by a point, but L011 says a dog needs 2+ points, so I flipped to Steelers -3.5."
+  "note": "Philly has lost seven straight with Joe Milton at QB, but it's off a bye and Pittsburgh is without Herbig and Pittman, so my number is PIT -2.5 and the Steelers to win. The raw lean was Eagles +3.5 by a point, but L011 says a dog needs 2+ points, so I flipped to Steelers -3.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-NYJ-LAC",
@@ -20326,16 +20333,16 @@
   "spread_pick": "LAC -3.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "LAC -172 / NYJ +144",
   "fd_ml": "LAC -180 / NYJ +152",
   "kalshi_ml": "LAC 61%",
   "model_ml": "LAC 62%",
   "ml_pick": "LAC",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "NYJ 27, LAC 24",
+  "result_context": "Bad read: NYJ scored on their first five drives and snapped a 5-game skid, winning outright as a 3.5-pt dog.",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -20359,7 +20366,7 @@
    "sos_rank_home": 3,
    "open_line_home": -3,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": -11.4,
    "last5_margin_home": -11.2,
    "streak_away": -5,
@@ -20369,7 +20376,8 @@
    "precip": null,
    "away_dome_or_warm": false
   },
-  "note": "The Chargers are 1-8 but FPI rates them well after the league's third-toughest schedule, and the Jets have lost five straight and fly cross-country. My number is LAC -4, so Chargers -3.5 and LA to win, but it's close to the market."
+  "note": "The Chargers are 1-8 but FPI rates them well after the league's third-toughest schedule, and the Jets have lost five straight and fly cross-country. My number is LAC -4, so Chargers -3.5 and LA to win, but it's close to the market.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-JAC-NYG",
@@ -20388,16 +20396,16 @@
   "spread_pick": "NYG +5.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "JAC -255 / NYG +210",
   "fd_ml": "JAC -260 / NYG +215",
   "kalshi_ml": "JAC 71%",
   "model_ml": "JAC 68%",
   "ml_pick": "JAC",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "JAC 18, NYG 23",
+  "result_context": "NYG (J.J. McCarthy) held off a late JAC rally and won outright as a 5.5-pt dog.",
   "lessons_applied": "L012",
   "official": false,
   "features": {
@@ -20421,7 +20429,7 @@
    "sos_rank_home": 31,
    "open_line_home": 6.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 5.5,
    "last5_margin_away": 14.8,
    "last5_margin_home": 0.8,
    "streak_away": 3,
@@ -20431,7 +20439,8 @@
    "precip": "rain",
    "away_dome_or_warm": true
   },
-  "note": "FPI says JAC -8.5, but 1-2 inches of rain and the Giants' extra rest (10 days) should keep it tighter, so my number is JAC -6.5 and the Jags to win. Most of the action is on Jacksonville and the line still dropped from 6.5 to 5.5, so L012 flips me off a 1-point edge to Giants +5.5."
+  "note": "FPI says JAC -8.5, but 1-2 inches of rain and the Giants' extra rest (10 days) should keep it tighter, so my number is JAC -6.5 and the Jags to win. Most of the action is on Jacksonville and the line still dropped from 6.5 to 5.5, so L012 flips me off a 1-point edge to Giants +5.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-LV-DEN",
@@ -20450,16 +20459,16 @@
   "spread_pick": "DEN -10.5 (FD)",
   "spread_side": "home",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DEN -660 / LV +478",
   "fd_ml": "DEN -600 / LV +450",
   "kalshi_ml": "DEN 83%",
   "model_ml": "DEN 81%",
   "ml_pick": "DEN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "LV 24, DEN 38",
+  "result_context": "Lucky win, Turnovers / special teams: tied 17-17 in Q3 and only 31-24 with 4:19 left; McMillian's 35-yd pick-six with 1:52 left pushed DEN past -10.5. Bowers out for LV.",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -20483,7 +20492,7 @@
    "sos_rank_home": 2,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -10.5,
    "last5_margin_away": -8.2,
    "last5_margin_home": 6.4,
    "streak_away": -2,
@@ -20493,7 +20502,8 @@
    "precip": null,
    "away_dome_or_warm": true
   },
-  "note": "Denver is coming off a bye on a five-game win streak and the Raiders have rookie Fernando Mendoza at QB with Brock Bowers questionable, so my number is DEN -12 and the Broncos to win. Broncos -10.5, but Bowers' status keeps it off the official list."
+  "note": "Denver is coming off a bye on a five-game win streak and the Raiders have rookie Fernando Mendoza at QB with Brock Bowers questionable, so my number is DEN -12 and the Broncos to win. Broncos -10.5, but Bowers' status keeps it off the official list.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NFL-MIN-SF",
@@ -20512,16 +20522,16 @@
   "spread_pick": "SF -3.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "SF -190 / MIN +159",
   "fd_ml": "SF -166 / MIN +140",
   "kalshi_ml": "SF 62%",
   "model_ml": "SF 57%",
   "ml_pick": "SF",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MIN 10, SF 35",
+  "result_context": "Blowout: SF led 28-10 early in the 4th and won by 25 in Mexico City.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -20545,7 +20555,7 @@
    "sos_rank_home": 28,
    "open_line_home": -3.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": 3.0,
    "last5_margin_home": 5.4,
    "streak_away": 1,
@@ -20555,7 +20565,8 @@
    "precip": null,
    "away_dome_or_warm": true
   },
-  "note": "On a neutral field in Mexico City, FPI has San Francisco by 3, and the 49ers' WR room is beat up with Mike Evans questionable, so my number is SF -2.5 and the Niners to win. The raw lean was Vikings +3.5 by a point, but L011 wants 2+ points for a dog, so 49ers -3.5."
+  "note": "On a neutral field in Mexico City, FPI has San Francisco by 3, and the 49ers' WR room is beat up with Mike Evans questionable, so my number is SF -2.5 and the Niners to win. The raw lean was Vikings +3.5 by a point, but L011 wants 2+ points for a dog, so 49ers -3.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NBA-DET-ATL",
@@ -20574,16 +20585,16 @@
   "spread_pick": "DET -2.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "DET -130 / ATL +110",
   "fd_ml": "DET -134 / ATL +114",
   "kalshi_ml": "DET 57%",
   "model_ml": "DET 57%",
   "ml_pick": "DET",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "DET 97, ATL 107",
+  "result_context": "Bad beat: DET led by double digits entering the 4th, then went 0-for-7 to open it during an 18-0 ATL run and lost the quarter 33-12.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -20607,7 +20618,7 @@
    "sos_rank_home": null,
    "open_line_home": 2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 2.5,
    "last5_margin_away": 1.2,
    "last5_margin_home": 1.6,
    "streak_away": -1,
@@ -20617,7 +20628,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Both teams are banged up (no Duren for Detroit, no McCollum for Atlanta), and the net ratings make Detroit about a 2-point road favorite, so my number is DET -2 and the Pistons to win. The raw lean was Hawks +2.5 by half a point, but L011 doesn't back a dog that thin, so Pistons -2.5."
+  "note": "Both teams are banged up (no Duren for Detroit, no McCollum for Atlanta), and the net ratings make Detroit about a 2-point road favorite, so my number is DET -2 and the Pistons to win. The raw lean was Hawks +2.5 by half a point, but L011 doesn't back a dog that thin, so Pistons -2.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NBA-OKC-MIA",
@@ -20636,16 +20648,16 @@
   "spread_pick": "MIA -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MIA -148 / OKC +124",
   "fd_ml": "MIA -144 / OKC +122",
   "kalshi_ml": "MIA 59%",
   "model_ml": "MIA 53%",
   "ml_pick": "MIA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "OKC 113, MIA 123",
+  "result_context": "Injury: SGA out (neck/back) and OKC had only nine players; Giannis also out for MIA. MIA led wire to wire and by 20 early in the 4th; OKC's late run made it 10.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -20669,7 +20681,7 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -2.5,
    "last5_margin_away": 2.4,
    "last5_margin_home": 12.6,
    "streak_away": 1,
@@ -20679,7 +20691,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "OKC is down Chet, Jalen Williams and Caruso, and SGA (back) and Giannis (groin) are both questionable, while Miami has won six straight and is on four days' rest. My number is MIA -1 and the Heat to win; the raw lean was Thunder +2.5, but that 1.5-point dog edge doesn't clear L011, so Heat -2.5."
+  "note": "OKC is down Chet, Jalen Williams and Caruso, and SGA (back) and Giannis (groin) are both questionable, while Miami has won six straight and is on four days' rest. My number is MIA -1 and the Heat to win; the raw lean was Thunder +2.5, but that 1.5-point dog edge doesn't clear L011, so Heat -2.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-NBA-DEN-CHI",
@@ -20698,16 +20711,16 @@
   "spread_pick": "DEN -8.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "DEN -437 / CHI +340",
   "fd_ml": "DEN -405 / CHI +315",
   "kalshi_ml": "DEN 77%",
   "model_ml": "DEN 72%",
   "ml_pick": "DEN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DEN 151, CHI 145",
+  "result_context": "Overtime: DEN led 105-95 after three, CHI tied it with 2 sec left (25 threes), DEN won by 6 in OT, short of -8.5 (ML won). Jokic triple-double, Murray 45.",
   "lessons_applied": "L011",
   "official": false,
   "features": {
@@ -20731,7 +20744,7 @@
    "sos_rank_home": null,
    "open_line_home": 8.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 10.5,
    "last5_margin_away": 2.8,
    "last5_margin_home": 6.8,
    "streak_away": 2,
@@ -20741,7 +20754,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Denver is basically healthy around Jokic (only Strawther is out) and Chicago is 4-10 without Caleb Wilson and with Powell questionable, so my number is DEN -7 and the Nuggets to win. The raw lean was Bulls +8.5 by 1.5, but L011 wants 2+ points for a dog, so Nuggets -8.5."
+  "note": "Denver is basically healthy around Jokic (only Strawther is out) and Chicago is 4-10 without Caleb Wilson and with Powell questionable, so my number is DEN -7 and the Nuggets to win. The raw lean was Bulls +8.5 by 1.5, but L011 wants 2+ points for a dog, so Nuggets -8.5.",
+  "clv": 2.0
  },
  {
   "id": "2026-11-22-NBA-DAL-UTA",
@@ -20760,16 +20774,16 @@
   "spread_pick": "DAL -1.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DAL -135 / UTA +114",
   "fd_ml": "DAL -138 / UTA +118",
   "kalshi_ml": "DAL 53%",
   "model_ml": "DAL 57%",
   "ml_pick": "DAL",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DAL 116, UTA 114",
+  "result_context": "Close win: UTA's 16-0 run tied it late before Flagg won it; DAL by 2 covered -1.5.",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -20793,7 +20807,7 @@
    "sos_rank_home": null,
    "open_line_home": 1.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 2.5,
    "last5_margin_away": -10.8,
    "last5_margin_home": 2.4,
    "streak_away": 2,
@@ -20803,7 +20817,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Dallas is on a back-to-back at altitude without P.J. Washington, but Utah is missing Markkanen, Jaren Jackson Jr. and Nurkic, so my number is DAL -2 and the Mavs to win. Mavs -1.5 is a small edge, since the market already has the tired spot in it."
+  "note": "Dallas is on a back-to-back at altitude without P.J. Washington, but Utah is missing Markkanen, Jaren Jackson Jr. and Nurkic, so my number is DAL -2 and the Mavs to win. Mavs -1.5 is a small edge, since the market already has the tired spot in it.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-22-NBA-ORL-WAS",
@@ -20822,16 +20837,16 @@
   "spread_pick": "ORL -5.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "ORL -197 / WAS +165",
   "fd_ml": "ORL -196 / WAS +164",
   "kalshi_ml": "ORL 65%",
   "model_ml": "ORL 57%",
   "ml_pick": "ORL",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "ORL 96, WAS 116",
+  "result_context": "Bad read: WAS hit 22 of 39 threes, led 63-51 at half and by 20 after three; ORL lost outright by 20.",
   "lessons_applied": "L010,L013",
   "official": false,
   "features": {
@@ -20855,7 +20870,7 @@
    "sos_rank_home": null,
    "open_line_home": 5.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 4.5,
    "last5_margin_away": 6.0,
    "last5_margin_home": -8.0,
    "streak_away": 1,
@@ -20865,7 +20880,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Net ratings only have Orlando by about 1.5 since they've played without Banchero, so my number is ORL -2 and the Magic to win, and the raw lean was Wizards +5.5. That 3.5-point gap is a warning (L010), and Orlando's Wagner-Suggs-Bane core has a much better track record than this Washington group 14 games in (L013), so I flipped to Magic -5.5."
+  "note": "Net ratings only have Orlando by about 1.5 since they've played without Banchero, so my number is ORL -2 and the Magic to win, and the raw lean was Wizards +5.5. That 3.5-point gap is a warning (L010), and Orlando's Wagner-Suggs-Bane core has a much better track record than this Washington group 14 games in (L013), so I flipped to Magic -5.5.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-22-NBA-IND-NYK",
@@ -20884,16 +20900,16 @@
   "spread_pick": "IND +9.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "NYK -296 / IND +240",
   "fd_ml": "NYK -310 / IND +250",
   "kalshi_ml": "NYK 75%",
   "model_ml": "NYK 80%",
   "ml_pick": "NYK",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "IND 106, NYK 113",
+  "result_context": "Injury: Anunoby and McBride out for NYK; NYK led by 15 with 2:35 left, IND's 6-0 run made it 112-106 before a late FT; NYK by 7 inside +9.5.",
   "lessons_applied": "L001",
   "official": false,
   "features": {
@@ -20917,7 +20933,7 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -7.5,
    "last5_margin_away": -3.2,
    "last5_margin_home": 3.0,
    "streak_away": -3,
@@ -20927,7 +20943,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Ratings say NYK -12, but it's the second night of a back-to-back and Towns and Anunoby are both questionable, so my number is NYK -10 and the Knicks to win. Laying 9.5 with a top-2 guy questionable is exactly what L001 warns about, so Pacers +9.5."
+  "note": "Ratings say NYK -12, but it's the second night of a back-to-back and Towns and Anunoby are both questionable, so my number is NYK -10 and the Knicks to win. Laying 9.5 with a top-2 guy questionable is exactly what L001 warns about, so Pacers +9.5.",
+  "clv": 2.0
  },
  {
   "id": "2026-11-22-NBA-BOS-GSW",
@@ -20946,16 +20963,16 @@
   "spread_pick": "GSW +9.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "BOS -324 / GSW +261",
   "fd_ml": "BOS -335 / GSW +270",
   "kalshi_ml": "BOS 76%",
   "model_ml": "BOS 79%",
   "ml_pick": "BOS",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "BOS 87, GSW 88",
+  "result_context": "Injury: Curry, Butler and Moody out for GSW; BOS led by 5 midway through the 4th, GSW took it late and won 88-87 on a Green stop. +9.5 never in doubt (BOS ML lost).",
   "lessons_applied": "L001",
   "official": false,
   "features": {
@@ -20979,7 +20996,7 @@
    "sos_rank_home": null,
    "open_line_home": 9.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 7.5,
    "last5_margin_away": 5.4,
    "last5_margin_home": -23.2,
    "streak_away": -3,
@@ -20989,7 +21006,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Golden State has lost five straight by 23 a game without Curry, Butler and Porzingis, so my number is BOS -9.5 and the Celtics to win. But Boston is on a back-to-back with Tatum (rest) and White (shoulder) questionable after both sat in Sacramento, so L001 says don't lay 9.5 and I'll take Warriors +9.5."
+  "note": "Golden State has lost five straight by 23 a game without Curry, Butler and Porzingis, so my number is BOS -9.5 and the Celtics to win. But Boston is on a back-to-back with Tatum (rest) and White (shoulder) questionable after both sat in Sacramento, so L001 says don't lay 9.5 and I'll take Warriors +9.5.",
+  "clv": 2.0
  },
  {
   "id": "2026-11-22-CBB-BUT-NEB",
@@ -21008,16 +21026,16 @@
   "spread_pick": "BUT +12.5 (FD)",
   "spread_side": "away",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "NEB -850 / BUT +575",
   "fd_ml": "NEB -1000 / BUT +660",
   "kalshi_ml": "NEB 88%",
   "model_ml": "NEB 85%",
   "ml_pick": "NEB",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BUT 74, NEB 76",
+  "result_context": "Close win: NEB won on Cale Jacobsen's buzzer-beater; +12.5 never in doubt (NEB ML won).",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -21041,7 +21059,7 @@
    "sos_rank_home": null,
    "open_line_home": -11.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -12.5,
    "last5_margin_away": 7.0,
    "last5_margin_home": 27.6,
    "streak_away": 2,
@@ -21051,7 +21069,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Nebraska is 5-0 and crushed Boise State by 27, but Torvik only makes this about 11 on a neutral floor, and Butler is a short drive from Chicago, so my number is NEB -11.5 and the Huskers to win. It's a small dog edge, and L016 says keep the dog in CBB rather than flip it, so Butler +12.5."
+  "note": "Nebraska is 5-0 and crushed Boise State by 27, but Torvik only makes this about 11 on a neutral floor, and Butler is a short drive from Chicago, so my number is NEB -11.5 and the Huskers to win. It's a small dog edge, and L016 says keep the dog in CBB rather than flip it, so Butler +12.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-CBB-USI-TEX",
@@ -21070,16 +21089,16 @@
   "spread_pick": "USI +39.5 (FD)",
   "spread_side": "away",
   "spread_edge": 6.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "TEX -100000 / USI +7000",
   "kalshi_ml": "TEX 99%",
   "model_ml": "TEX 99%",
   "ml_pick": "TEX",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "USI 61, TEX 97",
+  "result_context": "Blowout: TEX by 36, but +39.5 still covered by 3.5.",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -21103,7 +21122,7 @@
    "sos_rank_home": null,
    "open_line_home": -40.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -39.5,
    "last5_margin_away": 9.8,
    "last5_margin_home": 31.2,
    "streak_away": 1,
@@ -21113,7 +21132,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Torvik says about 28.5, but its scaling runs low on mismatches like this (Texas beat Chicago State and Gardner-Webb by 50 and 48), so my number is TEX -33 and the Longhorns to win big. That's still 6.5 short of 39.5, which clears L004's bar, and L017 says don't shrink it into the chalk, so Southern Indiana +39.5 as a tracking pick."
+  "note": "Torvik says about 28.5, but its scaling runs low on mismatches like this (Texas beat Chicago State and Gardner-Webb by 50 and 48), so my number is TEX -33 and the Longhorns to win big. That's still 6.5 short of 39.5, which clears L004's bar, and L017 says don't shrink it into the chalk, so Southern Indiana +39.5 as a tracking pick.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-CBB-VT-OKST",
@@ -21132,16 +21152,16 @@
   "spread_pick": "VT -1.5 (FD)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "VT -120 / OKST +100",
   "fd_ml": "VT -113 / OKST -106",
   "kalshi_ml": "VT 53%",
   "model_ml": "VT 61%",
   "ml_pick": "VT",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "VT 80, OKST 106",
+  "result_context": "Bad read, Blowout: tied 41-41 at half and VT led 54-51 early in the 2nd; OKST then ran 11-0 and 13-0 and shot 67% to win by 26.",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -21165,7 +21185,7 @@
    "sos_rank_home": null,
    "open_line_home": 1.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 1.5,
    "last5_margin_away": 17.6,
    "last5_margin_home": 16.0,
    "streak_away": 6,
@@ -21175,7 +21195,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Virginia Tech is 6-0 and beat Northwestern by 17 on Friday, while Oklahoma State lost by 15 to Minnesota in the same event, and Torvik makes the Hokies almost a 3-point favorite. My number is VT -3, so Hokies -1.5 and Virginia Tech to win."
+  "note": "Virginia Tech is 6-0 and beat Northwestern by 17 on Friday, while Oklahoma State lost by 15 to Minnesota in the same event, and Torvik makes the Hokies almost a 3-point favorite. My number is VT -3, so Hokies -1.5 and Virginia Tech to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-CBB-UTAH-MINN",
@@ -21194,16 +21215,16 @@
   "spread_pick": "UTAH +11.5 (FD)",
   "spread_side": "away",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MINN -700 / UTAH +500",
   "fd_ml": "MINN -670 / UTAH +490",
   "kalshi_ml": "MINN 85%",
   "model_ml": "MINN 79%",
   "ml_pick": "MINN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "UTAH 62, MINN 77",
+  "result_context": "Line was right: Crocker-Johnson scored a career-high 31 and MINN won by 15, covering -11.5 against us.",
   "lessons_applied": "L002",
   "official": true,
   "features": {
@@ -21227,7 +21248,7 @@
    "sos_rank_home": null,
    "open_line_home": -10.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -10.5,
    "last5_margin_away": 2.6,
    "last5_margin_home": 19.4,
    "streak_away": -2,
@@ -21237,7 +21258,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Minnesota is 6-0 and Utah only scored 46 against Dayton, but Torvik makes this about MINN -8.5 on a neutral floor, so my number is MINN -9 and the Gophers to win. FD's 11.5 gives a 2.5-point edge, which L002 caps at 2 for a neutral power-conference game, so Utah +11.5."
+  "note": "Minnesota is 6-0 and Utah only scored 46 against Dayton, but Torvik makes this about MINN -8.5 on a neutral floor, so my number is MINN -9 and the Gophers to win. FD's 11.5 gives a 2.5-point edge, which L002 caps at 2 for a neutral power-conference game, so Utah +11.5.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-22-CBB-DEL-UCLA",
@@ -21256,16 +21278,16 @@
   "spread_pick": "DEL +29.5 (FD)",
   "spread_side": "away",
   "spread_edge": 3.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "",
   "fd_ml": "UCLA -50000 / DEL +3500",
   "kalshi_ml": "UCLA 99%",
   "model_ml": "UCLA 99%",
   "ml_pick": "UCLA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DEL 48, UCLA 85",
+  "result_context": "Blowout, Line was right: UCLA by 37 with Jovic scoring 17 in his season debut; +29.5 missed by 7.5.",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -21289,7 +21311,7 @@
    "sos_rank_home": null,
    "open_line_home": -29.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -29.5,
    "last5_margin_away": 7.6,
    "last5_margin_home": 34.4,
    "streak_away": 3,
@@ -21299,7 +21321,8 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Torvik says about 23.5, and I bumped it for the mismatch since UCLA beat its other cupcakes by 39 to 69, so my number is UCLA -26 and the Bruins to win. That 3.5-point gap isn't enough for L004 to back the dog, but L017 says don't lay the full 29.5 either, so Delaware +29.5 as a pass-level lean."
+  "note": "Torvik says about 23.5, and I bumped it for the mismatch since UCLA beat its other cupcakes by 39 to 69, so my number is UCLA -26 and the Bruins to win. That 3.5-point gap isn't enough for L004 to back the dog, but L017 says don't lay the full 29.5 either, so Delaware +29.5 as a pass-level lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-22-CBB-ULL-USC",
@@ -21318,16 +21341,16 @@
   "spread_pick": "ULL +33.5 (DK)",
   "spread_side": "away",
   "spread_edge": 3.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "USC -100000 / ULL +5500",
   "kalshi_ml": "USC 99%",
   "model_ml": "USC 99%",
   "ml_pick": "USC",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "ULL 56, USC 82",
+  "result_context": "USC by 26, well inside +33.5 (L017 pass-level lean held).",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -21351,7 +21374,7 @@
    "sos_rank_home": null,
    "open_line_home": -32.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -33.5,
    "last5_margin_away": -6.2,
    "last5_margin_home": 34.4,
    "streak_away": -1,
@@ -21361,6 +21384,7 @@
    "precip": null,
    "away_dome_or_warm": null
   },
-  "note": "Torvik only has this around 24.5, but Louisiana is 1-3 and hasn't topped 61 points while USC beat UAPB by 76 and Tarleton by 45, so I bumped my number to USC -30 and the Trojans to win. That 3.5-point gap isn't enough for L004 to back the dog, and L017 says don't lay 33.5 either, so Louisiana +33.5 as a pass-level lean."
+  "note": "Torvik only has this around 24.5, but Louisiana is 1-3 and hasn't topped 61 points while USC beat UAPB by 76 and Tarleton by 45, so I bumped my number to USC -30 and the Trojans to win. That 3.5-point gap isn't enough for L004 to back the dog, and L017 says don't lay 33.5 either, so Louisiana +33.5 as a pass-level lean.",
+  "clv": 0.0
  }
 ]
