@@ -123,7 +123,7 @@ window.pkMap = function (root, games, lessons, v1) {
       if (n.prog != null) { ctx.strokeStyle = n.color; ctx.globalAlpha = (dim ? 0.45 : 1) * 0.3; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p[0], p[1], r + 3.5, 0, 7); ctx.stroke(); ctx.globalAlpha = dim ? 0.45 : 1; ctx.beginPath(); ctx.arc(p[0], p[1], r + 3.5, -Math.PI / 2, -Math.PI / 2 + n.prog * Math.PI * 2); ctx.stroke(); }
       if (sel === n) { ctx.strokeStyle = C.ink; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(p[0], p[1], r + (n.prog != null ? 7 : 4), 0, 7); ctx.stroke(); }
       const big = n.group !== 'les' && n.group !== 'src'; const quiet = small && n.group === 'inp'; if (small && (!big || quiet) && sel !== n && !(focus && focus.has(n.id) && n.group === 'src')) { ctx.globalAlpha = 1; return; }
-      ctx.font = (big ? '600 ' : '500 ') + Math.round((n.group === 'les' ? 10 : big ? 12.5 : 11) * (small ? 0.9 : 1)) + 'px Inter, system-ui, sans-serif'; ctx.fillStyle = C.ink; ctx.globalAlpha = dim ? 0.45 : n.group === 'les' ? 0.85 : 1;
+      ctx.font = (big ? '600 ' : '500 ') + Math.round((n.group === 'les' ? 10 : big ? 12.5 : 11) * (small ? 0.9 : 1)) + 'px "IBM Plex Sans", system-ui, sans-serif'; ctx.fillStyle = C.ink; ctx.globalAlpha = dim ? 0.45 : n.group === 'les' ? 0.85 : 1;
       const left = n.group === 'src'; ctx.textAlign = left ? 'right' : n.group === 'les' ? 'center' : 'left'; ctx.textBaseline = 'middle';
       if (n.group === 'les') { ctx.textAlign = 'left'; ctx.fillText(n.name, p[0] + r + 7, p[1]); } else { const tx = p[0] + (left ? -(r + 6) : r + 6); ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(7,11,28,.85)'; ctx.strokeText(n.name, tx, p[1]); ctx.fillText(n.name, tx, p[1]); }
       ctx.globalAlpha = 1;

@@ -7,7 +7,8 @@
 <meta name="description" content="How the forecasting model is performing: record over time, closing line value, calibration, simple-strategy benchmarks and a market efficiency check.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
 :root{
   --bg:#f9f9ff; --panel:#ffffff; --line:#dfe3ea; --line2:#f1f4f8;
@@ -15,7 +16,7 @@
   --green:#3a9a4a; --red:#c94545; --blue:#1f7fb3; --purple:#224f6a; --amber:#1f7fb3; --teal:#54b7e8; --orange:#8a9aa8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
 nav{position:sticky;top:0;z-index:10;background:rgba(249,249,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -75,6 +76,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
 .grid2>*{min-width:0}
 </style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <nav><div class="wrap">
@@ -212,7 +214,7 @@ const C={text:'#16324a',muted:'#3f4f63',dim:'#5f666e',grid:'rgba(34,79,106,.06)'
 const $=id=>document.getElementById(id);
 const pct=x=>(100*x).toFixed(1)+'%';
 const fmtDay=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
-if(window.Chart){Chart.defaults.color=C.muted;Chart.defaults.font.family='Inter,system-ui,sans-serif';Chart.defaults.borderColor=C.grid;}
+if(window.Chart){Chart.defaults.color=C.muted;Chart.defaults.font.family='"IBM Plex Sans",system-ui,sans-serif';Chart.defaults.borderColor=C.grid;}
 
 function parseSpread(s){const m=/^(.+?)\s+([+-]?\d+(?:\.\d+)?)/.exec(s||'');return m?{team:m[1].trim(),line:+m[2]}:null;}
 function parseFinal(s){const parts=(s||'').split(',').map(x=>x.trim());if(parts.length!==2)return null;
@@ -241,16 +243,16 @@ const pkLabels={id:'pkLabels',afterDatasetsDraw(ch){const o=ch.options.plugins.p
   const L=[];(o.ends||[]).forEach(e=>{const ds=ch.data.datasets[e.i];const m=ch.getDatasetMeta(e.i);if(!ds||m.hidden)return;let k=ds.data.length-1;while(k>=0&&ds.data[k]==null)k--;if(k<0)return;
     const pt=m.data[k];L.push({x:pt.x+8,y:pt.y,t:e.text.replace('{v}',(+ds.data[k]).toFixed(1)+'%'),c:e.color||ds.borderColor,b:e.bold});});
   L.sort((a,b)=>a.y-b.y);for(let it=0;it<20;it++)for(let j=1;j<L.length;j++){const d=L[j].y-L[j-1].y;if(d<15){const sh=(15-d)/2;L[j-1].y-=sh;L[j].y+=sh;}}
-  L.forEach(l=>{x.font=(l.b?'700 ':'600 ')+'12px Inter,system-ui,sans-serif';x.fillStyle=l.c;x.textBaseline='middle';x.textAlign='left';x.fillText(l.t,l.x,l.y);});
+  L.forEach(l=>{x.font=(l.b?'700 ':'600 ')+'12px "IBM Plex Sans",system-ui,sans-serif';x.fillStyle=l.c;x.textBaseline='middle';x.textAlign='left';x.fillText(l.t,l.x,l.y);});
   const g=o.gap;if(g){const m=ch.getDatasetMeta(g.i),ds=ch.data.datasets[g.i];let k=ds.data.length-1;while(k>=0&&ds.data[k]==null)k--;if(k>=0){const v=ds.data[k],y1=m.data[k].y,y2=ch.scales.y.getPixelForValue(g.target),px=m.data[k].x-14;
     const d=v-g.target,col=d>=0?'#2e7d3a':'#c94545';x.strokeStyle=col;x.fillStyle=col;x.lineWidth=1.6;x.beginPath();x.moveTo(px,y1);x.lineTo(px,y2);x.stroke();
     const dir=y2>y1?1:-1;x.beginPath();x.moveTo(px,y2);x.lineTo(px-4,y2-6*dir);x.lineTo(px+4,y2-6*dir);x.closePath();x.fill();
-    x.font='700 12px Inter,system-ui,sans-serif';x.textAlign='right';x.textBaseline='top';x.fillText(Math.abs(d).toFixed(1)+' pts '+(d>=0?'above':'below')+(ch.width<560?'':' break-even'),px+4,Math.max(y1,y2)+10);}}
-  (o.marks||[]).forEach(mk=>{const m=ch.getDatasetMeta(mk.i),pt=m.data[mk.k];if(!pt)return;x.fillStyle=mk.color;x.beginPath();x.arc(pt.x,pt.y,4,0,7);x.fill();x.font='600 11.5px Inter,system-ui,sans-serif';x.textAlign='center';x.textBaseline='bottom';x.fillText(mk.text,pt.x,pt.y-8);});
+    x.font='700 12px "IBM Plex Sans",system-ui,sans-serif';x.textAlign='right';x.textBaseline='top';x.fillText(Math.abs(d).toFixed(1)+' pts '+(d>=0?'above':'below')+(ch.width<560?'':' break-even'),px+4,Math.max(y1,y2)+10);}}
+  (o.marks||[]).forEach(mk=>{const m=ch.getDatasetMeta(mk.i),pt=m.data[mk.k];if(!pt)return;x.fillStyle=mk.color;x.beginPath();x.arc(pt.x,pt.y,4,0,7);x.fill();x.font='600 11.5px "IBM Plex Sans",system-ui,sans-serif';x.textAlign='center';x.textBaseline='bottom';x.fillText(mk.text,pt.x,pt.y-8);});
   x.restore();}};
-const pkBarVals={id:'pkBarVals',afterDatasetsDraw(ch){const po=ch.options.plugins.pkBarVals;if(!po||!po.on)return;const x=ch.ctx,m=ch.getDatasetMeta(0),ds=ch.data.datasets[0];x.save();x.font='700 12px Inter,system-ui,sans-serif';x.textAlign='center';x.textBaseline='bottom';
-  x.textBaseline='top';m.data.forEach((b,k)=>{const v=ds.data[k];if(typeof v!=='number')return;const nar=b.width<44;x.font='700 '+(nar?10:12)+'px Inter,system-ui,sans-serif';x.fillStyle=ds.backgroundColor[k]==='#c3ccd6'?'#3f4f63':'#ffffff';x.fillText(nar?Math.round(v)+'%':v.toFixed(1)+'%',b.x,b.y+7);});
-  if(po.be!=null){const y=ch.scales.y.getPixelForValue(po.be);x.font='600 11.5px Inter,system-ui,sans-serif';x.fillStyle='#7b8794';x.textAlign='left';x.textBaseline='bottom';x.fillText('Break-even '+po.be+'%',ch.chartArea.left+6,y-4);}x.restore();}};
+const pkBarVals={id:'pkBarVals',afterDatasetsDraw(ch){const po=ch.options.plugins.pkBarVals;if(!po||!po.on)return;const x=ch.ctx,m=ch.getDatasetMeta(0),ds=ch.data.datasets[0];x.save();x.font='700 12px "IBM Plex Sans",system-ui,sans-serif';x.textAlign='center';x.textBaseline='bottom';
+  x.textBaseline='top';m.data.forEach((b,k)=>{const v=ds.data[k];if(typeof v!=='number')return;const nar=b.width<44;x.font='700 '+(nar?10:12)+'px "IBM Plex Sans",system-ui,sans-serif';x.fillStyle=ds.backgroundColor[k]==='#c3ccd6'?'#3f4f63':'#ffffff';x.fillText(nar?Math.round(v)+'%':v.toFixed(1)+'%',b.x,b.y+7);});
+  if(po.be!=null){const y=ch.scales.y.getPixelForValue(po.be);x.font='600 11.5px "IBM Plex Sans",system-ui,sans-serif';x.fillStyle='#7b8794';x.textAlign='left';x.textBaseline='bottom';x.fillText('Break-even '+po.be+'%',ch.chartArea.left+6,y-4);}x.restore();}};
 if(window.Chart){Chart.register(pkLabels);Chart.register(pkBarVals);}
 function line(id,cfg){if(!window.Chart)return;new Chart($(id),cfg);}
 const baseOpts=(yTitle,extra={})=>({responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},

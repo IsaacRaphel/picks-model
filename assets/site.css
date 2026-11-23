@@ -1,0 +1,67 @@
+/* ==========================================================
+   Editorial layer: loaded after each page's own styles.
+   Serif headlines, plain sans body, mono numbers, square
+   corners, no gradients, no glows, no pills.
+   ========================================================== */
+:root{
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --monof:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --rule:#d5dbe3;
+}
+body{font-family:var(--sans)!important;font-feature-settings:"kern","liga";letter-spacing:0}
+code,pre,.mono,.code,.step .num,.tl .when{font-family:var(--monof)!important}
+
+/* headlines */
+h1,h2,h3,.brand,article h2,.card h2,.sechead h2{font-family:var(--serif)!important;font-weight:600!important;letter-spacing:-.012em!important}
+h1{font-weight:600!important;letter-spacing:-.02em!important}
+h3{font-weight:600!important}
+
+/* numbers read like a terminal / report table */
+.n,.big,.stat .n,.tile .n,.topcard .pk,td.r,.r3,.odds{font-variant-numeric:tabular-nums}
+.stat .n,.tile .n,.two .card .big,.topcard .pk{font-family:var(--serif)!important;font-weight:600!important;letter-spacing:-.01em!important;font-variant-numeric:lining-nums tabular-nums}
+
+/* ---------- nav ---------- */
+nav{background:rgba(249,249,255,.96)!important;backdrop-filter:none!important}
+.brand{font-size:18px}
+.brand span{color:var(--text)!important}
+.navlinks a{border-radius:0!important;background:none!important;box-shadow:none!important;padding:6px 10px!important;border-bottom:2px solid transparent}
+.navlinks a:hover{background:none!important;color:var(--text)!important;border-bottom-color:var(--rule)}
+.navlinks a.on{background:none!important;box-shadow:none!important;color:var(--text)!important;border-bottom-color:var(--text)!important;font-weight:600}
+.navlinks a.navbtn{background:#16324a!important;color:#fff!important;box-shadow:none!important;border-radius:3px!important;border-bottom:0!important;margin:0 6px!important;font-weight:600}
+.navlinks a.navbtn:hover{background:#0f2536!important;filter:none!important}
+.navlinks a.navbtn.on{box-shadow:none!important;outline:2px solid #16324a;outline-offset:2px}
+@media(max-width:560px){.navlinks a{padding:6px 5px!important}.navlinks a.navbtn{margin:0 3px!important}}
+
+/* ---------- kill template tells ---------- */
+.hero:before,.hero:after{display:none!important}
+.grad{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;color:inherit!important}
+.dot,.tl.now:before{box-shadow:none!important}
+.beta{background:none!important;color:var(--text)!important;border:1px solid var(--text);border-radius:2px!important;padding:2px 7px!important;font-size:11px!important;letter-spacing:.12em!important}
+.eyebrow{border-radius:0!important}
+.chip,.toc2 a{border-radius:2px!important;background:none!important}
+.streak,.st,.econ .tag,.tag,.ovr{border-radius:2px!important}
+.econ .tag{background:none!important;padding:0!important;color:var(--muted)!important;letter-spacing:.1em!important}
+.tabs button.on{background:#16324a!important}
+.pfill{background:#16324a!important}
+
+/* boxes: square, flat, quieter */
+.card,.tile,.g,.topcard,.step,.code,article,.toc a,.facts,.pkmap-panel,.pkmap-canvas,.chartbox canvas{border-radius:4px!important;box-shadow:none!important}
+.btn{border-radius:3px!important}
+
+/* How-it-works steps: one neutral rule instead of four colors */
+.step{border-top:2px solid var(--text)!important}
+.step .tag{background:none!important;padding:0!important;color:var(--dim)!important;font-family:var(--monof)!important}
+
+/* section labels */
+.kicker,.eyebrow,.card .eyebrow,.sechead .eyebrow{font-family:var(--sans)!important;font-size:12px!important;letter-spacing:.12em!important;color:var(--dim)!important;font-weight:600!important}
+
+/* takeaways read like a figure note, not a callout */
+.takeaway{border-left:2px solid var(--text)!important}
+
+/* controls: square, consistent */
+.tabs,.seg,input,select,.pkmap-btn{border-radius:4px!important}
+.tabs button,.seg button{border-radius:0!important}
+.seg button[aria-pressed="true"],.seg button.on{background:#16324a!important;color:#fff!important}
+.pt,.offtag,.pbar,.pfill{border-radius:2px!important}
+.navlinks a.navbtn.on{outline:0!important;text-decoration:underline;text-underline-offset:4px}

@@ -7,7 +7,8 @@
 <meta name="description" content="Daily forecasts, market prices, graded results and the hypotheses the model is testing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
 :root{
   --bg:#f9f9ff; --panel:#ffffff; --panel2:#16324a; --line:#dfe3ea; --line2:#f1f4f8;
@@ -15,7 +16,7 @@
   --green:#3a9a4a; --red:#c94545; --blue:#1f7fb3; --purple:#224f6a; --amber:#1f7fb3; --teal:#54b7e8; --orange:#8a9aa8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 nav{position:sticky;top:0;z-index:10;background:rgba(249,249,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
@@ -127,6 +128,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
 @media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
 </style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <nav><div class="wrap">
@@ -252,7 +254,7 @@ function drawTiles(){
   $('t-ats').textContent=a.s;if(a.pct!=null){const ci=wilson(a.w,a.w+a.l);$('t-ats-s').textContent=a.pct.toFixed(1)+'% · 95% range '+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'% · break-even 52.4%';}
   {const o=rec(G.filter(g=>g.official===true).map(g=>g.spread_result));if(o.w+o.l){$('t-ml').textContent=o.s;const ci=wilson(o.w,o.w+o.l);$('t-ml-s').textContent=o.pct.toFixed(1)+'% · 95% range '+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'%';}}
   $('t-top').textContent=t.s;
-  {const s=potdStreak(P);const el2=document.querySelector('#t-top + .s');if(el2)el2.textContent=s?('🔥 '+s+'-day win streak'):'One best play per day';}
+  {const s=potdStreak(P);const el2=document.querySelector('#t-top + .s');if(el2)el2.textContent=s?(s+'-day win streak'):'One best play per day';}
   const graded=G.filter(g=>['W','L','P'].includes(g.spread_result));
   {const m=rec(G.map(g=>g.ml_result));$('t-n').textContent=m.s;$('t-days').textContent=m.pct!=null?m.pct.toFixed(1)+'% of winners picked':'';}
   $('t-ats-x').textContent='Every game since Nov 2 ('+graded.length+' graded over '+new Set(graded.map(g=>g.date)).size+' days), forecast as data. Most are close calls.';
@@ -268,7 +270,7 @@ function drawTop(){
   const p=P.find(x=>x.kind==='Pick of the day'&&x.date===S.day);
   if(!p){box.append(el('p','muted','No top pick for this day.'));return;}
   box.append(el('div','pick',p.pick));
-  {const s=potdStreak(P.filter(x=>x.date<=S.day));if(s)box.append(el('div','streak','🔥 '+s+'-day win streak'));}
+  {const s=potdStreak(P.filter(x=>x.date<=S.day));if(s)box.append(el('div','streak',s+'-day win streak'));}
   const o=el('div','odds');
   [['DraftKings',p.dk_odds],['FanDuel',p.fd_odds],['Kalshi',p.kalshi_odds]].forEach(([b,v])=>{const s=el('span');s.append(document.createTextNode(b+' '));s.append(el('b',null,v||'Not offered'));o.append(s);});
   const r=el('span');r.append(document.createTextNode('Result '));r.append(el('b',p.result==='W'||p.result==='L'||p.result==='P'?p.result:'pend',p.result==='W'?'Win':p.result==='L'?'Loss':p.result==='P'?'Push':'Not played yet'));o.append(r);

@@ -13,7 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
 :root{
   --bg:#f9f9ff; --panel:#ffffff; --panel2:#16324a; --line:#dfe3ea;
@@ -22,7 +23,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
@@ -159,7 +160,37 @@ section{scroll-margin-top:70px}
 .navlinks .short{display:none}
 @media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
 @media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
+
+/* ===== editorial hero ===== */
+header.hero{padding:44px 0 56px!important}
+.dateline{display:flex;flex-wrap:wrap;gap:6px 20px;align-items:center;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding-bottom:14px;border-bottom:1px solid #d5dbe3;margin-bottom:38px}
+.dateline .beta{margin-left:auto}
+.herogrid{display:grid;grid-template-columns:minmax(0,1.32fr) minmax(0,1fr);gap:56px;align-items:start}
+.herotext h1{font-size:clamp(32px,4.4vw,48px)!important;line-height:1.1;max-width:none}
+.herotext .lede{font-size:17.5px;line-height:1.65;max-width:none;color:#2c3d4f}
+.herotext .lede:first-of-type{margin-top:24px}
+.lede.phase{border-left:2px solid var(--text)!important;font-size:15.5px!important;color:var(--muted)!important}
+.fig1{margin:6px 0 0;border-top:2px solid var(--text);padding-top:12px;position:sticky;top:84px}
+.figlab{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.figtitle{font-family:"Source Serif 4",Georgia,serif;font-size:19px;font-weight:600;margin:3px 0 10px;line-height:1.25}
+#fig1{width:100%;height:auto;display:block}
+.fig1 figcaption{font-size:12.5px;color:var(--dim);line-height:1.5;margin-top:8px;border-top:1px solid #d5dbe3;padding-top:8px}
+.onpage{margin-top:40px;display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;font-size:15px;padding-top:14px;border-top:1px solid #d5dbe3}
+.onpage .oplab{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-right:4px}
+.onpage a{text-decoration:none;color:var(--text);border-bottom:1px solid #b9c3cf;padding-bottom:1px}
+.onpage a:hover{border-bottom-color:var(--text)}
+.stats{background:none!important;border:0!important;border-top:2px solid var(--text)!important;border-bottom:1px solid #d5dbe3!important;border-radius:0!important;margin-top:36px!important;gap:0!important}
+.stat{background:none!important;padding:18px 20px 16px!important}
+.stat:first-child{padding-left:0!important}
+.stat+.stat{border-left:1px solid #d5dbe3}
+.stat .n{font-size:30px!important}
+.stat .l{font-size:13px!important}
+.stat .ci{color:var(--dim)!important;font-size:12.5px!important}
+@media(max-width:860px){.herogrid{grid-template-columns:1fr;gap:34px}.fig1{position:static}}
+@media(max-width:720px){.stat:nth-child(3){border-left:0;padding-left:0!important}.stat:nth-child(n+3){border-top:1px solid #d5dbe3}}
+@media(max-width:560px){.dateline{gap:4px 14px;font-size:11px}.dateline span:nth-child(2){display:none}}
 </style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -176,18 +207,23 @@ section{scroll-margin-top:70px}
 </div></nav>
 
 <header class="hero"><div class="wrap">
-  <div class="tagrow"><span class="beta">Beta</span><div class="eyebrow"><span class="dot"></span> Phase 1: data collection · updated daily</div></div>
-  <h1>Can a disciplined model find where <span class="grad">markets misprice outcomes?</span></h1>
-  <p class="lede">A forecasting system that collects market data every day, makes its own predictions, grades itself against the market's final price, and only keeps the changes that prove themselves over time.</p>
-  <p class="lede">Sports betting markets are some of the most efficient markets there are, so the honest expected answer is <em>probably not</em>. The point is to measure how close a careful, rules-based process can get, and to find where the market is weakest.</p>
-  <p class="lede phase">Right now the project is in its data-collection phase. Every day it logs prices, makes baseline forecasts and grades them, building the dataset the real model will be built and tested on. Today's forecasts are a starting point, not the finished model.</p>
-  <div class="cta">
-    <a class="chip" href="#about">About me</a>
-    <a class="chip" href="#how">How it works</a>
-    <a class="chip" href="#learning">How it evolves</a>
-    <a class="chip" href="#plan">Roadmap</a>
-    <a class="chip" href="#responsible">About this project</a>
-    <a class="chip" href="#deeper">See the work</a>
+  <div class="dateline"><span>Research project</span><span>Phase 1 of 3: data collection</span><span id="dl-upd">Updated daily</span><span class="beta">Beta</span></div>
+  <div class="herogrid">
+    <div class="herotext">
+      <h1>Can a disciplined model find where markets misprice outcomes?</h1>
+    <p class="lede">A forecasting system that collects market data every day, makes its own predictions, grades itself against the market's final price, and only keeps the changes that prove themselves over time.</p>
+    <p class="lede">Sports betting markets are some of the most efficient markets there are, so the honest expected answer is <em>probably not</em>. The point is to measure how close a careful, rules-based process can get, and to find where the market is weakest.</p>
+    <p class="lede phase">Right now the project is in its data-collection phase. Every day it logs prices, makes baseline forecasts and grades them, building the dataset the real model will be built and tested on. Today's forecasts are a starting point, not the finished model.</p>
+    </div>
+    <figure class="fig1" aria-label="Running win rate against the spread">
+      <div class="figlab">Figure 1</div>
+      <div class="figtitle">Running win rate against the spread</div>
+      <svg id="fig1" viewBox="0 0 380 250" role="img" aria-label="Season-to-date win rate against the spread with its 95% range and the 52.4% break-even line"></svg>
+      <figcaption id="fig1-cap">Season-to-date record on each day. Shaded: 95% range. Dashed: 52.4% break-even after the sportsbook's cut. Source: the model's own graded games.</figcaption>
+    </figure>
+  </div>
+  <div class="onpage"><span class="oplab">On this page</span>
+    <a href="#about">About me</a><a href="#how">How it works</a><a href="#learning">How it evolves</a><a href="#plan">Roadmap</a><a href="#responsible">About this project</a><a href="#deeper">See the work</a>
   </div>
 
   <div class="stats">
@@ -302,17 +338,39 @@ function wilson(w,n,z=1.96){if(!n)return null;const p=w/n,d=1+z*z/n,c=(p+z*z/(2*
   document.querySelectorAll('.tl[data-start]').forEach(el=>{const s=el.dataset.start,e=el.dataset.end;const w=el.querySelector('.when');
     if(today>=e){el.classList.add('done');w.textContent='Done';}else if(today>=s){el.classList.add('now');w.textContent='Now';}else{w.textContent='Up next';}});
   let first=true;document.querySelectorAll('.tl[data-start]').forEach(el=>{const w=el.querySelector('.when');if(w.textContent==='Up next'){if(!first)w.textContent='Later';first=false;}});})();
+
+// ---- Figure 1: running win rate, drawn as plain SVG ----
+function drawFig1(games){
+  const svg=document.getElementById('fig1');if(!svg)return;
+  const g=games.filter(x=>['W','L','P'].includes(x.spread_result));const days=[...new Set(g.map(x=>x.date))].sort();if(days.length<2)return;
+  let w=0,l=0;const pts=days.map(d=>{g.filter(x=>x.date===d).forEach(x=>{if(x.spread_result==='W')w++;if(x.spread_result==='L')l++;});const c=wilson(w,w+l);return{r:100*w/(w+l),lo:100*c[0],hi:100*c[1]};});
+  const W=380,H=250,L=34,R=72,T=10,B=26,y0=30,y1=80;
+  const X=i=>L+(W-L-R)*i/(days.length-1),Y=v=>T+(H-T-B)*(1-(Math.max(y0,Math.min(y1,v))-y0)/(y1-y0));
+  const ns='http://www.w3.org/2000/svg',mk=(t,a)=>{const e=document.createElementNS(ns,t);for(const k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e;};
+  const mono='IBM Plex Mono, monospace';
+  [40,50,60,70].forEach(v=>{mk('line',{x1:L,x2:W-R,y1:Y(v),y2:Y(v),stroke:'#e6eaf0','stroke-width':1});const t=mk('text',{x:L-6,y:Y(v)+3.5,'text-anchor':'end','font-size':10,'font-family':mono,fill:'#7b8794'});t.textContent=v+'%';});
+  mk('path',{d:'M'+pts.map((p,i)=>X(i)+','+Y(p.hi)).join('L')+'L'+pts.map((p,i)=>X(i)+','+Y(p.lo)).reverse().join('L')+'Z',fill:'rgba(22,50,74,.08)'});
+  mk('line',{x1:L,x2:W-R,y1:Y(52.4),y2:Y(52.4),stroke:'#8a95a3','stroke-width':1.2,'stroke-dasharray':'5 4'});
+  mk('path',{d:'M'+pts.map((p,i)=>X(i)+','+Y(p.r)).join('L'),fill:'none',stroke:'#1f7fb3','stroke-width':2.2,'stroke-linejoin':'round'});
+  const last=pts[pts.length-1],lx=X(pts.length-1),ly=Y(last.r);mk('circle',{cx:lx,cy:ly,r:3.5,fill:'#1f7fb3'});
+  let yr=ly,yb=Y(52.4);if(Math.abs(yr-yb)<13){if(yr>=yb)yr=yb+13;else yr=yb-13;}
+  const t1=mk('text',{x:lx+7,y:yr+4,'font-size':12,'font-weight':600,'font-family':mono,fill:'#1f7fb3'});t1.textContent=last.r.toFixed(1)+'%';
+  const t2=mk('text',{x:lx+7,y:yb+(yr>yb?-5:13),'font-size':10,'font-family':mono,fill:'#7b8794'});t2.textContent='52.4%';
+  const fmt=d=>new Date(d+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});
+  [[0,'start'],[days.length-1,'end']].forEach(([i,an])=>{const t=mk('text',{x:X(i),y:H-8,'text-anchor':an,'font-size':10,'font-family':mono,fill:'#7b8794'});t.textContent=fmt(days[i]);});
+}
 Promise.all([
   fetch('data/games.json',{cache:'no-store'}).then(r=>r.json()),
   fetch('data/lessons.json',{cache:'no-store'}).then(r=>r.json())
 ]).then(([games,lessons])=>{
+  drawFig1(games);
   const graded=games.filter(g=>['W','L','P'].includes(g.spread_result));
   const w=graded.filter(g=>g.spread_result==='W').length, l=graded.filter(g=>g.spread_result==='L').length;
   document.getElementById('st-games').textContent=graded.length.toLocaleString();
   if(w+l){document.getElementById('st-ats').textContent=(100*w/(w+l)).toFixed(1)+'%';const ci=wilson(w,w+l);document.getElementById('st-ci').textContent='95% range '+Math.round(100*ci[0])+'–'+Math.round(100*ci[1])+'% · break-even 52.4%';}
   document.getElementById('st-lessons').textContent=lessons.filter(x=>x.status&&x.status!=='Setup').length;
   const last=graded.map(g=>g.date).sort().pop();
-  if(last){const d=new Date(last+'T12:00:00');
+  if(last){const d=new Date(last+'T12:00:00');document.getElementById('dl-upd').textContent='Data through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
     document.getElementById('st-asof').textContent='Through '+d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})+'.'+' Record is '+w+'-'+l+'. The 95% range shows how much this could move by luck alone: until it sits fully above 52.4%, there is no evidence of an edge yet.';}
 }).catch(()=>{});
 
