@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog | Isaac Raphel</title>
+<meta name="description" content="Dated record of every change to the forecasting process: new data fields, rule changes and lessons added for testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#f9f9ff;--panel:#ffffff;--line:#dfe3ea;--text:#16324a;--muted:#3f4f63;--dim:#5f666e;--green:#3a9a4a;--blue:#1f7fb3;--purple:#224f6a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.narrow{max-width:740px}
+nav{position:sticky;top:0;z-index:10;background:rgba(249,249,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:700;text-decoration:none}.brand span{color:var(--green)}
+.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted);align-items:center}.navlinks a{text-decoration:none}.navlinks a:hover,.navlinks a.on{color:var(--text)}
+.navlinks a.navbtn{color:#fff;background:linear-gradient(90deg,#1f7fb3,#224f6a);padding:7px 14px;border-radius:8px;font-weight:600}
+@media(max-width:700px){.hide-sm{display:none}}
+header{padding:44px 0 10px}
+h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.025em;font-weight:800}
+.sub{color:var(--muted);margin-top:8px}
+.toc{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+.toc a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.toc a:hover{border-color:#b9c3cf}
+.toc .d{font-size:12.5px;color:var(--dim)}.toc .t{font-weight:600}
+article{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px;margin-top:22px}
+article .d{font-size:13px;color:var(--dim)}
+article h2{font-size:clamp(22px,3.4vw,28px);letter-spacing:-.02em;line-height:1.2;margin:4px 0 10px}
+article .sum{color:var(--muted);font-size:16px;border-left:3px solid var(--purple);padding-left:14px;margin-bottom:8px}
+article h3{font-size:17px;margin:22px 0 6px}
+article p{color:#1e3246;font-size:15.5px;margin-top:10px}
+footer{border-top:1px solid var(--line);padding:30px 0 44px;color:var(--dim);font-size:13.5px;margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+/* nav-fix */
+.brand,.navlinks a{white-space:nowrap}
+@media(max-width:700px){.navlinks{gap:14px}.hide-sm{display:none}}
+/* nav-v2 */
+.navlinks{gap:6px!important}
+.navlinks a{padding:6px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+.navlinks a:hover{color:var(--text);background:rgba(34,79,106,.04)}
+.navlinks a.on{color:#16324a;background:linear-gradient(90deg,rgba(84,183,232,.22),rgba(34,79,106,.22));box-shadow:inset 0 0 0 1px rgba(34,79,106,.35)}
+@media(max-width:560px){.brand{display:none}nav .wrap{justify-content:center}.navlinks{gap:2px!important}.navlinks a{padding:6px 7px;font-size:13px}}
+/* nav-v3 */
+@media(max-width:560px){.navlinks a.navbtn{margin:0 2px}.navlinks .arr{display:none}}
+.navlinks a.navbtn{color:#fff!important;font-weight:600;background:linear-gradient(90deg,#1f7fb3,#224f6a)!important;box-shadow:0 0 0 1px rgba(34,79,106,.5),0 4px 18px rgba(34,79,106,.35)!important;margin:0 4px}
+.navlinks a.navbtn:hover{filter:brightness(1.12)}
+.navlinks a.navbtn.on{box-shadow:0 0 0 2px rgba(84,183,232,.6),0 4px 18px rgba(34,79,106,.45)!important}
+.m h2{font-size:22px;letter-spacing:-.015em;margin:34px 0 8px;scroll-margin-top:72px}
+.m p,.m li{color:#1e3246;font-size:15.5px}
+.m p{margin-top:10px}
+.m ul{margin:10px 0 0 20px}.m li{margin-top:6px}
+.m b{color:var(--text)}
+.m a{color:#1f7fb3}
+.m code{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:13px;background:#16324a;border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+.m table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+.m td{padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top;color:#1e3246}
+.m td:first-child{color:var(--muted);white-space:nowrap;width:1%}
+.toc2{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.toc2 a{font-size:13.5px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--text);background:rgba(34,79,106,.03)}
+.toc2 a:hover{border-color:rgba(34,79,106,.6)}
+/* nav-v4 */
+.navlinks .short{display:none}
+@media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
+@media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
+.dlrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.dl{font:600 14px "IBM Plex Sans",system-ui,sans-serif;color:#16324a;background:#fff;border:1px solid #16324a;border-radius:4px;padding:8px 14px;cursor:pointer;text-decoration:none}
+.m a.dl{color:#16324a}
+.dl:hover{background:#16324a;color:#fff!important}
+.dlmeta{font-size:13px!important;color:var(--dim)!important}
+.m code{background:#eef1f5!important;color:#16324a!important;font-family:"IBM Plex Mono",ui-monospace,monospace}
+.m table.dict td:first-child{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;white-space:normal;width:34%}
+.cl{margin-top:26px;border-top:1px solid var(--line)}
+.cl .day{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+.cl .dt{font-family:"Source Serif 4",Georgia,serif;font-weight:600;font-size:16px;color:var(--text);font-variant-numeric:tabular-nums}
+.cl .it{margin:0 0 12px}.cl .it:last-child{margin-bottom:0}
+.cl .tag{display:inline-block;font:600 11px "IBM Plex Sans",system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-right:8px}
+.cl .tag.model{color:#1f7fb3}.cl .tag.data{color:#2f7d3c}.cl .tag.rules{color:#224f6a}
+.cl .ti{font-weight:600;color:var(--text)}
+.cl .tx{color:#1e3246;font-size:15px;margin-top:2px}
+.cl .st{font-size:12.5px;color:var(--dim);margin-left:6px}
+.filt{display:flex;gap:16px;margin-top:18px;font-size:14px;color:var(--muted)}
+.filt label{display:flex;gap:6px;align-items:center;cursor:pointer}
+@media(max-width:560px){.cl .day{grid-template-columns:1fr;gap:6px}}
+</style>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="index.html">Isaac Raphel<span>.</span></a>
+  <div class="navlinks">
+    <a href="index.html">Overview</a>
+    <a href="model.html" class="navbtn">Live model<span class="arr"> →</span></a>
+    <a href="analysis.html">Analysis</a>
+    <a href="map.html"><span class="long">Model map</span><span class="short">Map</span></a>
+    <a href="method.html"><span class="long">Methodology</span><span class="short">Method</span></a>
+    <a href="notes.html">Notes</a>
+  </div>
+</div></nav>
+<main class="wrap narrow m">
+  <header>
+    <h1>Changelog</h1>
+    <p class="sub">Every change to how forecasts are made or what gets recorded, with the date it took effect. Results from before a change were made under the old rules, so this is the context for reading any chart on the site.</p>
+    <div class="filt"><label><input type="checkbox" id="f-lessons" checked> Show lessons added for testing</label></div>
+  </header>
+  <div class="cl" id="cl"><p class="sub">Loading…</p></div>
+</main>
+<footer><div class="wrap">
+  <span>Isaac Raphel · Indiana University · Research project · no real money wagered · not betting advice</span>
+  <span class="flinks"><a href="method.html">Methodology</a> · <a href="method.html#data">Data</a> · <a href="index.html">Back to overview →</a></span>
+</div></footer>
+<script>
+// Hand-written entries for process changes. Lesson additions are read from data/lessons.json.
+const CHANGES=[
+ {d:'2026-11-23',t:'data',ti:'Three new inputs logged for every game',tx:'Market consensus win probability (DraftKings, FanDuel and Kalshi moneylines with the bookmaker margin removed), a high-altitude flag for venues at 4,000+ ft, and each team\'s games in the last seven days to catch schedule crunches that a back-to-back flag misses.'},
+ {d:'2026-11-23',t:'rules',ti:'Formula v1 inputs expanded',tx:'The market consensus probability, altitude and schedule crunch were added to the candidate inputs Formula v1 will be tested on. Market consensus also becomes a baseline the formula has to beat.'},
+ {d:'2026-11-17',t:'data',ti:'Form, streaks and weather logged',tx:'Each team\'s average margin over its last five games, current win or loss streak, and for outdoor football the kickoff temperature, wind, rain or snow, and whether the road team plays home games in a dome or warm city.'},
+ {d:'2026-11-17',t:'rules',ti:'Formula v1 date set to December 31',tx:'Pushed back from earlier targets to collect as much data as possible. Plan: train through Dec 23, check on Dec 24-30, then run unchanged on new games.'},
+ {d:'2026-11-17',t:'rules',ti:'Weekly “What the data shows so far” snapshot',tx:'Every Monday review now includes a season-to-date summary of all graded games with uncertainty ranges.'},
+ {d:'2026-11-13',t:'model',ti:'Stricter statistical tests for lessons',tx:'A lesson now needs 50+ picks, a one-sided binomial test, a Benjamini-Hochberg correction across all lessons and non-negative closing line value to be kept.'},
+ {d:'2026-11-13',t:'model',ti:'Official plays introduced',tx:'Only games with a 1.5+ point edge, no unresolved injury question, no huge spread and no lesson overriding the model\'s own number count as official plays, graded as their own record.'},
+ {d:'2026-11-13',t:'data',ti:'Structured inputs logged for every game',tx:'Rating system and team ratings, implied rating line, home edge, rest, back-to-backs, key players out, QB changes, travel, games played, strength of schedule, opening and closing lines and public bet share, so a model can be fit later.'},
+ {d:'2026-11-02',t:'data',ti:'Data collection starts',tx:'Daily forecasts for the NFL, NBA and power-conference college football and basketball, with DraftKings, FanDuel and Kalshi prices, graded every night.'}
+];
+const TAGS={model:'Model',data:'Data',rules:'Plan',lesson:'Lesson'};
+const fmt=d=>{const[y,m,dd]=d.split('-').map(Number);return new Date(y,m-1,dd).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});};
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let LES=[];
+function render(){
+  const show=document.getElementById('f-lessons').checked;
+  const items=CHANGES.slice();
+  if(show)LES.forEach(l=>{if(l.added&&l.id&&l.lesson)items.push({d:l.added,t:'lesson',ti:l.id+' · '+(l.situation||'New lesson'),tx:l.lesson,st:l.status});});
+  const by={};items.forEach(i=>{(by[i.d]=by[i.d]||[]).push(i);});
+  const days=Object.keys(by).sort().reverse();
+  document.getElementById('cl').innerHTML=days.map(d=>'<div class="day"><div class="dt">'+fmt(d)+'</div><div>'+by[d].map(i=>'<div class="it"><span class="tag '+i.t+'">'+TAGS[i.t]+'</span><span class="ti">'+esc(i.ti)+'</span>'+(i.st?'<span class="st">now '+esc(i.st)+'</span>':'')+'<div class="tx">'+esc(i.tx)+'</div></div>').join('')+'</div></div>').join('');
+}
+document.getElementById('f-lessons').addEventListener('change',render);
+fetch('data/lessons.json',{cache:'no-store'}).then(r=>r.json()).then(L=>{LES=L.filter(l=>l.status!=='Setup');render();}).catch(()=>render());
+</script>
+</body>
+</html>

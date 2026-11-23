@@ -68,6 +68,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .navlinks .short{display:none}
 @media(max-width:560px){.navlinks .long{display:none}.navlinks .short{display:inline}.navlinks{gap:0!important}.navlinks a{padding:6px 5px!important;font-size:12.5px!important}.navlinks a.navbtn{margin:0 3px!important}}
 @media(max-width:380px){.navlinks a{padding:6px 4px!important;font-size:12px!important}}
+.dlrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.dl{font:600 14px "IBM Plex Sans",system-ui,sans-serif;color:#16324a;background:#fff;border:1px solid #16324a;border-radius:4px;padding:8px 14px;cursor:pointer;text-decoration:none}
+.m a.dl{color:#16324a}
+.dl:hover{background:#16324a;color:#fff!important}
+.dlmeta{font-size:13px!important;color:var(--dim)!important}
+.m code{background:#eef1f5!important;color:#16324a!important;font-family:"IBM Plex Mono",ui-monospace,monospace}
+.m table.dict td:first-child{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;white-space:normal;width:34%}
 </style>
 <link rel="stylesheet" href="assets/site.css">
 </head>
@@ -88,7 +95,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <h1>Methodology</h1>
     <p class="sub">How the project works, what I decided versus what's automated, and the statistical rules everything is held to.</p>
     <div class="toc2">
-      <a href="#design">What I designed</a><a href="#stack">Stack and data</a><a href="#pipeline">Daily pipeline</a><a href="#features">What's logged</a><a href="#forecast">How forecasts are made</a><a href="#grading">How it's graded</a><a href="#stats">Statistical rules</a><a href="#limits">Limitations</a>
+      <a href="#design">What I designed</a><a href="#stack">Stack and data</a><a href="#pipeline">Daily pipeline</a><a href="#features">What's logged</a><a href="#forecast">How forecasts are made</a><a href="#grading">How it's graded</a><a href="#stats">Statistical rules</a><a href="#card">Model card</a><a href="#data">Download the data</a><a href="#limits">Limitations</a>
     </div>
   </header>
 
@@ -124,7 +131,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </table>
 
   <h2 id="features">What's logged for every game</h2>
-  <p>Besides the lines at all three books and the forecast itself, each game stores structured inputs so a model can be fit on them: the rating system used and each team's rating, the line the ratings imply, home advantage and neutral site, rest days and back-to-backs, key players out, quarterback changes, time zones traveled, games played, strength-of-schedule rank, the opening line, the share of public bets on each side, and the closing line. Missing values are stored as blank, never guessed.</p>
+  <p>Besides the lines at all three books and the forecast itself, each game stores structured inputs so a model can be fit on them: the rating system used and each team's rating, the line the ratings imply, home advantage and neutral site, rest days and back-to-backs, key players out, quarterback changes, time zones traveled, games played, strength-of-schedule rank, the opening line, the share of public bets on each side, and the closing line. Later additions: each team's scoring margin over its last five games, win or loss streaks, kickoff weather for outdoor football, the market's consensus win probability (DraftKings, FanDuel and Kalshi prices with the bookmaker margin removed), a high-altitude flag, and games played in the last seven days. Missing values are stored as blank, never guessed. The <a href="changelog.html">changelog</a> lists when each piece was added.</p>
 
   <h2 id="forecast">How forecasts are made</h2>
   <ul>
@@ -155,6 +162,49 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <p>A lesson is dropped once it has 50+ picks and is below 50%, or 100+ picks without passing. Dropped lessons stay on file so the same idea isn't relearned. Early on, almost nothing should pass; that's the expected result, not a failure.</p>
   <p><b>Out-of-sample testing.</b> Formula v1 is built from the first phase of data and then run on new games without changes, so it can't be tuned to fit the results it's judged on.</p>
 
+  <h2 id="card">Model card</h2>
+  <p>A model card is a one-page summary of what a model is, what it's for and where it falls short. This one covers the current daily process, before Formula v1.</p>
+  <table>
+    <tr><td>What it is</td><td>A written forecasting process run every morning by scheduled AI agents: start from a public rating system's line, adjust for game context, and pick a side on the spread and moneyline. There are no fitted coefficients yet.</td></tr>
+    <tr><td>Version</td><td>Phase 1, data collection. Formula v1, the first fitted model, is scheduled for December 31, 2026 (trained through Dec 23, checked on Dec 24-30, then run unchanged on new games).</td></tr>
+    <tr><td>Intended use</td><td>Research and teaching: measuring how close a disciplined process gets to market prices, and where markets are weakest. Not betting advice.</td></tr>
+    <tr><td>Inputs</td><td>Market lines at three books, public betting splits, team ratings and the structured game context listed above.</td></tr>
+    <tr><td>Outputs</td><td>A forecast spread, a pick on the spread and moneyline, a win probability for the moneyline side, an official-play flag and a short written reason.</td></tr>
+    <tr><td>How it's judged</td><td>Against-the-spread record vs 52.4% break-even with 95% ranges, closing line value, calibration, and simple-strategy control groups.</td></tr>
+    <tr><td>Results so far</td><td id="mc-live">Loading…</td></tr>
+    <tr><td>Known weak spots</td><td>Small samples; data gathered from public pages can contain errors; the closing line is the 6:30pm ET price, not the true close; many lessons are tested at once, so some will look good by chance.</td></tr>
+    <tr><td>Who's behind it</td><td>Isaac Raphel, Indiana University economics. Designed by me, run by AI agents following written rules (see <a href="#design">What I designed</a>).</td></tr>
+  </table>
+
+  <h2 id="data">Download the data</h2>
+  <p>Every game and lesson on this site, as a spreadsheet-ready CSV built from the live files in your browser. The structured inputs are flattened into columns that start with <code>features.</code>. Betting-bankroll details are removed before data reaches this site.</p>
+  <div class="dlrow">
+    <button type="button" class="dl" data-f="games">Games (CSV)</button>
+    <button type="button" class="dl" data-f="lessons">Lessons (CSV)</button>
+    <a class="dl" href="data/games.json" download>Games (JSON)</a>
+  </div>
+  <p class="dlmeta" id="dl-meta"></p>
+  <h3>Data dictionary</h3>
+  <table class="dict">
+    <tr><td>id</td><td>Date, league, away team and home team, e.g. 2026-11-22-NBA-CHI-SEA</td></tr>
+    <tr><td>dk_spread, fd_spread</td><td>DraftKings and FanDuel spread with its price, updated through the 6:30pm check</td></tr>
+    <tr><td>kalshi_spread, kalshi_ml</td><td>Kalshi prediction-market spread and win chance</td></tr>
+    <tr><td>public_split</td><td>Share of public bets (and money, when shown) on the more popular side</td></tr>
+    <tr><td>model_spread</td><td>The model's own line before any lesson was applied</td></tr>
+    <tr><td>spread_pick, spread_edge</td><td>The side and number picked, and how many points the model's line favored it</td></tr>
+    <tr><td>spread_result, ml_result</td><td>W, L, P (push) or pending</td></tr>
+    <tr><td>clv</td><td>Closing line value: points better (or worse, if negative) than the closing number</td></tr>
+    <tr><td>official</td><td>True for the model's real plays, which are graded as their own record</td></tr>
+    <tr><td>lessons_applied</td><td>Lesson ids that changed this pick (see the Lessons tab on the live model)</td></tr>
+    <tr><td>result_context</td><td>What happened: bad beat, blowout, injury and similar tags</td></tr>
+    <tr><td>features.rating_line</td><td>The spread team ratings alone imply, from the home team's view (negative = home favored)</td></tr>
+    <tr><td>features.open_line_home, close_line_home</td><td>Opening and closing spread from the home team's view</td></tr>
+    <tr><td>features.rest_*, b2b_*, games_last7_*</td><td>Days of rest, back-to-backs, and games in the past week for each team</td></tr>
+    <tr><td>features.key_out_*</td><td>Key players out (a starting QB counts as 2)</td></tr>
+    <tr><td>features.mkt_prob_home</td><td>Market consensus chance the home team wins, with the bookmaker margin removed (from Nov 23)</td></tr>
+    <tr><td>features.altitude_home</td><td>True when the home venue is at 4,000+ ft (from Nov 23)</td></tr>
+  </table>
+
   <h2 id="limits">Limitations</h2>
   <ul>
     <li><b>Small samples.</b> Hundreds of games are needed before any record means much; everything here is labeled with its uncertainty for that reason.</li>
@@ -167,7 +217,49 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </main>
 <footer><div class="wrap">
   <span>Isaac Raphel · Indiana University · Research project · no real money wagered · not betting advice</span>
-  <a href="index.html">Back to overview →</a>
+  <span class="flinks"><a href="changelog.html">Changelog</a> · <a href="#data">Data</a> · <a href="index.html">Back to overview →</a></span>
 </div></footer>
+<script>
+(function(){
+function wilson(w,n,z=1.96){if(!n)return null;const p=w/n,d=1+z*z/n,c=(p+z*z/(2*n))/d,h=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n))/d;return[c-h,c+h];}
+const pct=x=>(x*100).toFixed(1)+'%';
+const md=d=>{const[y,m,dd]=d.split('-').map(Number);return new Date(y,m-1,dd).toLocaleDateString('en-US',{month:'short',day:'numeric'});};
+const cache={};
+function get(n){return cache[n]||(cache[n]=fetch('data/'+n+'.json',{cache:'no-store'}).then(r=>r.json()));}
+Promise.all([get('games'),fetch('data/updated.json',{cache:'no-store'}).then(r=>r.json()).catch(()=>null)]).then(([G,u])=>{
+  const g=G.filter(x=>x.spread_result==='W'||x.spread_result==='L'||x.spread_result==='P');
+  const w=g.filter(x=>x.spread_result==='W').length,l=g.filter(x=>x.spread_result==='L').length,p=g.length-w-l;
+  const o=g.filter(x=>x.official===true),ow=o.filter(x=>x.spread_result==='W').length,ol=o.filter(x=>x.spread_result==='L').length;
+  const c=g.map(x=>x.clv).filter(v=>typeof v==='number');
+  const ds=g.map(x=>x.date).sort();
+  const ci=wilson(w,w+l);
+  let t=g.length+' graded games ('+md(ds[0])+' to '+md(ds[ds.length-1])+'). Against the spread: '+w+'-'+l+(p?'-'+p:'')+', '+pct(w/(w+l))+' (95% range '+pct(ci[0])+' to '+pct(ci[1])+') vs 52.4% break-even.';
+  if(ow+ol)t+=' Official plays: '+ow+'-'+ol+'.';
+  if(c.length)t+=' Average closing line value: '+(c.reduce((a,b)=>a+b,0)/c.length>=0?'+':'')+(c.reduce((a,b)=>a+b,0)/c.length).toFixed(2)+' points over '+c.length+' games.';
+  t+=ci[0]>0.524?' The whole 95% range is above break-even.':ci[1]<0.524?' The whole 95% range is below break-even.':' The 95% range still includes break-even, so there isn\'t enough evidence yet to say whether there is an edge.';
+  document.getElementById('mc-live').textContent=t;
+  const pend=G.length-g.length;
+  document.getElementById('dl-meta').textContent=G.length+' games in the file ('+pend+' not graded yet)'+(u&&u.at?' · last synced '+new Date(u.at).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}):'');
+}).catch(()=>{document.getElementById('mc-live').textContent='Live numbers are on the Analysis page.';});
+function csv(rows){
+  const top=[],feat=[];
+  rows.forEach(r=>{Object.keys(r).forEach(k=>{if(k==='features'){Object.keys(r.features||{}).forEach(f=>{if(!feat.includes(f))feat.push(f);});}else if(!top.includes(k))top.push(k);});});
+  const cols=top.concat(feat.map(f=>'features.'+f));
+  const esc=v=>{if(v===null||v===undefined)return'';const s=typeof v==='object'?JSON.stringify(v):String(v);return /[",\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;};
+  const lines=[cols.join(',')];
+  rows.forEach(r=>{lines.push(cols.map(c=>c.startsWith('features.')?esc((r.features||{})[c.slice(9)]):esc(r[c])).join(','));});
+  return lines.join('\r\n');
+}
+document.querySelectorAll('button.dl').forEach(b=>b.addEventListener('click',()=>{
+  const f=b.dataset.f;
+  get(f).then(rows=>{
+    const blob=new Blob(['\ufeff'+csv(rows)],{type:'text/csv;charset=utf-8'});
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download='picks-model-'+f+'-'+new Date().toISOString().slice(0,10)+'.csv';
+    document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},500);
+  });
+}));
+})();
+</script>
 </body>
 </html>
