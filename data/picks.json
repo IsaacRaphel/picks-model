@@ -208,5 +208,15 @@
   "fd_odds": "-102",
   "kalshi_odds": "-104",
   "result": "L"
+ },
+ {
+  "id": "2026-11-23-potd",
+  "date": "2026-11-23",
+  "kind": "Pick of the day",
+  "pick": "MEM -3.5",
+  "dk_odds": "-115",
+  "fd_odds": "-114",
+  "kalshi_odds": "-108",
+  "result": "pending"
  }
 ]
