@@ -218,5 +218,15 @@
   "fd_odds": "-114",
   "kalshi_odds": "-108",
   "result": "W"
+ },
+ {
+  "id": "2026-11-24-potd",
+  "date": "2026-11-24",
+  "kind": "Pick of the day",
+  "pick": "BYU ML",
+  "dk_odds": "-122",
+  "fd_odds": "-110",
+  "kalshi_odds": "+108",
+  "result": "pending"
  }
 ]
