@@ -238,5 +238,15 @@
   "fd_odds": "-106",
   "kalshi_odds": "-104",
   "result": "W"
+ },
+ {
+  "id": "2026-11-26-potd",
+  "date": "2026-11-26",
+  "kind": "Pick of the day",
+  "pick": "PUR -4.5",
+  "dk_odds": "-110",
+  "fd_odds": "-120",
+  "kalshi_odds": "-133",
+  "result": "pending"
  }
 ]
