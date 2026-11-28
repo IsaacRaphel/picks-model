@@ -26616,16 +26616,16 @@
   "spread_pick": "MIA +4.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MIA +130 / NYK -155",
   "fd_ml": "MIA +124 / NYK -146",
   "kalshi_ml": "NYK 62%",
   "model_ml": "NYK 68%",
   "ml_pick": "NYK",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "MIA 108, NYK 105",
+  "result_context": "Close win: MIA blew most of a 23-pt lead, NYK led 92-91 in the 4th, Adebayo broke a 95-95 tie and Brunson made 2 of 3 FTs with 9.8s left; MIA won outright as a dog",
   "lessons_applied": "L012",
   "official": false,
   "features": {
@@ -26649,7 +26649,7 @@
    "sos_rank_home": null,
    "open_line_home": -4.5,
    "public_bets_pct_home": 64,
-   "close_line_home": null,
+   "close_line_home": -2.5,
    "last5_margin_away": 9.6,
    "last5_margin_home": 7.8,
    "streak_away": -1,
@@ -26665,7 +26665,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Ratings say NYK -8 but Anunoby is out and three other Knicks are questionable, so my number is NYK -5.5 and the Knicks to win at MSG. That leaned Knicks -3.5 by 2, but 64% of bets are on New York and DraftKings dropped a point anyway, so L012 switches me to Heat +4.5."
+  "note": "Ratings say NYK -8 but Anunoby is out and three other Knicks are questionable, so my number is NYK -5.5 and the Knicks to win at MSG. That leaned Knicks -3.5 by 2, but 64% of bets are on New York and DraftKings dropped a point anyway, so L012 switches me to Heat +4.5.",
+  "clv": 2.0
  },
  {
   "id": "2026-11-27-NBA-MIL-DET",
@@ -26684,16 +26685,16 @@
   "spread_pick": "MIL +8.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MIL +351 / DET -452",
   "fd_ml": "MIL +350 / DET -450",
   "kalshi_ml": "DET 77%",
   "model_ml": "DET 80%",
   "ml_pick": "DET",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MIL 98, DET 113",
+  "result_context": "Line was right: DET's bench (Isaiah Joe 22) pulled away to win by 15",
   "lessons_applied": "L001,L006",
   "official": false,
   "features": {
@@ -26717,7 +26718,7 @@
    "sos_rank_home": null,
    "open_line_home": -11.5,
    "public_bets_pct_home": 69,
-   "close_line_home": null,
+   "close_line_home": -9.5,
    "last5_margin_away": -4.4,
    "last5_margin_home": 6.0,
    "streak_away": -1,
@@ -26733,7 +26734,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Ratings say DET -17 against a 2-17 Bucks team, but Cade and Duren are both out, so my number is DET -10 and Detroit still wins. The raw lean was Pistons -8.5 by 1.5, but L001 says pass on a big favorite missing a top-2 guy and L006 says don't back the banged-up side without a 2-point edge, so Bucks +8.5."
+  "note": "Ratings say DET -17 against a 2-17 Bucks team, but Cade and Duren are both out, so my number is DET -10 and Detroit still wins. The raw lean was Pistons -8.5 by 1.5, but L001 says pass on a big favorite missing a top-2 guy and L006 says don't back the banged-up side without a 2-point edge, so Bucks +8.5.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-27-NBA-PHI-IND",
@@ -26752,16 +26754,16 @@
   "spread_pick": "IND +3.5 (FD)",
   "spread_side": "home",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "PHI -170 / IND +142",
   "fd_ml": "PHI -164 / IND +138",
   "kalshi_ml": "PHI 60%",
   "model_ml": "PHI 57%",
   "ml_pick": "PHI",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "PHI 111, IND 87",
+  "result_context": "Blowout: PHI won by 24, IND never in it",
   "lessons_applied": "L012",
   "official": false,
   "features": {
@@ -26785,7 +26787,7 @@
    "sos_rank_home": null,
    "open_line_home": 4.5,
    "public_bets_pct_home": 31,
-   "close_line_home": null,
+   "close_line_home": 3.5,
    "last5_margin_away": 2.0,
    "last5_margin_home": -6.6,
    "streak_away": 1,
@@ -26801,7 +26803,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Philly is 15-4 but ratings only have them about 1.5 better here, and Jaylen Brown is out with Embiid questionable, so my number is PHI -2 and the Sixers barely win. L011 would push me to lay it, but 69% of bets are on Philly while the line fell from 4.5, so L012 keeps me on Pacers +3.5."
+  "note": "Philly is 15-4 but ratings only have them about 1.5 better here, and Jaylen Brown is out with Embiid questionable, so my number is PHI -2 and the Sixers barely win. L011 would push me to lay it, but 69% of bets are on Philly while the line fell from 4.5, so L012 keeps me on Pacers +3.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-NBA-BKN-TOR",
@@ -26820,16 +26823,16 @@
   "spread_pick": "BKN +8.5 (FD)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "BKN +297 / TOR -374",
   "fd_ml": "BKN +295 / TOR -370",
   "kalshi_ml": "TOR 73%",
   "model_ml": "TOR 72%",
   "ml_pick": "TOR",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BKN 100, TOR 124",
+  "result_context": "Blowout: TOR won by 24",
   "lessons_applied": "L006",
   "official": false,
   "features": {
@@ -26853,7 +26856,7 @@
    "sos_rank_home": null,
    "open_line_home": -7.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -9.5,
    "last5_margin_away": -12.6,
    "last5_margin_home": -3.8,
    "streak_away": 1,
@@ -26869,7 +26872,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Ratings say TOR -10.5, but that's with Kawhi and RJ Barrett, who are both out, and Toronto is 2-7 at home, so my number is TOR -7 with the Raptors still winning. L006 keeps me off the banged-up favorite, so Nets +8.5 is a lean, not a play, since the case is mostly Toronto's injuries (L009)."
+  "note": "Ratings say TOR -10.5, but that's with Kawhi and RJ Barrett, who are both out, and Toronto is 2-7 at home, so my number is TOR -7 with the Raptors still winning. L006 keeps me off the banged-up favorite, so Nets +8.5 is a lean, not a play, since the case is mostly Toronto's injuries (L009).",
+  "clv": -1.0
  },
  {
   "id": "2026-11-27-NBA-ATL-BOS",
@@ -26888,16 +26892,16 @@
   "spread_pick": "BOS -8.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "ATL +312 / BOS -395",
   "fd_ml": "ATL +285 / BOS -355",
   "kalshi_ml": "BOS 75%",
   "model_ml": "BOS 77%",
   "ml_pick": "BOS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "ATL 87, BOS 86",
+  "result_context": "Bad read, Close loss: short-handed ATL (5 out) won outright 87-86, Jalen Johnson 24 and a late block sealed it",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -26921,7 +26925,7 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": 52,
-   "close_line_home": null,
+   "close_line_home": -9.5,
    "last5_margin_away": 5.6,
    "last5_margin_home": -0.2,
    "streak_away": 4,
@@ -26937,7 +26941,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Atlanta is on a 4-game win streak, but ratings make them about average and they're without McCollum, Landale and two other frontcourt players, while Boston is 6-1 at home. My number is BOS -9, so a small lean on the Celtics -8.5 and to win."
+  "note": "Atlanta is on a 4-game win streak, but ratings make them about average and they're without McCollum, Landale and two other frontcourt players, while Boston is 6-1 at home. My number is BOS -9, so a small lean on the Celtics -8.5 and to win.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-NBA-MEM-MIN",
@@ -26956,16 +26961,16 @@
   "spread_pick": "MIN -3.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MEM +130 / MIN -155",
   "fd_ml": "MEM +136 / MIN -162",
   "kalshi_ml": "MIN 60%",
   "model_ml": "MIN 66%",
   "ml_pick": "MIN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "MEM 114, MIN 109",
+  "result_context": "Injury, Line was right: MIN without Edwards, LaMelo Ball and DiVincenzo; MEM won outright with late stops",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -26989,7 +26994,7 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": 68,
-   "close_line_home": null,
+   "close_line_home": -2.5,
    "last5_margin_away": 9.2,
    "last5_margin_home": 8.0,
    "streak_away": 2,
@@ -27005,7 +27010,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Minnesota beat Memphis by 9 here last week and rates as the better team even without Edwards, so my number is MIN -5 and the Wolves to win. Memphis is 9-1 on the road and LaMelo is questionable, so Wolves -3.5 is a lean, not a play."
+  "note": "Minnesota beat Memphis by 9 here last week and rates as the better team even without Edwards, so my number is MIN -5 and the Wolves to win. Memphis is 9-1 on the road and LaMelo is questionable, so Wolves -3.5 is a lean, not a play.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-27-NBA-DAL-PHX",
@@ -27024,16 +27030,16 @@
   "spread_pick": "DAL +2.5 (FD)",
   "spread_side": "away",
   "spread_edge": 3.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DAL +130 / PHX -155",
   "fd_ml": "DAL +130 / PHX -154",
   "kalshi_ml": "PHX 54%",
   "model_ml": "DAL 52%",
   "ml_pick": "DAL",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DAL 113, PHX 109",
+  "result_context": "Close win: Cooper Flagg 34 as DAL won outright late",
   "lessons_applied": "L010",
   "official": false,
   "features": {
@@ -27057,7 +27063,7 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": 3.2,
    "last5_margin_home": 7.0,
    "streak_away": 4,
@@ -27073,7 +27079,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Dallas has won 4 of 5 (including by 19 at Denver) and rates better than Phoenix, which just got home from a 5-game road trip, so my number is DAL -0.5 and the Mavs to win. That's a 3-point edge on Mavs +2.5, but L010 says I can't name anything the market's missing beyond ratings, so it's a lean, not a play."
+  "note": "Dallas has won 4 of 5 (including by 19 at Denver) and rates better than Phoenix, which just got home from a 5-game road trip, so my number is DAL -0.5 and the Mavs to win. That's a 3-point edge on Mavs +2.5, but L010 says I can't name anything the market's missing beyond ratings, so it's a lean, not a play.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-27-NBA-LAL-SAS",
@@ -27092,16 +27099,16 @@
   "spread_pick": "SAS -5.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "LAL +171 / SAS -205",
   "fd_ml": "LAL +176 / SAS -210",
   "kalshi_ml": "SAS 61%",
   "model_ml": "SAS 71%",
   "ml_pick": "SAS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "LAL 96, SAS 99",
+  "result_context": "Close loss: SAS won by just 3 on a -5.5 number",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -27125,7 +27132,7 @@
    "sos_rank_home": null,
    "open_line_home": -6.5,
    "public_bets_pct_home": 44,
-   "close_line_home": null,
+   "close_line_home": -5.5,
    "last5_margin_away": 3.4,
    "last5_margin_home": 6.8,
    "streak_away": 2,
@@ -27141,7 +27148,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "The Spurs are the best team in the ratings and the Lakers' 15-3 record is softer than it looks, but Fox is questionable and Harris is out, so my number is SAS -6.5 and San Antonio to win. Small lean on Spurs -5.5 until Fox's status is clear."
+  "note": "The Spurs are the best team in the ratings and the Lakers' 15-3 record is softer than it looks, but Fox is questionable and Harris is out, so my number is SAS -6.5 and San Antonio to win. Small lean on Spurs -5.5 until Fox's status is clear.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-NBA-DEN-UTA",
@@ -27160,16 +27168,16 @@
   "spread_pick": "DEN -9.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DEN -438 / UTA +341",
   "fd_ml": "DEN -450 / UTA +350",
   "kalshi_ml": "DEN 78%",
   "model_ml": "DEN 69%",
   "ml_pick": "DEN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "DEN 120, UTA 107",
+  "result_context": "Murray sparked a late DEN run to win by 13",
   "lessons_applied": "L010",
   "official": false,
   "features": {
@@ -27193,7 +27201,7 @@
    "sos_rank_home": null,
    "open_line_home": 9.5,
    "public_bets_pct_home": 46,
-   "close_line_home": null,
+   "close_line_home": 9.5,
    "last5_margin_away": -2.4,
    "last5_margin_home": 2.0,
    "streak_away": -1,
@@ -27209,7 +27217,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Adjusted ratings only have Denver by about 3, but Utah is 3-16 without Markkanen and Jaren Jackson Jr., so my number is DEN -6 and the Nuggets to win. That leaned Jazz +10.5 by 4.5, but L010 says a gap that big means the market knows Utah is gutted, so I flipped to Nuggets -9.5."
+  "note": "Adjusted ratings only have Denver by about 3, but Utah is 3-16 without Markkanen and Jaren Jackson Jr., so my number is DEN -6 and the Nuggets to win. That leaned Jazz +10.5 by 4.5, but L010 says a gap that big means the market knows Utah is gutted, so I flipped to Nuggets -9.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-NBA-NOP-LAC",
@@ -27228,16 +27237,16 @@
   "spread_pick": "LAC -2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "NOP +114 / LAC -135",
   "fd_ml": "NOP +120 / LAC -142",
   "kalshi_ml": "LAC 57%",
   "model_ml": "LAC 60%",
   "ml_pick": "LAC",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "NOP 105, LAC 104",
+  "result_context": "Close loss: NOP held on 105-104 behind Trey Murphy/Zion; LAC lost outright",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -27261,7 +27270,7 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": 53,
-   "close_line_home": null,
+   "close_line_home": -2.5,
    "last5_margin_away": -5.0,
    "last5_margin_home": -15.4,
    "streak_away": -4,
@@ -27277,7 +27286,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Two bad teams, but ratings make the Clippers about 4 points better at home and New Orleans is without Dejounte Murray, so my number is LAC -3. The Clippers have lost 5 straight by double digits, so it's only a small lean on LAC -2.5 and to win."
+  "note": "Two bad teams, but ratings make the Clippers about 4 points better at home and New Orleans is without Dejounte Murray, so my number is LAC -3. The Clippers have lost 5 straight by double digits, so it's only a small lean on LAC -2.5 and to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-NBA-GSW-POR",
@@ -27296,16 +27306,16 @@
   "spread_pick": "GSW +9.5 (DK)",
   "spread_side": "away",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "GSW +241 / POR -297",
   "fd_ml": "GSW +295 / POR -370",
   "kalshi_ml": "POR 73%",
   "model_ml": "POR 73%",
   "ml_pick": "POR",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "GSW 94, POR 116",
+  "result_context": "Blowout: POR routed GSW by 22 (Avdija 26), GSW eliminated from the Cup",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -27329,7 +27339,7 @@
    "sos_rank_home": null,
    "open_line_home": -9.5,
    "public_bets_pct_home": 61,
-   "close_line_home": null,
+   "close_line_home": -7.5,
    "last5_margin_away": -10.2,
    "last5_margin_home": 6.0,
    "streak_away": 2,
@@ -27345,7 +27355,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Golden State is without Curry, Butler and Porzingis, and Portland is 12-6 and rates as a top-4 team even with Morant out for weeks, so my number is POR -10.5 and the Blazers to win. Small lean on Portland -9.5. Changed at 3pm: Lillard ruled out (calf) on the 1:30pm report and the line hasn't moved off -9.5, so my number drops to POR -7.5 and I flip to Warriors +9.5; Blazers still to win."
+  "note": "Golden State is without Curry, Butler and Porzingis, and Portland is 12-6 and rates as a top-4 team even with Morant out for weeks, so my number is POR -10.5 and the Blazers to win. Small lean on Portland -9.5. Changed at 3pm: Lillard ruled out (calf) on the 1:30pm report and the line hasn't moved off -9.5, so my number drops to POR -7.5 and I flip to Warriors +9.5; Blazers still to win.",
+  "clv": 2.0
  },
  {
   "id": "2026-11-27-NFL-DEN-PIT",
@@ -27364,16 +27375,16 @@
   "spread_pick": "PIT +4.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "DEN -237 / PIT +196",
   "fd_ml": "",
   "kalshi_ml": "DEN 69%",
   "model_ml": "DEN 57%",
   "ml_pick": "DEN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "DEN 5, PIT 27",
+  "result_context": "Turnovers / special teams, Blowout: PIT led 24-5 at half with a Nix fumble recovered in the end zone and a Ramsey pick-six; Rudolph started for the benched Rodgers",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -27397,7 +27408,7 @@
    "sos_rank_home": 31,
    "open_line_home": 1.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 4.5,
    "last5_margin_away": 8.0,
    "last5_margin_home": 2.2,
    "streak_away": 6,
@@ -27413,7 +27424,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "FPI has these teams about even, and the line jumped 3 points because Pittsburgh benched a struggling Rodgers (370 yards and 8 sacks the last two games) for Mason Rudolph. My number is DEN -2.5 with the Broncos to win, but in rain and 15 mph wind I'll take Steelers +4.5."
+  "note": "FPI has these teams about even, and the line jumped 3 points because Pittsburgh benched a struggling Rodgers (370 yards and 8 sacks the last two games) for Mason Rudolph. My number is DEN -2.5 with the Broncos to win, but in rain and 15 mph wind I'll take Steelers +4.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CFB-NEB-IOWA",
@@ -27432,16 +27444,16 @@
   "spread_pick": "NEB +3.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "NEB +164 / IOWA -198",
   "fd_ml": "NEB +152 / IOWA -182",
   "kalshi_ml": "IOWA 65%",
   "model_ml": "IOWA 61%",
   "ml_pick": "IOWA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "NEB 7, IOWA 31",
+  "result_context": "Blowout, Line was right: Hank Brown ran for 3 TDs as Iowa rolled by 24",
   "lessons_applied": "L012",
   "official": false,
   "features": {
@@ -27465,7 +27477,7 @@
    "sos_rank_home": null,
    "open_line_home": -6,
    "public_bets_pct_home": 55,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": 2.6,
    "last5_margin_home": 15.8,
    "streak_away": 2,
@@ -27481,7 +27493,8 @@
    "epa_net_away": 0.21,
    "epa_net_home": null
   },
-  "note": "FPI makes Iowa about 3 points better at Kinnick, and Nebraska is down linebackers Chambliss and maybe Shavers, so my number is IOWA -4 and the Hawkeyes to win. That leaned Iowa -3.5 by a half point, but 55% of bets are on Iowa and the line still fell from 6 to 3.5, so L012 switches me to Nebraska +3.5."
+  "note": "FPI makes Iowa about 3 points better at Kinnick, and Nebraska is down linebackers Chambliss and maybe Shavers, so my number is IOWA -4 and the Hawkeyes to win. That leaned Iowa -3.5 by a half point, but 55% of bets are on Iowa and the line still fell from 6 to 3.5, so L012 switches me to Nebraska +3.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CFB-MSST-MISS",
@@ -27500,16 +27513,16 @@
   "spread_pick": "MISS -17.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MSST +625 / MISS -950",
   "fd_ml": "MSST +660 / MISS -1000",
   "kalshi_ml": "MISS 88%",
   "model_ml": "MISS 90%",
   "ml_pick": "MISS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MSST 17, MISS 41",
+  "result_context": "Chambliss accounted for 3 TDs, Ole Miss won by 24",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -27533,7 +27546,7 @@
    "sos_rank_home": null,
    "open_line_home": -19.5,
    "public_bets_pct_home": 52,
-   "close_line_home": null,
+   "close_line_home": -17.5,
    "last5_margin_away": -10.4,
    "last5_margin_home": 4.6,
    "streak_away": 1,
@@ -27549,7 +27562,8 @@
    "epa_net_away": null,
    "epa_net_home": 0.186
   },
-  "note": "FPI has Ole Miss by about 16, and Mississippi State's starting QB AJ Swann is doubtful, so backup Billy Puckett likely starts. My number is MISS -19 with the Rebels to win the Egg Bowl, a small lean on -17.5 but too big a spread to be a play."
+  "note": "FPI has Ole Miss by about 16, and Mississippi State's starting QB AJ Swann is doubtful, so backup Billy Puckett likely starts. My number is MISS -19 with the Rebels to win the Egg Bowl, a small lean on -17.5 but too big a spread to be a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CFB-FLA-FSU",
@@ -27568,16 +27582,16 @@
   "spread_pick": "FSU +6.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "FLA -238 / FSU +195",
   "fd_ml": "FLA -230 / FSU +190",
   "kalshi_ml": "FLA 68%",
   "model_ml": "FLA 62%",
   "ml_pick": "FLA",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "FLA 26, FSU 10",
+  "result_context": "Line was right: Florida controlled it and won by 16",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -27601,7 +27615,7 @@
    "sos_rank_home": null,
    "open_line_home": 5.5,
    "public_bets_pct_home": 38,
-   "close_line_home": null,
+   "close_line_home": 6.5,
    "last5_margin_away": -3.6,
    "last5_margin_home": -5.0,
    "streak_away": 2,
@@ -27617,7 +27631,8 @@
    "epa_net_away": 0.189,
    "epa_net_home": null
   },
-  "note": "FPI only has Florida about 4.5 points better on the road, and Florida State needs this one to get bowl eligible, so my number is FLA -4.5 with the Gators to win. The line moved up to 6.5 with 62% of bets on Florida, so I'll take the Seminoles +6.5."
+  "note": "FPI only has Florida about 4.5 points better on the road, and Florida State needs this one to get bowl eligible, so my number is FLA -4.5 with the Gators to win. The line moved up to 6.5 with 62% of bets on Florida, so I'll take the Seminoles +6.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CFB-TEX-TAMU",
@@ -27636,16 +27651,16 @@
   "spread_pick": "TEX -10.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "TEX -455 / TAMU +350",
   "fd_ml": "TEX -450 / TAMU +340",
   "kalshi_ml": "TEX 81%",
   "model_ml": "TEX 79%",
   "ml_pick": "TEX",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TEX 16, TAMU 6",
+  "result_context": "Hook: Texas won 16-6 on defense (one TD all game) and missed -10.5 by half a point",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -27669,7 +27684,7 @@
    "sos_rank_home": null,
    "open_line_home": 10.5,
    "public_bets_pct_home": 37,
-   "close_line_home": null,
+   "close_line_home": 10.5,
    "last5_margin_away": 18.4,
    "last5_margin_home": -2.8,
    "streak_away": 5,
@@ -27685,7 +27700,8 @@
    "epa_net_away": 0.255,
    "epa_net_home": 0.035
   },
-  "note": "Texas has won 5 straight and FPI makes them about 13 points better, while A&M has scored 7, 9 and 7 in its last three and still hasn't named a QB. My number is TEX -12, even with Texas missing LT Trevor Goosby, so Longhorns -10.5 and to win."
+  "note": "Texas has won 5 straight and FPI makes them about 13 points better, while A&M has scored 7, 9 and 7 in its last three and still hasn't named a QB. My number is TEX -12, even with Texas missing LT Trevor Goosby, so Longhorns -10.5 and to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CFB-MINN-WIS",
@@ -27704,16 +27720,16 @@
   "spread_pick": "WIS -8.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MINN +270 / WIS -340",
   "fd_ml": "MINN +270 / WIS -335",
   "kalshi_ml": "WIS 75%",
   "model_ml": "WIS 77%",
   "ml_pick": "WIS",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MINN 5, WIS 28",
+  "result_context": "Blowout: Wisconsin won the Axe by 23",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -27737,7 +27753,7 @@
    "sos_rank_home": null,
    "open_line_home": -6.5,
    "public_bets_pct_home": 44,
-   "close_line_home": null,
+   "close_line_home": -9.5,
    "last5_margin_away": -8.6,
    "last5_margin_home": 7.4,
    "streak_away": 1,
@@ -27753,7 +27769,8 @@
    "epa_net_away": null,
    "epa_net_home": 0.175
   },
-  "note": "FPI has Wisconsin by about 11.5 at home, where they're 5-0, and Minnesota is missing three offensive linemen. The line went from 6.5 to 9.5 with most bets on Minnesota, which looks like sharp money on the Badgers, so my number is WIS -11 and Wisconsin -8.5, but QB Deuce Adams is questionable, so it's not a play."
+  "note": "FPI has Wisconsin by about 11.5 at home, where they're 5-0, and Minnesota is missing three offensive linemen. The line went from 6.5 to 9.5 with most bets on Minnesota, which looks like sharp money on the Badgers, so my number is WIS -11 and Wisconsin -8.5, but QB Deuce Adams is questionable, so it's not a play.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-CFB-WVU-UTAH",
@@ -27772,16 +27789,16 @@
   "spread_pick": "WVU +26.5 (DK)",
   "spread_side": "away",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "WVU +1300 / UTAH -2800",
   "fd_ml": "WVU +1280 / UTAH -3500",
   "kalshi_ml": "UTAH 94%",
   "model_ml": "UTAH 95%",
   "ml_pick": "UTAH",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "WVU 28, UTAH 52",
+  "result_context": "Utah won by 24 to finish unbeaten; WVU covered +26.5 by 2.5",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -27805,7 +27822,7 @@
    "sos_rank_home": null,
    "open_line_home": -20.5,
    "public_bets_pct_home": 47,
-   "close_line_home": null,
+   "close_line_home": -25.5,
    "last5_margin_away": -4.8,
    "last5_margin_home": 12.4,
    "streak_away": -3,
@@ -27821,7 +27838,8 @@
    "epa_net_away": null,
    "epa_net_home": 0.269
   },
-  "note": "FPI has Utah by about 21, and with West Virginia QB Michael Hawkins Jr. doubtful my number is UTAH -24, so the 11-0 Utes win easily. Utah already clinched a spot in next week's Big 12 title game, so I'll take the points with WVU +26.5, but at this size it's not a play."
+  "note": "FPI has Utah by about 21, and with West Virginia QB Michael Hawkins Jr. doubtful my number is UTAH -24, so the 11-0 Utes win easily. Utah already clinched a spot in next week's Big 12 title game, so I'll take the points with WVU +26.5, but at this size it's not a play.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-CBB-UVA-XAV",
@@ -27840,16 +27858,16 @@
   "spread_pick": "XAV +7.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "UVA -340 / XAV +270",
   "fd_ml": "UVA -295 / XAV +240",
   "kalshi_ml": "UVA 74%",
   "model_ml": "UVA 75%",
   "ml_pick": "UVA",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "UVA 83, XAV 71",
+  "result_context": "Line was right: Virginia handled Xavier by 12 (Sam Lewis 21)",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -27873,7 +27891,7 @@
    "sos_rank_home": null,
    "open_line_home": 8.5,
    "public_bets_pct_home": 68,
-   "close_line_home": null,
+   "close_line_home": 7.5,
    "last5_margin_away": 21.2,
    "last5_margin_home": 11.6,
    "streak_away": 8,
@@ -27889,7 +27907,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Virginia is 8-0 with an elite defense and Torvik makes them about 7 points better than a Xavier team that just knocked off Texas A&M. My number is UVA -7 with the Cavaliers to win, which is only a half-point edge on Xavier +7.5, and L016 keeps the dog instead of flipping, so it's a lean."
+  "note": "Virginia is 8-0 with an elite defense and Torvik makes them about 7 points better than a Xavier team that just knocked off Texas A&M. My number is UVA -7 with the Cavaliers to win, which is only a half-point edge on Xavier +7.5, and L016 keeps the dog instead of flipping, so it's a lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-WAKE-MEM",
@@ -27908,16 +27927,16 @@
   "spread_pick": "WAKE +2.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "WAKE +114 / MEM -135",
   "fd_ml": "WAKE +110 / MEM -132",
   "kalshi_ml": "",
   "model_ml": "MEM 56%",
   "ml_pick": "MEM",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "WAKE 85, MEM 88",
+  "result_context": "Hook, Close loss: Memphis led by 20 with 10 min left, Wake rallied to 86-85 but Reid's FTs made it a 3-pt loss on +2.5",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -27941,7 +27960,7 @@
    "sos_rank_home": null,
    "open_line_home": -1.5,
    "public_bets_pct_home": 59,
-   "close_line_home": null,
+   "close_line_home": -1.5,
    "last5_margin_away": 19.0,
    "last5_margin_home": 6.0,
    "streak_away": 5,
@@ -27957,7 +27976,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has Memphis about a point better, and both teams won Wednesday, so my number is MEM -1.5 with the Tigers to win a close one. That's a 1-point edge on Wake Forest +2.5, and L016 keeps the dog, so it's a lean."
+  "note": "Torvik has Memphis about a point better, and both teams won Wednesday, so my number is MEM -1.5 with the Tigers to win a close one. That's a 1-point edge on Wake Forest +2.5, and L016 keeps the dog, so it's a lean.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-CBB-SOU-VAN",
@@ -27976,16 +27996,16 @@
   "spread_pick": "SOU +37.5 (DK)",
   "spread_side": "away",
   "spread_edge": 5.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "",
   "fd_ml": "SOU +7000 / VAN -100000",
   "kalshi_ml": "VAN 99%",
   "model_ml": "VAN 99%",
   "ml_pick": "VAN",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "SOU 56, VAN 111",
+  "result_context": "Blowout, Garbage time: Vanderbilt buried Southern early and won by 55 with the bench in",
   "lessons_applied": "L004,L017",
   "official": false,
   "features": {
@@ -28009,7 +28029,7 @@
    "sos_rank_home": null,
    "open_line_home": -36.5,
    "public_bets_pct_home": 37,
-   "close_line_home": null,
+   "close_line_home": -36.5,
    "last5_margin_away": -12.2,
    "last5_margin_home": 22.2,
    "streak_away": -1,
@@ -28025,7 +28045,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik makes this Vandy by about 29, and Southern just lost by 29 at Nebraska as a 35.5-point dog, so my number is VAN -32 with the 7-0 Commodores winning easily. DraftKings' +37.5 clears L004's 5-point bar and L017 keeps me off the full chalk, so Southern +37.5, but not as a play at this size."
+  "note": "Torvik makes this Vandy by about 29, and Southern just lost by 29 at Nebraska as a 35.5-point dog, so my number is VAN -32 with the 7-0 Commodores winning easily. DraftKings' +37.5 clears L004's 5-point bar and L017 keeps me off the full chalk, so Southern +37.5, but not as a play at this size.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-CBB-GTWN-UCLA",
@@ -28044,16 +28065,16 @@
   "spread_pick": "GTWN +8.5 (DK)",
   "spread_side": "away",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "GTWN +270 / UCLA -340",
   "fd_ml": "GTWN +290 / UCLA -375",
   "kalshi_ml": "UCLA 75%",
   "model_ml": "UCLA 73%",
   "ml_pick": "UCLA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "GTWN 63, UCLA 75",
+  "result_context": "UCLA pulled away to win by 12",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -28077,7 +28098,7 @@
    "sos_rank_home": null,
    "open_line_home": -8.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -7.5,
    "last5_margin_away": 11.6,
    "last5_margin_home": 26.8,
    "streak_away": -1,
@@ -28093,7 +28114,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik makes UCLA about 6 points better, and Saint Mary's just beat the Bruins by 15, so my number is UCLA -6.5 with UCLA still winning. I'll take Georgetown +8.5, but guard J. Petty is questionable for UCLA, so it's not an official play."
+  "note": "Torvik makes UCLA about 6 points better, and Saint Mary's just beat the Bruins by 15, so my number is UCLA -6.5 with UCLA still winning. I'll take Georgetown +8.5, but guard J. Petty is questionable for UCLA, so it's not an official play.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-CBB-ISU-SJU",
@@ -28112,16 +28134,16 @@
   "spread_pick": "ISU +4.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "ISU +110 / SJU -130",
   "fd_ml": "",
   "kalshi_ml": "SJU 62%",
   "model_ml": "SJU 61%",
   "ml_pick": "SJU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "ISU 75, SJU 80",
+  "result_context": "Hook, Close loss, Back-to-back: SJU played the night before; ISU got within 3 three times late but never led and lost by 5 on +4.5",
   "lessons_applied": "L016",
   "official": true,
   "features": {
@@ -28145,7 +28167,7 @@
    "sos_rank_home": null,
    "open_line_home": -4.5,
    "public_bets_pct_home": 50,
-   "close_line_home": null,
+   "close_line_home": -1.5,
    "last5_margin_away": 17.2,
    "last5_margin_home": 20.6,
    "streak_away": -1,
@@ -28161,7 +28183,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has St. John's only about 2.5 points better, and both teams lost Thursday, so my number is SJU -3 with the Johnnies to win. That's a 1.5-point edge on Iowa State +4.5, and L016 keeps the dog in a game where the ratings agree with me."
+  "note": "Torvik has St. John's only about 2.5 points better, and both teams lost Thursday, so my number is SJU -3 with the Johnnies to win. That's a 1.5-point edge on Iowa State +4.5, and L016 keeps the dog in a game where the ratings agree with me.",
+  "clv": 3.0
  },
  {
   "id": "2026-11-27-CBB-TCU-BAY",
@@ -28180,16 +28203,16 @@
   "spread_pick": "TCU +4.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "TCU +164 / BAY -198",
   "fd_ml": "",
   "kalshi_ml": "BAY 60%",
   "model_ml": "BAY 65%",
   "ml_pick": "BAY",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "TCU 88, BAY 69",
+  "result_context": "Blowout: TCU won the 3rd-place game by 19 as the dog",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -28213,7 +28236,7 @@
    "sos_rank_home": null,
    "open_line_home": -4.5,
    "public_bets_pct_home": 57,
-   "close_line_home": null,
+   "close_line_home": -4.5,
    "last5_margin_away": 4.0,
    "last5_margin_home": 14.4,
    "streak_away": -1,
@@ -28229,7 +28252,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Baylor rates about 4 points better and both teams lost Thursday by 8, so my number is BAY -4 with the Bears to win. Only a half-point edge on TCU +4.5, and L016 keeps the dog, so it's a lean."
+  "note": "Baylor rates about 4 points better and both teams lost Thursday by 8, so my number is BAY -4 with the Bears to win. Only a half-point edge on TCU +4.5, and L016 keeps the dog, so it's a lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-CIN-BC",
@@ -28248,16 +28272,16 @@
   "spread_pick": "CIN -8.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "CIN -410 / BC +320",
   "fd_ml": "CIN -410 / BC +320",
   "kalshi_ml": "CIN 78%",
   "model_ml": "CIN 76%",
   "ml_pick": "CIN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "CIN 70, BC 59",
+  "result_context": "Cincinnati handed previously unbeaten BC its first loss by 11",
   "lessons_applied": "L012",
   "official": false,
   "features": {
@@ -28281,7 +28305,7 @@
    "sos_rank_home": null,
    "open_line_home": 8.5,
    "public_bets_pct_home": 67,
-   "close_line_home": null,
+   "close_line_home": 8.5,
    "last5_margin_away": 14.0,
    "last5_margin_home": 13.4,
    "streak_away": 4,
@@ -28297,7 +28321,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Boston College is 7-0 but against a soft schedule, and Torvik makes Cincinnati about 7 points better, so my number is CIN -7.5 with the Bearcats to win. That leaned BC +9.5 by 2, but 67% of bets are on BC and FanDuel moved toward Cincinnati, so L012 switches me to Cincinnati -8.5."
+  "note": "Boston College is 7-0 but against a soft schedule, and Torvik makes Cincinnati about 7 points better, so my number is CIN -7.5 with the Bearcats to win. That leaned BC +9.5 by 2, but 67% of bets are on BC and FanDuel moved toward Cincinnati, so L012 switches me to Cincinnati -8.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-TEX-SMC",
@@ -28316,16 +28341,16 @@
   "spread_pick": "SMC +8.5 (FD)",
   "spread_side": "home",
   "spread_edge": 3.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "TEX -345 / SMC +275",
   "fd_ml": "TEX -350 / SMC +280",
   "kalshi_ml": "TEX 74%",
   "model_ml": "TEX 70%",
   "ml_pick": "TEX",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "TEX 76, SMC 73",
+  "result_context": "Close win: Texas rallied to win by 3, SMC covered +8.5 comfortably",
   "lessons_applied": "L010",
   "official": false,
   "features": {
@@ -28349,7 +28374,7 @@
    "sos_rank_home": null,
    "open_line_home": 7.5,
    "public_bets_pct_home": 50,
-   "close_line_home": null,
+   "close_line_home": 7.5,
    "last5_margin_away": 20.6,
    "last5_margin_home": 17.4,
    "streak_away": 7,
@@ -28365,7 +28390,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Texas is 7-0 but Torvik only has them about 4.5 points better than a Saint Mary's team that just beat UCLA by 15, so my number is TEX -5.5 with the Longhorns to win. That's a 3-point edge on Saint Mary's +8.5, but L010 says I can't name what the market is missing, so it's a lean, not a play."
+  "note": "Texas is 7-0 but Torvik only has them about 4.5 points better than a Saint Mary's team that just beat UCLA by 15, so my number is TEX -5.5 with the Longhorns to win. That's a 3-point edge on Saint Mary's +8.5, but L010 says I can't name what the market is missing, so it's a lean, not a play.",
+  "clv": 1.0
  },
  {
   "id": "2026-11-27-CBB-VILL-KU",
@@ -28384,16 +28410,16 @@
   "spread_pick": "KU -12.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "VILL +600 / KU -900",
   "fd_ml": "VILL +590 / KU -880",
   "kalshi_ml": "KU 87%",
   "model_ml": "KU 88%",
   "ml_pick": "KU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "VILL 50, KU 65",
+  "result_context": "Kansas pulled away late to win by 15",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -28417,7 +28443,7 @@
    "sos_rank_home": null,
    "open_line_home": -12.5,
    "public_bets_pct_home": 46,
-   "close_line_home": null,
+   "close_line_home": -12.5,
    "last5_margin_away": 12.4,
    "last5_margin_home": 11.4,
    "streak_away": 2,
@@ -28433,7 +28459,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Kansas rates as a top-3 team and is rested at Allen Fieldhouse, and Villanova already lost by 20 at Pitt, so my number is KU -12.5 and the Jayhawks win. No edge on the spread, so it's a coin-flip lean on Kansas -12.5."
+  "note": "Kansas rates as a top-3 team and is rested at Allen Fieldhouse, and Villanova already lost by 20 at Pitt, so my number is KU -12.5 and the Jayhawks win. No edge on the spread, so it's a coin-flip lean on Kansas -12.5.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-MARQ-TAMU",
@@ -28452,16 +28479,16 @@
   "spread_pick": "MARQ +1.5 (DK)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MARQ +110 / TAMU -130",
   "fd_ml": "MARQ -104 / TAMU -115",
   "kalshi_ml": "",
   "model_ml": "TAMU 54%",
   "ml_pick": "TAMU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MARQ 76, TAMU 78",
+  "result_context": "Bad beat, Hook: Marquette led most of the game (up 66-55 midway through the 2nd half), tied it with 15s left, then Pope's putback at the buzzer won it by 2 on MARQ +1.5",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -28485,7 +28512,7 @@
    "sos_rank_home": null,
    "open_line_home": -2.5,
    "public_bets_pct_home": 48,
-   "close_line_home": null,
+   "close_line_home": -1.5,
    "last5_margin_away": 6.6,
    "last5_margin_home": 18.4,
    "streak_away": -1,
@@ -28501,7 +28528,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has A&M about a point better, but Marquette's defense (95 adjusted) just held Virginia to 60, so my number is TAMU -1 with the Aggies barely winning. Half-point edge on Marquette +1.5, and L016 keeps the dog, so it's a lean."
+  "note": "Torvik has A&M about a point better, but Marquette's defense (95 adjusted) just held Virginia to 60, so my number is TAMU -1 with the Aggies barely winning. Half-point edge on Marquette +1.5, and L016 keeps the dog, so it's a lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-MICH-KSU",
@@ -28520,16 +28548,16 @@
   "spread_pick": "MICH -7.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "MICH -360 / KSU +285",
   "fd_ml": "MICH -320 / KSU +260",
   "kalshi_ml": "MICH 74%",
   "model_ml": "MICH 76%",
   "ml_pick": "MICH",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MICH 98, KSU 69",
+  "result_context": "Blowout: Michigan won by 29",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -28553,7 +28581,7 @@
    "sos_rank_home": null,
    "open_line_home": 8.5,
    "public_bets_pct_home": 60,
-   "close_line_home": null,
+   "close_line_home": 7.5,
    "last5_margin_away": -0.2,
    "last5_margin_home": -3.0,
    "streak_away": -3,
@@ -28569,7 +28597,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Both teams are reeling (Michigan has lost 3 straight, K-State lost by 40 to Gonzaga), but Torvik still makes Michigan about 8 points better. My number is MICH -7.5, right on the line, so it's a coin-flip lean on the Wolverines -7.5 and to win."
+  "note": "Both teams are reeling (Michigan has lost 3 straight, K-State lost by 40 to Gonzaga), but Torvik still makes Michigan about 8 points better. My number is MICH -7.5, right on the line, so it's a coin-flip lean on the Wolverines -7.5 and to win.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-WKU-ILL",
@@ -28588,16 +28617,16 @@
   "spread_pick": "WKU +27.5 (DK)",
   "spread_side": "away",
   "spread_edge": 5.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "WKU +3500 / ILL -20000",
   "fd_ml": "WKU +3500 / ILL -30000",
   "kalshi_ml": "ILL 98%",
   "model_ml": "ILL 98%",
   "ml_pick": "ILL",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "WKU 76, ILL 116",
+  "result_context": "Blowout: Illinois won by 40 on a 27.5 number",
   "lessons_applied": "L004,L017",
   "official": false,
   "features": {
@@ -28621,7 +28650,7 @@
    "sos_rank_home": null,
    "open_line_home": -27.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -27.5,
    "last5_margin_away": 8.6,
    "last5_margin_home": 29.8,
    "streak_away": 2,
@@ -28637,7 +28666,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik makes Illinois about 19 points better, and while the Illini hung 133 on Winthrop, Western Kentucky is a top-90 team, not a cupcake. My number is ILL -22 with Illinois winning easily, and +27.5 clears L004's 5-point bar so L017 lets me take WKU, but not as a play at this size."
+  "note": "Torvik makes Illinois about 19 points better, and while the Illini hung 133 on Winthrop, Western Kentucky is a top-90 team, not a cupcake. My number is ILL -22 with Illinois winning easily, and +27.5 clears L004's 5-point bar so L017 lets me take WKU, but not as a play at this size.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-BGSU-IU",
@@ -28656,16 +28686,16 @@
   "spread_pick": "BGSU +22.5 (FD)",
   "spread_side": "away",
   "spread_edge": 2.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "BGSU +1800 / IU -5000",
   "fd_ml": "BGSU +2000 / IU -8000",
   "kalshi_ml": "IU 96%",
   "model_ml": "IU 97%",
   "ml_pick": "IU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "BGSU 57, IU 93",
+  "result_context": "Blowout: Indiana won by 36",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -28689,7 +28719,7 @@
    "sos_rank_home": null,
    "open_line_home": -23.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -22.5,
    "last5_margin_away": 6.4,
    "last5_margin_home": 12.8,
    "streak_away": 1,
@@ -28705,7 +28735,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has Indiana by about 18.5 at Assembly Hall, and I bumped it to IU -20 for the home crowd, so the 7-0 Hoosiers win easily. Bowling Green's offense can keep scoring late, so I'll take +22.5, but it's too big a spread to be a play."
+  "note": "Torvik has Indiana by about 18.5 at Assembly Hall, and I bumped it to IU -20 for the home crowd, so the 7-0 Hoosiers win easily. Bowling Green's offense can keep scoring late, so I'll take +22.5, but it's too big a spread to be a play.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-UCF-UGA",
@@ -28724,16 +28755,16 @@
   "spread_pick": "UCF +5.5 (FD)",
   "spread_side": "away",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "UCF +190 / UGA -230",
   "fd_ml": "UCF +188 / UGA -225",
   "kalshi_ml": "",
   "model_ml": "UGA 68%",
   "ml_pick": "UGA",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "UCF 88, UGA 76",
+  "result_context": "UCF rallied to beat Georgia outright by 12",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -28757,7 +28788,7 @@
    "sos_rank_home": null,
    "open_line_home": -5.5,
    "public_bets_pct_home": 73,
-   "close_line_home": null,
+   "close_line_home": -5.5,
    "last5_margin_away": 1.6,
    "last5_margin_home": 13.0,
    "streak_away": -3,
@@ -28773,7 +28804,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik makes Georgia about 5 points better, and UCF has lost 3 straight by 8 or less, so my number is UGA -5 with the Bulldogs to win. Half-point edge on UCF +5.5, and L016 keeps the dog, so it's a lean."
+  "note": "Torvik makes Georgia about 5 points better, and UCF has lost 3 straight by 8 or less, so my number is UGA -5 with the Bulldogs to win. Half-point edge on UCF +5.5, and L016 keeps the dog, so it's a lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-WVU-UNC",
@@ -28792,16 +28824,16 @@
   "spread_pick": "UNC +2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 3.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "WVU -155 / UNC +130",
   "fd_ml": "WVU -140 / UNC +118",
   "kalshi_ml": "WVU 57%",
   "model_ml": "UNC 52%",
   "ml_pick": "UNC",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "WVU 72, UNC 59",
+  "result_context": "Bad read, Turnovers / special teams: WVU led wire to wire and won by 13 as UNC turned it over",
   "lessons_applied": "L002",
   "official": false,
   "features": {
@@ -28825,7 +28857,7 @@
    "sos_rank_home": null,
    "open_line_home": 2.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": 3.5,
    "last5_margin_away": 8.2,
    "last5_margin_home": 20.0,
    "streak_away": -2,
@@ -28841,7 +28873,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has West Virginia less than a point better, and this game is in Charlotte, basically a home crowd for North Carolina, so my number is UNC -0.5 with the Tar Heels to win. That's 3 points on UNC +2.5, but L002 caps neutral-site edges between major teams at 2, so it's a lean, not a play."
+  "note": "Torvik has West Virginia less than a point better, and this game is in Charlotte, basically a home crowd for North Carolina, so my number is UNC -0.5 with the Tar Heels to win. That's 3 points on UNC +2.5, but L002 caps neutral-site edges between major teams at 2, so it's a lean, not a play.",
+  "clv": -1.0
  },
  {
   "id": "2026-11-27-CBB-OAK-HOU",
@@ -28860,16 +28893,16 @@
   "spread_pick": "OAK +36.5 (DK)",
   "spread_side": "away",
   "spread_edge": 4.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "",
   "fd_ml": "OAK +7000 / HOU -100000",
   "kalshi_ml": "HOU 99%",
   "model_ml": "HOU 99%",
   "ml_pick": "HOU",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "OAK 46, HOU 77",
+  "result_context": "Houston won by 31; Oakland covered +36.5",
   "lessons_applied": "L017",
   "official": false,
   "features": {
@@ -28893,7 +28926,7 @@
    "sos_rank_home": null,
    "open_line_home": -38.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -36.5,
    "last5_margin_away": -23.6,
    "last5_margin_home": 19.0,
    "streak_away": -2,
@@ -28909,7 +28942,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik makes Houston about 30 points better, and Oakland is 1-7 with losses by 41 and 46, so my number is HOU -32 with the Cougars winning big. Houston plays slow, and +36.5 is a 4.5-point edge, short of L004's 5-point bar, so per L017 Oakland is only a pass-level lean."
+  "note": "Torvik makes Houston about 30 points better, and Oakland is 1-7 with losses by 41 and 46, so my number is HOU -32 with the Cougars winning big. Houston plays slow, and +36.5 is a 4.5-point edge, short of L004's 5-point bar, so per L017 Oakland is only a pass-level lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-PSU-MSST",
@@ -28928,16 +28962,16 @@
   "spread_pick": "PSU +6.5 (DK)",
   "spread_side": "away",
   "spread_edge": 1.5,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "PSU +225 / MSST -278",
   "fd_ml": "PSU +215 / MSST -265",
   "kalshi_ml": "MSST 70%",
   "model_ml": "MSST 68%",
   "ml_pick": "MSST",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "PSU 68, MSST 63",
+  "result_context": "Penn State erased a 16-pt 2nd-half deficit to win outright",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -28961,7 +28995,7 @@
    "sos_rank_home": null,
    "open_line_home": -6.5,
    "public_bets_pct_home": 53,
-   "close_line_home": null,
+   "close_line_home": -6.5,
    "last5_margin_away": 7.4,
    "last5_margin_home": 6.0,
    "streak_away": -1,
@@ -28977,7 +29011,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has Mississippi State about 5 points better, and both lost Wednesday, so my number is MSST -5 with the Bulldogs to win. That's 1.5 points on Penn State +6.5, and L016 keeps the dog, but guard B. Byers is questionable, so it's a lean."
+  "note": "Torvik has Mississippi State about 5 points better, and both lost Wednesday, so my number is MSST -5 with the Bulldogs to win. That's 1.5 points on Penn State +6.5, and L016 keeps the dog, but guard B. Byers is questionable, so it's a lean.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-MIA-ALA",
@@ -28996,16 +29031,16 @@
   "spread_pick": "ALA +2.5 (FD)",
   "spread_side": "home",
   "spread_edge": 2.0,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "MIA -135 / ALA +114",
   "fd_ml": "MIA -138 / ALA +116",
   "kalshi_ml": "MIA 54%",
   "model_ml": "MIA 52%",
   "ml_pick": "MIA",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "W",
+  "final": "MIA 87, ALA 81",
+  "result_context": "Line was right: Miami held off Alabama by 6",
   "lessons_applied": "",
   "official": true,
   "features": {
@@ -29029,7 +29064,7 @@
    "sos_rank_home": null,
    "open_line_home": 2.5,
    "public_bets_pct_home": 36,
-   "close_line_home": null,
+   "close_line_home": 2.5,
    "last5_margin_away": 31.0,
    "last5_margin_home": 14.6,
    "streak_away": 1,
@@ -29045,7 +29080,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has these two dead even, and Miami's 27-point win over a slumping Michigan is pushing 64% of bets its way. My number is MIA -0.5, a true coin flip with a slight Miami lean to win, so Alabama +2.5 is the value."
+  "note": "Torvik has these two dead even, and Miami's 27-point win over a slumping Michigan is pushing 64% of bets its way. My number is MIA -0.5, a true coin flip with a slight Miami lean to win, so Alabama +2.5 is the value.",
+  "clv": 0.0
  },
  {
   "id": "2026-11-27-CBB-TENN-LOU",
@@ -29064,16 +29100,16 @@
   "spread_pick": "LOU +1.5 (DK)",
   "spread_side": "home",
   "spread_edge": 1.0,
-  "spread_result": "pending",
+  "spread_result": "W",
   "dk_ml": "TENN +130 / LOU -155",
   "fd_ml": "",
   "kalshi_ml": "TENN 51%",
   "model_ml": "TENN 52%",
   "ml_pick": "TENN",
   "ml_side": "away",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "TENN 64, LOU 84",
+  "result_context": "Blowout: Louisville won by 20 and ended Tennessee's unbeaten start",
   "lessons_applied": "L016",
   "official": false,
   "features": {
@@ -29097,7 +29133,7 @@
    "sos_rank_home": null,
    "open_line_home": 1.5,
    "public_bets_pct_home": 40,
-   "close_line_home": null,
+   "close_line_home": -3.5,
    "last5_margin_away": 13.2,
    "last5_margin_home": 11.0,
    "streak_away": 7,
@@ -29113,7 +29149,8 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik has this a pick'em for the Las Vegas title, so my number is TENN -0.5 with 7-0 Tennessee barely winning. That's a 1-point edge on Louisville +1.5, and L016 keeps the dog, but Louisville's Ellis is doubtful, so it's a lean."
+  "note": "Torvik has this a pick'em for the Las Vegas title, so my number is TENN -0.5 with 7-0 Tennessee barely winning. That's a 1-point edge on Louisville +1.5, and L016 keeps the dog, but Louisville's Ellis is doubtful, so it's a lean.",
+  "clv": 5.0
  },
  {
   "id": "2026-11-27-CBB-CREI-GONZ",
@@ -29132,16 +29169,16 @@
   "spread_pick": "GONZ -5.5 (DK)",
   "spread_side": "home",
   "spread_edge": 0.5,
-  "spread_result": "pending",
+  "spread_result": "L",
   "dk_ml": "CREI +205 / GONZ -250",
   "fd_ml": "",
   "kalshi_ml": "GONZ 65%",
   "model_ml": "GONZ 72%",
   "ml_pick": "GONZ",
   "ml_side": "home",
-  "ml_result": "pending",
-  "final": "",
-  "result_context": "",
+  "ml_result": "L",
+  "final": "CREI 97, GONZ 89",
+  "result_context": "Overtime: Creighton rallied late to force OT and won 97-89 outright",
   "lessons_applied": "",
   "official": false,
   "features": {
@@ -29165,7 +29202,7 @@
    "sos_rank_home": null,
    "open_line_home": -5.5,
    "public_bets_pct_home": null,
-   "close_line_home": null,
+   "close_line_home": -5.5,
    "last5_margin_away": 10.2,
    "last5_margin_home": 20.0,
    "streak_away": 4,
@@ -29181,6 +29218,7 @@
    "epa_net_away": null,
    "epa_net_home": null
   },
-  "note": "Torvik makes Gonzaga about 6 points better than Creighton for the bracket title, so my number is GONZ -6 and the Zags to win. Only a half-point edge, so a small lean on Gonzaga -5.5."
+  "note": "Torvik makes Gonzaga about 6 points better than Creighton for the bracket title, so my number is GONZ -6 and the Zags to win. Only a half-point edge, so a small lean on Gonzaga -5.5.",
+  "clv": 0.0
  }
 ]
