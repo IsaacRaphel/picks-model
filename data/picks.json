@@ -258,5 +258,15 @@
   "fd_odds": "-106",
   "kalshi_odds": "-104",
   "result": "L"
+ },
+ {
+  "id": "2026-11-28-potd",
+  "date": "2026-11-28",
+  "kind": "Pick of the day",
+  "pick": "LOU -2.5",
+  "dk_odds": "-125",
+  "fd_odds": "-120",
+  "kalshi_odds": "-108",
+  "result": "pending"
  }
 ]
